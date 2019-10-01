@@ -8,6 +8,12 @@ using TMPro;
 public class AllButtonAction : MonoBehaviour
 {
     public GameObject[] Players;
+    bool startup= true;
+
+    float PlayerAttackPower;
+    float EnemyDefenceValue;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +23,11 @@ public class AllButtonAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(startup==true)
+        {
+            Players=GameObject.FindGameObjectsWithTag("Player");
+            startup = false;
+        }
     }
 
     public void Fight_Button_Action_Event()
@@ -152,6 +162,33 @@ public class AllButtonAction : MonoBehaviour
         {
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+        }
+        if (name == "HeavenlyWorth")
+        {
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+        }
+       
+    }
+
+    public void ActivePlayer_Attack_Attribute()
+    {
+        for(int i=0;i<Players.Length;i++)
+        {
+            try
+            {
+                if(Players[i].GetComponent<PA>().state.ToString()== "waitingforinput")
+                {
+                    PlayerAttackPower=Players[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                }
+            }
+            catch (System.Exception)
+            {
+                if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
+                {
+                    PlayerAttackPower = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+                }
+            }
         }
        
     }

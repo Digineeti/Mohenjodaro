@@ -13,7 +13,11 @@ public class PA : MonoBehaviour
     public GameObject helathSliderPanel;                    //declaring PlayerUi health bar object
     public GameObject PlayerUIPanel;                        //declaring playerUi State object 
     public GameObject TurnUiPanel;                          //declaring TurnUi State object 
-   
+
+    bool startup;
+
+    public Animator anim;
+
     //making player state collection 
     public enum State
     {
@@ -28,6 +32,8 @@ public class PA : MonoBehaviour
         ActiveCircle.SetActive(false);                  //make all player turn circle disable
         AGIValue = callScriptObject.Attribute.AGI;      //set player AGI value from scriptable object 
         Globalvariable.PlayerUi = false;                //call global variable PlayerUi false
+
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -61,20 +67,40 @@ public class PA : MonoBehaviour
             //active the turn circle
             Globalvariable.AttackUi = true;
             ActiveCircle.SetActive(true);
-            
+
             //do action on player input press
-            if (Input.GetKeyDown(KeyCode.A))
+
+            Globalvariable.currentTime += Time.deltaTime;
+            if (Globalvariable.Active_Player_Action)
             {
-                //player action goes here
-                Debug.Log(gameObject.name + " Hit");
-                //calling the playe attack animation 
-                //Anim.SetBool("movetoattack",true);
-                //making the global variable index set to zero
-                Globalvariable.Index--;
-                Globalvariable.Heal=0;
-                //after action make player state busy
-                state = State.busy;
+                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
+                anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
+                startup = true;
+                Globalvariable.Active_Player_Action = false;
             }
+            if (startup == true)
+            {
+                if (Globalvariable.currentTime > Globalvariable.nextTime)
+                {
+                    startup = false;
+                    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
+                    Globalvariable.Index--;
+                    Globalvariable.Active_Player_Animation_Parameter = null;
+                }
+
+            }
+            //if (Input.GetKeyDown(KeyCode.A))
+            //{
+            //    //player action goes here
+            //    Debug.Log(gameObject.name + " Hit");
+            //    //calling the playe attack animation 
+            //    //Anim.SetBool("movetoattack",true);
+            //    //making the global variable index set to zero
+            //    Globalvariable.Index--;
+            //    Globalvariable.Heal = 0;
+            //    //after action make player state busy
+            //    state = State.busy;
+            //}
         }
         else
         {

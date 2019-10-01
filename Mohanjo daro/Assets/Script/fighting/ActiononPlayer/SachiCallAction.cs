@@ -88,25 +88,25 @@ public class SachiCallAction : MonoBehaviour
 
             //animation and action here 
             // the global variable for activate the action 
-            Globalvariable.currentTime += Time.deltaTime;
-            if (Globalvariable.Active_Player_Action)
-            {
-                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-                anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
-                startup = true;
-                Globalvariable.Active_Player_Action = false;
-            }
-            if (startup == true)
-            {
-                if (Globalvariable.currentTime > Globalvariable.nextTime)
-                {
-                    startup = false;
-                    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
-                    Globalvariable.Index--;
-                    Globalvariable.Active_Player_Animation_Parameter = null;
-                }
+            //Globalvariable.currentTime += Time.deltaTime;
+            //if (Globalvariable.Active_Player_Action)
+            //{
+            //    Globalvariable.nextTime = Globalvariable.currentTime + 1f;
+            //    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
+            //    startup = true;
+            //    Globalvariable.Active_Player_Action = false;
+            //}
+            //if (startup == true)
+            //{
+            //    if (Globalvariable.currentTime > Globalvariable.nextTime)
+            //    {
+            //        startup = false;
+            //        anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
+            //        Globalvariable.Index--;
+            //        Globalvariable.Active_Player_Animation_Parameter = null;
+            //    }
 
-            }
+            //}
             #endregion
 
             #region InActivePlayersetup
