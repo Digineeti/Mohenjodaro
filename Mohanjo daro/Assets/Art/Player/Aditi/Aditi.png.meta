@@ -1,0 +1,1561 @@
+fileFormatVersion: 2
+guid: 2143470945a0055428e84dd1e6999f03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4523733521947583689
+    second: cha1_0
+  - first:
+      213: -349983261981551753
+    second: cha1_1
+  - first:
+      213: 4853942925744857582
+    second: cha1_2
+  - first:
+      213: 5384845510216681620
+    second: cha1_3
+  - first:
+      213: -84275298856615737
+    second: cha1_4
+  - first:
+      213: 8479824178104713673
+    second: cha1_5
+  - first:
+      213: -5464019892143545872
+    second: cha1_6
+  - first:
+      213: 1211331068593245571
+    second: cha1_7
+  - first:
+      213: 3168692098293954
+    second: cha1_8
+  - first:
+      213: -23618364091146817
+    second: cha1_9
+  - first:
+      213: 7184482633074955967
+    second: cha1_10
+  - first:
+      213: -731674420304618585
+    second: cha1_11
+  - first:
+      213: 8666194482232817328
+    second: cha1_12
+  - first:
+      213: 503784990071934965
+    second: cha1_13
+  - first:
+      213: 3868305741812933256
+    second: cha1_14
+  - first:
+      213: -6386932273815313544
+    second: cha1_15
+  - first:
+      213: 6896938275591502260
+    second: cha1_16
+  - first:
+      213: -3033947981002349642
+    second: cha1_17
+  - first:
+      213: -5072352832112066289
+    second: cha1_18
+  - first:
+      213: -2854655100324402705
+    second: cha1_19
+  - first:
+      213: 5141772631865960548
+    second: cha1_20
+  - first:
+      213: -1005555661626496847
+    second: cha1_21
+  - first:
+      213: -6499388314121821700
+    second: cha1_22
+  - first:
+      213: -3599200553291986828
+    second: cha1_23
+  - first:
+      213: -1934328093967980411
+    second: cha1_24
+  - first:
+      213: -7500608036102306197
+    second: cha1_25
+  - first:
+      213: -2342510291070224884
+    second: cha1_26
+  - first:
+      213: 4699569395323618770
+    second: cha1_27
+  - first:
+      213: -4220165005946641159
+    second: cha1_28
+  - first:
+      213: -8526542244672469239
+    second: cha1_29
+  - first:
+      213: 1111783340584850933
+    second: cha1_30
+  - first:
+      213: 871891329285463696
+    second: cha1_31
+  - first:
+      213: 7704128515992213910
+    second: cha1_32
+  - first:
+      213: -5916418574275783821
+    second: cha1_33
+  - first:
+      213: -2234411309039526825
+    second: cha1_34
+  - first:
+      213: 1495360810078170482
+    second: cha1_35
+  - first:
+      213: 7113733958630150958
+    second: cha1_36
+  - first:
+      213: -1651152844540429697
+    second: cha1_37
+  - first:
+      213: -6131086091050944461
+    second: cha1_38
+  - first:
+      213: -5230236758449094963
+    second: cha1_39
+  - first:
+      213: -5740740882381826102
+    second: cha1_40
+  - first:
+      213: 8197298434824644168
+    second: cha1_41
+  - first:
+      213: -7485922916472833389
+    second: cha1_42
+  - first:
+      213: 1401495963179933818
+    second: cha1_43
+  - first:
+      213: 5133793470861936894
+    second: cha1_44
+  - first:
+      213: 4840576789943431374
+    second: cha1_45
+  - first:
+      213: -4018238004509466385
+    second: cha1_46
+  - first:
+      213: 8869073277265173871
+    second: cha1_47
+  - first:
+      213: 6853765269510342589
+    second: cha1_48
+  - first:
+      213: -3490335570343581669
+    second: cha1_49
+  - first:
+      213: 8539093187645371585
+    second: cha1_50
+  - first:
+      213: 7301786412658428822
+    second: cha1_51
+  - first:
+      213: -3598297168653857826
+    second: cha1_52
+  - first:
+      213: 6746397019897942439
+    second: cha1_53
+  - first:
+      213: 4411870178976748855
+    second: Aditi_0
+  - first:
+      213: -8592928056791891105
+    second: Aditi_1
+  - first:
+      213: -3115918785747715550
+    second: Aditi_2
+  - first:
+      213: 7721285651707105902
+    second: Aditi_3
+  - first:
+      213: 8273383760204322923
+    second: Aditi_4
+  - first:
+      213: -1758067350581554
+    second: Aditi_5
+  - first:
+      213: 8252539094012680039
+    second: Aditi_6
+  - first:
+      213: 1396396982677028976
+    second: Aditi_7
+  - first:
+      213: 2702490770783790569
+    second: Aditi_8
+  - first:
+      213: -3141480839455892130
+    second: Aditi_9
+  - first:
+      213: 3941078027644661792
+    second: Aditi_10
+  - first:
+      213: -361695899190753995
+    second: Aditi_11
+  - first:
+      213: -5944274718624832894
+    second: Aditi_12
+  - first:
+      213: -597531863118651260
+    second: Aditi_13
+  - first:
+      213: 62704909850693135
+    second: Aditi_14
+  - first:
+      213: 3622234050206536833
+    second: Aditi_15
+  - first:
+      213: 7562277566660247193
+    second: Aditi_16
+  - first:
+      213: 1834121663699223499
+    second: Aditi_17
+  - first:
+      213: -1952457192329565308
+    second: Aditi_18
+  - first:
+      213: 5678097717772421163
+    second: Aditi_19
+  - first:
+      213: 3722072119729805608
+    second: Aditi_20
+  - first:
+      213: -7941328139596408438
+    second: Aditi_21
+  - first:
+      213: 2946092209594726573
+    second: Aditi_22
+  - first:
+      213: 7693408216461092588
+    second: Aditi_23
+  - first:
+      213: 7399968923704196347
+    second: Aditi_24
+  - first:
+      213: 8120725613985416798
+    second: Aditi_25
+  - first:
+      213: 8382232931332173921
+    second: Aditi_26
+  - first:
+      213: 5409141718786165387
+    second: Aditi_27
+  - first:
+      213: -5937350082115042979
+    second: Aditi_28
+  - first:
+      213: -87137247769484248
+    second: Aditi_29
+  - first:
+      213: 3884328818761467481
+    second: Aditi_30
+  - first:
+      213: -4725874544114651131
+    second: Aditi_31
+  - first:
+      213: -5051142761268587466
+    second: Aditi_32
+  - first:
+      213: 5581613024348225571
+    second: Aditi_33
+  - first:
+      213: -2167798131355461056
+    second: Aditi_34
+  - first:
+      213: 5458316599009481495
+    second: Aditi_35
+  - first:
+      213: 7254332867464233865
+    second: Aditi_36
+  - first:
+      213: 8676995289925208211
+    second: Aditi_37
+  - first:
+      213: -3967216998005663743
+    second: Aditi_38
+  - first:
+      213: -6404622422879003804
+    second: Aditi_39
+  - first:
+      213: 7148142943251878450
+    second: Aditi_40
+  - first:
+      213: 1782237379523892532
+    second: Aditi_41
+  - first:
+      213: 2012216187822303992
+    second: Aditi_42
+  - first:
+      213: -8119410365761115634
+    second: Aditi_43
+  - first:
+      213: 1613909069233822496
+    second: Aditi_44
+  - first:
+      213: 7041836195100512264
+    second: Aditi_45
+  - first:
+      213: -7511682234102520768
+    second: Aditi_46
+  - first:
+      213: 6747298201617820448
+    second: Aditi_47
+  - first:
+      213: 1929264826393634652
+    second: Aditi_48
+  - first:
+      213: 147493515299408499
+    second: Aditi_49
+  - first:
+      213: -5090143132390963862
+    second: Aditi_50
+  - first:
+      213: 6128209396017404364
+    second: Aditi_51
+  - first:
+      213: -4023534400907227733
+    second: Aditi_52
+  - first:
+      213: 6887097202827237507
+    second: Aditi_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aditi_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 320
+        width: 41
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9e1bf53ddf2fe4491ad05f6f8d99c9
+      internalID: 4411870178976748855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 320
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a8954af5e48e8448bed7d53b50e7cb
+      internalID: -8592928056791891105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 320
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018d4e4228348b44eab20fee3bdfd892
+      internalID: -3115918785747715550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 320
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de550a002a864549a3bc299a16c1053
+      internalID: 7721285651707105902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 320
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57328b6e84892204a899e8dbcf66d811
+      internalID: 8273383760204322923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 320
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a64e8050c491844782dd30dd7177799
+      internalID: -1758067350581554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 320
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43d3a407634c534fb37443ef85934f4
+      internalID: 8252539094012680039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 320
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8daca8f2e1e356a4f80f153dd6396df2
+      internalID: 1396396982677028976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_8
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 320
+        width: 53
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44337deafaa995344a4bae93d6370934
+      internalID: 2702490770783790569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 256
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52780dc1fc55594cab6cdd7f086ea6c
+      internalID: -3141480839455892130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 256
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475480e1ba95e624289b15be9c273835
+      internalID: 3941078027644661792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 256
+        width: 43
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31212b233d092ab46977bc22b306041a
+      internalID: -361695899190753995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_12
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 256
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20293718dfc851448bba08ea99539a11
+      internalID: -5944274718624832894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 256
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a962f8df9b1e274e9bd19ce43aaac8c
+      internalID: -597531863118651260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_14
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 256
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542e95d1b2f7dc84ba5fe9071b92a6ed
+      internalID: 62704909850693135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_15
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 256
+        width: 42
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ac126e7021ac5429ecaf697e651151
+      internalID: 3622234050206536833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_16
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 257
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d1377069da0174ea94c7612d06f9fb
+      internalID: 7562277566660247193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_17
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 258
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12ba1f0ac4da5045869f66e02391cb8
+      internalID: 1834121663699223499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_18
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 192
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2454f5239ef4f63488fd5b8f50ce88d8
+      internalID: -1952457192329565308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 192
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42f393eb4ab801e4982f09ac9061e149
+      internalID: 5678097717772421163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_20
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 192
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322a8d158f8ccca4ab434af1e74630f7
+      internalID: 3722072119729805608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 192
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de580f6025627342928d57635134265
+      internalID: -7941328139596408438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1aacd25edeccdd4a96e3f0be9ab29c1
+      internalID: 2946092209594726573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_23
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 192
+        width: 47
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568e3e50172f2dd48b028bb1736dfa8a
+      internalID: 7693408216461092588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_24
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 192
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dc3ccccd5d86b4dac109bf7afedf2d
+      internalID: 7399968923704196347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_25
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 192
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cc7cc9ef4638e4f9c404406b93f22c
+      internalID: 8120725613985416798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_26
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 192
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3317675a017a5bb4db15b271a2cdc4a2
+      internalID: 8382232931332173921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_27
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 128
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a72510257171924d9294016536ca327
+      internalID: 5409141718786165387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_28
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 128
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70faa14bd3308994cb06b052101b6c84
+      internalID: -5937350082115042979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_29
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 128
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e92aca30d89e45b41a286eafbb3516be
+      internalID: -87137247769484248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_30
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 128
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62093f66611fa7545abf85af03e835e7
+      internalID: 3884328818761467481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_31
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 128
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3167eb9a9c51c74489692373b3e5250
+      internalID: -4725874544114651131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_32
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 128
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d86dc7d8dfd50846807d2ea560ea820
+      internalID: -5051142761268587466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_33
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 128
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84d7225a319df14aae0c6f1254a1445
+      internalID: 5581613024348225571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_34
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 128
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed324630ce8b3346866197103f20512
+      internalID: -2167798131355461056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_35
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 128
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a986d2bd9a12194d99337d08956e865
+      internalID: 5458316599009481495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 64
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b83f3dbeee06a24e886ebcb3d3104a0
+      internalID: 7254332867464233865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 64
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f473f4c298cb64d43ba05a2a499feca8
+      internalID: 8676995289925208211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_38
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 64
+        width: 54
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1076a339c54673e4190de82399271958
+      internalID: -3967216998005663743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_39
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 64
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a0e11bd904dd2b439086e48a1737309
+      internalID: -6404622422879003804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_40
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 64
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7dba23e10b422428526bacae250eb1
+      internalID: 7148142943251878450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_41
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 64
+        width: 43
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c8aae65770e17439e804dcb4ff79ca
+      internalID: 1782237379523892532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_42
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 64
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c379b1549c0811e44930d666b94461bd
+      internalID: 2012216187822303992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_43
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 64
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0831cb2e2dc3bdc43b18be2860e23d3b
+      internalID: -8119410365761115634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_44
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 64
+        width: 41
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a532600ee814eb04a86e9b51c01b1104
+      internalID: 1613909069233822496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_45
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56acdc586c8e11040ad019753d094406
+      internalID: 7041836195100512264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_46
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee304006350abd4d82a670446cfa9ca
+      internalID: -7511682234102520768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_47
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 54
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336fd4afb5f979a4f81c1a5747047484
+      internalID: 6747298201617820448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_48
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f546607992728d47bda239a604ad1a0
+      internalID: 1929264826393634652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_49
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae9640f5e2179a4f9210caa5a8204df
+      internalID: 147493515299408499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_50
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 48
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87a53d91c4847a4e908f42bc54c906a
+      internalID: -5090143132390963862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e1409fa34a98740ae622ce917404ae
+      internalID: 6128209396017404364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_52
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d609ad29382cfb14d8528ede9dd897d2
+      internalID: -4023534400907227733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditi_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1f8829fcc9aac4fa848f143995ba81
+      internalID: 6887097202827237507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1561 @@
+fileFormatVersion: 2
+guid: dd907af25f69c904497a9d25bd006d4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5082232296278195983
+    second: cha4_0
+  - first:
+      213: -5071172551793533751
+    second: cha4_1
+  - first:
+      213: -4486091526693493850
+    second: cha4_2
+  - first:
+      213: 4542026791283577953
+    second: cha4_3
+  - first:
+      213: 8066930057757941286
+    second: cha4_4
+  - first:
+      213: -815539132801201055
+    second: cha4_5
+  - first:
+      213: 3379195536191760849
+    second: cha4_6
+  - first:
+      213: -2071664577606280184
+    second: cha4_7
+  - first:
+      213: -2237448205364615631
+    second: cha4_8
+  - first:
+      213: -8875288658947672287
+    second: cha4_9
+  - first:
+      213: -2666768637859439589
+    second: cha4_10
+  - first:
+      213: 1169494569096442494
+    second: cha4_11
+  - first:
+      213: -6400300350064393380
+    second: cha4_12
+  - first:
+      213: -317401886375319941
+    second: cha4_13
+  - first:
+      213: 2902486872671872689
+    second: cha4_14
+  - first:
+      213: 5234575838823082941
+    second: cha4_15
+  - first:
+      213: 1518355301797074863
+    second: cha4_16
+  - first:
+      213: 8730295673195318880
+    second: cha4_17
+  - first:
+      213: 1053380266528902247
+    second: cha4_18
+  - first:
+      213: 6567342816456748214
+    second: cha4_19
+  - first:
+      213: -7843670873316244521
+    second: cha4_20
+  - first:
+      213: -8561860862531929418
+    second: cha4_21
+  - first:
+      213: 2201072745449850788
+    second: cha4_22
+  - first:
+      213: 7613814858932812149
+    second: cha4_23
+  - first:
+      213: 7209355467362970540
+    second: cha4_24
+  - first:
+      213: 8713763792646013487
+    second: cha4_25
+  - first:
+      213: -8893146573965711473
+    second: cha4_26
+  - first:
+      213: 1015664044079202102
+    second: cha4_27
+  - first:
+      213: -7517198479064305986
+    second: cha4_28
+  - first:
+      213: -8519267527397341371
+    second: cha4_29
+  - first:
+      213: -954383474619319216
+    second: cha4_30
+  - first:
+      213: 791549196434774633
+    second: cha4_31
+  - first:
+      213: -5212275643341612173
+    second: cha4_32
+  - first:
+      213: 2987193070021174638
+    second: cha4_33
+  - first:
+      213: 5069890924613474387
+    second: cha4_34
+  - first:
+      213: -8032177960252799440
+    second: cha4_35
+  - first:
+      213: 2285455669997882465
+    second: cha4_36
+  - first:
+      213: 6080276961701503651
+    second: cha4_37
+  - first:
+      213: -3459595368050137049
+    second: cha4_38
+  - first:
+      213: -1609658659709573799
+    second: cha4_39
+  - first:
+      213: -8681855553347890604
+    second: cha4_40
+  - first:
+      213: -2004602430239431439
+    second: cha4_41
+  - first:
+      213: 122672549503064239
+    second: cha4_42
+  - first:
+      213: -2047589469175848690
+    second: cha4_43
+  - first:
+      213: 6611744687807216459
+    second: cha4_44
+  - first:
+      213: -3220532925733163687
+    second: cha4_45
+  - first:
+      213: 7274376831997416810
+    second: cha4_46
+  - first:
+      213: 7506148956627026329
+    second: cha4_47
+  - first:
+      213: 5741802570479981351
+    second: cha4_48
+  - first:
+      213: 829153614687022548
+    second: cha4_49
+  - first:
+      213: -725378342995376580
+    second: cha4_50
+  - first:
+      213: -6483251476320809329
+    second: cha4_51
+  - first:
+      213: -1201832840763587272
+    second: cha4_52
+  - first:
+      213: 5970492026492428830
+    second: cha4_53
+  - first:
+      213: 5557783474127247203
+    second: Indrani_0
+  - first:
+      213: -8239237550152722545
+    second: Indrani_1
+  - first:
+      213: -7893422341071614201
+    second: Indrani_2
+  - first:
+      213: -7891360190896192747
+    second: Indrani_3
+  - first:
+      213: 1213834731563693938
+    second: Indrani_4
+  - first:
+      213: 2724656032034505521
+    second: Indrani_5
+  - first:
+      213: 1138414490184588743
+    second: Indrani_6
+  - first:
+      213: -7399165318057750457
+    second: Indrani_7
+  - first:
+      213: -3357328700425858181
+    second: Indrani_8
+  - first:
+      213: 8175120182484306203
+    second: Indrani_9
+  - first:
+      213: -4414927545786888296
+    second: Indrani_10
+  - first:
+      213: -3218987632970610035
+    second: Indrani_11
+  - first:
+      213: -3436622756204182807
+    second: Indrani_12
+  - first:
+      213: 8621250946663466441
+    second: Indrani_13
+  - first:
+      213: -1920652887388036424
+    second: Indrani_14
+  - first:
+      213: -9089879582205339147
+    second: Indrani_15
+  - first:
+      213: -5259182674148206274
+    second: Indrani_16
+  - first:
+      213: -1411427055895442303
+    second: Indrani_17
+  - first:
+      213: -8556724772210361670
+    second: Indrani_18
+  - first:
+      213: 2763530863019791954
+    second: Indrani_19
+  - first:
+      213: 2987793001027851811
+    second: Indrani_20
+  - first:
+      213: -3367332357701163024
+    second: Indrani_21
+  - first:
+      213: 5961951824628460213
+    second: Indrani_22
+  - first:
+      213: -552788134190891420
+    second: Indrani_23
+  - first:
+      213: -4825298391202093018
+    second: Indrani_24
+  - first:
+      213: 5478333532843769234
+    second: Indrani_25
+  - first:
+      213: 6204796236942447451
+    second: Indrani_26
+  - first:
+      213: 8503381947431814926
+    second: Indrani_27
+  - first:
+      213: -5049922549111068368
+    second: Indrani_28
+  - first:
+      213: -1087543246243757016
+    second: Indrani_29
+  - first:
+      213: 4571867538031997249
+    second: Indrani_30
+  - first:
+      213: 4035496846841423830
+    second: Indrani_31
+  - first:
+      213: -7154174387384977862
+    second: Indrani_32
+  - first:
+      213: 5854433428865890023
+    second: Indrani_33
+  - first:
+      213: -7678272945690966217
+    second: Indrani_34
+  - first:
+      213: -3464073070226680344
+    second: Indrani_35
+  - first:
+      213: 7378339181718902510
+    second: Indrani_36
+  - first:
+      213: 5380459701998683234
+    second: Indrani_37
+  - first:
+      213: -68893245703219809
+    second: Indrani_38
+  - first:
+      213: 1059471937552650899
+    second: Indrani_39
+  - first:
+      213: 5926087590439899269
+    second: Indrani_40
+  - first:
+      213: 6627653898045176049
+    second: Indrani_41
+  - first:
+      213: 7239007654535439393
+    second: Indrani_42
+  - first:
+      213: -6470207468148125598
+    second: Indrani_43
+  - first:
+      213: 3316044353966325878
+    second: Indrani_44
+  - first:
+      213: -6170726214709466675
+    second: Indrani_45
+  - first:
+      213: -2646980428666339939
+    second: Indrani_46
+  - first:
+      213: -3796259263114952097
+    second: Indrani_47
+  - first:
+      213: 7390670697821725069
+    second: Indrani_48
+  - first:
+      213: 1218310449771782540
+    second: Indrani_49
+  - first:
+      213: 4576016729721585332
+    second: Indrani_50
+  - first:
+      213: 5936755220726980098
+    second: Indrani_51
+  - first:
+      213: 6854311092340331826
+    second: Indrani_52
+  - first:
+      213: -6220531283279069864
+    second: Indrani_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Indrani_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 320
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0928b4c8fe06cbc4b926646c712ca14f
+      internalID: 5557783474127247203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 320
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd491ed8fcd25ea429ff961b2756bc5d
+      internalID: -8239237550152722545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_2
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 320
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9491b0f7991554b8942defe5ff0282
+      internalID: -7893422341071614201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 320
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c0636ce437aee469cda646442f563d
+      internalID: -7891360190896192747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 320
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f950359b8e6209845a91ff4ec1d10519
+      internalID: 1213834731563693938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 320
+        width: 51
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e647a7f951ef3459852a77bf1e609d
+      internalID: 2724656032034505521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 320
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8354a28aef1bb494da1c449ded5458b4
+      internalID: 1138414490184588743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 320
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820421c0feae86c4995168972a7bd68b
+      internalID: -7399165318057750457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 320
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92a1d3733081c34f96d173e00d4c1f8
+      internalID: -3357328700425858181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_9
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 256
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49f1add0b110fe4787d2e18f5fc14f9
+      internalID: 8175120182484306203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 256
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0aa41d10d1bae94b8b32bff7a99d8de
+      internalID: -4414927545786888296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 256
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60fc5379943959843be60decf3eb86dc
+      internalID: -3218987632970610035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 256
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130135e7f49fcb14aa1bb943253a71ad
+      internalID: -3436622756204182807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 256
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12906f953097b9f4886c6d12c3bcbd2c
+      internalID: 8621250946663466441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_14
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 256
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86b8df4eef5c33429cfcf43a346ac1e
+      internalID: -1920652887388036424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_15
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 256
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b2008ddd119fa4795d77f2d56b183c
+      internalID: -9089879582205339147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_16
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 256
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125b4690728bd3642bc6a4426353d00c
+      internalID: -5259182674148206274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_17
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 257
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55717ac65930ad24aabc1e7cee36983c
+      internalID: -1411427055895442303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_18
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 192
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd271c0c93c5ebc4486780f445a8e07f
+      internalID: -8556724772210361670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60383da495fd6149bb4cc2faf8b71c6
+      internalID: 2763530863019791954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_20
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 192
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb62482d4cfe344ebc85708e991f21b
+      internalID: 2987793001027851811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 192
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c74406e9be31a6409be455c07d28c27
+      internalID: -3367332357701163024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_22
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 190
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c13194f7a56e694f8c1783d59ac1405
+      internalID: 5961951824628460213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_23
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 192
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2e3f30e5137c94dbeae90541a726b9
+      internalID: -552788134190891420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_24
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 192
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697cbcdfaf77ea2499a7b11401884172
+      internalID: -4825298391202093018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_25
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 192
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48898abe5c5522d41b1cced74dea2607
+      internalID: 5478333532843769234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_26
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 192
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a838f50819f451a4fae908839f76f563
+      internalID: 6204796236942447451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_27
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 128
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6773806ed5a40934482658abbc3095d9
+      internalID: 8503381947431814926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_28
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 128
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44fd8c275727c0446b8d7b28560c802b
+      internalID: -5049922549111068368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_29
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 128
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b778359e13a47664589c4c93111acb3c
+      internalID: -1087543246243757016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_30
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 128
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f6d949ae015aa44b5beb7d03e913ea
+      internalID: 4571867538031997249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_31
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 128
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364fac244067d68468b9c767e81bd9f1
+      internalID: 4035496846841423830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_32
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 128
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeeb219c33302314da9840d5ad39f2b4
+      internalID: -7154174387384977862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_33
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 128
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708c398bcc1353f4492ab20145a9d973
+      internalID: 5854433428865890023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_34
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 128
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa0f23760522a741bb5d55558f82f0c
+      internalID: -7678272945690966217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_35
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 128
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac40a887098057409ca6ed8401b7f8a
+      internalID: -3464073070226680344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_36
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 64
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f1c27ec342f954f9297cedf22e13ab
+      internalID: 7378339181718902510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_37
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 64
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c454c31a4083e41b0073348ab01c7a
+      internalID: 5380459701998683234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_38
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 64
+        width: 50
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f41ef760ece200438069d3bf398c8ba
+      internalID: -68893245703219809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_39
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 64
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29f130120ae53245892b609e24832d6
+      internalID: 1059471937552650899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_40
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 64
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be29beec458e615429c3d8261cc4dbf4
+      internalID: 5926087590439899269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_41
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 64
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd37a0473028ef49937afe32ed37bc8
+      internalID: 6627653898045176049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_42
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 64
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85dbb1496e9549b458f44eda5012a512
+      internalID: 7239007654535439393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_43
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 64
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe02cef301e5bc479397a63ac9d5a63
+      internalID: -6470207468148125598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_44
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 64
+        width: 52
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26bf67fcd997524fb3230626e5217e7
+      internalID: 3316044353966325878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_45
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcfa9a61807deb940ad6bff73290dcb2
+      internalID: -6170726214709466675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_46
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c47eeef0170ee459ca76d37bc980e8
+      internalID: -2646980428666339939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_47
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a634ce80ef67a145bcc6bc1aef0262a
+      internalID: -3796259263114952097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_48
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 46
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a659d490fa54d84998c641d71d26748
+      internalID: 7390670697821725069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_49
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86900800ea94464c9c3731958d409c3
+      internalID: 1218310449771782540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_50
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 47
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a0d340f94934f4481549d58411e633
+      internalID: 4576016729721585332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_51
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f23f2e7df9e71449d59f78dfb7ef6d
+      internalID: 5936755220726980098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_52
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13597d11395c2504a877b5663cd7a1f7
+      internalID: 6854311092340331826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indrani_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 61
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e6eb4b7fbb91b4e8424889b67fc1c7
+      internalID: -6220531283279069864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

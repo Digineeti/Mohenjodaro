@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Wave Big Corner
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: ba389d05d2c1cbe43ab19f421f00be28, type: 3}
+  - {fileID: 21300000, guid: 3bc1edd8f84ceed44a0c8b64b16c09d9, type: 3}
+  - {fileID: 21300000, guid: c48c9bed3ae52c14a86b9933560f6b6c, type: 3}
+  - {fileID: 21300000, guid: de1304f7f40d6eb40a041e4ffbe88a97, type: 3}
+  - {fileID: 21300000, guid: 4d0bf74d0ed62ab4c90af57a4eb97917, type: 3}
+  - {fileID: 21300000, guid: 88446965fc9140b4e806780024a71cf1, type: 3}
+  - {fileID: 21300000, guid: ae8005a659ff76947aaf8907d80fec8f, type: 3}
+  - {fileID: 21300000, guid: a088fb4ffd78d964082bcc72266774f1, type: 3}
+  - {fileID: 21300000, guid: 4d0bf74d0ed62ab4c90af57a4eb97917, type: 3}
+  - {fileID: 21300000, guid: de1304f7f40d6eb40a041e4ffbe88a97, type: 3}
+  - {fileID: 21300000, guid: c48c9bed3ae52c14a86b9933560f6b6c, type: 3}
+  - {fileID: 21300000, guid: 3bc1edd8f84ceed44a0c8b64b16c09d9, type: 3}
+  m_MinSpeed: 3
+  m_MaxSpeed: 3
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0

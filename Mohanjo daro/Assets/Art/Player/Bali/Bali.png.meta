@@ -1,0 +1,1561 @@
+fileFormatVersion: 2
+guid: 5ca1cf841e2aed24ba3ffa7122b5f057
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8572640201675386475
+    second: MaleBody_0
+  - first:
+      213: -4680932255076635025
+    second: MaleBody_1
+  - first:
+      213: 8759415722502130203
+    second: MaleBody_2
+  - first:
+      213: 1571800271432868451
+    second: MaleBody_3
+  - first:
+      213: 2775455631253352099
+    second: MaleBody_4
+  - first:
+      213: 2039515079727304277
+    second: MaleBody_5
+  - first:
+      213: 3583486450813939969
+    second: MaleBody_6
+  - first:
+      213: -9145544423038543649
+    second: MaleBody_7
+  - first:
+      213: -213769188413961775
+    second: MaleBody_8
+  - first:
+      213: -2384215145809488761
+    second: MaleBody_9
+  - first:
+      213: 6637636273986854696
+    second: MaleBody_10
+  - first:
+      213: -7342759451664035491
+    second: MaleBody_11
+  - first:
+      213: -3893414384837514146
+    second: MaleBody_12
+  - first:
+      213: -7490317023489434322
+    second: MaleBody_13
+  - first:
+      213: -7966044578644571527
+    second: MaleBody_14
+  - first:
+      213: 1760992025757067420
+    second: MaleBody_15
+  - first:
+      213: -4514636231524872653
+    second: MaleBody_16
+  - first:
+      213: -7869428106725861366
+    second: MaleBody_17
+  - first:
+      213: -359000633045089192
+    second: MaleBody_18
+  - first:
+      213: -7673934594939056976
+    second: MaleBody_19
+  - first:
+      213: 5060192184862716568
+    second: MaleBody_20
+  - first:
+      213: -5339899594234348951
+    second: MaleBody_21
+  - first:
+      213: 7938295781245472621
+    second: MaleBody_22
+  - first:
+      213: 2827659991059931613
+    second: MaleBody_23
+  - first:
+      213: 4379304740295236505
+    second: MaleBody_24
+  - first:
+      213: 2503952688787659943
+    second: MaleBody_25
+  - first:
+      213: 666269248845110044
+    second: MaleBody_26
+  - first:
+      213: -1846990427840106283
+    second: MaleBody_27
+  - first:
+      213: 135674121150375868
+    second: MaleBody_28
+  - first:
+      213: 4649628708685958791
+    second: MaleBody_29
+  - first:
+      213: -989373048258276073
+    second: MaleBody_30
+  - first:
+      213: 1716558636037477639
+    second: MaleBody_31
+  - first:
+      213: 5187642535225371405
+    second: MaleBody_32
+  - first:
+      213: 4176526503923087206
+    second: MaleBody_33
+  - first:
+      213: -8734185321924066545
+    second: MaleBody_34
+  - first:
+      213: -1455588989698734908
+    second: MaleBody_35
+  - first:
+      213: 1794907856043039197
+    second: MaleBody_36
+  - first:
+      213: 4883497869449819994
+    second: MaleBody_37
+  - first:
+      213: 3621563241621526422
+    second: MaleBody_38
+  - first:
+      213: 8301193195844781819
+    second: MaleBody_39
+  - first:
+      213: -4524797348097572319
+    second: MaleBody_40
+  - first:
+      213: 8637528502549445931
+    second: MaleBody_41
+  - first:
+      213: 831504604242608545
+    second: MaleBody_42
+  - first:
+      213: 5575003128456861230
+    second: MaleBody_43
+  - first:
+      213: 7898670994720351491
+    second: MaleBody_44
+  - first:
+      213: 5624349221116177887
+    second: MaleBody_45
+  - first:
+      213: 3300854599072466246
+    second: MaleBody_46
+  - first:
+      213: 2298021975069225901
+    second: MaleBody_47
+  - first:
+      213: 509734328690611424
+    second: MaleBody_48
+  - first:
+      213: 8392923424895291198
+    second: MaleBody_49
+  - first:
+      213: 8491674736656503082
+    second: MaleBody_50
+  - first:
+      213: -8190230890219563717
+    second: MaleBody_51
+  - first:
+      213: -4887757610347566063
+    second: MaleBody_52
+  - first:
+      213: 7085340417189872468
+    second: MaleBody_53
+  - first:
+      213: -4028890591485773220
+    second: Bali_0
+  - first:
+      213: 6726995024990381369
+    second: Bali_1
+  - first:
+      213: 2317854547086854810
+    second: Bali_2
+  - first:
+      213: 1632640482896644631
+    second: Bali_3
+  - first:
+      213: 3468700473024697056
+    second: Bali_4
+  - first:
+      213: 25242272082363982
+    second: Bali_5
+  - first:
+      213: -5337499521604734947
+    second: Bali_6
+  - first:
+      213: 8490741023520777311
+    second: Bali_7
+  - first:
+      213: 2294008561388260513
+    second: Bali_8
+  - first:
+      213: -7680633121878440777
+    second: Bali_9
+  - first:
+      213: -8985858093124750947
+    second: Bali_10
+  - first:
+      213: -949082394140142241
+    second: Bali_11
+  - first:
+      213: 66990498082385439
+    second: Bali_12
+  - first:
+      213: 7687908398416366483
+    second: Bali_13
+  - first:
+      213: -1672198733165624218
+    second: Bali_14
+  - first:
+      213: 8781850776116105343
+    second: Bali_15
+  - first:
+      213: -4601424364627683213
+    second: Bali_16
+  - first:
+      213: 7943083204206576294
+    second: Bali_17
+  - first:
+      213: -8333027256871734032
+    second: Bali_18
+  - first:
+      213: 1117997750793901126
+    second: Bali_19
+  - first:
+      213: -3505331566757698487
+    second: Bali_20
+  - first:
+      213: -5676917843560464117
+    second: Bali_21
+  - first:
+      213: -1124429573971754224
+    second: Bali_22
+  - first:
+      213: -5007318640746748778
+    second: Bali_23
+  - first:
+      213: 4532541873075553073
+    second: Bali_24
+  - first:
+      213: 1244179940500306615
+    second: Bali_25
+  - first:
+      213: 5325636202923035455
+    second: Bali_26
+  - first:
+      213: 2710967550980937133
+    second: Bali_27
+  - first:
+      213: 3038754943978221462
+    second: Bali_28
+  - first:
+      213: -7282750553205717005
+    second: Bali_29
+  - first:
+      213: -702438021490591241
+    second: Bali_30
+  - first:
+      213: 4863065946532040892
+    second: Bali_31
+  - first:
+      213: 3135502192559880886
+    second: Bali_32
+  - first:
+      213: -3825127730944484729
+    second: Bali_33
+  - first:
+      213: 6961590616901870691
+    second: Bali_34
+  - first:
+      213: 1125668606600804102
+    second: Bali_35
+  - first:
+      213: 8720295271230535184
+    second: Bali_36
+  - first:
+      213: -5649353742425242529
+    second: Bali_37
+  - first:
+      213: -7548108738658093597
+    second: Bali_38
+  - first:
+      213: 2929665489966590443
+    second: Bali_39
+  - first:
+      213: -6003310471209167466
+    second: Bali_40
+  - first:
+      213: -5418847729901491486
+    second: Bali_41
+  - first:
+      213: 1579868989146058258
+    second: Bali_42
+  - first:
+      213: -5873362212447740823
+    second: Bali_43
+  - first:
+      213: -2705450638250969684
+    second: Bali_44
+  - first:
+      213: 7992048008375798352
+    second: Bali_45
+  - first:
+      213: 7331849912105340890
+    second: Bali_46
+  - first:
+      213: -976473191591030306
+    second: Bali_47
+  - first:
+      213: 5902188434869780077
+    second: Bali_48
+  - first:
+      213: 1385587256323158756
+    second: Bali_49
+  - first:
+      213: 780022530769963665
+    second: Bali_50
+  - first:
+      213: 6463418805588657824
+    second: Bali_51
+  - first:
+      213: -2858091751758666996
+    second: Bali_52
+  - first:
+      213: -1563281287747448907
+    second: Bali_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bali_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a3ac64e13aedc4eb6f952fe737504d
+      internalID: -4028890591485773220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 320
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad8b832ec91a7e40a3b45344a03c9da
+      internalID: 6726995024990381369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 320
+        width: 32
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632db25216e0859439ee07d8c48d35fb
+      internalID: 2317854547086854810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 320
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09acae270fb8c54f9c3c0be0e37a957
+      internalID: 1632640482896644631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_4
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 320
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cedf89df8224aa419a4cc1ab3c255ac
+      internalID: 3468700473024697056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 320
+        width: 44
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0103e9f6d7bf94b8822c350ab6fa7a
+      internalID: 25242272082363982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 320
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1874dbf8d1af5374ca33116bb37bb9fe
+      internalID: -5337499521604734947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d32e0b956ffa74f89649724ded57ef
+      internalID: 8490741023520777311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_8
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 320
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef47ed1a1539e744e81d527d6f22c174
+      internalID: 2294008561388260513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_9
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 256
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18996f6a1cc1c8548842ebb327f85aa4
+      internalID: -7680633121878440777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_10
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 256
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445ce0286ca440f4c987fbd9a66810bd
+      internalID: -8985858093124750947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_11
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 256
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf02c8f7969e07b46b1c0aa4487135bd
+      internalID: -949082394140142241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_12
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 256
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d4ca61202f00347a3aed86b5cab93a
+      internalID: 66990498082385439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 256
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6c6a78114993246b98e10be7fc3fa5
+      internalID: 7687908398416366483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_14
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 256
+        width: 43
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f2e5bb3f33a554e836c918b0de2300
+      internalID: -1672198733165624218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_15
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 256
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9ab33b14b926a4b81896a10e902420
+      internalID: 8781850776116105343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_16
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 257
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3cb289373a5a646bdfd67ce1e74f8b
+      internalID: -4601424364627683213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_17
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 258
+        width: 46
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9963aa95a7758a94eb1adbab9b0570c1
+      internalID: 7943083204206576294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_18
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 192
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed6f4dcb48fa134c8f600274bb64f92
+      internalID: -8333027256871734032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 192
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f760b4a3ef113cc4ea36ec64e02b813e
+      internalID: 1117997750793901126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_20
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 192
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff7acfdc18223144820932447e50091
+      internalID: -3505331566757698487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 192
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ff9228fdc46514c95cb603673d911a
+      internalID: -5676917843560464117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84be7a4ecfa2f548b95de9719d8ab9a
+      internalID: -1124429573971754224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_23
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 192
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c110f7773bd94c642b01d5f63e261b07
+      internalID: -5007318640746748778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_24
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 192
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0abf28469a85549b3c6902877ef7ce
+      internalID: 4532541873075553073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_25
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 192
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e430f8504818741ac5c54abea4cb59
+      internalID: 1244179940500306615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_26
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 192
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a69de2b8890e744948014f02f5bcf7
+      internalID: 5325636202923035455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_27
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 128
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3819671a73d275d41a7f37cc7d201f2e
+      internalID: 2710967550980937133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_28
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 128
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39353d94181bcc48aed3f33c370c92b
+      internalID: 3038754943978221462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_29
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 128
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ba436b33cdb614badc276864bfa898
+      internalID: -7282750553205717005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_30
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 128
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdcec06dbcbb4ad499390c7713144630
+      internalID: -702438021490591241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_31
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 128
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f542be0596b0943937ee7cae9320f9
+      internalID: 4863065946532040892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_32
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 128
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d688e61ee97fc4e90c264850cfa0b4
+      internalID: 3135502192559880886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_33
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 128
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d4ad47205b6bb41964e4784d3dcdca
+      internalID: -3825127730944484729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_34
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 128
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227e657e50652c545ac1171edb5b750d
+      internalID: 6961590616901870691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_35
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 128
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae82430aaccd10844963467988155e14
+      internalID: 1125668606600804102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_36
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 64
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246f6b54f8c22c640a768770e2ca42b8
+      internalID: 8720295271230535184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_37
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 64
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e315f58c7a7324c8a80f5998705973
+      internalID: -5649353742425242529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_38
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 64
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eeb6f29839639d4e96f80ada981fc63
+      internalID: -7548108738658093597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_39
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 64
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f474fa811025745aec8b854bd5e2d1
+      internalID: 2929665489966590443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_40
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 64
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb219dbc29c15245a97af58e8e4e5e6
+      internalID: -6003310471209167466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_41
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 64
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7fba34cb724d54f9816c2751c23068
+      internalID: -5418847729901491486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_42
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4e1ec11386ebf41960e7716eb023b7
+      internalID: 1579868989146058258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_43
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9820c0616cd3eb46964584c996ede39
+      internalID: -5873362212447740823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_44
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 64
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211cc927a2c747142a1a7527e6ee0a18
+      internalID: -2705450638250969684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_45
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d56da4a5bbf3e84b83f9336dd0dc6b0
+      internalID: 7992048008375798352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_46
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c04deaa4fbc9c499dd0fd200df781f
+      internalID: 7331849912105340890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_47
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 46
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b97e9f5c92a5e41a7eadbe347cb2d3
+      internalID: -976473191591030306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_48
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 32
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3125841e56a6f1a47be88e65bc1eee7c
+      internalID: 5902188434869780077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_49
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323052f4b539d6c499e1acfa8dcdb95a
+      internalID: 1385587256323158756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_50
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8171a8286f66349ad976c6f5c78f91
+      internalID: 780022530769963665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1160eade7efece5488af483332555ec6
+      internalID: 6463418805588657824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_52
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de98d28965978d748b67106455340d86
+      internalID: -2858091751758666996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bali_53
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 61
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 479b2ea524d787340a8fe68b170301a7
+      internalID: -1563281287747448907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

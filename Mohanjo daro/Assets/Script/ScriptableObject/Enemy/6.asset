@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6852260ae4ceb874e9bd511231fd26c2, type: 3}
+  m_Name: 6
+  m_EditorClassIdentifier: 
+  Name: Vendor
+  HPMax: 95
+  SPMax: 75
+  Exp: 45
+  ATK: 86
+  DEF: 12
+  MAT: 45
+  MDF: 47
+  AGI: 10
+  Luk: 60

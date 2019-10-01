@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Canvas
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Props
+  - Land
+  - Wave
+  - Player
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Water
+    uniqueID: 3811146041
+    locked: 0
+  - name: Land
+    uniqueID: 3343926437
+    locked: 0
+  - name: Wave
+    uniqueID: 368620189
+    locked: 0
+  - name: Road
+    uniqueID: 67367111
+    locked: 0
+  - name: Player
+    uniqueID: 3709312537
+    locked: 0
+  - name: Props
+    uniqueID: 2487195775
+    locked: 0

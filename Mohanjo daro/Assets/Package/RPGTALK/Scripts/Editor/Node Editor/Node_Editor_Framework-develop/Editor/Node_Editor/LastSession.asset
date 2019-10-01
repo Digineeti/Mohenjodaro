@@ -1,0 +1,400 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9172826320451416755
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -8833732738124355919}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections: []
+  side: 4
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &-8833732738124355919
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc0b4ceaf84e421bbb8af9fbe820df0, type: 3}
+  m_Name: Not start but not attached to anything
+  m_EditorClassIdentifier: 
+  position: {x: -573.27, y: -174.82}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterPotrait: {fileID: 21300004, guid: 29abebc8e9c7048819f3d2245a2a92be, type: 3}
+  DialogLine: This is what will be said
+  CutsceneTitle: Cutscene_0
+  startOfCutscene: 1
+  attachedTo: {fileID: 0}
+  characterID: 1
+  expressions:
+  - None
+  expressionID: 0
+  choices: []
+  questionID: TypeyourquestionIDhere
+  attachedToChoice: {fileID: 0}
+  lineInTxt: 8
+  saves:
+  - {fileID: 0}
+  - {fileID: 0}
+  attachedToSave: {fileID: 0}
+  toWhereOUT: {fileID: -3736906385218229437}
+  fromWhereIN: {fileID: -9172826320451416755}
+--- !u!114 &-7479502617075862893
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc0b4ceaf84e421bbb8af9fbe820df0, type: 3}
+  m_Name: Not start but not attached to anything
+  m_EditorClassIdentifier: 
+  position: {x: 293.41, y: -7.84}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterPotrait: {fileID: 21300000, guid: 29abebc8e9c7048819f3d2245a2a92be, type: 3}
+  DialogLine: This is what will be said
+  CutsceneTitle: FollowUp_Cutscene_0_SaveNode_1
+  startOfCutscene: 1
+  attachedTo: {fileID: 0}
+  characterID: 2
+  expressions:
+  - None
+  expressionID: 0
+  choices: []
+  questionID: Type your question ID here
+  attachedToChoice: {fileID: 0}
+  lineInTxt: 2
+  saves: []
+  attachedToSave: {fileID: 0}
+  toWhereOUT: {fileID: -1755183856434842224}
+  fromWhereIN: {fileID: 8957546052645749388}
+--- !u!114 &-7183018346114662261
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff623184d6a3b46c1bcbd076e9a8374b, type: 3}
+  m_Name: Save Node
+  m_EditorClassIdentifier: 
+  position: {x: 57.995, y: -270.53497}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  savedData: IDOfQuestion
+  modifier: 0
+  attachedTo: {fileID: 0}
+  toWhereOUT: {fileID: 8400334650407501208}
+  fromWhereIN: {fileID: 7033125266829574828}
+--- !u!114 &-5869723640147705625
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff623184d6a3b46c1bcbd076e9a8374b, type: 3}
+  m_Name: Save Node
+  m_EditorClassIdentifier: 
+  position: {x: 31.085, y: 18.455002}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  savedData: IDOfQuestion
+  modifier: 0
+  attachedTo: {fileID: 0}
+  toWhereOUT: {fileID: 7590509940859963900}
+  fromWhereIN: {fileID: 5965219581314533320}
+--- !u!114 &-3736906385218229437
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: To Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -8833732738124355919}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections:
+  - {fileID: 7033125266829574828}
+  - {fileID: 5965219581314533320}
+  side: 2
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &-2757380828811696101
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc0b4ceaf84e421bbb8af9fbe820df0, type: 3}
+  m_Name: Not start but not attached to anything
+  m_EditorClassIdentifier: 
+  position: {x: 308.09, y: -297.18}
+  dynamicConnectionPorts: []
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+  CharacterPotrait: {fileID: 21300000, guid: 29abebc8e9c7048819f3d2245a2a92be, type: 3}
+  DialogLine: This is what will be said
+  CutsceneTitle: FollowUp_Cutscene_0_SaveNode_0
+  startOfCutscene: 1
+  attachedTo: {fileID: 0}
+  characterID: 2
+  expressions:
+  - None
+  expressionID: 0
+  choices: []
+  questionID: Type your question ID here
+  attachedToChoice: {fileID: 0}
+  lineInTxt: 5
+  saves: []
+  attachedToSave: {fileID: 0}
+  toWhereOUT: {fileID: -1501310614888780757}
+  fromWhereIN: {fileID: 4343391444707294863}
+--- !u!114 &-1755183856434842224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: To Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -7479502617075862893}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections: []
+  side: 2
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &-1501310614888780757
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: To Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -2757380828811696101}
+  direction: 2
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections: []
+  side: 2
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66198f05a38b4c63bc0337fedf5bb9e, type: 3}
+  m_Name: LastSession
+  m_EditorClassIdentifier: 
+  editorStates:
+  - {fileID: 6146375291489254998}
+  saveName: New RPGTalk
+  savePath: 
+  livesInScene: 0
+  nodes:
+  - {fileID: -2757380828811696101}
+  - {fileID: -7183018346114662261}
+  - {fileID: -5869723640147705625}
+  - {fileID: -7479502617075862893}
+  - {fileID: -8833732738124355919}
+  groups: []
+  Name: RPGTalk
+  characters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  charactersNames:
+  - None
+  - FunnyGuy
+  - Girl
+  - '*PlayerName*'
+  expressions: []
+--- !u!114 &4343391444707294863
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -2757380828811696101}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections:
+  - {fileID: 8400334650407501208}
+  side: 4
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &5965219581314533320
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -5869723640147705625}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: RPGTalkSaveForward
+  _connections:
+  - {fileID: -3736906385218229437}
+  side: 4
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &6146375291489254998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ab6487237ff124ea4c2aa5de9ce3fb, type: 3}
+  m_Name: MainEditorState
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  parentEditor: {fileID: 0}
+  selectedNode: {fileID: -8833732738124355919}
+  panOffset: {x: -128.78, y: -6.17}
+  zoom: 1.17
+--- !u!114 &7033125266829574828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -7183018346114662261}
+  direction: 1
+  maxConnectionCount: 0
+  styleID: RPGTalkSaveForward
+  _connections:
+  - {fileID: -3736906385218229437}
+  side: 4
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &7590509940859963900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: To Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -5869723640147705625}
+  direction: 2
+  maxConnectionCount: 0
+  styleID: RPGTalkSaveForward
+  _connections:
+  - {fileID: 8957546052645749388}
+  side: 2
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &8400334650407501208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017e2c7fd038ecb46b317c1e003f31dc, type: 3}
+  m_Name: To Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -7183018346114662261}
+  direction: 2
+  maxConnectionCount: 0
+  styleID: RPGTalkSaveForward
+  _connections:
+  - {fileID: 4343391444707294863}
+  side: 2
+  sidePosition: 0
+  sideOffset: 0
+--- !u!114 &8957546052645749388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d338988a4691f43b8c0764bd85cf70, type: 3}
+  m_Name: From Where
+  m_EditorClassIdentifier: 
+  body: {fileID: -7479502617075862893}
+  direction: 1
+  maxConnectionCount: 1
+  styleID: RPGTalkForward
+  _connections:
+  - {fileID: 7590509940859963900}
+  side: 4
+  sidePosition: 0
+  sideOffset: 0
