@@ -12,7 +12,7 @@ public class AllButtonAction : MonoBehaviour
 
     float PlayerAttackPower;
     float EnemyDefenceValue;
-
+    string name;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +25,15 @@ public class AllButtonAction : MonoBehaviour
     {
         if(startup==true)
         {
-            Players=GameObject.FindGameObjectsWithTag("Player");
+            
             startup = false;
         }
     }
 
     public void Fight_Button_Action_Event()
     {
-        string name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
+        //Players=GetComponent<Turn_Management>().spawanHero;
+        name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
         GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
         //Debug.Log(Button_Click_On_Player.name);
         //Hero Ation
@@ -106,6 +107,21 @@ public class AllButtonAction : MonoBehaviour
         {
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //Extract ata on the click game object value
+            EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
+            PlayerAttackPower=ActivePlayer_Attack_Attribute();
+            //calculating attackpower using the formula
+            float  damaged = (PlayerAttackPower*PlayerAttackPower) / (PlayerAttackPower+EnemyDefenceValue);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(4).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = damaged.ToString();
+            damagepanel.SetActive(true);
+            //the enemy current Hp value 
+            //float currentHp = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- damaged;
+            Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- damaged;
+
+
         }
         if (name == "LightingAttack")
         {
@@ -171,25 +187,51 @@ public class AllButtonAction : MonoBehaviour
        
     }
 
-    public void ActivePlayer_Attack_Attribute()
+    public float  ActivePlayer_Attack_Attribute()
     {
-        for(int i=0;i<Players.Length;i++)
+        float value = -1;
+        //for(int i=0;i<Players.Length;i++)
+        //{
+        GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
+        try
         {
-            try
+            if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
             {
-                if(Players[i].GetComponent<PA>().state.ToString()== "waitingforinput")
-                {
-                    PlayerAttackPower=Players[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                }
+                value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
             }
-            catch (System.Exception)
+        }
+        catch (System.Exception)
+        {
+            //if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
+            //{
+            //    value = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+            //}
+        }
+        if (value < 0)
+        {
+            for (int i = 0; i < Players.Length; i++)
             {
-                if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
+                try
                 {
-                    PlayerAttackPower = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+                    if (Players[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        value = Players[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    }
+                }
+                catch (System.Exception)
+                {
+                    //if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
+                    //{
+                    //    value = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+                    //}
                 }
             }
         }
-       
+
+
+        //}
+        return value;
     }
+
+    
 }

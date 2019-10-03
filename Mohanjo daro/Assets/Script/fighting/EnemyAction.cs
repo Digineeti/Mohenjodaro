@@ -15,7 +15,11 @@ public class EnemyAction : MonoBehaviour
     public Animator anim;
     bool action=true;
 
+    float currentTime;
+    float NextTime;
+    bool damage=true;
 
+  
 
     public State state;
     public enum State
@@ -87,6 +91,21 @@ public class EnemyAction : MonoBehaviour
         else
         {
             ActiveCircle.SetActive(false);
+            currentTime += Time.deltaTime;
+            if (damage == true)
+            {
+                if (gameObject.transform.GetChild(4).gameObject.activeSelf == true)
+                {                   
+                    NextTime = currentTime + 1;
+                    damage = false;
+                }
+            }
+            if(currentTime>NextTime)
+            {
+                gameObject.transform.GetChild(4).gameObject.SetActive(false);
+                damage = true;
+            }
+           
         }
 
     }

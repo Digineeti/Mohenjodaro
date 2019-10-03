@@ -7,14 +7,14 @@ public class ScriptableUI :ScriptableObject
 {
     public string Name;                     //player name    
     public string Level;                    //player level 
-    public int HPMax;                       //player Max Health Point
-    public int SPMax;                       //player Max Special Point
+    public float HPMax;                       //player Max Health Point
+    public float SPMax;                       //player Max Special Point
     public float Exp;                       //player Initial Exprience Point  
-    public int ATK;                         //player Attack
-    public int DEF;                         //player Defence
-    public int MAT;                         //player Magic Attack
-    public int MDF;                         //player Magic Defence
-    public int AGI;                         //player Agility
-    public int Luk;                         //player Luck
+    public float ATK;                         //player Attack
+    public float DEF;                         //player Defence
+    public float MAT;                         //player Magic Attack
+    public float MDF;                         //player Magic Defence
+    public float AGI;                         //player Agility
+    public float Luk;                         //player Luck
     
 }

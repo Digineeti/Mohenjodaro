@@ -6,12 +6,12 @@ using UnityEngine;
 public class En_ScriptableUI :ScriptableObject
 {
     public string Name;                     //player name    
-    public int HPMax;                       //player Max Health Point   
-    public int Exp;                         //player Initial Exprience Point  
-    public int ATK;                         //player Attack
-    public int DEF;                         //player Defence
-    public int MAT;                         //player Magic Attack
-    public int MDF;                         //player Magic Defence
-    public int AGI;                         //player Agility
-    public int Luk;                         //player Luck
+    public float HPMax;                       //player Max Health Point   
+    public float Exp;                         //player Initial Exprience Point  
+    public float ATK;                         //player Attack
+    public float DEF;                         //player Defence
+    public float MAT;                         //player Magic Attack
+    public float MDF;                         //player Magic Defence
+    public float AGI;                         //player Agility
+    public float Luk;                         //player Luck
 }

@@ -41,6 +41,8 @@ public class Callingscriptableobject : MonoBehaviour
         AGI.text                = Attribute.AGI.ToString();
         LUK.text                = Attribute.Luk.ToString();
 
+
+        
     }
 
 }
