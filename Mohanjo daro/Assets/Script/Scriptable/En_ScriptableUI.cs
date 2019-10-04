@@ -6,6 +6,7 @@ using UnityEngine;
 public class En_ScriptableUI :ScriptableObject
 {
     public string Name;                     //player name    
+    public string Level;                       //player level 
     public float HPMax;                       //player Max Health Point   
     public float Exp;                         //player Initial Exprience Point  
     public float ATK;                         //player Attack

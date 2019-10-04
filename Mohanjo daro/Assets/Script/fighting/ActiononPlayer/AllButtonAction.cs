@@ -114,12 +114,13 @@ public class AllButtonAction : MonoBehaviour
             //calculating attackpower using the formula
             float  damaged = (PlayerAttackPower*PlayerAttackPower) / (PlayerAttackPower+EnemyDefenceValue);
 
-            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(4).gameObject;
-            damagepanel.GetComponentInChildren<TMP_Text>().text = damaged.ToString();
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
             //the enemy current Hp value 
             //float currentHp = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- damaged;
-            Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- damaged;
+            //Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- Mathf.RoundToInt(damaged);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
 
 
         }
@@ -184,7 +185,11 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-       
+       if(name== "Strom")
+        {
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+        }
     }
 
     public float  ActivePlayer_Attack_Attribute()

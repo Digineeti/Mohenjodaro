@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   Name: Bright
-  HPMax: 20
-  Exp: 30
-  ATK: 10
-  DEF: 30
-  MAT: 30
-  MDF: 40
-  AGI: 100
-  Luk: 80
+  Level: 1
+  HPMax: 10
+  Exp: 1
+  ATK: 5
+  DEF: 1
+  MAT: 1
+  MDF: 1
+  AGI: 10
+  Luk: 1

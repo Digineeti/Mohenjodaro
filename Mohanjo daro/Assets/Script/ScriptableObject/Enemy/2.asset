@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 2
   m_EditorClassIdentifier: 
   Name: Black
-  HPMax: 80
+  Level: 1
+  HPMax: 20
   Exp: 20
   ATK: 25
   DEF: 30

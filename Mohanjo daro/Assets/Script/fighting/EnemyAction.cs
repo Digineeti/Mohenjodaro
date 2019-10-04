@@ -10,16 +10,16 @@ public class EnemyAction : MonoBehaviour
     public bool PlayerState = false;
 
     public GameObject ActiveCircle;
-    public GameObject[] ActionList;
-
-    public Animator anim;
+    private Animator anim;
     bool action=true;
 
     float currentTime;
     float NextTime;
     bool damage=true;
 
-  
+    public ActionList AL;
+    public GameObject []PlayerList;
+    internal string ActinName;
 
     public State state;
     public enum State
@@ -40,8 +40,24 @@ public class EnemyAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set PlayerUI healthbar active by default
+        //if (Globalvariable.PlayerUi == true)
+        //{
+        //    //playerUi stat disable
+        //    PlayerUIPanel.SetActive(true);
+        //}
+        //else
+        //{
+        //    //healthbar disable
+        //    PlayerUIPanel.SetActive(false);
+        //}
         if (state == State.Action)
         {
+            int Action = Random.Range(0, AL.EnemyActionsList.Length);
+            ActinName = AL.EnemyActionsList[Action];
+            int Hiton = Random.Range(0, PlayerList.Length);
+
+
             Globalvariable.currentTime += Time.deltaTime;
             if (action == true)
             {
@@ -49,33 +65,8 @@ public class EnemyAction : MonoBehaviour
                 action = false;
             }
             ActiveCircle.SetActive(true);
-            //if (Input.GetKeyDown(KeyCode.E))
-            //{
-            //Automatic action perform 
-            int num = Random.Range(1, ActionList.Length);
            
-            if (num == 1)
-            {
-                //Debug.Log("Action: " + num + "Hit");
-                anim.SetBool("Happy", true);
-            }
-            if (num == 2)
-            {
-                //Debug.Log("Action: " + num + "I am thinking");
-                anim.SetBool("Punch", true);
-            }
-               
-            if (num == 3)
-            {
-                //Debug.Log("Action: " + num + "I Hit");
-                anim.SetBool("Happy", true);
-            }
-            if (num == 4)
-            {
-                //Debug.Log("Action: " + num + "I am Ready to kill you");
-                anim.SetBool("Punch", true);
-            }
-
+          
             if (Globalvariable.currentTime > Globalvariable.nextTime)
             {
                 action = true;
@@ -85,8 +76,6 @@ public class EnemyAction : MonoBehaviour
                 anim.SetBool("Punch", false);
             }
 
-
-            //}
         }
         else
         {
@@ -94,7 +83,7 @@ public class EnemyAction : MonoBehaviour
             currentTime += Time.deltaTime;
             if (damage == true)
             {
-                if (gameObject.transform.GetChild(4).gameObject.activeSelf == true)
+                if (gameObject.transform.GetChild(1).gameObject.activeSelf == true)
                 {                   
                     NextTime = currentTime + 1;
                     damage = false;
@@ -102,12 +91,20 @@ public class EnemyAction : MonoBehaviour
             }
             if(currentTime>NextTime)
             {
-                gameObject.transform.GetChild(4).gameObject.SetActive(false);
+                gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 damage = true;
             }
            
         }
 
+    }
+
+    public float damage_Calculation()
+    {
+        //damage formula 
+
+
+        return 0;
     }
 
 

@@ -55,7 +55,7 @@ public class AllEnemyAction : MonoBehaviour
             
         }
     }
-
+    //set the button value and text
     void ActivatePanel()
     {
         for (int i = 0; i < ButtonPanel.Length; i++)
