@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PA : MonoBehaviour
 {
     #region variable
@@ -10,19 +11,27 @@ public class PA : MonoBehaviour
     public Callingscriptableobject callScriptObject;        //declaring the scriptable object 
     public State state;                                     //declare state variable player current state
     public float AGIValue;                                  //declare AGI variable, player current Agi
-    public GameObject helathSliderPanel;                    //declaring PlayerUi health bar object
+    //public GameObject helathSliderPanel;                    //declaring PlayerUi health bar object
     public GameObject PlayerUIPanel;                        //declaring playerUi State object 
     public GameObject TurnUiPanel;                          //declaring TurnUi State object 
+    public ParticleSystem ParticalturnBlinker;
 
     bool startup;
 
-    public Animator anim;
+    private Animator anim;
 
     //making player state collection 
     public enum State
     {
         waitingforinput,
         busy,
+    }
+
+    public TurnState Turnstate;
+    public enum TurnState
+    {
+        Turnover,
+        NextTurn,
     }
     #endregion
 
@@ -34,12 +43,15 @@ public class PA : MonoBehaviour
         Globalvariable.PlayerUi = false;                //call global variable PlayerUi false
 
         anim = GetComponent<Animator>();
+
+        Turnstate = TurnState.NextTurn;
     }
     // Update is called once per frame
     void Update()
     {
+        
 
-        if(Globalvariable.turnUi== true)
+        if (Globalvariable.turnUi== true)
         {
             TurnUiPanel.SetActive(true);
         }
@@ -51,7 +63,7 @@ public class PA : MonoBehaviour
         if (Globalvariable.PlayerUi == true)
         {
             //healthbar enable
-            helathSliderPanel.SetActive(false);
+            //helathSliderPanel.SetActive(false);
             //playerUi stat disable
             PlayerUIPanel.SetActive(true);
         }
@@ -68,6 +80,10 @@ public class PA : MonoBehaviour
             Globalvariable.AttackUi = true;
             ActiveCircle.SetActive(true);
 
+            var emission = ParticalturnBlinker.emission;
+            emission.enabled = true;
+            //ParticalturnBlinker.Play();
+           
             //do action on player input press
 
             Globalvariable.currentTime += Time.deltaTime;
@@ -85,6 +101,7 @@ public class PA : MonoBehaviour
                     startup = false;
                     anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
                     Globalvariable.Index--;
+                    Turnstate = TurnState.Turnover;
                     Globalvariable.Active_Player_Animation_Parameter = null;
                 }
 
@@ -105,7 +122,8 @@ public class PA : MonoBehaviour
         else
         {
             ActiveCircle.SetActive(false);
-           
+            var emission = ParticalturnBlinker.emission;
+            emission.enabled = false;
         }
         
     }

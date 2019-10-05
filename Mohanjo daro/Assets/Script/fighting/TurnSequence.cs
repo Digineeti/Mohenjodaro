@@ -35,19 +35,16 @@ public class TurnSequence : MonoBehaviour
                         count++;
                         try
                         {
-                            Turn.spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                            Turn.spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();                           
                         }
                         catch (System.Exception)
                         {
-                            Turn.spawanHero[i].GetComponent<EA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                            Turn.spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
                         }
                     }
 
                 }
-            }
+            }           
         }
-         
-        
-     
     }
 }

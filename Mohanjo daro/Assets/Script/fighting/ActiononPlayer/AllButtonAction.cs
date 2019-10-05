@@ -118,8 +118,6 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
             //the enemy current Hp value 
-            //float currentHp = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- damaged;
-            //Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.HPMax- Mathf.RoundToInt(damaged);
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
 
 

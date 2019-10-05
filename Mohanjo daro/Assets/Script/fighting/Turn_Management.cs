@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Turn_Management : MonoBehaviour
 {
@@ -107,6 +108,7 @@ public class Turn_Management : MonoBehaviour
                 Globalvariable.Index++;
                 CharacterMoveChoice characterAbility = characterQueue.Dequeue();
 
+
                 Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
 
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -140,7 +142,6 @@ public class Turn_Management : MonoBehaviour
                             }
                         }                       
                     }
-
                     else
                     {
                         Globalvariable.AttackUi = false;
@@ -167,13 +168,40 @@ public class Turn_Management : MonoBehaviour
                             }
                         }                      
                     }
+
+                    try
+                    {
+                        if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
+                            spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                        else
+                            spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+                    }
+                    catch (System.Exception)
+                    {
+                        if (spawanHero[i].GetComponent<EnemyAction>().Turnstate.ToString() == "NextTurn")
+                            spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                        else
+                            spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+                        
+                    }
                 }
             }
             else
             {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        spawanHero[i].GetComponent<PA>().Turnstate = PA.TurnState.NextTurn;
+                    }
+                    catch (System.Exception)
+                    {
+                        spawanHero[i].GetComponent<EnemyAction>().Turnstate = EnemyAction.TurnState.NextTurn;
+                    }
+                }
                 for (int i = 0; i < selectedChoice.Count; i++)
                 {
-                    characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);
+                    characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);                  
                 }
             }
         }

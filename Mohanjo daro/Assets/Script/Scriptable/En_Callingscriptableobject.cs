@@ -47,11 +47,11 @@ public class En_Callingscriptableobject : MonoBehaviour
             HPValue.value = Attribute.HPMax;            //after call the current value here from playerpreref.
 
             //Player TurnAction
-            TAHPValue.maxValue = Attribute.HPMax;
-            TAHPValue.value = Attribute.HPMax;
-            //Player TurnInfo
-            TIHPValue.maxValue = Attribute.HPMax;
-            TIHPValue.value = Attribute.HPMax;           
+            //TAHPValue.maxValue = Attribute.HPMax;
+            //TAHPValue.value = Attribute.HPMax;
+            ////Player TurnInfo
+            //TIHPValue.maxValue = Attribute.HPMax;
+            //TIHPValue.value = Attribute.HPMax;           
 
             Level.text = Attribute.Level.ToString();
             EXP.text = Attribute.Exp.ToString();
@@ -83,11 +83,11 @@ public class En_Callingscriptableobject : MonoBehaviour
             HPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             HPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
             //Player TurnAction
-            TAHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
-            TAHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
-            //Player TurnInfo
-            TIHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
-            TIHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
+            //TAHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
+            //TAHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
+            ////Player TurnInfo
+            //TIHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
+            //TIHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
             Level.text = PlayerPrefs.GetFloat(gameObject.name + "_Level").ToString();
             EXP.text = PlayerPrefs.GetFloat(gameObject.name + "_Exp").ToString();
             DEF.text = PlayerPrefs.GetFloat(gameObject.name + "_DEF").ToString();
