@@ -7,6 +7,7 @@ using TMPro;
 public class Callingscriptableobject : MonoBehaviour
 {
     #region variable
+   
     public ScriptableUI Attribute;
     public TMP_Text Name;
     //player health Panel
@@ -116,6 +117,13 @@ public class Callingscriptableobject : MonoBehaviour
             AGI.text = PlayerPrefs.GetFloat(gameObject.name + "_AGI").ToString();
             LUK.text = PlayerPrefs.GetFloat(gameObject.name + "_Luk").ToString();
             ATK.text = PlayerPrefs.GetFloat(gameObject.name + "_ATK").ToString();
+        }
+        // destory the game object if its hp value is 
+
+        if (HPValue.value <= 0)
+        {
+            Destroy(gameObject);
+           
         }
 
     }

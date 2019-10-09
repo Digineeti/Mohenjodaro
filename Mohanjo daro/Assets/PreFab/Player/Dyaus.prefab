@@ -380,6 +380,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3388102705455233172, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
+    - target: {fileID: 4444662261397212209, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 39a65e00bbc78554da5a1d71d4e14a42, type: 2}
     m_RemovedComponents:
     - {fileID: 521009045346138534, guid: bc80ef91776a2804299cc722c0bb4834, type: 3}
     - {fileID: 5966899913530364546, guid: bc80ef91776a2804299cc722c0bb4834, type: 3}

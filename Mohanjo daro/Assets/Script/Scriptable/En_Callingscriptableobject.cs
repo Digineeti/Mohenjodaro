@@ -7,6 +7,7 @@ using TMPro;
 public class En_Callingscriptableobject : MonoBehaviour
 {
     public En_ScriptableUI Attribute;
+   
 
     public TMP_Text Name;
     //player health Panel
@@ -97,6 +98,10 @@ public class En_Callingscriptableobject : MonoBehaviour
             LUK.text = PlayerPrefs.GetFloat(gameObject.name + "_Luk").ToString();
             ATK.text = PlayerPrefs.GetFloat(gameObject.name + "_ATK").ToString();
         }
+
+       
+
+
 
     }
 

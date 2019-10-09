@@ -15,6 +15,7 @@ public class PA : MonoBehaviour
     public GameObject PlayerUIPanel;                        //declaring playerUi State object 
     public GameObject TurnUiPanel;                          //declaring TurnUi State object 
     public ParticleSystem ParticalturnBlinker;
+    public GameObject light;
 
     bool startup;
 
@@ -82,8 +83,9 @@ public class PA : MonoBehaviour
 
             var emission = ParticalturnBlinker.emission;
             emission.enabled = true;
+            light.SetActive(true);
             //ParticalturnBlinker.Play();
-           
+
             //do action on player input press
 
             Globalvariable.currentTime += Time.deltaTime;
@@ -124,6 +126,7 @@ public class PA : MonoBehaviour
             ActiveCircle.SetActive(false);
             var emission = ParticalturnBlinker.emission;
             emission.enabled = false;
+            light.SetActive(false);
         }
         
     }

@@ -205,5 +205,22 @@ public class Turn_Management : MonoBehaviour
                 }
             }
         }
+
+        // destory the player which has hp power is equal to or less then zero....
+
+        //for (int i = 0; i < spawanHero.Length; i++)
+        //{
+        //    try
+        //    {
+        //        if (spawanHero[i].GetComponent<Callingscriptableobject>().HPValue.value<=0)
+        //            Destroy(gameObject);
+        //    }
+        //    catch (System.Exception)
+        //    {
+
+        //        if (spawanHero[i].GetComponent<En_Callingscriptableobject>().HPValue.value <= 0)
+        //            Destroy(gameObject);
+        //    }           
+        //}
     }
 }
