@@ -70,11 +70,6 @@ PrefabInstance:
       propertyPath: state
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2474590857048047335, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: HealingPower
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233173, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_Controller
@@ -217,11 +212,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5498899625034425688, guid: bc80ef91776a2804299cc722c0bb4834,
+    - target: {fileID: 4444662261397212209, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
-      propertyPath: m_Name
-      value: HealButton1
-      objectReference: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d480feea44955d04492487388517f1ea, type: 2}
     - target: {fileID: 7373037724651762022, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_IsActive
@@ -230,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 839206421201503648, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_text
-      value: 18
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 1972811855512676590, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
@@ -359,6 +354,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3388102705455233172, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
+    - target: {fileID: 2474590857048047335, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: HealingPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498899625034425688, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_Name
+      value: HealButton1
+      objectReference: {fileID: 0}
     - target: {fileID: 5352669198611304449, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -379,11 +384,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4444662261397212209, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d480feea44955d04492487388517f1ea, type: 2}
     m_RemovedComponents:
     - {fileID: 434463815549453403, guid: bc80ef91776a2804299cc722c0bb4834, type: 3}
     - {fileID: 521009045346138534, guid: bc80ef91776a2804299cc722c0bb4834, type: 3}

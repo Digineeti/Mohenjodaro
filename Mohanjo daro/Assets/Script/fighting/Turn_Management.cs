@@ -39,67 +39,12 @@ public class Turn_Management : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(extract)
+        
+        if (extract)
         {
             extract = false;
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            for(int i=0;i<spawanHero.Length;i++)
-            {
-                try
-                {
-                    Character One = new Character
-                    {
-                        Name = spawanHero[i].gameObject,
-                        AGI = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.AGI,
-                    };
-                    Ability testAbility = new Ability
-                    {
-                        Name = "Tackle"
-                    };
-                    CharacterMoveChoice choice1 = new CharacterMoveChoice
-                    {
-                        character = One,
-                        ability = testAbility
-                    };
-                    selectedChoice.Add(choice1);
-                }
-                catch (System.Exception)
-                {
-                    Character One = new Character
-                    {
-                        Name = spawanHero[i].gameObject,
-                        AGI = spawanHero[i].GetComponent<En_Callingscriptableobject>().Attribute.AGI,
-                    };
-                    Ability testAbility = new Ability
-                    {
-                        Name = "Tackle"
-                    };
-                    CharacterMoveChoice choice1 = new CharacterMoveChoice
-                    {
-                        character = One,
-                        ability = testAbility
-                    };
-                    selectedChoice.Add(choice1);
-                }               
-            }
-
-            selectedChoice.Sort(delegate (CharacterMoveChoice x, CharacterMoveChoice y)
-            {
-                if (x.character.AGI == y.character.AGI) return 0;
-
-                else if (x.character.AGI > y.character.AGI) return -1;
-
-                else if (x.character.AGI < y.character.AGI) return 1;
-
-                else return x.character.AGI.CompareTo(y.character.AGI);
-            });
-            for (int i = 0; i < selectedChoice.Count; i++)
-            {
-                characterQueue.Enqueue(selectedChoice[i]);
-                TurnQueue.Enqueue(selectedChoice[i]);
-            }
+            Player_Attribute_Sequence();
         }
-
         if (Globalvariable.Index == 0)
         {
             //Destroy(startmassage);
@@ -107,14 +52,10 @@ public class Turn_Management : MonoBehaviour
             {
                 Globalvariable.Index++;
                 CharacterMoveChoice characterAbility = characterQueue.Dequeue();
-
-
                 Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
-
                 for (int i = 0; i < spawanHero.Length; i++)
                 {
                     //Debug.Log(spawanHero[i].name);
-
                     if (spawanHero[i].gameObject == characterAbility.character.Name)
                     {
                         try
@@ -126,8 +67,7 @@ public class Turn_Management : MonoBehaviour
                                 {
                                     ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
                                 }
-                            }
-                          
+                            }                          
                         }
                         catch (System.Exception)
                         {
@@ -168,7 +108,6 @@ public class Turn_Management : MonoBehaviour
                             }
                         }                      
                     }
-
                     try
                     {
                         if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
@@ -212,7 +151,7 @@ public class Turn_Management : MonoBehaviour
         //{
         //    try
         //    {
-        //        if (spawanHero[i].GetComponent<Callingscriptableobject>().HPValue.value<=0)
+        //        if (spawanHero[i].GetComponent<Callingscriptableobject>().HPValue.value <= 0)
         //            Destroy(gameObject);
         //    }
         //    catch (System.Exception)
@@ -220,7 +159,96 @@ public class Turn_Management : MonoBehaviour
 
         //        if (spawanHero[i].GetComponent<En_Callingscriptableobject>().HPValue.value <= 0)
         //            Destroy(gameObject);
-        //    }           
+        //    }
         //}
+
+      
+    }
+
+    public  void Player_Attribute_Sequence()
+    {
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < spawanHero.Length; i++)
+        {
+            try
+            {
+                Character One = new Character
+                {
+                    Name = spawanHero[i].gameObject,
+                    AGI = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.AGI,
+                };
+                Ability testAbility = new Ability
+                {
+                    Name = "Tackle"
+                };
+                CharacterMoveChoice choice1 = new CharacterMoveChoice
+                {
+                    character = One,
+                    ability = testAbility
+                };
+                selectedChoice.Add(choice1);
+            }
+            catch (System.Exception)
+            {
+                Character One = new Character
+                {
+                    Name = spawanHero[i].gameObject,
+                    AGI = spawanHero[i].GetComponent<En_Callingscriptableobject>().Attribute.AGI,
+                };
+                Ability testAbility = new Ability
+                {
+                    Name = "Tackle"
+                };
+                CharacterMoveChoice choice1 = new CharacterMoveChoice
+                {
+                    character = One,
+                    ability = testAbility
+                };
+                selectedChoice.Add(choice1);
+            }
+        }
+
+        selectedChoice.Sort(delegate (CharacterMoveChoice x, CharacterMoveChoice y)
+        {
+            if (x.character.AGI == y.character.AGI) return 0;
+
+            else if (x.character.AGI > y.character.AGI) return -1;
+
+            else if (x.character.AGI < y.character.AGI) return 1;
+
+            else return x.character.AGI.CompareTo(y.character.AGI);
+        });
+        for (int i = 0; i < selectedChoice.Count; i++)
+        {
+            characterQueue.Enqueue(selectedChoice[i]);
+            TurnQueue.Enqueue(selectedChoice[i]);
+        }
+        //turn sequence 
+        int count = 0;
+        while (TurnQueue.Count > 0)
+        {
+
+            Turn_Management.CharacterMoveChoice characterAbility = TurnQueue.Dequeue();
+
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                //Debug.Log(spawanHero[i].name);
+
+                if (spawanHero[i].gameObject == characterAbility.character.Name)
+                {
+                    count++;
+                    try
+                    {
+                        spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                    }
+                    catch (System.Exception)
+                    {
+                        spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                    }
+                }
+
+            }
+        }
+
     }
 }

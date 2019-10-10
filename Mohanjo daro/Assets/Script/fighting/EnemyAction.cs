@@ -7,6 +7,7 @@ using TMPro;
 public class EnemyAction : MonoBehaviour
 {
     #region variable
+    public GameObject light;
     public GameObject TurnUiPanel;
     [HideInInspector]
     public bool PlayerState = false;
@@ -75,6 +76,7 @@ public class EnemyAction : MonoBehaviour
         if (state == State.Action)
         {
             Globalvariable.currentTime += Time.deltaTime;
+           
             if (action == true)
             {
                 Globalvariable.nextTime = Globalvariable.currentTime + 1f;
@@ -82,7 +84,7 @@ public class EnemyAction : MonoBehaviour
                 action = false;                
             }
             ActiveCircle.SetActive(true);
-
+            light.SetActive(true);
             damagepanel.SetActive(true);
             if (Globalvariable.currentTime > Globalvariable.nextTime)
             {
@@ -113,7 +115,7 @@ public class EnemyAction : MonoBehaviour
                 gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 damage = true;
             }
-           
+            light.SetActive(false);
         }
 
     }

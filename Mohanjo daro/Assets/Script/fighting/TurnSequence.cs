@@ -18,33 +18,33 @@ public class TurnSequence : MonoBehaviour
     void Update()
     {
        
-        if(startup == true)
-        {
-            startup = false;
-            while (Turn.TurnQueue.Count > 0)
-            {
+        //if(startup == true)
+        //{
+        //    startup = false;
+        //    while (Turn.TurnQueue.Count > 0)
+        //    {
 
-                Turn_Management.CharacterMoveChoice characterAbility = Turn.TurnQueue.Dequeue();
+        //        Turn_Management.CharacterMoveChoice characterAbility = Turn.TurnQueue.Dequeue();
 
-                for (int i = 0; i < Turn.spawanHero.Length; i++)
-                {
-                    //Debug.Log(spawanHero[i].name);
+        //        for (int i = 0; i < Turn.spawanHero.Length; i++)
+        //        {
+        //            //Debug.Log(spawanHero[i].name);
 
-                    if (Turn.spawanHero[i].gameObject == characterAbility.character.Name)
-                    {
-                        count++;
-                        try
-                        {
-                            Turn.spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();                           
-                        }
-                        catch (System.Exception)
-                        {
-                            Turn.spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
-                        }
-                    }
+        //            if (Turn.spawanHero[i].gameObject == characterAbility.character.Name)
+        //            {
+        //                count++;
+        //                try
+        //                {
+        //                    Turn.spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();                           
+        //                }
+        //                catch (System.Exception)
+        //                {
+        //                    Turn.spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+        //                }
+        //            }
 
-                }
-            }           
-        }
+        //        }
+        //    }           
+        //}
     }
 }

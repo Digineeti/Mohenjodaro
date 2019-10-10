@@ -120,11 +120,11 @@ public class Callingscriptableobject : MonoBehaviour
         }
         // destory the game object if its hp value is 
 
-        if (HPValue.value <= 0)
-        {
-            Destroy(gameObject);
+        //if (HPValue.value <= 0)
+        //{
+        //    Destroy(gameObject);
            
-        }
+        //}
 
     }
 

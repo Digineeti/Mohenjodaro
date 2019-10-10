@@ -109,6 +109,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4930469982512439255, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: m_LightVolumeOpacity
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948690921198874087, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 595c49c1a6ab94f458f2a55a3ea5150c, type: 2}
     - target: {fileID: 2191695440037360582, guid: 3f0b940c2ce881d4bae94a413644a57c,
         type: 3}
       propertyPath: m_AnchorMax.x
