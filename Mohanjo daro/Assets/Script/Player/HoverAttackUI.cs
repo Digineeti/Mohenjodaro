@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class HoverAttackUI : MonoBehaviour
 {
@@ -12,8 +13,7 @@ public class HoverAttackUI : MonoBehaviour
     }  
     private void OnMouseExit()
     {
-        PanelToShow.SetActive(false);
-
+        PanelToShow.SetActive(false);       
     }
     void OnMouseOver()
     {

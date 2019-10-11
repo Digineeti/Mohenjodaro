@@ -115,7 +115,8 @@ public class EnemyAction : MonoBehaviour
                 gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 damage = true;
             }
-            light.SetActive(false);
+            if (Globalvariable.All_Enemy_Hoverbutton == false)
+                light.SetActive(false);
         }
 
     }

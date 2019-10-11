@@ -63,4 +63,17 @@ public class Globalvariable
         get       { return _Active_Player_Animation_Parameter; }
         set       { _Active_Player_Animation_Parameter = value; }
     }
+
+    private static bool _All_Player_Hoverbutton;
+    public static bool All_Player_Hoverbutton
+    {
+        get { return _All_Player_Hoverbutton; }
+        set { _All_Player_Hoverbutton = value; }
+    }
+    private static bool _All_Enemy_Hoverbutton;
+    public static bool All_Enemy_Hoverbutton
+    {
+        get { return _All_Enemy_Hoverbutton; }
+        set { _All_Enemy_Hoverbutton = value; }
+    }
 }

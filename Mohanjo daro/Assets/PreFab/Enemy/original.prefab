@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 5511140270192284610}
+  spawanHero: []
 --- !u!114 &2302813879893599086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +326,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &401325932953232504
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 8897466863632093518}
+  spawanHero: []
 --- !u!114 &6462637996744512503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +500,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &830186665027994464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,6 +2290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 7341107489069297085}
+  spawanHero: []
 --- !u!114 &8099465549719871239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2295,6 +2310,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &2318467471898911448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 5383030732816482947}
+  spawanHero: []
 --- !u!114 &3905249499451023866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2462,6 +2484,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &2379585903849635763
 GameObject:
   m_ObjectHideFlags: 0
@@ -4703,6 +4731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 3236871521672898621}
+  spawanHero: []
 --- !u!114 &4126293613490331038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4722,6 +4751,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &4534769444760620993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,7 +5283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3724359875247686581}
   - component: {fileID: 4930469982512439255}
-  - component: {fileID: 4948690921198874087}
+  - component: {fileID: 3447041682674878328}
   m_Layer: 0
   m_Name: Sprite Light 2D
   m_TagString: Untagged
@@ -5265,7 +5300,7 @@ Transform:
   m_GameObject: {fileID: 5048026985562802560}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000008742278}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 3841962804339302915}
   m_RootOrder: 5
@@ -5287,9 +5322,9 @@ MonoBehaviour:
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0
+  m_LightVolumeOpacity: 0.009
   m_ApplyToSortingLayers: 199e17dd
-  m_LightCookieSprite: {fileID: 122699928309857893, guid: a28ed8b5b0d046843b83063ff98d8255,
+  m_LightCookieSprite: {fileID: 21300000, guid: ad0acda429c3f5449aa7a3967cd4ee14,
     type: 3}
   m_UseNormalMap: 1
   m_LightOrder: 0
@@ -5310,7 +5345,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!95 &4948690921198874087
+--- !u!95 &3447041682674878328
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -5320,7 +5355,7 @@ Animator:
   m_GameObject: {fileID: 5048026985562802560}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e710561bbf3db1e41a9e92018bfd2c74, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7619,6 +7654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 742688240986889109}
+  spawanHero: []
 --- !u!114 &7934364509210656149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7638,6 +7674,12 @@ MonoBehaviour:
   - {fileID: 3236541332157029436, guid: d8c2da3501f6e644d819ee2301f724fb, type: 3}
   - {fileID: 1335619031643389355, guid: d95d58d518f50524ab0aec585d53be5d, type: 3}
   - {fileID: 313321151452163696, guid: 5fa321360b9af7f4bacbd6d8412cdc90, type: 3}
+  Enemy:
+  - {fileID: 8490799349723819106, guid: de8313d10e5154b4d8b5079d156666f0, type: 3}
+  - {fileID: 8308100979321334513, guid: 281488a4517be064c96ea296bf19e702, type: 3}
+  - {fileID: 6347742781284590520, guid: a83c770cbd0ac9a4c93e26ad0e776c43, type: 3}
+  - {fileID: 4073308094763946999, guid: f55f6478b64e52b4aa1f531b22918bae, type: 3}
+  - {fileID: 1934461328405625021, guid: bd6da6edd2d05d6448cfee3e5e7e5716, type: 3}
 --- !u!1 &7164083276212544698
 GameObject:
   m_ObjectHideFlags: 0

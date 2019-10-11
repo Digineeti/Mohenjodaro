@@ -8,6 +8,7 @@ using TMPro;
 public class AllButtonAction : MonoBehaviour
 {
     public GameObject[] Players;
+    public GameObject[] Enemy;
     bool startup= true;
 
     float PlayerAttackPower;
@@ -51,6 +52,11 @@ public class AllButtonAction : MonoBehaviour
         {
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            for(int i=0;i<Players.Length;i++)
+            {
+
+            }
         }
         if (name == "Heal")
         {

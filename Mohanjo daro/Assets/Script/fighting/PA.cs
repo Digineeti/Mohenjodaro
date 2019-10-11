@@ -126,7 +126,8 @@ public class PA : MonoBehaviour
             ActiveCircle.SetActive(false);
             var emission = ParticalturnBlinker.emission;
             emission.enabled = false;
-            light.SetActive(false);
+            if (Globalvariable.All_Player_Hoverbutton == false)
+                light.SetActive(false);
         }
         
     }

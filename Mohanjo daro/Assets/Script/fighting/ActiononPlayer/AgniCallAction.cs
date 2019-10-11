@@ -108,7 +108,6 @@ public class AgniCallAction : MonoBehaviour
             //}
 
             #endregion
-
             //
             #region InActivePlayersetup
             PlayerList = GameObject.FindGameObjectsWithTag("Player");
