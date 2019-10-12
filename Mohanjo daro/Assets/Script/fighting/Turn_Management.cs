@@ -39,7 +39,8 @@ public class Turn_Management : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
+
         if (extract)
         {
             extract = false;
@@ -52,7 +53,7 @@ public class Turn_Management : MonoBehaviour
             {
                 Globalvariable.Index++;
                 CharacterMoveChoice characterAbility = characterQueue.Dequeue();
-                Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
+                //Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
                 for (int i = 0; i < spawanHero.Length; i++)
                 {
                     //Debug.Log(spawanHero[i].name);
@@ -167,7 +168,7 @@ public class Turn_Management : MonoBehaviour
 
     public  void Player_Attribute_Sequence()
     {
-        spawanHero = GameObject.FindGameObjectsWithTag("Player");
+      
         for (int i = 0; i < spawanHero.Length; i++)
         {
             try

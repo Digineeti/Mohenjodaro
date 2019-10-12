@@ -40,7 +40,6 @@ public class AttackActionHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 {
                     if (spawanHero[i].GetComponent<EnemyAction>().state.ToString() == "busy")
                         spawanHero[i].transform.GetChild(5).gameObject.SetActive(true);
-
                 }
                 catch (System.Exception)
                 {                    

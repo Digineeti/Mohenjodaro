@@ -25,7 +25,7 @@ public class En_Callingscriptableobject : MonoBehaviour
     //player TurnAction
     public Slider TAHPValue;
     //PlayerTurnInfo
-    public Slider TIHPValue;
+    public Slider TIHPValue;  
 
     #region variable    
 
@@ -33,10 +33,13 @@ public class En_Callingscriptableobject : MonoBehaviour
 
     private void Start()
     {
-       
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat(gameObject.name + "_HPValue", PlayerPrefs.GetFloat(gameObject.name + "_HPMax"));
     }
     private void Update()
     {
+
+
         if (PlayerPrefs.GetString(gameObject.name) == "")
         {
             Name.text = Attribute.name;
@@ -73,16 +76,44 @@ public class En_Callingscriptableobject : MonoBehaviour
             PlayerPrefs.SetFloat(gameObject.name + "_AGI", Attribute.AGI);
             PlayerPrefs.SetFloat(gameObject.name + "_Luk", Attribute.Luk);
             PlayerPrefs.SetFloat(gameObject.name + "_ATK", Attribute.Luk);
+            //setting the first clone enemy data
+            PlayerPrefs.SetString(gameObject.name+"first", Attribute.name);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_HPMax", Attribute.HPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_HPValue", Attribute.HPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_Level", float.Parse(Attribute.Level));
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_Exp", Attribute.Exp);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_DEF", Attribute.DEF);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_MAT", Attribute.MAT);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_MDF", Attribute.MDF);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_AGI", Attribute.AGI);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_Luk", Attribute.Luk);
+            PlayerPrefs.SetFloat(gameObject.name + "first" + "_ATK", Attribute.Luk);
+            //setting the second clone enemy data
+            PlayerPrefs.SetString(gameObject.name + "Second", Attribute.name);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_HPMax", Attribute.HPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_HPValue", Attribute.HPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_Level", float.Parse(Attribute.Level));
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_Exp", Attribute.Exp);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_DEF", Attribute.DEF);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_MAT", Attribute.MAT);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_MDF", Attribute.MDF);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_AGI", Attribute.AGI);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_Luk", Attribute.Luk);
+            PlayerPrefs.SetFloat(gameObject.name + "Second" + "_ATK", Attribute.Luk);
         }
         else
         {
+
+           
             Name.text = PlayerPrefs.GetString(gameObject.name);
 
             HPHealthBar.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             HPHealthBar.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
+            //HPHealthBar.value = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             //Player PlayerUI
             HPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             HPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
+            //HPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             //Player TurnAction
             //TAHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             //TAHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");

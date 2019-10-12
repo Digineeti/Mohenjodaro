@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 21864891}
   - component: {fileID: 21864892}
   - component: {fileID: 21864893}
+  - component: {fileID: 21864894}
   m_Layer: 0
   m_Name: battleManager
   m_TagString: Untagged
@@ -313,6 +314,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Turn: {fileID: 21864891}
+--- !u!114 &21864894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21864888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85da1f2a273f1014e9e80b5736c28c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &27975833
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.40000153, y: 0.6774063}
+  m_AnchoredPosition: {x: 0.40000153, y: 0.6773987}
   m_SizeDelta: {x: -0.95196533, y: -1.0811195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &27975835
@@ -1983,7 +1996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 1.4447861}
+  m_AnchoredPosition: {x: 1, y: 1.4447937}
   m_SizeDelta: {x: 1.7079468, y: -0.92677665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375757434
@@ -3775,7 +3788,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4777,7 +4790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.1349945, y: 0.7529831}
+  m_AnchoredPosition: {x: -0.1349945, y: 0.7529907}
   m_SizeDelta: {x: -0.598999, y: -1.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209235599
@@ -5516,7 +5529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.14370728, y: 3.9999466}
+  m_AnchoredPosition: {x: -0.14370728, y: 3.9999542}
   m_SizeDelta: {x: -0.58200073, y: -2.4821203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351392626
@@ -6246,7 +6259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 0.9999924}
+  m_AnchoredPosition: {x: 1, y: 1}
   m_SizeDelta: {x: 2.1179504, y: -2.5112798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675853533
@@ -8308,7 +8321,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

@@ -9,6 +9,7 @@ public class AllButtonAction : MonoBehaviour
 {
     public GameObject[] Players;
     public GameObject[] Enemy;
+    public GameObject[] spawanHero;
     bool startup= true;
 
     float PlayerAttackPower;
@@ -32,10 +33,10 @@ public class AllButtonAction : MonoBehaviour
     }
 
     public void Fight_Button_Action_Event()
-    {
-        //Players=GetComponent<Turn_Management>().spawanHero;
+    {       
         name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
         GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
         //Debug.Log(Button_Click_On_Player.name);
         //Hero Ation
         if (name == "Defence")
@@ -47,15 +48,54 @@ public class AllButtonAction : MonoBehaviour
         {
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+            //heal all action for enemy 
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if(spawanHero[i].GetComponent<EnemyAction>().state.ToString()== "busy")
+                    {
+                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
+                        float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
+                        currentHPvalue -= 40;
+
+                        PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
+                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
+                    }
+                   
+                }
+                catch (System.Exception)
+                {                   
+                }
+               
+            }
         }
         if (name == "RunAway")
         {
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
-            for(int i=0;i<Players.Length;i++)
-            {
+            //heal all action for player 
 
+            for(int i=0;i< spawanHero.Length;i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "busy" || spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
+                        currentHPvalue += 400;
+
+                        PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
+                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
+                    }
+                }
+                catch (System.Exception)
+                {
+                    
+                }
+              
+                   
             }
         }
         if (name == "Heal")
@@ -125,6 +165,13 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.SetActive(true);
             //the enemy current Hp value 
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
+            {
+                //must play death animation of player and enemy...
+                //Destroy(GameObject.Find(Button_Click_On_Player.name));
+                Button_Click_On_Player.GetComponent<EnemyAction>().state =EnemyAction.State.Death;// "Death"; 
+
+            }
 
 
         }
@@ -201,6 +248,7 @@ public class AllButtonAction : MonoBehaviour
         float value = -1;
         //for(int i=0;i<Players.Length;i++)
         //{
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
         GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
         try
         {
@@ -218,13 +266,13 @@ public class AllButtonAction : MonoBehaviour
         }
         if (value < 0)
         {
-            for (int i = 0; i < Players.Length; i++)
+            for (int i = 0; i < spawanHero.Length; i++)
             {
                 try
                 {
-                    if (Players[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
-                        value = Players[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                        value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                     }
                 }
                 catch (System.Exception)

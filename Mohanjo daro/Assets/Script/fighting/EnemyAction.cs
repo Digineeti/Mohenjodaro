@@ -30,6 +30,7 @@ public class EnemyAction : MonoBehaviour
     {
         Action,
         busy,
+        Death,
 
     }
 
@@ -95,6 +96,23 @@ public class EnemyAction : MonoBehaviour
                 Turnstate = TurnState.Turnover;
                 anim.SetBool("Happy", false);
                 anim.SetBool("Punch", false);
+            }
+
+        }
+        else if(state == State.Death)
+        {
+            Globalvariable.currentTime += Time.deltaTime;
+            if (action == true)
+            {
+                Globalvariable.nextTime = Globalvariable.currentTime + 1f;              
+                action = false;
+                anim.SetBool("Death", true);
+            }
+            if (Globalvariable.currentTime > Globalvariable.nextTime)
+            {
+                action = true;              
+                Globalvariable.Index--;
+                Destroy(gameObject);
             }
 
         }
