@@ -91,7 +91,7 @@ public class EnemyAction : MonoBehaviour
             {
                 action = true;
                 damagepanel.SetActive(false);
-                Globalvariable.Index--;
+                Globalvariable.Index=0;
                 state = State.busy;
                 Turnstate = TurnState.Turnover;
                 anim.SetBool("Happy", false);
@@ -99,19 +99,20 @@ public class EnemyAction : MonoBehaviour
             }
 
         }
-        else if(state == State.Death)
+        else if (state == State.Death)
         {
             Globalvariable.currentTime += Time.deltaTime;
             if (action == true)
             {
-                Globalvariable.nextTime = Globalvariable.currentTime + 1f;              
+                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
                 action = false;
                 anim.SetBool("Death", true);
             }
             if (Globalvariable.currentTime > Globalvariable.nextTime)
             {
-                action = true;              
-                Globalvariable.Index--;
+                action = true;
+                Globalvariable.Index=0;
+                Turnstate = TurnState.Turnover;
                 Destroy(gameObject);
             }
 

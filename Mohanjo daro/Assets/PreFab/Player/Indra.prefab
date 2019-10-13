@@ -58,7 +58,7 @@ PrefabInstance:
     - target: {fileID: 1496840057392407740, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: state
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 839206421201503648, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_text
-      value: 25
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5677134997412679535, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}

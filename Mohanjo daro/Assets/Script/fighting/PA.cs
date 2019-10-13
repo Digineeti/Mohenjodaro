@@ -102,7 +102,7 @@ public class PA : MonoBehaviour
                 {
                     startup = false;
                     anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
-                    Globalvariable.Index--;
+                    Globalvariable.Index=0;
                     Turnstate = TurnState.Turnover;
                     Globalvariable.Active_Player_Animation_Parameter = null;
                 }
@@ -137,7 +137,7 @@ public class PA : MonoBehaviour
         if (state == State.waitingforinput)
         {
             Debug.Log(gameObject.name + " Hit");           
-            Globalvariable.Index--;
+            Globalvariable.Index=0;
             Globalvariable.Heal = 0;
             //after action make player state busy
             state = State.busy;
