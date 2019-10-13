@@ -76,4 +76,13 @@ public class Globalvariable
         get { return _All_Enemy_Hoverbutton; }
         set { _All_Enemy_Hoverbutton = value; }
     }
+
+
+    private static bool _extract_sequence;
+    public static bool extract_sequence
+    {
+        get { return _extract_sequence; }
+        set { _extract_sequence = value; }
+    }
+
 }

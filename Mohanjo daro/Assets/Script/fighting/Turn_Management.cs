@@ -33,7 +33,7 @@ public class Turn_Management : MonoBehaviour
     public Queue<CharacterMoveChoice> TurnQueue = new Queue<CharacterMoveChoice>();
     void Start()
     {
-        
+        Globalvariable.extract_sequence = true;
     }
 
     // Update is called once per frame
@@ -41,9 +41,14 @@ public class Turn_Management : MonoBehaviour
     {
         spawanHero = GameObject.FindGameObjectsWithTag("Player");
 
-        if (extract)
+        //if (extract)
+        //{
+        //    extract = false;
+        //    Player_Attribute_Sequence();
+        //}
+        if (Globalvariable.extract_sequence)
         {
-            extract = false;
+            Globalvariable.extract_sequence = false;
             Player_Attribute_Sequence();
         }
         if (Globalvariable.Index == 0)
@@ -61,7 +66,9 @@ public class Turn_Management : MonoBehaviour
                     {
                         try
                         {
+                            
                             spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
+                            //changing the state of prefeb 
                             for(int j=0;j<ChangeInPrefab.Length;j++)
                             {
                                 if(spawanHero[i].name==ChangeInPrefab[j].name)
@@ -73,7 +80,16 @@ public class Turn_Management : MonoBehaviour
                         catch (System.Exception)
                         {
                             Globalvariable.AttackUi = false;
-                            spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                            if(spawanHero[i].GetComponent<EnemyAction>().state.ToString()== "Death")
+                            {
+
+                            }
+                            else
+                            {
+                                spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                            }
+                          
+                            //changing the state of prefeb 
                             for (int j = 0; j < ChangeInPrefab.Length; j++)
                             {
                                 if (spawanHero[i].name == ChangeInPrefab[j].name)
@@ -89,6 +105,7 @@ public class Turn_Management : MonoBehaviour
                         try
                         {
                             spawanHero[i].GetComponent<PA>().state = PA.State.busy;
+                            //changing the state of prefeb 
                             for (int j = 0; j < ChangeInPrefab.Length; j++)
                             {
                                 if (spawanHero[i].name == ChangeInPrefab[j].name)
@@ -99,7 +116,15 @@ public class Turn_Management : MonoBehaviour
                         }
                         catch (System.Exception)
                         {
-                            spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                            if (spawanHero[i].GetComponent<EnemyAction>().state.ToString() == "Death")
+                            {
+
+                            }
+                            else
+                            {
+                                spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                            }
+                            //changing the state of prefeb 
                             for (int j = 0; j < ChangeInPrefab.Length; j++)
                             {
                                 if (spawanHero[i].name == ChangeInPrefab[j].name)
@@ -225,31 +250,36 @@ public class Turn_Management : MonoBehaviour
             TurnQueue.Enqueue(selectedChoice[i]);
         }
         //turn sequence 
-        int count = 0;
-        while (TurnQueue.Count > 0)
+        if(extract)
         {
-
-            Turn_Management.CharacterMoveChoice characterAbility = TurnQueue.Dequeue();
-
-            for (int i = 0; i < spawanHero.Length; i++)
+            int count = 0;
+            while (TurnQueue.Count > 0)
             {
-                //Debug.Log(spawanHero[i].name);
 
-                if (spawanHero[i].gameObject == characterAbility.character.Name)
+                Turn_Management.CharacterMoveChoice characterAbility = TurnQueue.Dequeue();
+
+                for (int i = 0; i < spawanHero.Length; i++)
                 {
-                    count++;
-                    try
-                    {
-                        spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
-                    }
-                    catch (System.Exception)
-                    {
-                        spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
-                    }
-                }
+                    //Debug.Log(spawanHero[i].name);
 
+                    if (spawanHero[i].gameObject == characterAbility.character.Name)
+                    {
+                        count++;
+                        try
+                        {
+                            spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                        }
+                        catch (System.Exception)
+                        {
+                            spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().text = count.ToString();
+                        }
+                    }
+
+                }
             }
+            extract = false;
         }
+       
 
     }
 }

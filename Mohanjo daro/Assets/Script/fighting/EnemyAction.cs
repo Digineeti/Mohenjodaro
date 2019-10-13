@@ -113,7 +113,9 @@ public class EnemyAction : MonoBehaviour
                 action = true;
                 Globalvariable.Index=0;
                 Turnstate = TurnState.Turnover;
+               
                 Destroy(gameObject);
+                Globalvariable.extract_sequence = true;
             }
 
         }
