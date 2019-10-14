@@ -9,7 +9,7 @@ public class SpwanningEnemyFront : MonoBehaviour
     public GameObject parent; 
     public float EnemyScale = .5f;
     public EnemyAction EA;
-    private int count = 0;
+    //private int count = 0;
 
 
     private void Start()

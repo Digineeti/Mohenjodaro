@@ -7,7 +7,7 @@ using TMPro;
 public class EnemyAction : MonoBehaviour
 {
     #region variable
-    public GameObject light;
+    public GameObject Light;
     public GameObject TurnUiPanel;
     [HideInInspector]
     public bool PlayerState = false;
@@ -30,7 +30,7 @@ public class EnemyAction : MonoBehaviour
     {
         Action,
         busy,
-        Death,
+        //Death,
 
     }
 
@@ -76,21 +76,23 @@ public class EnemyAction : MonoBehaviour
         }
         if (state == State.Action)
         {
+            
             Globalvariable.currentTime += Time.deltaTime;
            
             if (action == true)
             {
                 Globalvariable.nextTime = Globalvariable.currentTime + 1f;
                 damage_Calculation();
-                action = false;                
+                action = false;
+                Globalvariable.After_Death_ReSequence += 1;
             }
             ActiveCircle.SetActive(true);
-            light.SetActive(true);
-            damagepanel.SetActive(true);
+            Light.SetActive(true);
+            //damagepanel.SetActive(true);
             if (Globalvariable.currentTime > Globalvariable.nextTime)
             {
                 action = true;
-                damagepanel.SetActive(false);
+                //damagepanel.SetActive(false);
                 Globalvariable.Index=0;
                 state = State.busy;
                 Turnstate = TurnState.Turnover;
@@ -99,26 +101,24 @@ public class EnemyAction : MonoBehaviour
             }
 
         }
-        else if (state == State.Death)
-        {
-            Globalvariable.currentTime += Time.deltaTime;
-            if (action == true)
-            {
-                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-                action = false;
-                anim.SetBool("Death", true);
-            }
-            if (Globalvariable.currentTime > Globalvariable.nextTime)
-            {
-                action = true;
-                Globalvariable.Index=0;
-                Turnstate = TurnState.Turnover;
-               
-                Destroy(gameObject);
-                Globalvariable.extract_sequence = true;
-            }
-
-        }
+        //else if (state == State.Death)
+        //{
+        //    Globalvariable.currentTime += Time.deltaTime;
+        //    if (action == true)
+        //    {
+        //        Globalvariable.nextTime = Globalvariable.currentTime + 1f;
+        //        action = false;
+        //        anim.SetBool("Death", true);
+        //    }
+        //    if (Globalvariable.currentTime > Globalvariable.nextTime)
+        //    {
+        //        action = true;               
+        //        Turnstate = TurnState.Turnover;
+        //        Destroy(gameObject);
+        //        //gameObject.SetActive(false);
+                
+        //    }
+        //}
         else
         {
             ActiveCircle.SetActive(false);
@@ -137,7 +137,7 @@ public class EnemyAction : MonoBehaviour
                 damage = true;
             }
             if (Globalvariable.All_Enemy_Hoverbutton == false)
-                light.SetActive(false);
+                Light.SetActive(false);
         }
 
     }
@@ -165,6 +165,7 @@ public class EnemyAction : MonoBehaviour
 
         //the enemy current Hp value 
         PlayerPrefs.SetFloat(PlayerList[Hiton].name + "_HPValue", PlayerPrefs.GetFloat(PlayerList[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged));
+
         Debug.Log("Action: "+ActionName +" player: "+ PlayerList[Hiton].name + " Damage: "+ damaged);
       
 

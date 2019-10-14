@@ -12,7 +12,7 @@ public class AGITurn : MonoBehaviour
 
 
     public GameObject startmassage;
-    bool StartActive=true;
+    //bool StartActive=true;
   
     public struct Character
     {
@@ -99,7 +99,7 @@ public class AGITurn : MonoBehaviour
         if (Globalvariable.Index==0)
         {
             //Destroy(startmassage);
-            StartActive = false;
+            //StartActive = false;
             if (characterQueue.Count > 0)
             {
                 Globalvariable.Index++;

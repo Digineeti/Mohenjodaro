@@ -7,14 +7,14 @@ using TMPro;
 
 public class AllButtonAction : MonoBehaviour
 {
-    public GameObject[] Players;
-    public GameObject[] Enemy;
+    //public GameObject[] Players;
+    //public GameObject[] Enemy;
     public GameObject[] spawanHero;
     bool startup= true;
 
     float PlayerAttackPower;
     float EnemyDefenceValue;
-    string name;
+    private string Name;
 
     // Start is called before the first frame update
     void Start()
@@ -33,19 +33,21 @@ public class AllButtonAction : MonoBehaviour
     }
 
     public void Fight_Button_Action_Event()
-    {       
-        name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
+    {
+        Name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
         GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
         spawanHero = GameObject.FindGameObjectsWithTag("Player");
         //Debug.Log(Button_Click_On_Player.name);
         //Hero Ation
-        if (name == "Defence")
+        if (Name == "Defence")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "Item")
+        if (Name == "Item")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             //heal all action for enemy 
@@ -70,8 +72,9 @@ public class AllButtonAction : MonoBehaviour
                
             }
         }
-        if (name == "RunAway")
+        if (Name == "RunAway")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -98,18 +101,21 @@ public class AllButtonAction : MonoBehaviour
                    
             }
         }
-        if (name == "Heal")
+        if (Name == "Heal")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "HealAll")
+        if (Name == "HealAll")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "DefenceBoost")
+        if (Name == "DefenceBoost")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             //testing first for vayu
             //this set for action activate in the active player 
             Globalvariable.Active_Player_Action = true;
@@ -119,38 +125,45 @@ public class AllButtonAction : MonoBehaviour
             //or start current player animation with the delay time..
 
         }
-        if (name == "DefenceAllBoost")
+        if (Name == "DefenceAllBoost")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "AttackBoost")
+        if (Name == "AttackBoost")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             //testing first for vayu
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
         }
-        if (name == "AttackAllBoost")
+        if (Name == "AttackAllBoost")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "Revive")
+        if (Name == "Revive")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "Protect")
+        if (Name == "Protect")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }      
 
         //enemy action
 
-        if (name == "Attack")
+        if (Name == "Attack")
         {
+            Globalvariable.After_Death_ReSequence += 1;
+            //player animation on hit
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -164,80 +177,96 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
             //the enemy current Hp value 
+          
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
             {
-                //must play death animation of player and enemy...
-                //Destroy(GameObject.Find(Button_Click_On_Player.name));
-                Button_Click_On_Player.GetComponent<EnemyAction>().state =EnemyAction.State.Death;// "Death"; 
+               
+               
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name),2f);
+                // Button_Click_On_Player.GetComponent<EnemyAction>().state =EnemyAction.State.Death;// "Death"; 
+
 
             }
 
 
         }
-        if (name == "LightingAttack")
+        if (Name == "LightingAttack")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "ThunderStrom")
+        if (Name == "ThunderStrom")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "LightBoom")
+        if (Name == "LightBoom")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "AirAttack")
+        if (Name == "AirAttack")
         {
-
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "FireBall")
+        if (Name == "FireBall")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "Inferno")
+        if (Name == "Inferno")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "QuickEnd")
+        if (Name == "QuickEnd")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "EarthQuake")
+        if (Name == "EarthQuake")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "Wind")
+        if (Name == "Wind")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "FireBlast")
+        if (Name == "FireBlast")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "HeavenlyWorth")
+        if (Name == "HeavenlyWorth")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (name == "HeavenlyWorth")
+        if (Name == "HeavenlyWorth")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-       if(name== "Strom")
+       if(Name == "Strom")
         {
+            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }

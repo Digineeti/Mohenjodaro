@@ -78,11 +78,11 @@ public class Globalvariable
     }
 
 
-    private static bool _extract_sequence;
-    public static bool extract_sequence
+    private static int  _After_Death_ReSequence;
+    public static int After_Death_ReSequence
     {
-        get { return _extract_sequence; }
-        set { _extract_sequence = value; }
+        get { return _After_Death_ReSequence; }
+        set { _After_Death_ReSequence = value; }
     }
 
 }

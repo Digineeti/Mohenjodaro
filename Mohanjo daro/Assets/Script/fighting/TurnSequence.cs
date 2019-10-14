@@ -6,8 +6,8 @@ using TMPro;
 public class TurnSequence : MonoBehaviour
 {
     public Turn_Management Turn;   
-    int count = 0;
-    bool startup = true;
+    //int count = 0;
+    //bool startup = true;
     // Start is called before the first frame update
     void Start()
     {
