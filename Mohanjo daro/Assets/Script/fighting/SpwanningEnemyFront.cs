@@ -20,11 +20,6 @@ public class SpwanningEnemyFront : MonoBehaviour
         int id = EnemyList[NoOfEnemy].name.IndexOf("(");
         EnemyList[NoOfEnemy].name = EnemyList[NoOfEnemy].name.Substring(0, id);
        
-
-
-       
         EnemyList[NoOfEnemy].transform.localScale = new Vector3(EnemyScale, EnemyScale, 1);
-
-
     }
 }

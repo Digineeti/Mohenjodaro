@@ -19166,11 +19166,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CM vcam1
       objectReference: {fileID: 0}
-    - target: {fileID: 54061464942460275, guid: df3c5787d9c4b6948b1ddadf2130883e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 54061464942460279, guid: df3c5787d9c4b6948b1ddadf2130883e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19233,18 +19228,8 @@ PrefabInstance:
       objectReference: {fileID: 1531359507}
     - target: {fileID: 54061464942460273, guid: df3c5787d9c4b6948b1ddadf2130883e,
         type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54061464942460273, guid: df3c5787d9c4b6948b1ddadf2130883e,
-        type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54061464942460273, guid: df3c5787d9c4b6948b1ddadf2130883e,
-        type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
+      propertyPath: field of view
+      value: 55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df3c5787d9c4b6948b1ddadf2130883e, type: 3}
@@ -23112,6 +23097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0.01886791
+      objectReference: {fileID: 0}
+    - target: {fileID: 123165073790461701, guid: cbfbe3fc846065941bab9579b5f4f967,
+        type: 3}
+      propertyPath: field of view
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 123165073790461702, guid: cbfbe3fc846065941bab9579b5f4f967,
         type: 3}

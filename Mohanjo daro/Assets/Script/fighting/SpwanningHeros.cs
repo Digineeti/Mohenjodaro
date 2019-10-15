@@ -12,21 +12,12 @@ public class SpwanningHeros : MonoBehaviour
     
     void Start()
     {
-        //Player = Instantiate(Player, gameObject.transform.position, Quaternion.identity) as GameObject;
-        ////Player.transform.SetParent(Parent.transform,true);
-        //int id = Player.name.IndexOf("(");
-        //Player.name = Player.name.Substring(0,id);
-        //Player.transform.Rotate(0f, 180f, 0f, Space.Self);
-        //Player.transform.localScale = new Vector3(PlayerScale, PlayerScale, 1);
-
-        //Player.GetComponent<PlayerAction>().state = PlayerAction.State.busy;
-
+       //Player.GetComponent<PlayerAction>().state = PlayerAction.State.busy;
         Player = Instantiate(Player, gameObject.transform.position, Quaternion.identity);
         int id = Player.name.IndexOf("(");
         Player.name = Player.name.Substring(0, id);
         Player.transform.Rotate(0f, 180f, 0f, Space.Self);
         Player.transform.localScale = new Vector3(PlayerScale, PlayerScale, 1);
-
     }
     private void Update()
     {

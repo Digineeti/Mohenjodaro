@@ -25,7 +25,7 @@ public class ActivePlayer : MonoBehaviour
     void Start()
     {      
         fixedHeroandenemy = true;
-        Winningpanel.SetActive(false);
+      
         Globalvariable.WinningLosing = true;
     }
 
@@ -34,6 +34,7 @@ public class ActivePlayer : MonoBehaviour
     {
         if(Globalvariable.WinningLosing)
         {
+            Winningpanel.SetActive(false);
             Globalvariable.WinningLosing = false;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             Hero = 0;
