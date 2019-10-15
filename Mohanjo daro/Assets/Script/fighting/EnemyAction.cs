@@ -21,7 +21,8 @@ public class EnemyAction : MonoBehaviour
     bool damage=true;
 
     public ActionList AL;
-    public GameObject []PlayerList;
+    //public GameObject []PlayerList;
+    private GameObject[] Heros;
     internal string ActionName;
     GameObject damagepanel;
     int Hiton;
@@ -144,29 +145,41 @@ public class EnemyAction : MonoBehaviour
 
     public void  damage_Calculation()
     {
-        
+        Heros= GameObject.FindGameObjectsWithTag("Player");
         float damaged = 0;
         int Action = Random.Range(0, AL.EnemyActionsList.Length);
+
         ActionName = AL.EnemyActionsList[Action];
-        int Hiton = Random.Range(0, PlayerList.Length);
-
-        float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
-        float PlayerDefenceValue= PlayerList[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
-        //damage will be depend on the diffrent action that enemy perform
-        damaged = (EnemyAttackValue * EnemyAttackValue) / (PlayerDefenceValue + EnemyAttackValue);
-        for (int i=0;i<PlayerList.Length;i++)
+    step:
+        int Hiton = Random.Range(0, Heros.Length);
+        try
         {
-            PlayerList[i].transform.GetChild(1).gameObject.SetActive(false);        
+            float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+            float PlayerDefenceValue = Heros[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
+            //damage will be depend on the diffrent action that enemy perform
+            damaged = (EnemyAttackValue * EnemyAttackValue) / (PlayerDefenceValue + EnemyAttackValue);
+            for (int i = 0; i < Heros.Length; i++)
+            {
+                Heros[i].transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            damagepanel = Heros[Hiton].transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+
+            //the enemy current Hp value 
+            PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged));
+
+            Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " Damage: " + damaged);
         }
+        catch (System.Exception)
+        {
+            goto step;
 
-        damagepanel = PlayerList[Hiton].transform.GetChild(1).gameObject;
-        damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
-        damagepanel.SetActive(true);
+        }
+     
 
-        //the enemy current Hp value 
-        PlayerPrefs.SetFloat(PlayerList[Hiton].name + "_HPValue", PlayerPrefs.GetFloat(PlayerList[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged));
-
-        Debug.Log("Action: "+ActionName +" player: "+ PlayerList[Hiton].name + " Damage: "+ damaged);
+        
       
 
     }

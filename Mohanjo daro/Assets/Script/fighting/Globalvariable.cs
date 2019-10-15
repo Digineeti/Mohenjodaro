@@ -85,4 +85,11 @@ public class Globalvariable
         set { _After_Death_ReSequence = value; }
     }
 
+
+    private static bool _WinningLosing;
+    public static bool WinningLosing
+    {
+        get { return _WinningLosing; }
+        set { _WinningLosing = value; }
+    }
 }

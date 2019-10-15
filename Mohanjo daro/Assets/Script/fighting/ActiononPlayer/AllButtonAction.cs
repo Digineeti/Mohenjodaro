@@ -186,7 +186,7 @@ public class AllButtonAction : MonoBehaviour
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.name),2f);
                 // Button_Click_On_Player.GetComponent<EnemyAction>().state =EnemyAction.State.Death;// "Death"; 
-
+                Globalvariable.WinningLosing = true;
 
             }
 
