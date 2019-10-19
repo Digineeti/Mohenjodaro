@@ -183,8 +183,15 @@ public class Turn_Management : MonoBehaviour
             //Destroy(startmassage);
             while (Globalvariable.After_Death_ReSequence >= 0)
             {
-                Globalvariable.After_Death_ReSequence--;              
-                CharacterMoveChoice characterAbility = characterQueue.Dequeue();
+                try
+                {
+                    Globalvariable.After_Death_ReSequence--;
+                    CharacterMoveChoice characterAbility = characterQueue.Dequeue();
+                }
+                catch (System.Exception)
+                {
+                }
+               
             }
 
         }

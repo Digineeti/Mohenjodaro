@@ -167,8 +167,18 @@ public class EnemyAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
 
+
+            float currentvalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
             //the hero set new Hp value after damage receive.
-            PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged));
+            PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", currentvalue);
+
+            //destoring the hero.......
+            //if(currentvalue<=0)
+            //{
+            //    Destroy(Heros[Hiton]);
+            //}
+
+
             Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " Damage: " + damaged);
             //player distroy her if it hp value is less or eual to zero.
 
