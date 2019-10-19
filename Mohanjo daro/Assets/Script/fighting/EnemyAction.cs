@@ -168,15 +168,19 @@ public class EnemyAction : MonoBehaviour
             damagepanel.SetActive(true);
 
 
-            float currentvalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
+            float currentvalue = 0;
+            float savevalue= PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue");
+            currentvalue =PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
             //the hero set new Hp value after damage receive.
             PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", currentvalue);
 
             //destoring the hero.......
-            //if(currentvalue<=0)
-            //{
-            //    Destroy(Heros[Hiton]);
-            //}
+            if (currentvalue <= 0)
+            {
+                //play the death animation here 
+                Heros[Hiton].GetComponent<Animator>().SetBool("Death", true);
+                //Destroy(Heros[Hiton]);
+            }
 
 
             Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " Damage: " + damaged);
