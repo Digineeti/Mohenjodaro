@@ -9,7 +9,7 @@ public class PA : MonoBehaviour
     #region variable
     public GameObject ActiveCircle;                         //declaring the gameobject  for player turn circle
     public Callingscriptableobject callScriptObject;        //declaring the scriptable object 
-    public State state;                                     //declare state variable player current state
+  
     public float AGIValue;                                  //declare AGI variable, player current Agi
     //public GameObject helathSliderPanel;                    //declaring PlayerUi health bar object
     public GameObject PlayerUIPanel;                        //declaring playerUi State object 
@@ -26,9 +26,11 @@ public class PA : MonoBehaviour
     private Animator anim;
 
     //making player state collection 
+    public State state;                                     //declare state variable player current state
     public enum State
     {
         waitingforinput,
+        death,
         busy,
     }
 
@@ -37,6 +39,12 @@ public class PA : MonoBehaviour
     {
         Turnover,
         NextTurn,
+    }
+
+    public  Death DeathPlayer;
+    public enum Death
+    {
+        death,
     }
     #endregion
 
@@ -124,6 +132,11 @@ public class PA : MonoBehaviour
             //    //after action make player state busy
             //    state = State.busy;
             //}
+        }
+       else if(state == PA.State.death)
+        {
+            //Globalvariable.Index = 0;
+            //Turnstate = TurnState.Turnover;
         }
         else
         {

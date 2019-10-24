@@ -92,4 +92,7 @@ public class Globalvariable
         get { return _WinningLosing; }
         set { _WinningLosing = value; }
     }
+
+
+    
 }

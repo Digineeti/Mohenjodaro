@@ -151,11 +151,19 @@ public class EnemyAction : MonoBehaviour
 
         ActionName = AL.EnemyActionsList[Action];
     step:
-        int Hiton = Random.Range(0, Heros.Length);
+        int Hiton = Random.Range(5, Heros.Length);
         try
         {
-            float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
-            float PlayerDefenceValue = Heros[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
+
+            if(Heros[Hiton].GetComponent<PA>().state.ToString()== "death")
+            {
+                goto step;
+            }
+            //its comes form playerpref save date value...
+            //float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
+            //float PlayerDefenceValue = Heros[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
+            float EnemyAttackValue = PlayerPrefs.GetFloat(gameObject.name + "_ATK");
+            float PlayerDefenceValue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_DEF");
             //damage will be depend on the diffrent action that enemy perform
             damaged = (EnemyAttackValue * EnemyAttackValue) / (PlayerDefenceValue + EnemyAttackValue);
             for (int i = 0; i < Heros.Length; i++)
@@ -179,6 +187,7 @@ public class EnemyAction : MonoBehaviour
             {
                 //play the death animation here 
                 Heros[Hiton].GetComponent<Animator>().SetBool("Death", true);
+                Heros[Hiton].GetComponent<PA>().state = PA.State.death;
                 //Destroy(Heros[Hiton]);
             }
 

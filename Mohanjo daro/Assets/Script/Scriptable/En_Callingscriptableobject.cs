@@ -33,7 +33,7 @@ public class En_Callingscriptableobject : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat(gameObject.name + "_HPValue", PlayerPrefs.GetFloat(gameObject.name + "_HPMax"));
     }
     private void Update()
