@@ -155,10 +155,12 @@ public class EnemyAction : MonoBehaviour
         try
         {
 
-            if(Heros[Hiton].GetComponent<PA>().state.ToString()== "death")
-            {
-                goto step;
-            }
+            //if (Heros[Hiton].GetComponent<PA>().DeathPlayer == PA.Death.death)
+            //{
+            //    goto step;
+            //}
+            //if the player is death then enemy attack miss... else hit...and make damaged
+
             //its comes form playerpref save date value...
             //float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
             //float PlayerDefenceValue = Heros[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
@@ -187,7 +189,7 @@ public class EnemyAction : MonoBehaviour
             {
                 //play the death animation here 
                 Heros[Hiton].GetComponent<Animator>().SetBool("Death", true);
-                Heros[Hiton].GetComponent<PA>().state = PA.State.death;
+                Heros[Hiton].GetComponent<PA>().DeathPlayer = PA.Death.death;
                 //Destroy(Heros[Hiton]);
             }
 

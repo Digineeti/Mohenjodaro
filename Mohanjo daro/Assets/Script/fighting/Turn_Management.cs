@@ -68,12 +68,12 @@ public class Turn_Management : MonoBehaviour
                         {
                             try
                             {
-                                if(spawanHero[i].GetComponent<PA>().state==PA.State.death)
-                                {
+                                //if(spawanHero[i].GetComponent<PA>().state==PA.State.death)
+                                //{
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -83,7 +83,7 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
                                         }
                                     }
-                                }
+                                //}
                               
 
                             }
@@ -108,12 +108,12 @@ public class Turn_Management : MonoBehaviour
                             try
                             {
 
-                                if (spawanHero[i].GetComponent<PA>().state == PA.State.death)
-                                {
+                                //if (spawanHero[i].GetComponent<PA>().state == PA.State.death)
+                                //{
 
-                                }
-                                else
-                                {
+                                //}
+                                //else
+                                //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.busy;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -123,7 +123,7 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.busy;
                                         }
                                     }
-                                }
+                                //}
                             }
                             catch (System.Exception)
                             {

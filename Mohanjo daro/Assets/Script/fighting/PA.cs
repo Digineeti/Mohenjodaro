@@ -29,8 +29,7 @@ public class PA : MonoBehaviour
     public State state;                                     //declare state variable player current state
     public enum State
     {
-        waitingforinput,
-        death,
+        waitingforinput,      
         busy,
     }
 
@@ -44,6 +43,7 @@ public class PA : MonoBehaviour
     public  Death DeathPlayer;
     public enum Death
     {
+        Active,
         death,
     }
     #endregion
@@ -99,45 +99,35 @@ public class PA : MonoBehaviour
             //ParticalturnBlinker.Play();
 
             //do action on player input press
-
-            Globalvariable.currentTime += Time.deltaTime;
-            if (Globalvariable.Active_Player_Action)
+            if(DeathPlayer==Death.Active)
             {
-                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-                anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
-                startup = true;
-                Globalvariable.Active_Player_Action = false;
-            }
-            if (startup == true)
-            {
-                if (Globalvariable.currentTime > Globalvariable.nextTime)
+                Globalvariable.currentTime += Time.deltaTime;
+                if (Globalvariable.Active_Player_Action)
                 {
-                    startup = false;
-                    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
-                    Globalvariable.Index=0;
-                    Turnstate = TurnState.Turnover;
-                    Globalvariable.Active_Player_Animation_Parameter = null;
+                    Globalvariable.nextTime = Globalvariable.currentTime + 1f;
+                    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
+                    startup = true;
+                    Globalvariable.Active_Player_Action = false;
                 }
+                if (startup == true)
+                {
+                    if (Globalvariable.currentTime > Globalvariable.nextTime)
+                    {
+                        startup = false;
+                        anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
+                        Globalvariable.Index = 0;
+                        Turnstate = TurnState.Turnover;
+                        Globalvariable.Active_Player_Animation_Parameter = null;
+                    }
 
+                }
             }
-            //if (Input.GetKeyDown(KeyCode.A))
-            //{
-            //    //player action goes here
-            //    Debug.Log(gameObject.name + " Hit");
-            //    //calling the playe attack animation 
-            //    //Anim.SetBool("movetoattack",true);
-            //    //making the global variable index set to zero
-            //    Globalvariable.Index--;
-            //    Globalvariable.Heal = 0;
-            //    //after action make player state busy
-            //    state = State.busy;
-            //}
-        }
-       else if(state == PA.State.death)
-        {
-            //Globalvariable.Index = 0;
-            //Turnstate = TurnState.Turnover;
-        }
+            if(DeathPlayer == Death.death)
+            {
+                Globalvariable.Index = 0;
+                Turnstate = TurnState.Turnover;
+            }
+        }     
         else
         {
             ActiveCircle.SetActive(false);
