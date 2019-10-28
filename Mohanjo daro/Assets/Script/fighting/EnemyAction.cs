@@ -190,6 +190,7 @@ public class EnemyAction : MonoBehaviour
                 //play the death animation here 
                 Heros[Hiton].GetComponent<Animator>().SetBool("Death", true);
                 Heros[Hiton].GetComponent<PA>().DeathPlayer = PA.Death.death;
+                
                 //Destroy(Heros[Hiton]);
             }
 
