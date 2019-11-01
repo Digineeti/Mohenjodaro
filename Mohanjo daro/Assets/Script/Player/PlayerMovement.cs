@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         {
             v_Current_Speed = Mathf.SmoothStep(v_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
             float y_velocity = input.vertical * v_Current_Speed;
-            Debug.Log("Speed: " + v_Current_Speed);
+           // Debug.Log("Speed: " + v_Current_Speed);
             //transform.Translate(new Vector2(0f, y_velocity*Time.deltaTime));
             RD.velocity = new Vector2(0f, input.vertical * v_Current_Speed);
             playerMoving = true;
