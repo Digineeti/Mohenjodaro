@@ -44,6 +44,8 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
         }
         if (Name == "Item")
         {
@@ -156,22 +158,55 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }      
+        }
 
         //enemy action
-
+       
         if (Name == "Attack")
         {
+            EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
+
+            float value = -1;
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
+            try
+            {
+                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+                {
+                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                }
+            }
+            catch (System.Exception)
+            {
+            }
+            if (value < 0)
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                        }
+                    }
+                    catch (System.Exception)
+                    {                        
+                    }
+                }
+            }
+
+            PlayerAttackPower = value;
             Globalvariable.After_Death_ReSequence += 1;
             //player animation on hit
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //Extract ata on the click game object value
-            EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
-            PlayerAttackPower=ActivePlayer_Attack_Attribute();
+           // EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
+            
             //calculating attackpower using the formula
-            float  damaged = (PlayerAttackPower*PlayerAttackPower) / (PlayerAttackPower+EnemyDefenceValue);
+            float damaged = 4 * PlayerAttackPower - 2 * EnemyDefenceValue;
 
             GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
@@ -180,14 +215,10 @@ public class AllButtonAction : MonoBehaviour
           
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
-            {
-               
-               
+            {  
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.name),2f);
-                // Button_Click_On_Player.GetComponent<EnemyAction>().state =EnemyAction.State.Death;// "Death"; 
                 Globalvariable.WinningLosing = true;
-
             }
 
 
@@ -197,13 +228,220 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //sp used =20 one 
+            float damaged = 1.5F * PlayerAttackPower;
+            float MAXDamage = damaged+(damaged * 20) / 100;
+            float DamagedReceive=0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+         
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+
         }
         if (Name == "ThunderStrom")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //sp used =50 All
+            float damaged = 0.9F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+
+
         }
+        if (Name == "Strom")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //sp used =50 all
+            float damaged = 0.8F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "FireBall")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //sp used =20  Random 4 near enemywhom receive damage
+            float damaged = 0.75F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "FireBlast")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //sp used =50 All
+
+            float damaged = 0.75F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "Wind")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //sp used =30 One row of enemy
+
+            float damaged = 1F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "QuickSand")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //sp used =30 front Enemy
+
+            float damaged = 0.75F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "EarthQuake")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //sp used =60  used in All Enemy
+            float damaged = 1.25F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+        if (Name == "HeavenlyWorth")
+        {
+            Globalvariable.After_Death_ReSequence += 1;
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            //sp used =70  used in All Enemy
+            float damaged = 1.25F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
+            DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.SetActive(true);
+            PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            {
+                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+                Destroy(GameObject.Find(Button_Click_On_Player.name), 2f);
+                Globalvariable.WinningLosing = true;
+            }
+        }
+
         if (Name == "LightBoom")
         {
             Globalvariable.After_Death_ReSequence += 1;
@@ -216,60 +454,16 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (Name == "FireBall")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
+       
         if (Name == "Inferno")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
-        if (Name == "QuickEnd")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-        if (Name == "EarthQuake")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-        if (Name == "Wind")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-        if (Name == "FireBlast")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-        if (Name == "HeavenlyWorth")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-        if (Name == "HeavenlyWorth")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
-       if(Name == "Strom")
-        {
-            Globalvariable.After_Death_ReSequence += 1;
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
-        }
+      
+       
+      
     }
 
     public float  ActivePlayer_Attack_Attribute()
@@ -277,43 +471,7 @@ public class AllButtonAction : MonoBehaviour
         float value = -1;
         //for(int i=0;i<Players.Length;i++)
         //{
-        spawanHero = GameObject.FindGameObjectsWithTag("Player");
-        GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-        try
-        {
-            if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-            {
-                value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-            }
-        }
-        catch (System.Exception)
-        {
-            //if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
-            //{
-            //    value = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
-            //}
-        }
-        if (value < 0)
-        {
-            for (int i = 0; i < spawanHero.Length; i++)
-            {
-                try
-                {
-                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
-                    {
-                        value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    }
-                }
-                catch (System.Exception)
-                {
-                    //if (Players[i].GetComponent<EnemyAction>().state.ToString() == "Action")
-                    //{
-                    //    value = Players[i].GetComponent<En_Callingscriptableobject>().Attribute.ATK;
-                    //}
-                }
-            }
-        }
-
+       
 
         //}
         return value;
