@@ -10,8 +10,6 @@ public class SpwanningEnemyFront : MonoBehaviour
     public float EnemyScale = .5f;
     public EnemyAction EA;
     //private int count = 0;
-
-
     private void Start()
     {
         int NoOfEnemy = Random.Range(1, EnemyList.Length);
@@ -22,4 +20,6 @@ public class SpwanningEnemyFront : MonoBehaviour
        
         EnemyList[NoOfEnemy].transform.localScale = new Vector3(EnemyScale, EnemyScale, 1);
     }
+
+
 }

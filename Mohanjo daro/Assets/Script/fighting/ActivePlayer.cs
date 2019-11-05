@@ -32,32 +32,31 @@ public class ActivePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Globalvariable.WinningLosing)
-        {
-            Winningpanel.SetActive(false);
-            Globalvariable.WinningLosing = false;
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            Hero = 0;
-            enemy = 0;
-            for (int i = 0; i < spawanHero.Length; i++)
-            {
-                try
-                {
-                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "busy" || spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
-                    {
-                        Hero++;
-                    }
-                }
-                catch (System.Exception)
-                {
-                    enemy++;
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
 
+        Hero = 0;
+        enemy = 0;
+        for (int i = 0; i < spawanHero.Length; i++)
+        {
+            try
+            {
+                if (spawanHero[i].GetComponent<PA>().DeathPlayer.ToString() == "Active")
+                {
+                    Hero++;
                 }
+            }
+            catch (System.Exception)
+            {
+                enemy++;
 
             }
-            
-            NoOfActiveEnemy.text = (enemy-1).ToString();
-            NoOfActiveHero.text = (Hero-1).ToString();
+
+        }
+        if (Globalvariable.WinningLosing)
+        {
+            Winningpanel.SetActive(false);
+            Globalvariable.WinningLosing = false;         
+           
             if (fixedHeroandenemy)
             {
                 NoOfEnemy.text = enemy.ToString();
@@ -68,13 +67,16 @@ public class ActivePlayer : MonoBehaviour
 
             }            
         }
-        if (Hero-1 <= 0)
+
+        NoOfActiveEnemy.text = (enemy).ToString();
+        NoOfActiveHero.text = (Hero).ToString();
+        if (Hero <= 0)
         {
             Winningpanel.SetActive(true);
             TMP_Text ActiveHero = Winningpanel.GetComponentInChildren<TMP_Text>();
             ActiveHero.text = "Enemy wins";
         }
-        if (enemy-1 <= 0)
+        if (enemy <= 0)
         {
             Winningpanel.SetActive(true);
             TMP_Text ActiveHero = Winningpanel.GetComponentInChildren<TMP_Text>();

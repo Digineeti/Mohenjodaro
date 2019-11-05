@@ -31,7 +31,7 @@ public class AttackActionHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
             }
         }
-        if (button.GetComponentInChildren<TMP_Text>().text == "Item")
+        if (button.GetComponentInChildren<TMP_Text>().text == "ThunderStrom" || button.GetComponentInChildren<TMP_Text>().text == "Strom" || button.GetComponentInChildren<TMP_Text>().text == "FireBlast" || button.GetComponentInChildren<TMP_Text>().text == "EarthQuake" || button.GetComponentInChildren<TMP_Text>().text == "HeavenlyWorth")
         {
             Globalvariable.All_Enemy_Hoverbutton = true;
             for (int i = 0; i < spawanHero.Length; i++)
@@ -48,6 +48,8 @@ public class AttackActionHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
             }
         }
+
+       
     }
     public void OnPointerExit(PointerEventData pointerEventData)
     {

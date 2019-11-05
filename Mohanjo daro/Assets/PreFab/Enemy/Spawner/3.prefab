@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 6421036609677134788, guid: 6a1ace463150f2d46b5808135651f649,
         type: 3}
       propertyPath: m_Name
-      value: EnemyPosition Variant 1
+      value: Position3
       objectReference: {fileID: 0}
     - target: {fileID: 6421036609677134789, guid: 6a1ace463150f2d46b5808135651f649,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 6421036609677134789, guid: 6a1ace463150f2d46b5808135651f649,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.34
       objectReference: {fileID: 0}
     - target: {fileID: 6421036609677134789, guid: 6a1ace463150f2d46b5808135651f649,
         type: 3}

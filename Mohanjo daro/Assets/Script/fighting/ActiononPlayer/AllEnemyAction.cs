@@ -34,7 +34,6 @@ public class AllEnemyAction : MonoBehaviour
         //int value = GameObject.FindGameObjectsWithTag("Players").Length;
         //Playerlist = new GameObject[value];
         Playerlist = GameObject.FindGameObjectsWithTag("Player");
-
         //Debug.Log(Playerlist[2].GetComponent<IndraAction>().EActiveAction);
         for (int i=0;i<Playerlist.Length;i++)
         {
@@ -49,7 +48,6 @@ public class AllEnemyAction : MonoBehaviour
             }
             catch (System.Exception)
             {
-
                 
             }
             
