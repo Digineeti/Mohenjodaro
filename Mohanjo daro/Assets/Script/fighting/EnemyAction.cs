@@ -155,10 +155,10 @@ public class EnemyAction : MonoBehaviour
         try
         {
 
-            //if (Heros[Hiton].GetComponent<PA>().DeathPlayer == PA.Death.death)
-            //{
-            //    goto step;
-            //}
+            if (Heros[Hiton].GetComponent<EnemyAction>().state.ToString() == "Action")
+            {
+                goto step;
+            }
             //if the player is death then enemy attack miss... else hit...and make damaged
 
             //its comes form playerpref save date value...

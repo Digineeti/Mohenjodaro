@@ -167,14 +167,16 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
+                    //extract the atk value from the playerprefs save data...
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-
+                    luckValue= PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -189,38 +191,66 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
+                            //extract the atk value from the playerprefs save data...
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
-                    {                        
+                    {
+                        
                     }
                 }
             }
 
             PlayerAttackPower = value;
-            Globalvariable.After_Death_ReSequence += 1;
+           
             //player animation on hit
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
-           // Extract ata on the click game object value
-           // EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
-            
+            // Extract ata on the click game object value
+            // EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
+            //damaged on the basis of luck value 
+            float missvalue=100-luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100))+1;
+            float damaged=0;
+            float randonvalue = Random.Range(1, 100);
+            if(randonvalue>0 && randonvalue<=missvalue)
+            {
+                damaged = (4 * PlayerAttackPower - 2 * EnemyDefenceValue)*0;
+                Debug.Log("damaged miss " + damaged);
+            }
+            else if(randonvalue>missvalue && randonvalue<criticalvalue)
+            {
+                damaged = (4 * PlayerAttackPower - 2 * EnemyDefenceValue) * 1;
+                Debug.Log("damaged normal " + damaged);
+            }
+            else
+            {
+                damaged = (4 * PlayerAttackPower - 2 * EnemyDefenceValue) * 2;
+                Debug.Log("damaged critical "+ damaged );
+            }
             //calculating attackpower using the formula
-            float damaged = 4 * PlayerAttackPower - 2 * EnemyDefenceValue;
+          
+
 
             GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
-            //the enemy current Hp value 
-          
+            
+
+            //the enemy current Hp value           
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
             {  
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name),2f);
                 Globalvariable.WinningLosing = true;
+                Globalvariable.After_Death_ReSequence += 1;
             }
 
 
@@ -230,6 +260,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -238,7 +269,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(20));
-
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -255,6 +286,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(20));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -264,19 +296,42 @@ public class AllButtonAction : MonoBehaviour
             }
 
             PlayerAttackPower = value;
-            Globalvariable.After_Death_ReSequence += 1;
+          
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
 
             //sp used =20 one 
-            float damaged = 1.5F * PlayerAttackPower;
-            float MAXDamage = damaged+(damaged * 20) / 100;
-            float DamagedReceive=0;
+
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 1.5F * PlayerAttackPower;
+            float MAXDamage = damaged + (damaged * 20) / 100;
+            float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
 
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {               
+                DamagedReceive = DamagedReceive * 0;                
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
+            //float damaged = 1.5F * PlayerAttackPower;
             GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
             damagepanel.SetActive(true);
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
          
@@ -285,14 +340,14 @@ public class AllButtonAction : MonoBehaviour
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                 Globalvariable.WinningLosing = true;
+                Globalvariable.After_Death_ReSequence += 1;
             }
 
         }
         if (Name == "ThunderStrom")
         {
-            
-
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -301,7 +356,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
-
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -318,6 +373,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -328,15 +384,38 @@ public class AllButtonAction : MonoBehaviour
             }
 
             PlayerAttackPower = value;
-            Globalvariable.After_Death_ReSequence += 1;
+           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+            //float damaged = 0.9F * PlayerAttackPower;
 
 
-            float damaged = 0.9F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 0.9F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
 
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
             for(int i=0;i<spawanHero.Length;i++)
@@ -353,7 +432,7 @@ public class AllButtonAction : MonoBehaviour
                 {                  
 
                     GameObject damagepanel = spawanHero[i].transform.GetChild(1).gameObject;
-                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
@@ -361,24 +440,20 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
 
                 }
                 
             }
-           
-
-
             //sp used =50 All
-           
-
-
         }
         if (Name == "Strom")
         {
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -387,7 +462,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
-
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -404,7 +479,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
-
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -415,16 +490,40 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+            
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
 
             //sp used =50 all
-            float damaged = 0.8F * PlayerAttackPower;
+            //float damaged = 0.8F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 0.8F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
+
 
             for (int i = 0; i < spawanHero.Length; i++)
             {
@@ -440,7 +539,7 @@ public class AllButtonAction : MonoBehaviour
                 {
 
                     GameObject damagepanel = spawanHero[i].transform.GetChild(1).gameObject;
-                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
@@ -448,6 +547,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
 
                 }
@@ -459,6 +559,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -467,6 +568,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(20));
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -483,6 +585,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(20));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -493,19 +596,50 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
 
             //sp used =20  Random 4 near enemywhom receive damage
-            float damaged = 0.75F * PlayerAttackPower;
+            //float damaged = 0.75F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 0.75F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
 
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
+            //random action ...
+            //1,2,3,4
+            //2,1,5
+            //3,1,6
+            //4,1,5,6
+            //5,2,4
+            //6,3,4
+
+            //
             GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+            damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
             damagepanel.SetActive(true);
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -513,6 +647,7 @@ public class AllButtonAction : MonoBehaviour
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                 Globalvariable.WinningLosing = true;
+                Globalvariable.After_Death_ReSequence += 1;
             }
         }
         if (Name == "FireBlast")
@@ -520,6 +655,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -528,6 +664,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -544,6 +681,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -554,16 +692,40 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //sp used =50 All
+            //float damaged = 0.75F * PlayerAttackPower;
 
-            float damaged = 0.75F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 0.75F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
+
 
             for (int i = 0; i < spawanHero.Length; i++)
             {
@@ -579,7 +741,7 @@ public class AllButtonAction : MonoBehaviour
                 {
 
                     GameObject damagepanel = spawanHero[i].transform.GetChild(1).gameObject;
-                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
@@ -587,6 +749,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
 
                 }
@@ -598,6 +761,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -606,6 +770,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(30));
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -622,6 +787,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -632,25 +798,49 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //sp used =30 One row of enemy
 
-            float damaged = 1F * PlayerAttackPower;
+            //float damaged = 1F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 1F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
+
+
             //hit enemy rows wise.....
-           
+
 
             GameObject Parent = Button_Click_On_Player.transform.parent.gameObject;
             #region middle row
             if (Parent.name == "Position1")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -658,13 +848,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position4");
                 if (secondplayer!=null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -672,13 +863,14 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             if (Parent.name == "Position4")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -686,13 +878,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
                 if(secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -700,6 +893,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
                
@@ -709,7 +903,7 @@ public class AllButtonAction : MonoBehaviour
             if (Parent.name == "Position2")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -717,13 +911,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position5");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -731,13 +926,14 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             if (Parent.name == "Position5")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -745,13 +941,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -759,6 +956,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
@@ -767,7 +965,7 @@ public class AllButtonAction : MonoBehaviour
             if (Parent.name == "Position3")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -775,13 +973,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position6");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -789,13 +988,14 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             if (Parent.name == "Position6")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -803,13 +1003,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position3");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -817,6 +1018,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
@@ -827,6 +1029,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -835,7 +1038,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(30));
-
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -852,6 +1055,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -862,23 +1066,45 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //sp used =30 front Enemy
 
-            float damaged = 0.75F * PlayerAttackPower;
+            //float damaged = 0.75F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged =0.75F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
 
             GameObject Parent = Button_Click_On_Player.transform.parent.gameObject;
 
             if (Parent.name == "Position1" )
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -886,13 +1112,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -900,27 +1127,29 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position3");
-                if (secondplayer != null)
+                if (thirdplayer != null)
                 {
-                    GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
-                    sdamagepanel.SetActive(true);
-                    PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
-                    if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
+                    GameObject thdamagepanel = thirdplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
+                    thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
+                    thdamagepanel.SetActive(true);
+                    PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+                    if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
-                        secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
-                        Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
+                        thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
+                        Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             else if(Parent.name == "Position2")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -928,13 +1157,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -942,27 +1172,29 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position3");
-                if (secondplayer != null)
+                if (thirdplayer != null)
                 {
-                    GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
-                    sdamagepanel.SetActive(true);
-                    PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
-                    if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
+                    GameObject thdamagepanel = thirdplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
+                    thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
+                    thdamagepanel.SetActive(true);
+                    PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+                    if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
-                        secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
-                        Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
+                        thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
+                        Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             else if(Parent.name == "Position3")
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -970,13 +1202,14 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
                 if (secondplayer != null)
                 {
                     GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
@@ -984,27 +1217,29 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position2");
-                if (secondplayer != null)
+                if (thirdplayer != null)
                 {
-                    GameObject sdamagepanel = secondplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
-                    sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
-                    sdamagepanel.SetActive(true);
-                    PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
-                    if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
+                    GameObject thdamagepanel = thirdplayer.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject;
+                    thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
+                    thdamagepanel.SetActive(true);
+                    PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
+                    if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
-                        secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
-                        Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
+                        thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
+                        Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
                 }
             }
             else
             {
                 GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
-                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
@@ -1012,6 +1247,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
+                    Globalvariable.After_Death_ReSequence += 1;
                 }
             }
 
@@ -1022,6 +1258,7 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
+            float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -1030,6 +1267,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(60));
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -1046,6 +1284,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -1061,10 +1300,33 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //sp used =60  used in All Enemy
-            float damaged = 1.25F * PlayerAttackPower;
+            //float damaged = 1.25F * PlayerAttackPower;
+
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 1.25F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
 
             for (int i = 0; i < spawanHero.Length; i++)
             {
@@ -1080,7 +1342,7 @@ public class AllButtonAction : MonoBehaviour
                 {
 
                     GameObject damagepanel = spawanHero[i].transform.GetChild(1).gameObject;
-                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
@@ -1088,6 +1350,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
 
                 }
@@ -1098,7 +1361,7 @@ public class AllButtonAction : MonoBehaviour
         {
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
-            float value = -1;
+            float value = -1; float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
             try
@@ -1107,6 +1370,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(70));
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
             catch (System.Exception)
@@ -1123,6 +1387,7 @@ public class AllButtonAction : MonoBehaviour
                         {
                             value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(70));
+                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
                     catch (System.Exception)
@@ -1134,15 +1399,37 @@ public class AllButtonAction : MonoBehaviour
             PlayerAttackPower = value;
 
 
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //sp used =70  used in All Enemy
-            float damaged = 1.25F * PlayerAttackPower;
+            //float damaged = 1.25F * PlayerAttackPower;
+            float missvalue = 100 - luckValue;
+            if (missvalue > 25)
+                missvalue = 25;
+
+            float criticalvalue = (100 - ((luckValue * 20) / 100)) + 1;
+            float damaged = 0;
+            float randonvalue = Random.Range(1, 100);
+
+            damaged = 1.25F * PlayerAttackPower;
             float MAXDamage = damaged + (damaged * 20) / 100;
             float DamagedReceive = 0;
             DamagedReceive = Mathf.Clamp(DamagedReceive, damaged, MAXDamage);
+
+            if (randonvalue > 0 && randonvalue <= missvalue)
+            {
+                DamagedReceive = DamagedReceive * 0;
+            }
+            else if (randonvalue > missvalue && randonvalue < criticalvalue)
+            {
+                DamagedReceive = DamagedReceive * 1;
+            }
+            else
+            {
+                DamagedReceive = DamagedReceive * 2;
+            }
 
             for (int i = 0; i < spawanHero.Length; i++)
             {
@@ -1158,7 +1445,7 @@ public class AllButtonAction : MonoBehaviour
                 {
 
                     GameObject damagepanel = spawanHero[i].transform.GetChild(1).gameObject;
-                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
+                    damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive));
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
@@ -1166,6 +1453,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
+                        Globalvariable.After_Death_ReSequence += 1;
                     }
 
                 }

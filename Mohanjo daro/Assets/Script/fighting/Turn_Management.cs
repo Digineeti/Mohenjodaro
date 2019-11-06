@@ -193,7 +193,6 @@ public class Turn_Management : MonoBehaviour
                 catch (System.Exception)
                 {
                 }
-
             }
 
         }
@@ -265,13 +264,11 @@ public class Turn_Management : MonoBehaviour
         int count = 0;
         while (TurnQueue.Count > 0)
         {
-
             Turn_Management.CharacterMoveChoice characterAbility = TurnQueue.Dequeue();
 
             for (int i = 0; i < spawanHero.Length; i++)
             {
                 //Debug.Log(spawanHero[i].name);
-
                 if (spawanHero[i].gameObject == characterAbility.character.Name)
                 {
                     count++;
