@@ -42,6 +42,8 @@ public class Turn_Management : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        string[] tags = new[] { "Player", "Enemy"  };
         if (playerspawancount == true)
         { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
         AfterDestroy = GameObject.FindGameObjectsWithTag("Player");

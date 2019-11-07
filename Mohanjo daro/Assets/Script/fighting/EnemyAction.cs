@@ -22,7 +22,7 @@ public class EnemyAction : MonoBehaviour
 
     public ActionList AL;
     //public GameObject []PlayerList;
-    private GameObject[] Heros;
+    private GameObject[] Heros=new GameObject[6];
     internal string ActionName;
     GameObject damagepanel;
     int Hiton;
@@ -145,22 +145,22 @@ public class EnemyAction : MonoBehaviour
 
     public void  damage_Calculation()
     {
-        Heros= GameObject.FindGameObjectsWithTag("Player");
+        Heros[0]= GameObject.Find("Agni");
+        Heros[1]= GameObject.Find("Dyaus");
+        Heros[2]= GameObject.Find("Indra");
+        Heros[3]= GameObject.Find("Prithvi");
+        Heros[4]= GameObject.Find("Sachi");
+        Heros[5]= GameObject.Find("Vayu");
         float damaged = 0;
         int Action = Random.Range(0, AL.EnemyActionsList.Length);
 
         ActionName = AL.EnemyActionsList[Action];
     step:
-        int Hiton = Random.Range(5, Heros.Length);
+        int Hiton = Random.Range(0, Heros.Length);
         try
         {
 
-            if (Heros[Hiton].GetComponent<EnemyAction>().state.ToString() == "Action")
-            {
-                goto step;
-            }
             //if the player is death then enemy attack miss... else hit...and make damaged
-
             //its comes form playerpref save date value...
             //float EnemyAttackValue = gameObject.GetComponent<En_Callingscriptableobject>().Attribute.ATK;
             //float PlayerDefenceValue = Heros[Hiton].GetComponent<Callingscriptableobject>().Attribute.DEF;
@@ -179,8 +179,8 @@ public class EnemyAction : MonoBehaviour
 
 
             float currentvalue = 0;
-            float savevalue= PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue");
-            currentvalue =PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
+            float savevalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue");
+            currentvalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
             //the hero set new Hp value after damage receive.
             PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", currentvalue);
 
@@ -190,14 +190,10 @@ public class EnemyAction : MonoBehaviour
                 //play the death animation here 
                 Heros[Hiton].GetComponent<Animator>().SetBool("Death", true);
                 Heros[Hiton].GetComponent<PA>().DeathPlayer = PA.Death.death;
-                
                 //Destroy(Heros[Hiton]);
             }
-
-
             Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " Damage: " + damaged);
             //player distroy her if it hp value is less or eual to zero.
-
 
 
         }

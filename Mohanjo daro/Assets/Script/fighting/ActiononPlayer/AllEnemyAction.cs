@@ -62,19 +62,23 @@ public class AllEnemyAction : MonoBehaviour
         }
         if (Name == "Agni")
         {
+
+            //call agni action list 2d array.
+            //extract the save value of sp of agni.
+            // apply for loop inside each if condition and check if sp value is grater then 2d array action list 
+            //if yes the active else inactive..
             if (Playerlist[activevalue].GetComponent<AgniAction>().EActiveAction == 1)
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
+
             }
             if (Playerlist[activevalue].GetComponent<AgniAction>().EActiveAction == 2)
             {
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -84,7 +88,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
@@ -97,7 +100,6 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
             }
             if (Playerlist[activevalue].GetComponent<DyausAction>().EActiveAction == 2)
@@ -105,7 +107,6 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -115,7 +116,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
@@ -127,7 +127,6 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
             }
             if (Playerlist[activevalue].GetComponent<IndraAction>().EActiveAction == 2)
@@ -135,7 +134,6 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -145,7 +143,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
@@ -157,7 +154,6 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
             }
             if (Playerlist[activevalue].GetComponent<PrithviAction>().EActiveAction == 2)
@@ -165,7 +161,6 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -175,7 +170,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
@@ -187,7 +181,6 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
             }
             if (Playerlist[activevalue].GetComponent<SachiAction>().EActiveAction == 2)
@@ -195,7 +188,6 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -205,7 +197,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
@@ -217,7 +208,6 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[0].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-
                 buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
             }
             if (Playerlist[activevalue].GetComponent<VayuAction>().EActiveAction == 2)
@@ -225,7 +215,6 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[1].SetActive(true);
                 int value1 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-
                 buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
             }
@@ -235,7 +224,6 @@ public class AllEnemyAction : MonoBehaviour
                 int value1 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
                 int value2 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
                 int value3 = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-
                 buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
                 buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;

@@ -14,6 +14,8 @@ public class AgniAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
+   //add 2d array for action name and value to perform that action.....
+
     // Start is called before the first frame update
     void Start()
     {

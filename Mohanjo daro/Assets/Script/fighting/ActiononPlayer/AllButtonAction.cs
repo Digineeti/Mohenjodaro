@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using UnityEngine.EventSystems;
 using TMPro;
@@ -241,8 +242,9 @@ public class AllButtonAction : MonoBehaviour
             GameObject damagepanel = Button_Click_On_Player.transform.GetChild(1).gameObject;
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
-            
 
+          
+           
             //the enemy current Hp value           
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged));
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
@@ -769,7 +771,7 @@ public class AllButtonAction : MonoBehaviour
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
                     value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(30));
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt( 30));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }

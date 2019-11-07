@@ -83,32 +83,8 @@ public class AgniCallAction : MonoBehaviour
                 buttonsInPanel4[1].GetComponentInChildren<TMP_Text>().text = Name2;
                 buttonsInPanel4[2].GetComponentInChildren<TMP_Text>().text = Name3;
                 buttonsInPanel4[3].GetComponentInChildren<TMP_Text>().text = Name4;
-            }
-
-            //animation and action here 
-            // the global variable for activate the action 
-            //Globalvariable.currentTime += Time.deltaTime;
-            //if (Globalvariable.Active_Player_Action)
-            //{
-            //    Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-            //    anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, true);
-            //    startup = true;
-            //    Globalvariable.Active_Player_Action = false;
-            //}
-            //if (startup == true)
-            //{
-            //    if (Globalvariable.currentTime > Globalvariable.nextTime)
-            //    {
-            //        startup = false;
-            //        anim.SetBool(Globalvariable.Active_Player_Animation_Parameter, false);
-            //        Globalvariable.Index--;
-            //        Globalvariable.Active_Player_Animation_Parameter = null;
-            //    }
-
-            //}
-
-            #endregion
-            //
+            }            
+            #endregion           
             #region InActivePlayersetup
             PlayerList = GameObject.FindGameObjectsWithTag("Player");
             for (int i = 0; i < PlayerList.Length; i++)
