@@ -24,7 +24,7 @@ public class DyausAction : MonoBehaviour
             Action[0] = 0;
             Action[1] = 1;
             Action[2] = 9;
-            Action[3] = 3;
+            Action[3] = 4;
 
             //enemy action
             EActiveAction = 2;
@@ -36,7 +36,7 @@ public class DyausAction : MonoBehaviour
             InActiveAction = 2;
             InActive = new int[InActiveAction];
             InActive[0] = 9;
-            InActive[1] = 3;
+            InActive[1] = 4;
 
         }
         if (int.Parse(attributeCall.Attribute.Level) > 10 && int.Parse(attributeCall.Attribute.Level) > 20)

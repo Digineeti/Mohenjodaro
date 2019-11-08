@@ -123,30 +123,57 @@ public class AllEnemyAction : MonoBehaviour
         }
         if (Name == "Indra")
         {
-            if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
+
+            for (int i = 0; i < Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction; i++)
             {
-                ButtonPanel[0].SetActive(true);
-                int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-                buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                ButtonPanel[Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction - 1].SetActive(true);
+                int value = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[i];
+                string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
+
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 2)
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 3)
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+
+                for (int j = 0; j < Playerlist[activevalue].GetComponent<IndraAction>().specialActioncount; j++)
+                {
+                    if (Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 0] == value)
+                    {
+                        if (Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                            buttonsInPanel3[i].interactable = true;
+                        else
+                            buttonsInPanel3[i].interactable = false;
+                    }
+
+                }
             }
-            if (Playerlist[activevalue].GetComponent<IndraAction>().EActiveAction == 2)
-            {
-                ButtonPanel[1].SetActive(true);
-                int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-                int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-                buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
-            }
-            if (Playerlist[activevalue].GetComponent<IndraAction>().EActiveAction == 3)
-            {
-                ButtonPanel[2].SetActive(true);
-                int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
-                int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
-                int value3 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
-                buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
-            }
+            //if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
+            //{
+            //    ButtonPanel[0].SetActive(true);
+            //    int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
+            //    buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //}
+            //if (Playerlist[activevalue].GetComponent<IndraAction>().EActiveAction == 2)
+            //{
+            //    ButtonPanel[1].SetActive(true);
+            //    int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
+            //    int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
+            //    buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //    buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
+            //}
+            //if (Playerlist[activevalue].GetComponent<IndraAction>().EActiveAction == 3)
+            //{
+            //    ButtonPanel[2].SetActive(true);
+            //    int value1 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[0]; string Name1 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value1];
+            //    int value2 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[1]; string Name2 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value2];
+            //    int value3 = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[2]; string Name3 = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value3];
+            //    //now this action is active ....testing here first...
+            //    buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //    buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
+            //    buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
+            //}
         }
         if (Name == "Prithvi")
         {

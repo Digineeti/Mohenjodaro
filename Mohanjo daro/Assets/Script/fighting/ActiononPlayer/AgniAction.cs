@@ -14,11 +14,16 @@ public class AgniAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
+   
+
    //add 2d array for action name and value to perform that action.....
 
     // Start is called before the first frame update
     void Start()
     {
+
+       
+
         InActive = Action;
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
@@ -78,22 +83,7 @@ public class AgniAction : MonoBehaviour
             InActive[0] = 4;
 
         }
-        //else
-        //{
-        //    //Active player action
-        //    ActiveAction = 4;
-        //    Action = new int[ActiveAction];
-        //    Action[0] = 0;
-        //    Action[1] = 1;
-        //    Action[2] = 2;
-        //    Action[2] = 3;
-        //    //enemy action
-        //    EActiveAction = 3;
-        //    Eaction = new int[EActiveAction];
-        //    Eaction[0] = 0;
-        //    Eaction[1] = 5;
-        //    Eaction[2] = 11;
-        //}
+       
     }
     // Update is called once per frame
     void Update()

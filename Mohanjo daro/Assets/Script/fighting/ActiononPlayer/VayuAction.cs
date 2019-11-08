@@ -20,12 +20,12 @@ public class VayuAction : MonoBehaviour
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
             //Active player action
-            ActiveAction = 4;
+            ActiveAction = 3;
             Action = new int[ActiveAction];
             Action[0] = 0;
             Action[1] = 1;
-            Action[2] = 5;
-            Action[3] = 7;
+            Action[2] = 10;
+           
             //enemy action
             EActiveAction = 2;
             Eaction = new int[EActiveAction];
@@ -33,10 +33,10 @@ public class VayuAction : MonoBehaviour
             Eaction[1] = 9;
 
             //InactivePlayer
-            InActiveAction = 2;
+            InActiveAction = 1;
             InActive = new int[InActiveAction];
-            InActive[0] = 5;
-            InActive[1] = 7;
+            InActive[0] = 10;
+           
 
         }
         if (int.Parse(attributeCall.Attribute.Level) > 10 && int.Parse(attributeCall.Attribute.Level) > 20)

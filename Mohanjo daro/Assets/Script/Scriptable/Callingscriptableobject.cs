@@ -14,7 +14,7 @@ public class Callingscriptableobject : MonoBehaviour
     public Slider HPHealthBar;
     //player PlayerUI
     public Slider HPValue;
-    public Slider SPValue;
+    public GameObject[] SPValue;
     public TMP_Text Level;
     public TMP_Text EXP;
     public TMP_Text DEF;
@@ -25,10 +25,10 @@ public class Callingscriptableobject : MonoBehaviour
     public TMP_Text ATK; 
     //player TurnAction
     public Slider TAHPValue;
-    public Slider TASPValue;
+    public GameObject[] TASPValue;
     //PlayerTurnInfo
     public Slider TIHPValue;
-    public Slider TISPValue;
+    public GameObject[] TISPValue;
 
     #endregion
     private void OnEnable()
@@ -49,14 +49,48 @@ public class Callingscriptableobject : MonoBehaviour
             TIHPValue.maxValue = Attribute.HPMax;
             TIHPValue.value = Attribute.HPMax;
             //player PlayerUI
-            SPValue.maxValue = Attribute.SPMax;
-            SPValue.value = Attribute.SPMax;            //after call the current value here from playerpreref.
+            //SPValue.maxValue = Attribute.SPMax;
+            //SPValue.value = 2;            //after call the current value here from playerpreref.
             //Player TurnAction
-            TASPValue.maxValue = Attribute.SPMax;
-            TASPValue.value = Attribute.SPMax;
+            //TASPValue.maxValue = Attribute.SPMax;
+            //TASPValue.value = 2;
             //Player TurnInfo
-            TISPValue.maxValue = Attribute.SPMax;
-            TISPValue.value = Attribute.SPMax;
+            //TISPValue.maxValue = Attribute.SPMax;
+            //TISPValue.value = 2;
+            float value = 0;
+            for (int i=0;i< 5; i++)
+            {
+                if(i< Attribute.SPMax)
+                {
+                    SPValue[i].SetActive(true);
+                    TASPValue[i].SetActive(true);
+                    TISPValue[i].SetActive(true);
+                    
+                    if (gameObject.name == "Dyaus")
+                        value = 5;
+                    else
+                        value = 2;
+                    if (i<value)
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                    else
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                    }
+                   
+                }
+                else
+                {
+                    SPValue[i].SetActive(false);
+                    TASPValue[i].SetActive(false);
+                    TISPValue[i].SetActive(false);
+                }
+            }
             Level.text = Attribute.Level.ToString();
             EXP.text = Attribute.Exp.ToString();
             DEF.text = Attribute.DEF.ToString();
@@ -69,7 +103,7 @@ public class Callingscriptableobject : MonoBehaviour
             PlayerPrefs.SetFloat(gameObject.name + "_HPMax", Attribute.HPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_HPValue", Attribute.HPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_SPMax", Attribute.SPMax);
-            PlayerPrefs.SetFloat(gameObject.name + "_SPValue", Attribute.SPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "_SPValue", value);
             PlayerPrefs.SetFloat(gameObject.name + "_Level", float.Parse(Attribute.Level));
             PlayerPrefs.SetFloat(gameObject.name + "_Exp", Attribute.Exp);
             PlayerPrefs.SetFloat(gameObject.name + "_DEF", Attribute.DEF);
@@ -95,13 +129,44 @@ public class Callingscriptableobject : MonoBehaviour
             TIHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             TIHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
             //player PlayerUi
-            SPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            SPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
-            TASPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            TASPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            //SPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //SPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            //TASPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //TASPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
             //Player TurnInfo
-            TISPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            TISPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            ///TISPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //TISPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < PlayerPrefs.GetFloat(gameObject.name + "_SPMax"))
+                {
+                    SPValue[i].SetActive(true);
+                    TASPValue[i].SetActive(true);
+                    TISPValue[i].SetActive(true);
+                    if (i< PlayerPrefs.GetFloat(gameObject.name + "_SPValue"))
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                    else
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color=Color.black;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                    }
+                   
+                }
+                else
+                {
+                    SPValue[i].SetActive(false);
+                    TASPValue[i].SetActive(false);
+                    TISPValue[i].SetActive(false);
+                }
+            }
+
+
             Level.text = PlayerPrefs.GetFloat(gameObject.name + "_Level").ToString();
             EXP.text = PlayerPrefs.GetFloat(gameObject.name + "_Exp").ToString();
             DEF.text = PlayerPrefs.GetFloat(gameObject.name + "_DEF").ToString();
@@ -132,14 +197,47 @@ public class Callingscriptableobject : MonoBehaviour
             TIHPValue.maxValue = Attribute.HPMax;
             TIHPValue.value = Attribute.HPMax;
             //player PlayerUI
-            SPValue.maxValue = Attribute.SPMax;
-            SPValue.value = Attribute.SPMax;            //after call the current value here from playerpreref.
+            //SPValue.maxValue = Attribute.SPMax;
+            //SPValue.value = 2;            //after call the current value here from playerpreref.
             //Player TurnAction
-            TASPValue.maxValue = Attribute.SPMax;
-            TASPValue.value = Attribute.SPMax;
+            //TASPValue.maxValue = Attribute.SPMax;
+            //TASPValue.value = 2;
             //Player TurnInfo
-            TISPValue.maxValue = Attribute.SPMax;
-            TISPValue.value = Attribute.SPMax;
+            //TISPValue.maxValue = Attribute.SPMax;
+            //TISPValue.value = 2;
+            float value = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < Attribute.SPMax)
+                {
+                    SPValue[i].SetActive(true);
+                    TASPValue[i].SetActive(true);
+                    TISPValue[i].SetActive(true);
+                    if (gameObject.name == "Dyaus")
+                        value = 5;
+                    else
+                        value = 2;
+                    if (i < value)
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                    else
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                    }
+
+                }
+                else
+                {
+                    SPValue[i].SetActive(false);
+                    TASPValue[i].SetActive(false);
+                    TISPValue[i].SetActive(false);
+                }
+            } 
             Level.text = Attribute.Level.ToString();
             EXP.text = Attribute.Exp.ToString();
             DEF.text = Attribute.DEF.ToString();
@@ -152,7 +250,7 @@ public class Callingscriptableobject : MonoBehaviour
             PlayerPrefs.SetFloat(gameObject.name + "_HPMax", Attribute.HPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_HPValue", Attribute.HPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_SPMax", Attribute.SPMax);
-            PlayerPrefs.SetFloat(gameObject.name + "_SPValue", Attribute.SPMax);
+            PlayerPrefs.SetFloat(gameObject.name + "_SPValue", value);
             PlayerPrefs.SetFloat(gameObject.name + "_Level", float.Parse(Attribute.Level));
             PlayerPrefs.SetFloat(gameObject.name + "_Exp", Attribute.Exp);
             PlayerPrefs.SetFloat(gameObject.name + "_DEF", Attribute.DEF);
@@ -178,13 +276,42 @@ public class Callingscriptableobject : MonoBehaviour
             TIHPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             TIHPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
             //player PlayerUi
-            SPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            SPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
-            TASPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            TASPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            //SPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //SPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            //TASPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //TASPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
             //Player TurnInfo
-            TISPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
-            TISPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            //TISPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_SPMax");
+            //TISPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_SPValue");
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < PlayerPrefs.GetFloat(gameObject.name + "_SPMax"))
+                {
+                    SPValue[i].SetActive(true);
+                    TASPValue[i].SetActive(true);
+                    TISPValue[i].SetActive(true);
+                    if (i < PlayerPrefs.GetFloat(gameObject.name + "_SPValue"))
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                    else
+                    {
+                        SPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TASPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                        TISPValue[i].GetComponent<SpriteRenderer>().color = Color.black;
+                    }
+
+                }
+                else
+                {
+                    SPValue[i].SetActive(false);
+                    TASPValue[i].SetActive(false);
+                    TISPValue[i].SetActive(false);
+                }
+            }
+
             Level.text = PlayerPrefs.GetFloat(gameObject.name + "_Level").ToString();
             EXP.text = PlayerPrefs.GetFloat(gameObject.name + "_Exp").ToString();
             DEF.text = PlayerPrefs.GetFloat(gameObject.name + "_DEF").ToString();

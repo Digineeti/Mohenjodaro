@@ -21,11 +21,12 @@ public class PrithviAction : MonoBehaviour
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
             //Active player action
-            ActiveAction = 3;
+            ActiveAction = 4;
             Action = new int[ActiveAction];
             Action[0] = 0;
             Action[1] = 1;
-            Action[2] = 10;
+            Action[2] = 5;
+            Action[3] = 6;
             //enemy action
             EActiveAction = 3;
             Eaction = new int[EActiveAction];
@@ -33,9 +34,10 @@ public class PrithviAction : MonoBehaviour
             Eaction[1] = 7;
             Eaction[2] = 8;
             //InactivePlayer
-            InActiveAction = 1;
+            InActiveAction = 2;
             InActive = new int[InActiveAction];
-            InActive[0] = 10;
+            InActive[0] = 5;
+            InActive[1] = 6;
           
 
         }

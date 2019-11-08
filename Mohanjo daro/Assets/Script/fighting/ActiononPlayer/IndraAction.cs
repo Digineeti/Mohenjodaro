@@ -13,10 +13,19 @@ public class IndraAction : MonoBehaviour
 
     public int[] InActive;
     public int InActiveAction;
+
+    public int[,] SpAction;
+    public int specialActioncount;
     // Start is called before the first frame update
     void Start()
     {
-       
+        specialActioncount = 2;
+        SpAction = new int[specialActioncount,2];
+        SpAction[0,0] = 1; SpAction[0,1] = 2;
+        SpAction[1,0] = 2; SpAction[1,1] = 4;
+
+
+
         if (int.Parse(attributeCall.Attribute.Level)<10)
         {
             //Active player action
