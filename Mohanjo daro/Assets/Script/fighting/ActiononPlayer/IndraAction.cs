@@ -24,8 +24,6 @@ public class IndraAction : MonoBehaviour
         SpAction[0,0] = 1; SpAction[0,1] = 2;
         SpAction[1,0] = 2; SpAction[1,1] = 4;
 
-
-
         if (int.Parse(attributeCall.Attribute.Level)<10)
         {
             //Active player action
@@ -83,25 +81,7 @@ public class IndraAction : MonoBehaviour
             InActiveAction = 1;
             InActive = new int[InActiveAction];
             InActive[0] = 4;
-        }
-
-        
-        //else
-        //{
-        //    //Active player action
-        //    ActiveAction = 4;
-        //    Action = new int[ActiveAction];
-        //    Action[0] = 0;
-        //    Action[1] = 1;
-        //    Action[2] = 2;
-        //    Action[3] = 5;
-        //    //enemy action
-        //    EActiveAction = 3;
-        //    Eaction = new int[EActiveAction];
-        //    Eaction[0] = 0;
-        //    Eaction[1] = 1;
-        //    Eaction[2] = 2;
-        //}
+        }        
     }
 
     // Update is called once per frame

@@ -13,10 +13,16 @@ public class SachiAction : MonoBehaviour
 
     public int[] InActive;
     public int InActiveAction;
+
+    public int[,] SpAction;
+    public int specialActioncount;
     // Start is called before the first frame update
     void Start()
     {
-        
+        specialActioncount = 1;
+        SpAction = new int[specialActioncount, 2];
+        SpAction[0, 0] = 10; SpAction[0, 1] =4 ;
+
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
             //Active player action
@@ -79,21 +85,7 @@ public class SachiAction : MonoBehaviour
             InActive[0] = 3;
             InActive[1] = 8;
         }
-        //else
-        //{
-        //    //Active player action
-        //    ActiveAction = 4;
-        //    Action = new int[ActiveAction];
-        //    Action[0] = 0;
-        //    Action[1] = 1;
-        //    Action[2] = 4;
-        //    Action[3] = 9;
-        //    //enemy action
-        //    EActiveAction = 2;
-        //    Eaction = new int[EActiveAction];
-        //    Eaction[0] = 0;
-        //    Eaction[1] = 10;
-        //}
+       
     }
 
     // Update is called once per frame

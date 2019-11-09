@@ -14,10 +14,17 @@ public class PrithviAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
+    public int[,] SpAction;
+    public int specialActioncount;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        specialActioncount = 2;
+        SpAction = new int[specialActioncount, 2];
+        SpAction[0, 0] = 7; SpAction[0, 1] = 1;
+        SpAction[0, 0] = 8; SpAction[0, 1] = 5;
+
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
             //Active player action
@@ -83,22 +90,7 @@ public class PrithviAction : MonoBehaviour
 
 
         }
-        //else
-        //{
-        //    //Active player action
-        //    ActiveAction = 4;
-        //    Action = new int[ActiveAction];
-        //    Action[0] = 0;
-        //    Action[1] = 1;
-        //    Action[2] = 10;
-        //    Action[2] = 9;
-        //    //enemy action
-        //    EActiveAction = 3;
-        //    Eaction = new int[EActiveAction];
-        //    Eaction[0] = 0;
-        //    Eaction[1] = 7;
-        //    Eaction[2] = 8;
-        //}
+       
     }
     // Update is called once per frame
     void Update()

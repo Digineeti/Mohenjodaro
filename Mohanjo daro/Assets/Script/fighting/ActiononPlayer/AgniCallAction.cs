@@ -44,6 +44,9 @@ public class AgniCallAction : MonoBehaviour
             {
                 ButtonPanel[i].SetActive(false);
             }
+
+            //apply for loop for the action 
+
             if (GetComponent<AgniAction>().ActiveAction == 1)
             {
                 ButtonPanel[0].SetActive(true);

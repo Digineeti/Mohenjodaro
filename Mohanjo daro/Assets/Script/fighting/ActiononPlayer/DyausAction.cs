@@ -12,9 +12,16 @@ public class DyausAction : MonoBehaviour
     public int EActiveAction;
     public int[] InActive;
     public int InActiveAction;
+
+    public int[,] SpAction;
+    public int specialActioncount;
     // Start is called before the first frame update
     void Start()
     {
+        specialActioncount = 1;
+        SpAction = new int[specialActioncount, 2];
+        SpAction[0, 0] = 12; SpAction[0, 1] = 5;
+
         InActive = Action;
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
@@ -83,21 +90,7 @@ public class DyausAction : MonoBehaviour
             InActive[1] = 3;
 
         }
-        //else
-        //{
-        //    //Active player action
-        //    ActiveAction = 4;
-        //    Action = new int[ActiveAction];
-        //    Action[0] = 0;
-        //    Action[1] = 1;
-        //    Action[2] = 9;
-        //    Action[2] = 3;
-        //    //enemy action
-        //    EActiveAction = 2;
-        //    Eaction = new int[EActiveAction];
-        //    Eaction[0] = 0;
-        //    Eaction[1] = 12;
-        //}
+       
     }
 
     // Update is called once per frame
