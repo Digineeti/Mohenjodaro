@@ -66,30 +66,38 @@ public class AllEnemyAction : MonoBehaviour
             {
                 ButtonPanel[Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction - 1].SetActive(true);
                 int value = Playerlist[activevalue].GetComponent<AgniAction>().Eaction[i];
-                string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];               
-
+                string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
+                if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<AgniAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
@@ -99,19 +107,16 @@ public class AllEnemyAction : MonoBehaviour
 
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<AgniAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<AgniAction>().SpAction[j, 1];
                             }
@@ -127,29 +132,37 @@ public class AllEnemyAction : MonoBehaviour
                 ButtonPanel[Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction - 1].SetActive(true);
                 int value = Playerlist[activevalue].GetComponent<DyausAction>().Eaction[i];
                 string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
-
+                if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<DyausAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
@@ -158,19 +171,16 @@ public class AllEnemyAction : MonoBehaviour
                         {
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<DyausAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<DyausAction>().SpAction[j, 1];
                             }
@@ -181,82 +191,67 @@ public class AllEnemyAction : MonoBehaviour
         }
         if (Name == "Indra")
         {
-
             for (int i = 0; i < Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction; i++)
             {
                 ButtonPanel[Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction - 1].SetActive(true);
                 int value = Playerlist[activevalue].GetComponent<IndraAction>().Eaction[i];
                 string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
-
-                //if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
-                //{
-                //    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
-                //}                   
-                //if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 2)
-                //{
-                //    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
-                //}                   
-                //if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 3)
-                //{
-                //    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
-                //}
-
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<IndraAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
-                            }
-
-                            
+                            }                            
                         }
                         else
                         {
-
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<IndraAction>().SpAction[j, 1];
                             }
-
-                           
                             //buttonsInPanel3[i].image.color = new Color(0, 0f, 1f, .60f);
                         }
-                           
+
                     }
-                     
                 }
             }
             //if (Playerlist[activevalue].gameObject.GetComponent<IndraAction>().EActiveAction == 1)
@@ -293,28 +288,37 @@ public class AllEnemyAction : MonoBehaviour
                 int value = Playerlist[activevalue].GetComponent<PrithviAction>().Eaction[i];
                 string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
 
+                if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<PrithviAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
@@ -323,19 +327,16 @@ public class AllEnemyAction : MonoBehaviour
                         {
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<PrithviAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<PrithviAction>().SpAction[j, 1];
                             }
@@ -352,28 +353,37 @@ public class AllEnemyAction : MonoBehaviour
                 int value = Playerlist[activevalue].GetComponent<SachiAction>().Eaction[i];
                 string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
 
+                if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<SachiAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
@@ -382,19 +392,16 @@ public class AllEnemyAction : MonoBehaviour
                         {
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<SachiAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<SachiAction>().SpAction[j, 1];
                             }
@@ -411,28 +418,37 @@ public class AllEnemyAction : MonoBehaviour
                 int value = Playerlist[activevalue].GetComponent<VayuAction>().Eaction[i];
                 string Name = Playerlist[activevalue].GetComponent<ActionList>().EnemyActionsList[value];
 
+                if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
                 for (int j = 0; j < Playerlist[activevalue].GetComponent<VayuAction>().specialActioncount; j++)
                 {
-                    if (Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 0] == value)
+                    if (Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 0] == Name)
                     {
-                        if (Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1] <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
+                        if (int.Parse(Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1]) <= PlayerPrefs.GetFloat(Playerlist[activevalue].name + "_SPValue"))
                         {
 
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = true;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = true;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = true;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }
@@ -441,19 +457,16 @@ public class AllEnemyAction : MonoBehaviour
                         {
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 1)
                             {
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel1[i].interactable = false;
                                 buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 2)
                             {
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel2[i].interactable = false;
                                 buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }
                             if (Playerlist[activevalue].gameObject.GetComponent<VayuAction>().EActiveAction == 3)
                             {
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
                                 buttonsInPanel3[i].interactable = false;
                                 buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + Playerlist[activevalue].GetComponent<VayuAction>().SpAction[j, 1];
                             }

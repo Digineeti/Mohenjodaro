@@ -14,15 +14,22 @@ public class IndraAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
-    public int[,] SpAction;
+    public string [,] SpAction;
     public int specialActioncount;
+
+    public string[,] SpPAction;
+    public int specialPActioncount;
     // Start is called before the first frame update
     void Start()
     {
         specialActioncount = 2;
-        SpAction = new int[specialActioncount,2];
-        SpAction[0,0] = 1; SpAction[0,1] = 2;
-        SpAction[1,0] = 2; SpAction[1,1] = 4;
+        SpAction = new string [specialActioncount,2];
+        //action on enemy..
+        SpAction[0,0] = "LightingAttack"; SpAction[0,1] = "2";
+        SpAction[1,0] = "ThunderStrom"; SpAction[1,1] = "4";
+        //action on player..
+        specialPActioncount = 0;
+        SpPAction = new string[specialPActioncount, 2];
 
         if (int.Parse(attributeCall.Attribute.Level)<10)
         {

@@ -13,15 +13,24 @@ public class DyausAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
-    public int[,] SpAction;
+    public string[,] SpAction;
     public int specialActioncount;
+
+    public string[,] SpPAction;
+    public int specialPActioncount;
+
     // Start is called before the first frame update
     void Start()
     {
         specialActioncount = 1;
-        SpAction = new int[specialActioncount, 2];
-        SpAction[0, 0] = 12; SpAction[0, 1] = 5;
-
+        SpAction = new string[specialActioncount, 2];
+        //action on enemy..
+        SpAction[0, 0] = "HeavenlyWorth"; SpAction[0, 1] = "5";
+        //action on player..
+        specialPActioncount = 2;
+        SpPAction = new string[specialPActioncount, 2];
+        SpPAction[0, 0] = "Revive"; SpPAction[0, 1] = "2";
+        SpPAction[1, 0] = "HealAll"; SpPAction[1, 1] = "4";
         InActive = Action;
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
@@ -90,7 +99,9 @@ public class DyausAction : MonoBehaviour
             InActive[1] = 3;
 
         }
-       
+
+      
+
     }
 
     // Update is called once per frame

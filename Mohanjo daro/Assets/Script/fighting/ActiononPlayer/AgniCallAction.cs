@@ -45,49 +45,127 @@ public class AgniCallAction : MonoBehaviour
                 ButtonPanel[i].SetActive(false);
             }
 
-            //apply for loop for the action 
+            //apply for loop for active player action 
 
-            if (GetComponent<AgniAction>().ActiveAction == 1)
+            for (int i = 0; i < GetComponent<AgniAction>().ActiveAction; i++)
             {
-                ButtonPanel[0].SetActive(true);
-                int value1 = GetComponent<AgniAction>().Action[0];   string Name1 = ActionList.ActivePlayerActionsList[value1];
+                ButtonPanel[GetComponent<AgniAction>().ActiveAction - 1].SetActive(true);
+                int value = GetComponent<AgniAction>().Action[i];
+                string Name = ActionList.ActivePlayerActionsList[value];
+                if (GetComponent<AgniAction>().ActiveAction == 1)
+                {
+                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (GetComponent<AgniAction>().ActiveAction == 2)
+                {
+                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (GetComponent<AgniAction>().ActiveAction == 3)
+                {
+                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                if (GetComponent<AgniAction>().ActiveAction == 4)
+                {
+                    buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text = Name;
+                }
+                for (int j = 0; j < GetComponent<AgniAction>().specialPActioncount; j++)
+                {
+                    if (GetComponent<AgniAction>().SpPAction[j, 0] == name)
+                    {
+                        if (int.Parse(GetComponent<AgniAction>().SpPAction[j, 1]) <= PlayerPrefs.GetFloat(gameObject.name + "_SPValue"))
+                        {
+                            if (GetComponent<AgniAction>().ActiveAction == 1)
+                            {
+                                buttonsInPanel1[i].interactable = true;
+                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 2)
+                            {
+                                buttonsInPanel2[i].interactable = true;
+                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 3)
+                            {
+                                buttonsInPanel3[i].interactable = true;
+                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 4)
+                            {
+                                buttonsInPanel4[i].interactable = true;
+                                buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                        }
+                        else
+                        {
+                            if (GetComponent<AgniAction>().ActiveAction == 1)
+                            {
+                                buttonsInPanel1[i].interactable = false;
+                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 2)
+                            {
+                                buttonsInPanel2[i].interactable = false;
+                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 3)
+                            {
+                                buttonsInPanel3[i].interactable = false;
+                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                            else if (GetComponent<AgniAction>().ActiveAction == 4)
+                            {
+                                buttonsInPanel4[i].interactable = true;
+                                buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                            }
+                        }
+                    }
 
-                buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                }
+
+
             }
-            if (GetComponent<AgniAction>().ActiveAction == 2)
-            {
-                ButtonPanel[1].SetActive(true);
-                int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-                int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
 
-                buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
-            }
-            if (GetComponent<AgniAction>().ActiveAction == 3)
-            {
-                ButtonPanel[2].SetActive(true);
-                int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-                int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
-                int value3 = GetComponent<AgniAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
+            //if (GetComponent<AgniAction>().ActiveAction == 1)
+            //{
+            //    ButtonPanel[0].SetActive(true);
+            //    int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
 
-                buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
-            }
-            if (GetComponent<AgniAction>().ActiveAction == 4)
-            {
-                ButtonPanel[3].SetActive(true);
-                int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-                int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
-                int value3 = GetComponent<AgniAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
-                 int value4 = GetComponent<AgniAction>().Action[3]; string Name4 = ActionList.ActivePlayerActionsList[value4];
+            //    buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //}
+            //if (GetComponent<AgniAction>().ActiveAction == 2)
+            //{
+            //    ButtonPanel[1].SetActive(true);
+            //    int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
+            //    int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
 
-                buttonsInPanel4[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                buttonsInPanel4[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                buttonsInPanel4[2].GetComponentInChildren<TMP_Text>().text = Name3;
-                buttonsInPanel4[3].GetComponentInChildren<TMP_Text>().text = Name4;
-            }            
-            #endregion           
+            //    buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //    buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
+            //}
+            //if (GetComponent<AgniAction>().ActiveAction == 3)
+            //{
+            //    ButtonPanel[2].SetActive(true);
+            //    int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
+            //    int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
+            //    int value3 = GetComponent<AgniAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
+
+            //    buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //    buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
+            //    buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
+            //}
+            //if (GetComponent<AgniAction>().ActiveAction == 4)
+            //{
+            //    ButtonPanel[3].SetActive(true);
+            //    int value1 = GetComponent<AgniAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
+            //    int value2 = GetComponent<AgniAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
+            //    int value3 = GetComponent<AgniAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
+            //    int value4 = GetComponent<AgniAction>().Action[3]; string Name4 = ActionList.ActivePlayerActionsList[value4];
+
+            //    buttonsInPanel4[0].GetComponentInChildren<TMP_Text>().text = Name1;
+            //    buttonsInPanel4[1].GetComponentInChildren<TMP_Text>().text = Name2;
+            //    buttonsInPanel4[2].GetComponentInChildren<TMP_Text>().text = Name3;
+            //    buttonsInPanel4[3].GetComponentInChildren<TMP_Text>().text = Name4;
+            //}
+            #endregion
             #region InActivePlayersetup
             PlayerList = GameObject.FindGameObjectsWithTag("Player");
             for (int i = 0; i < PlayerList.Length; i++)
@@ -117,55 +195,97 @@ public class AgniCallAction : MonoBehaviour
                         InActivePlayerPanel4 = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
                         InActivePlayerPanel4.SetActive(false);
 
-                        if (GetComponent<AgniAction>().InActiveAction == 1)
+                        //apply for loop here for inactive player action..
+                        for (int z = 0; z < GetComponent<AgniAction>().InActiveAction; z++)
                         {
-                            InActivePlayerPanel1.SetActive(true);
-                            int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
+                            if (GetComponent<AgniAction>().InActiveAction == 1)
+                            {
+                                InActivePlayerPanel1.SetActive(true);
+                            }
+                            if (GetComponent<AgniAction>().InActiveAction == 2)
+                            {
+                                InActivePlayerPanel2.SetActive(true);
+                            }
+                            if (GetComponent<AgniAction>().InActiveAction == 3)
+                            {
+                                InActivePlayerPanel3.SetActive(true);
+                            }
+                            if (GetComponent<AgniAction>().InActiveAction == 4)
+                            {
+                                InActivePlayerPanel4.SetActive(true);
+                            }
+                            int value = GetComponent<AgniAction>().InActive[z]; string Name = ActionList.InActivePlayerActionList[value];
 
-                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(3).GetComponentsInChildren<Button>();
-                            InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(4- GetComponent<AgniAction>().InActiveAction).GetComponentsInChildren<Button>();
+                            InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text = Name;
+                            //action active & inactive depending the player sp value.....
+                            for (int j = 0; j < GetComponent<AgniAction>().specialPActioncount; j++)
+                            {
+                                if (GetComponent<AgniAction>().SpPAction[j, 0] == name)
+                                {
+                                    if (int.Parse(GetComponent<AgniAction>().SpPAction[j, 1]) <= PlayerPrefs.GetFloat(gameObject.name + "_SPValue"))
+                                    {
+                                        InActivebuttonsInPanel[z].interactable = true;
+                                        InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                                    }
+                                    else
+                                    {
+                                        InActivebuttonsInPanel[z].interactable = true;
+                                        InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<AgniAction>().SpPAction[j, 1];
+                                    }
+                                }
+                            }
                         }
-                        if (GetComponent<AgniAction>().InActiveAction == 2)
-                        {
-                            InActivePlayerPanel2.SetActive(true);
 
-                            int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                            int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
+                        //if (GetComponent<AgniAction>().InActiveAction == 1)
+                        //{
+                        //    InActivePlayerPanel1.SetActive(true);
+                        //    int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
 
-                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
-                            InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                            InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                        }
-                        if (GetComponent<AgniAction>().InActiveAction == 3)
-                        {
-                            InActivePlayerPanel3.SetActive(true);
+                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(3).GetComponentsInChildren<Button>();
+                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                        //}
+                        //if (GetComponent<AgniAction>().InActiveAction == 2)
+                        //{
+                        //    InActivePlayerPanel2.SetActive(true);
 
-                            int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                            int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
-                            int value3 = GetComponent<AgniAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
+                        //    int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
+                        //    int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
 
-                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
+                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
+                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
+                        //}
+                        //if (GetComponent<AgniAction>().InActiveAction == 3)
+                        //{
+                        //    InActivePlayerPanel3.SetActive(true);
 
-                            InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                            InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                            InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
-                        }
-                        if (GetComponent<AgniAction>().InActiveAction == 4)
-                        {
-                            InActivePlayerPanel4.SetActive(true);
+                        //    int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
+                        //    int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
+                        //    int value3 = GetComponent<AgniAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
 
-                            int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                            int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
-                            int value3 = GetComponent<AgniAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
-                            int value4 = GetComponent<AgniAction>().InActive[3]; string Name4 = ActionList.InActivePlayerActionList[value4];
+                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
 
-                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
+                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
+                        //    InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
+                        //}
+                        //if (GetComponent<AgniAction>().InActiveAction == 4)
+                        //{
+                        //    InActivePlayerPanel4.SetActive(true);
 
-                            InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                            InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                            InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
-                            InActivebuttonsInPanel[3].GetComponentInChildren<TMP_Text>().text = Name4;
-                        }
+                        //    int value1 = GetComponent<AgniAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
+                        //    int value2 = GetComponent<AgniAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
+                        //    int value3 = GetComponent<AgniAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
+                        //    int value4 = GetComponent<AgniAction>().InActive[3]; string Name4 = ActionList.InActivePlayerActionList[value4];
+
+                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
+
+                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
+                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
+                        //    InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
+                        //    InActivebuttonsInPanel[3].GetComponentInChildren<TMP_Text>().text = Name4;
+                        //}
                     }
                 }
                 catch (System.Exception)

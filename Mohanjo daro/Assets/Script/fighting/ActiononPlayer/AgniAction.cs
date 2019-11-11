@@ -14,19 +14,27 @@ public class AgniAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
-    public int[,] SpAction;
+    public string[,] SpAction;
     public int specialActioncount;
+
+    public string[,] SpPAction;
+    public int specialPActioncount;
 
     //add 2d array for action name and value to perform that action.....
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //action on enemy..(max3)
         specialActioncount = 2;
-        SpAction = new int[specialActioncount, 2];
-        SpAction[0, 0] = 5; SpAction[0, 1] = 2;
-        SpAction[1, 0] = 11; SpAction[1, 1] = 4;
+        SpAction = new string [specialActioncount, 2];        
+        SpAction[0, 0] = "FireBall";  SpAction[0, 1] = "2";
+        SpAction[1, 0] = "FireBlast";  SpAction[1, 1] = "4";
+        //action on player(max 4)
+        specialPActioncount = 2;
+        SpPAction = new string[specialPActioncount, 2];
+        SpPAction[0, 0] = "AttackBoost"; SpPAction[0, 1] = "1";
+        SpPAction[1, 0] = "DefenceBoost"; SpPAction[1, 1] = "3";
 
         InActive = Action;
         if (int.Parse(attributeCall.Attribute.Level) < 10)

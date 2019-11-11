@@ -14,14 +14,23 @@ public class SachiAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
-    public int[,] SpAction;
+    public string[,] SpAction;
     public int specialActioncount;
+
+    public string[,] SpPAction;
+    public int specialPActioncount;
     // Start is called before the first frame update
     void Start()
     {
-        specialActioncount = 1;
-        SpAction = new int[specialActioncount, 2];
-        SpAction[0, 0] = 10; SpAction[0, 1] =4 ;
+        specialActioncount = 3;
+        SpAction = new string[specialActioncount, 2];
+        //action on enemy
+        SpAction[0, 0] = "Strom"; SpAction[0, 1] ="4" ;
+        //action on player
+        specialPActioncount = 2;
+        SpPAction = new string[specialPActioncount, 2];
+        SpPAction[0, 0] = "Heal"; SpPAction[0, 1] = "2";
+        SpPAction[1, 0] = "HealAll"; SpPAction[1, 1] = "4";
 
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {

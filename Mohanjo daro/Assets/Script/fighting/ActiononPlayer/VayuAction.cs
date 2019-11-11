@@ -14,14 +14,22 @@ public class VayuAction : MonoBehaviour
     public int[] InActive;
     public int InActiveAction;
 
-    public int[,] SpAction;
+    public string[,] SpAction;
     public int specialActioncount;
+
+    public string[,] SpPAction;
+    public int specialPActioncount;
     // Start is called before the first frame update
     void Start()
     {
         specialActioncount = 1;
-        SpAction = new int[specialActioncount, 2];
-        SpAction[0, 0] = 9; SpAction[0, 1] = 2;
+        SpAction = new string[specialActioncount, 2];
+        //Enemy special action list..(max3)
+        SpAction[0, 0] = "Wind"; SpAction[0, 1] = "2";
+        //player special action list..(max4)
+        specialPActioncount = 1;
+        SpPAction = new string[specialPActioncount, 2];
+        SpPAction[0, 0] = "Protect"; SpPAction[0, 1] = "1";
 
         if (int.Parse(attributeCall.Attribute.Level) < 10)
         {
