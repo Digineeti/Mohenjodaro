@@ -5007,7 +5007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActivePlayerActionsList:
-  - Defence
+  - Idle
   - Item
   - RunAway
   - Heal
@@ -5033,7 +5033,7 @@ MonoBehaviour:
   - FireBlast
   - HeavenlyWorth
   InActivePlayerActionList:
-  - Defence
+  - Idle
   - Item
   - RunAway
   - Heal

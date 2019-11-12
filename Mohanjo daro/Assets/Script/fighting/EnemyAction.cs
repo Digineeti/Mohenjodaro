@@ -167,7 +167,7 @@ public class EnemyAction : MonoBehaviour
             float EnemyAttackValue = PlayerPrefs.GetFloat(gameObject.name + "_ATK");
             float PlayerDefenceValue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_DEF");
             //damage will be depend on the diffrent action that enemy perform
-            damaged = (EnemyAttackValue * EnemyAttackValue) / (PlayerDefenceValue + EnemyAttackValue);
+            damaged = (4 * EnemyAttackValue) - (2 * PlayerDefenceValue);
             for (int i = 0; i < Heros.Length; i++)
             {
                 Heros[i].transform.GetChild(1).gameObject.SetActive(false);

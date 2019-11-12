@@ -123,7 +123,7 @@ public class DyausCallAction : MonoBehaviour
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 4)
                             {
-                                buttonsInPanel4[i].interactable = true;
+                                buttonsInPanel4[i].interactable = false;
                                 TwoTextInButton4[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                         }
@@ -193,7 +193,7 @@ public class DyausCallAction : MonoBehaviour
                                     }
                                     else
                                     {
-                                        InActivebuttonsInPanel[z].interactable = true;
+                                        InActivebuttonsInPanel[z].interactable = false;
                                         TwoTextInButtonInActivePlayer[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                                     }
                                 }

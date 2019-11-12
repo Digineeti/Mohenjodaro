@@ -40,12 +40,13 @@ public class AllButtonAction : MonoBehaviour
         spawanHero = GameObject.FindGameObjectsWithTag("Player");
         //Debug.Log(Button_Click_On_Player.name);
         //Hero Ation
-        if (Name == "Defence")
+        if (Name == "Idle")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
-
+            //save defence value of that player who button is click.....
+            //PlayerPrefs.SetFloat(Button_Click_On_Player.name+"_Defence_Apply",10);
 
         }
         if (Name == "Item")

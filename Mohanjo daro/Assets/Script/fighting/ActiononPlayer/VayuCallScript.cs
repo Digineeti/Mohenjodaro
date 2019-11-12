@@ -126,7 +126,7 @@ public class VayuCallScript : MonoBehaviour
                             }
                             else if (GetComponent<VayuAction>().ActiveAction == 4)
                             {
-                                buttonsInPanel4[i].interactable = true;
+                                buttonsInPanel4[i].interactable = false;
                                 TwoTextInButton4[1].text = GetComponent<VayuAction>().SpPAction[j, 1];
                             }
                         }
@@ -195,7 +195,7 @@ public class VayuCallScript : MonoBehaviour
                                     }
                                     else
                                     {
-                                        InActivebuttonsInPanel[z].interactable = true;
+                                        InActivebuttonsInPanel[z].interactable = false;
                                         TwoTextInButtonInActivePlayer[1].text = GetComponent<VayuAction>().SpPAction[j, 1];
                                     }
                                 }
