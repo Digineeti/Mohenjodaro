@@ -25,6 +25,12 @@ public class DyausCallAction : MonoBehaviour
     bool startup;
 
     public Animator anim;
+    TMP_Text[] TwoTextInButton1;
+    TMP_Text[] TwoTextInButton2;
+    TMP_Text[] TwoTextInButton3;
+    TMP_Text[] TwoTextInButton4;
+
+    TMP_Text[] TwoTextInButtonInActivePlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,19 +59,23 @@ public class DyausCallAction : MonoBehaviour
                 string Name = ActionList.ActivePlayerActionsList[value];
                 if (GetComponent<DyausAction>().ActiveAction == 1)
                 {
-                    buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text = Name;
+                    TwoTextInButton1 = buttonsInPanel1[i].GetComponentsInChildren<TMP_Text>();
+                    TwoTextInButton1[0].text = Name;
                 }
                 if (GetComponent<DyausAction>().ActiveAction == 2)
                 {
-                    buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text = Name;
+                    TwoTextInButton2 = buttonsInPanel2[i].GetComponentsInChildren<TMP_Text>();
+                    TwoTextInButton2[0].text = Name;
                 }
                 if (GetComponent<DyausAction>().ActiveAction == 3)
                 {
-                    buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text = Name;
+                    TwoTextInButton3 = buttonsInPanel3[i].GetComponentsInChildren<TMP_Text>();
+                    TwoTextInButton3[0].text = Name;
                 }
                 if (GetComponent<DyausAction>().ActiveAction == 4)
                 {
-                    buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text = Name;
+                    TwoTextInButton4 = buttonsInPanel4[i].GetComponentsInChildren<TMP_Text>();
+                    TwoTextInButton4[0].text = Name;
                 }
                 for (int j = 0; j < GetComponent<DyausAction>().specialPActioncount; j++)
                 {
@@ -76,22 +86,22 @@ public class DyausCallAction : MonoBehaviour
                             if (GetComponent<DyausAction>().ActiveAction == 1)
                             {
                                 buttonsInPanel1[i].interactable = true;
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton1[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 2)
                             {
                                 buttonsInPanel2[i].interactable = true;
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton2[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 3)
                             {
                                 buttonsInPanel3[i].interactable = true;
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton3[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 4)
                             {
                                 buttonsInPanel4[i].interactable = true;
-                                buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton4[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                         }
                         else
@@ -99,87 +109,38 @@ public class DyausCallAction : MonoBehaviour
                             if (GetComponent<DyausAction>().ActiveAction == 1)
                             {
                                 buttonsInPanel1[i].interactable = false;
-                                buttonsInPanel1[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton1[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 2)
                             {
                                 buttonsInPanel2[i].interactable = false;
-                                buttonsInPanel2[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton2[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 3)
                             {
                                 buttonsInPanel3[i].interactable = false;
-                                buttonsInPanel3[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton3[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                             else if (GetComponent<DyausAction>().ActiveAction == 4)
                             {
                                 buttonsInPanel4[i].interactable = true;
-                                buttonsInPanel4[i].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                TwoTextInButton4[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                             }
                         }
                     }
 
                 }
-
             }
-            //if (GetComponent<DyausAction>().ActiveAction == 1)
-            //{
-            //    ButtonPanel[0].SetActive(true);
-            //    int value1 = GetComponent<DyausAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-
-            //    buttonsInPanel1[0].GetComponentInChildren<TMP_Text>().text = Name1;
-            //}
-            //if (GetComponent<DyausAction>().ActiveAction == 2)
-            //{
-            //    ButtonPanel[1].SetActive(true);
-            //    int value1 = GetComponent<DyausAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-            //    int value2 = GetComponent<DyausAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
-
-            //    buttonsInPanel2[0].GetComponentInChildren<TMP_Text>().text = Name1;
-            //    buttonsInPanel2[1].GetComponentInChildren<TMP_Text>().text = Name2;
-            //}
-            //if (GetComponent<DyausAction>().ActiveAction == 3)
-            //{
-            //    ButtonPanel[2].SetActive(true);
-            //    int value1 = GetComponent<DyausAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-            //    int value2 = GetComponent<DyausAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
-            //    int value3 = GetComponent<DyausAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
-
-            //    buttonsInPanel3[0].GetComponentInChildren<TMP_Text>().text = Name1;
-            //    buttonsInPanel3[1].GetComponentInChildren<TMP_Text>().text = Name2;
-            //    buttonsInPanel3[2].GetComponentInChildren<TMP_Text>().text = Name3;
-            //}
-            //if (GetComponent<DyausAction>().ActiveAction == 4)
-            //{
-            //    ButtonPanel[3].SetActive(true);
-            //    int value1 = GetComponent<DyausAction>().Action[0]; string Name1 = ActionList.ActivePlayerActionsList[value1];
-            //    int value2 = GetComponent<DyausAction>().Action[1]; string Name2 = ActionList.ActivePlayerActionsList[value2];
-            //    int value3 = GetComponent<DyausAction>().Action[2]; string Name3 = ActionList.ActivePlayerActionsList[value3];
-            //    int value4 = GetComponent<DyausAction>().Action[3]; string Name4 = ActionList.ActivePlayerActionsList[value4];
-
-            //    buttonsInPanel4[0].GetComponentInChildren<TMP_Text>().text = Name1;
-            //    buttonsInPanel4[1].GetComponentInChildren<TMP_Text>().text = Name2;
-            //    buttonsInPanel4[2].GetComponentInChildren<TMP_Text>().text = Name3;
-            //    buttonsInPanel4[3].GetComponentInChildren<TMP_Text>().text = Name4;
-            //}
-
             #endregion
-
-
             #region InActivePlayersetup
             PlayerList = GameObject.FindGameObjectsWithTag("Player");
             for (int i = 0; i < PlayerList.Length; i++)
             {
                 //InActivePlayerPanel
-                //if condition number of buton to make active 
-                //InActivebuttonsInPanel2 = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
-                //InActivebuttonsInPanel3 = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(1).GetComponentsInChildren<Button>();
-                //InActivebuttonsInPanel4 = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponentsInChildren<Button>();
                 try
                 {
                     if (PlayerList[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
-
                     }
                     else
                     {
@@ -194,6 +155,9 @@ public class DyausCallAction : MonoBehaviour
 
                         InActivePlayerPanel4 = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
                         InActivePlayerPanel4.SetActive(false);
+
+                        //Inactive Player action using for loop..
+                        InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(4 - GetComponent<DyausAction>().InActiveAction).GetComponentsInChildren<Button>();
 
                         for (int z = 0; z < GetComponent<DyausAction>().InActiveAction; z++)
                         {
@@ -215,8 +179,8 @@ public class DyausCallAction : MonoBehaviour
                             }
                             int value = GetComponent<DyausAction>().InActive[z]; string Name = ActionList.InActivePlayerActionList[value];
 
-                            InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(4- GetComponent<DyausAction>().InActiveAction).GetComponentsInChildren<Button>();
-                            InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text = Name;
+                            TwoTextInButtonInActivePlayer = InActivebuttonsInPanel[z].GetComponentsInChildren<TMP_Text>();
+                            TwoTextInButtonInActivePlayer[0].text = Name;
                             //action active & inactive depending the player sp value.....
                             for (int j = 0; j < GetComponent<DyausAction>().specialPActioncount; j++)
                             {
@@ -225,74 +189,23 @@ public class DyausCallAction : MonoBehaviour
                                     if (int.Parse(GetComponent<DyausAction>().SpPAction[j, 1]) <= PlayerPrefs.GetFloat(gameObject.name + "_SPValue"))
                                     {
                                         InActivebuttonsInPanel[z].interactable = true;
-                                        InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                        TwoTextInButtonInActivePlayer[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                                     }
                                     else
                                     {
                                         InActivebuttonsInPanel[z].interactable = true;
-                                        InActivebuttonsInPanel[z].GetComponentInChildren<TMP_Text>().text += " " + GetComponent<DyausAction>().SpPAction[j, 1];
+                                        TwoTextInButtonInActivePlayer[1].text = GetComponent<DyausAction>().SpPAction[j, 1];
                                     }
                                 }
                             }
                         }
-                        //if (GetComponent<DyausAction>().InActiveAction == 1)
-                        //{
-                        //    InActivePlayerPanel1.SetActive(true);
-                        //    int value1 = GetComponent<DyausAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-
-                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(3).GetComponentsInChildren<Button>();
-                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                        //}
-                        //if (GetComponent<DyausAction>().InActiveAction == 2)
-                        //{
-                        //    InActivePlayerPanel2.SetActive(true);
-
-                        //    int value1 = GetComponent<DyausAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                        //    int value2 = GetComponent<DyausAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
-
-                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
-                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                        //}
-                        //if (GetComponent<DyausAction>().InActiveAction == 3)
-                        //{
-                        //    InActivePlayerPanel3.SetActive(true);
-
-                        //    int value1 = GetComponent<DyausAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                        //    int value2 = GetComponent<DyausAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
-                        //    int value3 = GetComponent<DyausAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
-
-                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
-
-                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                        //    InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
-                        //}
-                        //if (GetComponent<DyausAction>().InActiveAction == 4)
-                        //{
-                        //    InActivePlayerPanel4.SetActive(true);
-
-                        //    int value1 = GetComponent<DyausAction>().InActive[0]; string Name1 = ActionList.InActivePlayerActionList[value1];
-                        //    int value2 = GetComponent<DyausAction>().InActive[1]; string Name2 = ActionList.InActivePlayerActionList[value2];
-                        //    int value3 = GetComponent<DyausAction>().InActive[2]; string Name3 = ActionList.InActivePlayerActionList[value3];
-                        //    int value4 = GetComponent<DyausAction>().InActive[3]; string Name4 = ActionList.InActivePlayerActionList[value4];
-
-                        //    InActivebuttonsInPanel = PlayerList[i].transform.GetChild(3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).GetComponentsInChildren<Button>();
-
-                        //    InActivebuttonsInPanel[0].GetComponentInChildren<TMP_Text>().text = Name1;
-                        //    InActivebuttonsInPanel[1].GetComponentInChildren<TMP_Text>().text = Name2;
-                        //    InActivebuttonsInPanel[2].GetComponentInChildren<TMP_Text>().text = Name3;
-                        //    InActivebuttonsInPanel[3].GetComponentInChildren<TMP_Text>().text = Name4;
-                        //}
                     }
                 }
                 catch (System.Exception)
                 {
-
-
                 }
             }
-            #endregion}      
+            #endregion              
         }
     }
 }
