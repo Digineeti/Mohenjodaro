@@ -66,8 +66,8 @@ public class Callingscriptableobject : MonoBehaviour
                     TASPValue[i].SetActive(true);
                     TISPValue[i].SetActive(true);
                     
-                    if (gameObject.name == "Dyaus")
-                        value = 5;
+                    if (gameObject.name == "Sachi")
+                        value = 4;
                     else
                         value = 2;
                     if (i<value)
@@ -203,8 +203,8 @@ public class Callingscriptableobject : MonoBehaviour
                     SPValue[i].SetActive(true);
                     TASPValue[i].SetActive(true);
                     TISPValue[i].SetActive(true);
-                    if (gameObject.name == "Dyaus")
-                        value = 5;
+                    if (gameObject.name == "Sachi")
+                        value = 4;
                     else
                         value = 2;
                     if (i < value)
@@ -348,8 +348,8 @@ public class Callingscriptableobject : MonoBehaviour
                     SPValue[i].SetActive(true);
                     TASPValue[i].SetActive(true);
                     TISPValue[i].SetActive(true);
-                    if (gameObject.name == "Dyaus")
-                        value = 5;
+                    if (gameObject.name == "Sachi")
+                        value = 4;
                     else
                         value = 2;
                     if (i < value)

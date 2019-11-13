@@ -55,26 +55,26 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             //heal all action for enemy 
-            for (int i = 0; i < spawanHero.Length; i++)
-            {
-                try
-                {
-                    if(spawanHero[i].GetComponent<EnemyAction>().state.ToString()== "busy")
-                    {
-                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
-                        float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
-                        currentHPvalue -= 40;
+            //for (int i = 0; i < spawanHero.Length; i++)
+            //{
+            //    try
+            //    {
+            //        if(spawanHero[i].GetComponent<EnemyAction>().state.ToString()== "busy")
+            //        {
+            //            Debug.Log(spawanHero[i].gameObject.name +PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
+            //            float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
+            //            currentHPvalue -= 40;
 
-                        PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
-                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
-                    }
+            //            PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
+            //            Debug.Log(spawanHero[i].gameObject.name+PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
+            //        }
                    
-                }
-                catch (System.Exception)
-                {                   
-                }
+            //    }
+            //    catch (System.Exception)
+            //    {                   
+            //    }
                
-            }
+            //}
         }
         if (Name == "RunAway")
         {
@@ -83,40 +83,129 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             //heal all action for player 
+            //50%-50% chance for fight and run away ....
 
-            for(int i=0;i< spawanHero.Length;i++)
+
+            float value = Random.Range(0,100);
+            if(value<50)
             {
-                try
-                {
-                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "busy" || spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
-                    {
-                        float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
-                        currentHPvalue += 400;
+                //fighting with the enemy....
 
-                        PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
-                        Debug.Log(PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
-                    }
-                }
-                catch (System.Exception)
-                {
-                    
-                }
-              
-                   
+
+            }
+            else
+            {
+                //run away from the enemy scene.....
+                //add the running animation in the player ....
+
             }
         }
+
         if (Name == "Heal")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            float value = 0;
+            float luckValue = 0;
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+                {
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+
+                    float Heal = 1F * value;
+                    float MAXDamage = Heal + (Heal * 20) / 100;
+                    float HealReceive = 0;
+                    HealReceive = Mathf.Clamp(HealReceive, Heal, MAXDamage);
+
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2));
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") + Mathf.RoundToInt(HealReceive));
+                }
+                else
+                {
+                   
+                    for (int i = 0; i < spawanHero.Length; i++)
+                    {
+                        try
+                        {
+                            if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                            {
+                                value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                                luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                                float Heal = 1F * value;
+                                float MAXDamage = Heal + (Heal * 20) / 100;
+                                float HealReceive = 0;
+                                HealReceive = Mathf.Clamp(HealReceive, Heal, MAXDamage);
+
+                                PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2));
+                                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") + Mathf.RoundToInt(HealReceive));
+
+                            }
+                        }
+                        catch (System.Exception)
+                        {
+
+                        }
+                    }
+
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
         }
         if (Name == "HealAll")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            float value = 0;
+            float luckValue = 0;
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                        luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                        float Heal = 0.8F * value;
+                        float MAXDamage = Heal + (Heal * 20) / 100;
+                        float HealReceive = 0;
+                        HealReceive = Mathf.Clamp(HealReceive, Heal, MAXDamage);
+
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4));
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") + Mathf.RoundToInt(HealReceive));
+
+                        }
+                        else
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") + Mathf.RoundToInt(HealReceive));
+
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
         }
+
         if (Name == "DefenceBoost")
         {
             Globalvariable.After_Death_ReSequence += 1;
@@ -176,8 +265,8 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    //extract the atk value from the playerprefs save data...
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
                     luckValue= PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -193,8 +282,8 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            //extract the atk value from the playerprefs save data...
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -270,8 +359,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(20));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -287,8 +377,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(20));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -357,8 +448,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -374,8 +466,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -463,8 +556,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -480,8 +574,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -569,8 +664,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(20));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -586,8 +682,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(20));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -665,8 +762,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(50));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -682,8 +780,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(50));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -771,8 +870,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt( 30));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -788,8 +888,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -1039,8 +1140,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(30));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(1));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -1056,8 +1158,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -1268,8 +1371,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(60));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -1285,8 +1389,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(30));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(5));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -1371,8 +1476,9 @@ public class AllButtonAction : MonoBehaviour
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
                 {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(70));
+                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5));
                     luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
                 }
             }
@@ -1388,8 +1494,9 @@ public class AllButtonAction : MonoBehaviour
                     {
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
-                            value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(70));
+                            //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(5));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }

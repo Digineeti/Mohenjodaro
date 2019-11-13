@@ -64,21 +64,25 @@ public class VayuCallScript : MonoBehaviour
                 {
                     TwoTextInButton1 = buttonsInPanel1[i].GetComponentsInChildren<TMP_Text>();
                     TwoTextInButton1[0].text = Name;
+                    TwoTextInButton1[1].text = "";
                 }
                 if (GetComponent<VayuAction>().ActiveAction == 2)
                 {
                     TwoTextInButton2 = buttonsInPanel2[i].GetComponentsInChildren<TMP_Text>();
                     TwoTextInButton2[0].text = Name;
+                    TwoTextInButton2[1].text = "";
                 }
                 if (GetComponent<VayuAction>().ActiveAction == 3)
                 {
                     TwoTextInButton3 = buttonsInPanel3[i].GetComponentsInChildren<TMP_Text>();
                     TwoTextInButton3[0].text = Name;
+                    TwoTextInButton3[1].text = "";
                 }
                 if (GetComponent<VayuAction>().ActiveAction == 4)
                 {
                     TwoTextInButton4 = buttonsInPanel4[i].GetComponentsInChildren<TMP_Text>();
                     TwoTextInButton4[0].text = Name;
+                    TwoTextInButton4[1].text = "";
                 }
                 for (int j = 0; j < GetComponent<VayuAction>().specialPActioncount; j++)
                 {
