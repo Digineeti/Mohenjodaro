@@ -35,47 +35,48 @@ public class Turn_Management : MonoBehaviour
     public Queue<CharacterMoveChoice> TurnQueue = new Queue<CharacterMoveChoice>();
     void Start()
     {
-
+        Globalvariable.Hang = true;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        string[] tags = new[] { "Player", "Enemy"  };
-        if (playerspawancount == true)
-        { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
-        AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
-        if (AfterDestroy.Length == spawanHero.Length)
+        if (Globalvariable.Hang == true)
         {
-            if (extract)
+            string[] tags = new[] { "Player", "Enemy" };
+            if (playerspawancount == true)
+            { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
+            AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
+            if (AfterDestroy.Length == spawanHero.Length)
             {
-                extract = false;
-                Player_Attribute_Sequence();
-            }
-            if (Globalvariable.Index == 0)
-            {
-                //Destroy(startmassage);
-                if (characterQueue.Count > 0)
+                if (extract)
                 {
-                    Globalvariable.Index++;
-                    CharacterMoveChoice characterAbility = characterQueue.Dequeue();
-
-                    //Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
-                    for (int i = 0; i < spawanHero.Length; i++)
+                    extract = false;
+                    Player_Attribute_Sequence();
+                }
+                if (Globalvariable.Index == 0)
+                {
+                    //Destroy(startmassage);
+                    if (characterQueue.Count > 0)
                     {
-                        //Debug.Log(spawanHero[i].name);
-                        if (spawanHero[i].gameObject == characterAbility.character.Name)
-                        {
-                            try
-                            {
-                                //if(spawanHero[i].GetComponent<PA>().state==PA.State.death)
-                                //{
+                        Globalvariable.Index++;
+                        CharacterMoveChoice characterAbility = characterQueue.Dequeue();
 
-                                //}
-                                //else
-                                //{
+                        //Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
+                        for (int i = 0; i < spawanHero.Length; i++)
+                        {
+                            //Debug.Log(spawanHero[i].name);
+                            if (spawanHero[i].gameObject == characterAbility.character.Name)
+                            {
+                                try
+                                {
+                                    //if(spawanHero[i].GetComponent<PA>().state==PA.State.death)
+                                    //{
+
+                                    //}
+                                    //else
+                                    //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -85,37 +86,37 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
                                         }
                                     }
-                                //}
-                              
+                                    //}
 
+
+                                }
+                                catch (System.Exception)
+                                {
+                                    Globalvariable.AttackUi = false;
+
+                                    spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                    {
+                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                        {
+                                            ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                                        }
+                                    }
+
+                                }
                             }
-                            catch (System.Exception)
+                            else
                             {
                                 Globalvariable.AttackUi = false;
-
-                                spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
-                                for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                try
                                 {
-                                    if (spawanHero[i].name == ChangeInPrefab[j].name)
-                                    {
-                                        ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
-                                    }
-                                }
 
-                            }
-                        }
-                        else
-                        {
-                            Globalvariable.AttackUi = false;
-                            try
-                            {
+                                    //if (spawanHero[i].GetComponent<PA>().state == PA.State.death)
+                                    //{
 
-                                //if (spawanHero[i].GetComponent<PA>().state == PA.State.death)
-                                //{
-
-                                //}
-                                //else
-                                //{
+                                    //}
+                                    //else
+                                    //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.busy;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -125,78 +126,76 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.busy;
                                         }
                                     }
-                                //}
-                            }
-                            catch (System.Exception)
-                            {
-
-                                spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
-                                for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                    //}
+                                }
+                                catch (System.Exception)
                                 {
-                                    if (spawanHero[i].name == ChangeInPrefab[j].name)
+
+                                    spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
                                     {
-                                        ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                        {
+                                            ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                                        }
                                     }
                                 }
                             }
-                        }
-                        try
-                        {
-                            if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
-                                spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
-                            else
-                                spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
-                        }
-                        catch (System.Exception)
-                        {
-                            if (spawanHero[i].GetComponent<EnemyAction>().Turnstate.ToString() == "NextTurn")
-                                spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
-                            else
-                                spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+                            try
+                            {
+                                if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
+                                    spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                                else
+                                    spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+                            }
+                            catch (System.Exception)
+                            {
+                                if (spawanHero[i].GetComponent<EnemyAction>().Turnstate.ToString() == "NextTurn")
+                                    spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                                else
+                                    spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
 
+                            }
                         }
                     }
-                }
-                else
-                {
-                    Player_Attribute_Sequence();
-                    for (int i = 0; i < spawanHero.Length; i++)
+                    else
                     {
-                        try
+                        Player_Attribute_Sequence();
+                        for (int i = 0; i < spawanHero.Length; i++)
                         {
-                            spawanHero[i].GetComponent<PA>().Turnstate = PA.TurnState.NextTurn;
+                            try
+                            {
+                                spawanHero[i].GetComponent<PA>().Turnstate = PA.TurnState.NextTurn;
+                            }
+                            catch (System.Exception)
+                            {
+                                spawanHero[i].GetComponent<EnemyAction>().Turnstate = EnemyAction.TurnState.NextTurn;
+                            }
                         }
-                        catch (System.Exception)
+                        for (int i = 0; i < selectedChoice.Count; i++)
                         {
-                            spawanHero[i].GetComponent<EnemyAction>().Turnstate = EnemyAction.TurnState.NextTurn;
+                            characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);
                         }
-                    }
-                    for (int i = 0; i < selectedChoice.Count; i++)
-                    {
-                        characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);
                     }
                 }
             }
-        }
-        else
-        {
-
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            Player_Attribute_Sequence();
-
-            //Destroy(startmassage);
-            while (Globalvariable.After_Death_ReSequence >= 0)
+            else
             {
-                try
+                spawanHero = GameObject.FindGameObjectsWithTag("Player");
+                Player_Attribute_Sequence();
+                //Destroy(startmassage);
+                while (Globalvariable.After_Death_ReSequence >= 0)
                 {
-                    Globalvariable.After_Death_ReSequence--;
-                    CharacterMoveChoice characterAbility = characterQueue.Dequeue();
-                }
-                catch (System.Exception)
-                {
+                    try
+                    {
+                        Globalvariable.After_Death_ReSequence--;
+                        CharacterMoveChoice characterAbility = characterQueue.Dequeue();
+                    }
+                    catch (System.Exception)
+                    {
+                    }
                 }
             }
-
         }
 
     }

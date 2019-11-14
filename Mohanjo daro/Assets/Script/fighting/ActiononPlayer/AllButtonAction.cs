@@ -213,6 +213,41 @@ public class AllButtonAction : MonoBehaviour
             //this set for action activate in the active player 
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+            //save defence value for next turn of the player ...
+
+            if (PlayerPrefs.HasKey(Button_Click_On_Player.name + "Defence_Boost"))
+            {
+                float Action_Defence_Value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "Defence_Boost");
+                Action_Defence_Value += 20;
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Defence_Boost", Action_Defence_Value);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Defence_Boost", 20f);
+            }
+
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {                        
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1));
+                        }                        
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
 
             //this section for current player activity and animation that start after active player animation over 
             //or start current player animation with the delay time..
@@ -223,7 +258,45 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        float Action_Defence_Value = 0;
+                        if (PlayerPrefs.HasKey(spawanHero[i].name + "Defence_Boost"))
+                        {
+                           Action_Defence_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Defence_Boost");
+                           Action_Defence_Value+= 20;
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", Action_Defence_Value);
+                        }
+                        else
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", 20f);
+
+                        }
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(3));
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
+
         }
+
+
         if (Name == "AttackBoost")
         {
             Globalvariable.After_Death_ReSequence += 1;
@@ -231,24 +304,139 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
+
+            if (PlayerPrefs.HasKey(Button_Click_On_Player.name + "Attack_Boost"))
+            {
+                float Action_Attack_Value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "Attack_Boost");
+                Action_Attack_Value += 20;
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Attack_Boost", Action_Attack_Value);
+            }
+            else
+            {
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Attack_Boost", 20f);
+            }
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1));
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
+            //PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Attack_Boost", 20f);
+
         }
         if (Name == "AttackAllBoost")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        float Action_Defence_Value = 0;
+                        if (PlayerPrefs.HasKey(spawanHero[i].name + "Attack_Boost"))
+                        {
+                            Action_Defence_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Attack_Boost");
+                            Action_Defence_Value += 20;
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Attack_Boost", Action_Defence_Value);
+
+                        }
+                        else
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Attack_Boost", 20f);
+                        }
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2));
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+
+            }
+
         }
         if (Name == "Revive")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
         }
         if (Name == "Protect")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            try
+            {
+                //set the protect active player to protect the inactive player who demand for protect.....
+
+
+                //active player sp and defence value set.....
+                for (int i = 0; i < spawanHero.Length; i++)
+                {
+                    try
+                    {
+                        if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                        {
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1));
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "Defence_Boost"))
+                            {
+                                float Action_Defence_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Defence_Boost");
+                                Action_Defence_Value += 5;
+                                PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", Action_Defence_Value);
+
+                            }
+                            else
+                            {
+                                PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", 5f);
+
+                            }
+                            PlayerPrefs.SetString(Button_Click_On_Player.name + "Protect_Player", spawanHero[i].name);
+                        }
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                }
+                
+
+            }
+            catch (System.Exception)
+            {
+
+            }
+            //
+
         }
 
         //enemy action
@@ -283,7 +471,15 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");                           
+
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "Attack_Boost"))
+                            {
+                                float Action_Attack_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Attack_Boost");
+                                value += Action_Attack_Value;
+                                PlayerPrefs.DeleteKey(spawanHero[i].name + "Attack_Boost");
+
+                            }
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
                         }
                     }
@@ -312,12 +508,16 @@ public class AllButtonAction : MonoBehaviour
             float randonvalue = Random.Range(1, 100);
             if(randonvalue>0 && randonvalue<=missvalue)
             {
+               
                 damaged = (4 * PlayerAttackPower - 2 * EnemyDefenceValue)*0;
+
                 Debug.Log("damaged miss " + damaged);
             }
             else if(randonvalue>missvalue && randonvalue<criticalvalue)
             {
+               
                 damaged = (4 * PlayerAttackPower - 2 * EnemyDefenceValue) * 1;
+                Debug.Log("player defence after boost damage=" + damaged);
                 Debug.Log("damaged normal " + damaged);
             }
             else

@@ -74,11 +74,13 @@ public class ActivePlayer : MonoBehaviour
         {
             Winningpanel.SetActive(true);
             TMP_Text ActiveHero = Winningpanel.GetComponentInChildren<TMP_Text>();
+            Globalvariable.Hang = false;
             ActiveHero.text = "Enemy wins";
         }
         if (enemy <= 0)
         {
             Winningpanel.SetActive(true);
+            Globalvariable.Hang = false;
             TMP_Text ActiveHero = Winningpanel.GetComponentInChildren<TMP_Text>();
           
             ActiveHero.text = "Player wins";

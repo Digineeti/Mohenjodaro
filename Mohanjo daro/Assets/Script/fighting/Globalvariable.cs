@@ -93,6 +93,11 @@ public class Globalvariable
         set { _WinningLosing = value; }
     }
 
-
-    
+    private static bool _Hang;
+    public static bool Hang
+    {
+        get { return _Hang; }
+        set { _Hang = value; }
+    }
+   
 }

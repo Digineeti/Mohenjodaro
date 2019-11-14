@@ -5,43 +5,48 @@ using UnityEngine;
 public class UniqueEnemy : MonoBehaviour
 {
     private GameObject[] spawanHero;
-
+    bool spawan ;
     // Start is called before the first frame update
     void Start()
     {
-       
+        spawan = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawanHero = GameObject.FindGameObjectsWithTag("Player");
-        for (int i=0;i<spawanHero.Length;i++)
+        if(spawan==true)
         {
-            GameObject[] CompEnemy;
-            CompEnemy = GameObject.FindGameObjectsWithTag("Player");
-            int count = 0;
-            for(int j=0;j<CompEnemy.Length;j++)
+            spawan = false;
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            for (int i = 0; i < spawanHero.Length; i++)
             {
-                if(spawanHero[i].name==CompEnemy[j].name)
+                GameObject[] CompEnemy;
+                CompEnemy = GameObject.FindGameObjectsWithTag("Player");
+                int count = 0;
+                for (int j = 0; j < CompEnemy.Length; j++)
                 {
-                    count++;
-
-                    if(count==2)
+                    if (spawanHero[i].name == CompEnemy[j].name)
                     {
-                        //first 
-                        CompEnemy[j].gameObject.name = spawanHero[i].name + "first";
-                    }
-                    if(count==3)
-                    {
-                        //second
-                        CompEnemy[j].gameObject.name = spawanHero[i].name + "Second";
+                        count++;
 
+                        if (count == 2)
+                        {
+                            //first 
+                            CompEnemy[j].gameObject.name = spawanHero[i].name + "first";
+                        }
+                        if (count == 3)
+                        {
+                            //second
+                            CompEnemy[j].gameObject.name = spawanHero[i].name + "Second";
+
+                        }
                     }
                 }
+
             }
-          
         }
+       
        
     }
 }
