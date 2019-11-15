@@ -207,7 +207,7 @@ public class EnemyAction : MonoBehaviour
                     Debug.Log("player defence after boost=" + PlayerDefenceValue);
                 }
                 //damage will be depend on the diffrent action that enemy perform
-                damaged = (4 * EnemyAttackValue) - (2 * PlayerDefenceValue);
+                damaged = Mathf.Abs((4 * EnemyAttackValue) - (2 * PlayerDefenceValue));
                 //Debug.Log("player defence after boost damage=" + ((4 * EnemyAttackValue) - (2 * PlayerDefenceValue)));
                 for (int i = 0; i < Heros.Length; i++)
                 {
@@ -221,7 +221,7 @@ public class EnemyAction : MonoBehaviour
 
                 float currentvalue = 0;
                 float savevalue = PlayerPrefs.GetFloat(Heros[value].name + "_HPValue");
-                currentvalue = PlayerPrefs.GetFloat(Heros[value].name + "_HPValue") - Mathf.RoundToInt(damaged);
+                currentvalue =Mathf.Clamp(PlayerPrefs.GetFloat(Heros[value].name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Heros[value].name + "_HPMax"));
                 //the hero set new Hp value after damage receive.
                 PlayerPrefs.SetFloat(Heros[value].name + "_HPValue", currentvalue);
 
@@ -253,7 +253,7 @@ public class EnemyAction : MonoBehaviour
                     Debug.Log("player defence after boost=" + PlayerDefenceValue);
                 }
                 //damage will be depend on the diffrent action that enemy perform
-                damaged = (4 * EnemyAttackValue) - (2 * PlayerDefenceValue);
+                damaged = Mathf.Abs((4 * EnemyAttackValue) - (2 * PlayerDefenceValue));
                 //Debug.Log("player defence after boost damage=" + ((4 * EnemyAttackValue) - (2 * PlayerDefenceValue)));
                 for (int i = 0; i < Heros.Length; i++)
                 {
@@ -264,10 +264,9 @@ public class EnemyAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
                 damagepanel.SetActive(true);
 
-
                 float currentvalue = 0;
                 float savevalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue");
-                currentvalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged);
+                currentvalue = Mathf.Clamp(PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPMax"));
                 //the hero set new Hp value after damage receive.
                 PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", currentvalue);
 
@@ -280,7 +279,6 @@ public class EnemyAction : MonoBehaviour
                     //Destroy(Heros[Hiton]);
                 }
                 //Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " Damage: " + damaged);
-                //player distroy her if it hp value is less or eual to zero.
             }
         }
         catch (System.Exception)
