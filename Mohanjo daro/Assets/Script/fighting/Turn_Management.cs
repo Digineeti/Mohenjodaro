@@ -71,12 +71,6 @@ public class Turn_Management : MonoBehaviour
                             {
                                 try
                                 {
-                                    //if(spawanHero[i].GetComponent<PA>().state==PA.State.death)
-                                    //{
-
-                                    //}
-                                    //else
-                                    //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -85,10 +79,7 @@ public class Turn_Management : MonoBehaviour
                                         {
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
                                         }
-                                    }
-                                    //}
-
-
+                                    }                                  
                                 }
                                 catch (System.Exception)
                                 {
@@ -102,7 +93,6 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
                                         }
                                     }
-
                                 }
                             }
                             else
@@ -110,13 +100,6 @@ public class Turn_Management : MonoBehaviour
                                 Globalvariable.AttackUi = false;
                                 try
                                 {
-
-                                    //if (spawanHero[i].GetComponent<PA>().state == PA.State.death)
-                                    //{
-
-                                    //}
-                                    //else
-                                    //{
                                     spawanHero[i].GetComponent<PA>().state = PA.State.busy;
                                     //changing the state of prefeb 
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
@@ -126,11 +109,10 @@ public class Turn_Management : MonoBehaviour
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.busy;
                                         }
                                     }
-                                    //}
+                                    
                                 }
                                 catch (System.Exception)
                                 {
-
                                     spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
                                     for (int j = 0; j < ChangeInPrefab.Length; j++)
                                     {
@@ -184,6 +166,7 @@ public class Turn_Management : MonoBehaviour
                 spawanHero = GameObject.FindGameObjectsWithTag("Player");
                 Player_Attribute_Sequence();
                 //Destroy(startmassage);
+               
                 while (Globalvariable.After_Death_ReSequence >= 0)
                 {
                     try

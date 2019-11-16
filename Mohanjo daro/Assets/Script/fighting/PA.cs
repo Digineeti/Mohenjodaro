@@ -47,7 +47,7 @@ public class PA : MonoBehaviour
         death,
     }
     #endregion
-
+   
     private void Start()
     {
         state = State.busy;                             //make default state in busy state
@@ -58,12 +58,12 @@ public class PA : MonoBehaviour
         anim = GetComponent<Animator>();
 
         Turnstate = TurnState.NextTurn;
+
+      
     }
     // Update is called once per frame
     void Update()
     {
-        
-
         if (Globalvariable.turnUi== true)
         {
             TurnUiPanel.SetActive(true);
@@ -118,6 +118,7 @@ public class PA : MonoBehaviour
                         Globalvariable.Index = 0;
                         Turnstate = TurnState.Turnover;
                         Globalvariable.Active_Player_Animation_Parameter = null;
+                        
                     }
 
                 }
@@ -127,7 +128,11 @@ public class PA : MonoBehaviour
                 Globalvariable.Index = 0;
                 Turnstate = TurnState.Turnover;
             }
-        }     
+            //add the ap here to the player attribute.....
+
+            
+
+        }
         else
         {
             ActiveCircle.SetActive(false);
@@ -151,7 +156,7 @@ public class PA : MonoBehaviour
             if (Globalvariable.All_Player_Hoverbutton == false)
                 Light.SetActive(false);
         }
-        
+       
     }
 
     public void Healling_Option()
@@ -164,6 +169,20 @@ public class PA : MonoBehaviour
             //after action make player state busy
             state = State.busy;
         }
+    }
+
+    private void LateUpdate()
+    {
+        //if (state == State.waitingforinput)
+        //{
+        //    if (sp_Added==2)
+        //    {
+        //        Globalvariable.SP = false;
+        //        PlayerPrefs.DeleteKey(gameObject.name + "Added_SP");
+        //        PlayerPrefs.SetFloat(gameObject.name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(gameObject.name + "_SPValue") + PlayerPrefs.GetFloat(gameObject.name + "Action_SP"), 0f, PlayerPrefs.GetFloat(gameObject.name + "_SPMax")));
+        //    }
+
+        //}
     }
 
 }

@@ -99,5 +99,18 @@ public class Globalvariable
         get { return _Hang; }
         set { _Hang = value; }
     }
-   
+
+    private static string[] _SP;
+    public static string[] SP
+    {
+        get { return _SP; }
+        set { _SP = value; }
+    }
+
+    private static string[] _SP_Hero;
+    public static string[] SP_Hero
+    {
+        get { return _SP_Hero; }
+        set { _SP_Hero = value; }
+    }
 }

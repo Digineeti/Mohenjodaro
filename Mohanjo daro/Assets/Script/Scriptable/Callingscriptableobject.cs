@@ -384,6 +384,7 @@ public class Callingscriptableobject : MonoBehaviour
             PlayerPrefs.SetString(gameObject.name, Attribute.name);
             PlayerPrefs.SetFloat(gameObject.name + "_HPMax", Attribute.HPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_HPValue", Attribute.HPMax);
+
             PlayerPrefs.SetFloat(gameObject.name + "_SPMax", Attribute.SPMax);
             PlayerPrefs.SetFloat(gameObject.name + "_SPValue", value);
             PlayerPrefs.SetFloat(gameObject.name + "_Level", float.Parse(Attribute.Level));

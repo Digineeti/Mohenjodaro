@@ -17,6 +17,7 @@ public class AllButtonAction : MonoBehaviour
     float EnemyDefenceValue;
     private string Name;
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class AllButtonAction : MonoBehaviour
     {
         if(startup==true)
         {
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
             
             startup = false;
         }
@@ -47,34 +49,51 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             //save defence value of that player who button is click.....
             //PlayerPrefs.SetFloat(Button_Click_On_Player.name+"_Defence_Apply",10);
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
+                      
+                        //if(PlayerPrefs.HasKey(spawanHero[i].name + "Added_SP"))
+                        //{
+                        //    PlayerPrefs.SetFloat(spawanHero[i].name + "Added_SP", PlayerPrefs.GetFloat(spawanHero[i].name + "Added_SP")+1);
+                        //}
+                        //else
+                        //{
+                        //    PlayerPrefs.SetFloat(spawanHero[i].name + "Added_SP", 1);
+                        //}                     
 
+                    }
+                }
+                catch (System.Exception)
+                {
+
+                }
+            }
+           
         }
         if (Name == "Item")
         {
             Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
-            //heal all action for enemy 
-            //for (int i = 0; i < spawanHero.Length; i++)
-            //{
-            //    try
-            //    {
-            //        if(spawanHero[i].GetComponent<EnemyAction>().state.ToString()== "busy")
-            //        {
-            //            Debug.Log(spawanHero[i].gameObject.name +PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
-            //            float currentHPvalue = PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue");
-            //            currentHPvalue -= 40;
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                    }
+                }
+                catch (System.Exception)
+                {
 
-            //            PlayerPrefs.SetFloat(spawanHero[i].gameObject.name + "_HPValue", currentHPvalue);
-            //            Debug.Log(spawanHero[i].gameObject.name+PlayerPrefs.GetFloat(spawanHero[i].gameObject.name + "_HPValue"));
-            //        }
-                   
-            //    }
-            //    catch (System.Exception)
-            //    {                   
-            //    }
-               
-            //}
+                }
+            }
         }
         if (Name == "RunAway")
         {
@@ -109,7 +128,7 @@ public class AllButtonAction : MonoBehaviour
 
             float value = 0;
             float luckValue = 0;
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            //spawanHero = GameObject.FindGameObjectsWithTag("Player");
             try
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
@@ -124,6 +143,7 @@ public class AllButtonAction : MonoBehaviour
 
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f,PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
                     PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") + Mathf.RoundToInt(HealReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
                 }
                 else
                 {
@@ -143,7 +163,7 @@ public class AllButtonAction : MonoBehaviour
 
                                 PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") + Mathf.RoundToInt(HealReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-
+                                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
                             }
                         }
                         catch (System.Exception)
@@ -511,19 +531,19 @@ public class AllButtonAction : MonoBehaviour
                
                 damaged = Mathf.Abs((4 * PlayerAttackPower - 2 * EnemyDefenceValue)*0);
 
-                Debug.Log("damaged miss " + damaged);
+                //Debug.Log("damaged miss " + damaged);
             }
             else if(randonvalue>missvalue && randonvalue<criticalvalue)
             {
                
                 damaged = Mathf.Abs((4 * PlayerAttackPower - 2 * EnemyDefenceValue) * 1);
-                Debug.Log("player defence after boost damage=" + damaged);
-                Debug.Log("damaged normal " + damaged);
+                //Debug.Log("player defence after boost damage=" + damaged);
+                //Debug.Log("damaged normal " + damaged);
             }
             else
             {
                 damaged = Mathf.Abs((4 * PlayerAttackPower - 2 * EnemyDefenceValue) * 2);
-                Debug.Log("damaged critical "+ damaged );
+                //Debug.Log("damaged critical "+ damaged );
             }
             //calculating attackpower using the formula
           
