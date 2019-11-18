@@ -46,7 +46,7 @@ public class Turn_Management : MonoBehaviour
         {
             string[] tags = new[] { "Player", "Enemy" };
             if (playerspawancount == true)
-            { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
+            { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
             AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
             if (AfterDestroy.Length == spawanHero.Length)
             {
@@ -142,7 +142,7 @@ public class Turn_Management : MonoBehaviour
                     }
                     else
                     {
-                        Player_Attribute_Sequence();
+                        //Player_Attribute_Sequence();
                         for (int i = 0; i < spawanHero.Length; i++)
                         {
                             try
@@ -166,7 +166,8 @@ public class Turn_Management : MonoBehaviour
                 spawanHero = GameObject.FindGameObjectsWithTag("Player");
                 Player_Attribute_Sequence();
                 //Destroy(startmassage);
-               
+               //use the for loop for matching the agi nd dequeue upto that agi value found in the list ,....
+
                 while (Globalvariable.After_Death_ReSequence >= 0)
                 {
                     try
@@ -186,6 +187,7 @@ public class Turn_Management : MonoBehaviour
     public void Player_Attribute_Sequence()
     {
         selectedChoice.Clear();
+        spawanHero = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < spawanHero.Length; i++)
         {
             try

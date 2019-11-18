@@ -128,11 +128,38 @@ public class ActivePlayer : MonoBehaviour
                         {
 
                             //player level up if exp in greater then or equl to 100.
+                            float Normal_Value = PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_HPNormalValue")+ (PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_HPNormalValue")*1)/10;
+                            //add armor with the calculation also...
+                            //calculation of the the ATK
+                            Debug.Log(PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_ATK"));
+                            float New_ATK= PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_ATK") + (PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_ATK") * 1) / 20;
+                            //calculation of the Def_Value
+                            float New_DEF = PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_DEF") + (PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_DEF") * 1) / 20;
+                            Debug.Log(PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_DEF"));
+                            //reset the experiance
                             PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_Exp", 0);
-                            float level=PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_Level");
+                            //update the max hp 
+                            PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_HPMax", Normal_Value);
+                            PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_HPValue", Normal_Value);
+                            //update the normal value
+                            PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_HPNormalValue", Normal_Value);
+                            //resetting the DEf_Value
+                            PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_ATK", New_ATK);
+                            //Reseting the ATK_Value
+                            PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_DEF", New_DEF);
+
+                            float level =PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_Level");
                             level++;
 
                             PlayerPrefs.SetFloat(Globalvariable.SP_Hero[i] + "_Level", level);
+                            Debug.Log("Level :" + PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_Level"));
+                            Debug.Log("ATK :"+PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_ATK"));
+                            Debug.Log("DEF :" + PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_DEF"));
+                            Debug.Log("HPMax :" + PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_HPMax"));
+                            Debug.Log("HPValue :" + PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_HPValue"));
+                            Debug.Log("Exp :" + PlayerPrefs.GetFloat(Globalvariable.SP_Hero[i] + "_Exp"));
+
+
 
                         }
                         else
