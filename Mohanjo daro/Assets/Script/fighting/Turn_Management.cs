@@ -9,7 +9,8 @@ public class Turn_Management : MonoBehaviour
     public GameObject[] AfterDestroy;
     bool extract = true;
     bool playerspawancount = true;
-
+    bool rearrange;
+    int turn_again;
     public GameObject[] ChangeInPrefab;
 
     // Start is called before the first frame update
@@ -36,7 +37,8 @@ public class Turn_Management : MonoBehaviour
     void Start()
     {
         Globalvariable.Hang = true;
-
+        rearrange = true;
+        turn_again = 0;
     }
 
     // Update is called once per frame
@@ -45,8 +47,10 @@ public class Turn_Management : MonoBehaviour
         if (Globalvariable.Hang == true)
         {
             string[] tags = new[] { "Player", "Enemy" };
+            int turn_again = 0;
             if (playerspawancount == true)
             { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
             AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
             if (AfterDestroy.Length == spawanHero.Length)
             {
@@ -79,7 +83,16 @@ public class Turn_Management : MonoBehaviour
                                         {
                                             ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
                                         }
-                                    }                                  
+                                    }           
+                                    //adding the sp value in the next turn in the fight scene...
+                                    if(PlayerPrefs.HasKey(spawanHero[i].name + "Sp_Adding_Status"))
+                                    {
+                                        if(PlayerPrefs.HasKey(spawanHero[i].name + "Action_SP"))
+                                        {
+                                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + PlayerPrefs.GetFloat(spawanHero[i].name + "Action_SP"), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                                            PlayerPrefs.DeleteKey(spawanHero[i].name + "Sp_Adding_Status"); PlayerPrefs.DeleteKey(spawanHero[i].name + "Action_SP");
+                                        }
+                                    }
                                 }
                                 catch (System.Exception)
                                 {
@@ -161,27 +174,51 @@ public class Turn_Management : MonoBehaviour
                     }
                 }
             }
-            else
+            for (int i = 0; i < spawanHero.Length; i++)
             {
-                spawanHero = GameObject.FindGameObjectsWithTag("Player");
-                Player_Attribute_Sequence();
-                //Destroy(startmassage);
-               //use the for loop for matching the agi nd dequeue upto that agi value found in the list ,....
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state == PA.State.busy)
+                        turn_again++;
+                }
+                catch (System.Exception)
+                {
+                    if (spawanHero[i].GetComponent<EnemyAction>().state == EnemyAction.State.busy)
+                        turn_again++;
+                }
 
-                while (Globalvariable.After_Death_ReSequence >= 0)
+            }
+            if (spawanHero.Length == turn_again)
+            {               
+                Player_Attribute_Sequence();
+                for (int i = 0; i < spawanHero.Length; i++)
                 {
                     try
                     {
-                        Globalvariable.After_Death_ReSequence--;
-                        CharacterMoveChoice characterAbility = characterQueue.Dequeue();
+                        if (spawanHero[i].GetComponent<PA>().state == PA.State.busy || spawanHero[i].GetComponent<PA>().state == PA.State.waitingforinput)
+                        {
+                            PlayerPrefs.SetString(spawanHero[i].name+"Sp_Adding_Status","Yes");
+                        }
+                           
                     }
                     catch (System.Exception)
                     {
+                      
                     }
+
                 }
+                Globalvariable.Index = 0;
+
             }
         }
-
+    }
+    private void LateUpdate()
+    {       
+        //if(rearrange==true)
+        //{
+        //    rearrange = false;           
+        //    Player_Attribute_Sequence();
+        //}
     }
 
     public void Player_Attribute_Sequence()

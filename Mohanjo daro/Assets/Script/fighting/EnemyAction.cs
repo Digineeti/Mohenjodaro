@@ -84,7 +84,7 @@ public class EnemyAction : MonoBehaviour
                 Globalvariable.nextTime = Globalvariable.currentTime + 1f;
                 damage_Calculation();
                 action = false;
-                Globalvariable.After_Death_ReSequence += 1;
+                //Globalvariable.After_Death_ReSequence += 1;
             }
             ActiveCircle.SetActive(true);
             Light.SetActive(true);

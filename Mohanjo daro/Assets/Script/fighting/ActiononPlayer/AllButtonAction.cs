@@ -44,7 +44,7 @@ public class AllButtonAction : MonoBehaviour
         //Hero Ation
         if (Name == "Idle")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             //save defence value of that player who button is click.....
@@ -56,16 +56,6 @@ public class AllButtonAction : MonoBehaviour
                     if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
                         PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
-                      
-                        //if(PlayerPrefs.HasKey(spawanHero[i].name + "Added_SP"))
-                        //{
-                        //    PlayerPrefs.SetFloat(spawanHero[i].name + "Added_SP", PlayerPrefs.GetFloat(spawanHero[i].name + "Added_SP")+1);
-                        //}
-                        //else
-                        //{
-                        //    PlayerPrefs.SetFloat(spawanHero[i].name + "Added_SP", 1);
-                        //}                     
-
                     }
                 }
                 catch (System.Exception)
@@ -77,7 +67,7 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "Item")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             for (int i = 0; i < spawanHero.Length; i++)
@@ -97,7 +87,7 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "RunAway")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -122,13 +112,11 @@ public class AllButtonAction : MonoBehaviour
 
         if (Name == "Heal")
         {
-            Globalvariable.After_Death_ReSequence += 1;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
             float value = 0;
             float luckValue = 0;
-            //spawanHero = GameObject.FindGameObjectsWithTag("Player");
             try
             {
                 if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
@@ -161,9 +149,10 @@ public class AllButtonAction : MonoBehaviour
                                 float HealReceive = 0;
                                 HealReceive = Mathf.Clamp(HealReceive, Heal, MAXDamage);
 
+
                                 PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") + Mathf.RoundToInt(HealReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+                                PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                             }
                         }
                         catch (System.Exception)
@@ -181,7 +170,7 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "HealAll")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -206,13 +195,14 @@ public class AllButtonAction : MonoBehaviour
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") + Mathf.RoundToInt(HealReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
-
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                         else
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") + Mathf.RoundToInt(HealReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
 
                         }
+                       
                     }
                     catch (System.Exception)
                     {
@@ -228,9 +218,7 @@ public class AllButtonAction : MonoBehaviour
 
         if (Name == "DefenceBoost")
         {
-            Globalvariable.After_Death_ReSequence += 1;
-            //testing first for vayu
-            //this set for action activate in the active player 
+            //Globalvariable.After_Death_ReSequence += 1;           
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             //save defence value for next turn of the player ...
@@ -256,6 +244,7 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }                        
                     }
                     catch (System.Exception)
@@ -275,7 +264,7 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "DefenceAllBoost")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -301,6 +290,7 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(3),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -319,7 +309,7 @@ public class AllButtonAction : MonoBehaviour
 
         if (Name == "AttackBoost")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             //testing first for vayu
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
@@ -345,6 +335,7 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -362,7 +353,7 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "AttackAllBoost")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
@@ -387,6 +378,7 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -403,14 +395,49 @@ public class AllButtonAction : MonoBehaviour
         }
         if (Name == "Revive")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                        //PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax"), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
+
+                    }
+                }
+                catch (System.Exception)
+                {
+                }
+            }
+            //if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //{
+            //    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax"), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+
+            //}
+            //else
+            //{
+            if (Button_Click_On_Player.GetComponent<PA>().DeathPlayer.ToString() == "death")
+            {
+                Button_Click_On_Player.GetComponent<PA>().DeathPlayer = PA.Death.Active;
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax"), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+
+            }
+            else
+            {
+                PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax"), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+            }
+            //}
         }
         if (Name == "Protect")
         {
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -418,8 +445,6 @@ public class AllButtonAction : MonoBehaviour
             try
             {
                 //set the protect active player to protect the inactive player who demand for protect.....
-
-
                 //active player sp and defence value set.....
                 for (int i = 0; i < spawanHero.Length; i++)
                 {
@@ -433,30 +458,23 @@ public class AllButtonAction : MonoBehaviour
                                 float Action_Defence_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Defence_Boost");
                                 Action_Defence_Value += 5;
                                 PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", Action_Defence_Value);
-
                             }
                             else
                             {
                                 PlayerPrefs.SetFloat(spawanHero[i].name + "Defence_Boost", 5f);
-
                             }
                             PlayerPrefs.SetString(Button_Click_On_Player.name + "Protect_Player", spawanHero[i].name);
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
                     {
-
                     }
                 }
-                
-
             }
             catch (System.Exception)
             {
-
             }
-            //
-
         }
 
         //enemy action
@@ -466,22 +484,25 @@ public class AllButtonAction : MonoBehaviour
             EnemyDefenceValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_DEF");
 
             float value = -1;
-            float luckValue = 0;
+            float luckValue = 0;          
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    luckValue= PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //no sp reduction here ...
+            //        //PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
 
-            }
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        luckValue= PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
+
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -501,6 +522,7 @@ public class AllButtonAction : MonoBehaviour
 
                             }
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -562,7 +584,7 @@ public class AllButtonAction : MonoBehaviour
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name),2f);
                 Globalvariable.WinningLosing = true;
-                Globalvariable.After_Death_ReSequence += 1;
+               
             }
 
 
@@ -575,20 +597,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp( PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp( PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -601,6 +624,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -655,7 +679,7 @@ public class AllButtonAction : MonoBehaviour
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                 Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                 Globalvariable.WinningLosing = true;
-                Globalvariable.After_Death_ReSequence += 1;
+                
             }
 
         }
@@ -665,20 +689,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -691,6 +716,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -757,7 +783,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
 
                 }
@@ -773,20 +799,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -799,6 +826,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -866,7 +894,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
 
                 }
@@ -882,20 +910,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -908,6 +937,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -973,7 +1003,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
@@ -988,7 +1018,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position3");
@@ -1003,7 +1033,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject Forthplayer = GameObject.Find("Position4");
@@ -1018,7 +1048,7 @@ public class AllButtonAction : MonoBehaviour
                         Forthplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(Forthplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1035,7 +1065,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1050,7 +1080,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position5");
@@ -1065,7 +1095,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }              
             }
@@ -1082,7 +1112,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1097,7 +1127,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position6");
@@ -1112,7 +1142,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1129,7 +1159,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1144,7 +1174,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position5");
@@ -1159,7 +1189,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject Forthplayer = GameObject.Find("Position6");
@@ -1174,7 +1204,7 @@ public class AllButtonAction : MonoBehaviour
                         Forthplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(Forthplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1191,7 +1221,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
@@ -1206,7 +1236,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position4");
@@ -1221,7 +1251,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1238,7 +1268,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position3");
@@ -1253,7 +1283,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position4");
@@ -1268,7 +1298,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1283,20 +1313,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -1309,6 +1340,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -1377,7 +1409,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
 
                 }
@@ -1393,20 +1425,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -1419,6 +1452,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -1479,7 +1513,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position4");
@@ -1494,7 +1528,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1509,7 +1543,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1524,7 +1558,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                
@@ -1542,7 +1576,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position5");
@@ -1557,7 +1591,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1572,7 +1606,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
@@ -1587,7 +1621,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1604,7 +1638,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position6");
@@ -1619,7 +1653,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1634,7 +1668,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position3");
@@ -1649,7 +1683,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1663,20 +1697,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(1),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(1),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -1689,6 +1724,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(1),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -1745,7 +1781,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position2");
@@ -1760,7 +1796,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position3");
@@ -1775,7 +1811,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1790,7 +1826,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1805,7 +1841,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position3");
@@ -1820,7 +1856,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1835,7 +1871,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
 
                 GameObject secondplayer = GameObject.Find("Position1");
@@ -1850,7 +1886,7 @@ public class AllButtonAction : MonoBehaviour
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(secondplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
                 GameObject thirdplayer = GameObject.Find("Position2");
@@ -1865,7 +1901,7 @@ public class AllButtonAction : MonoBehaviour
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(thirdplayer.gameObject.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
                 }
             }
@@ -1880,7 +1916,7 @@ public class AllButtonAction : MonoBehaviour
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
                     Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
                     Globalvariable.WinningLosing = true;
-                    Globalvariable.After_Death_ReSequence += 1;
+                    //Globalvariable.After_Death_ReSequence += 1;;
                 }
             }            
         }
@@ -1892,20 +1928,21 @@ public class AllButtonAction : MonoBehaviour
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -1918,6 +1955,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -1928,7 +1966,7 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -1983,7 +2021,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
 
                 }
@@ -1997,20 +2035,21 @@ public class AllButtonAction : MonoBehaviour
             float value = -1; float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-                    value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-                    PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-                    luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-                }
-            }
-            catch (System.Exception)
-            {
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
+            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
+            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -2023,6 +2062,7 @@ public class AllButtonAction : MonoBehaviour
                             value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(5),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                         }
                     }
                     catch (System.Exception)
@@ -2034,7 +2074,7 @@ public class AllButtonAction : MonoBehaviour
             PlayerAttackPower = value;
 
 
-            //Globalvariable.After_Death_ReSequence += 1;
+            ////Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
 
@@ -2089,7 +2129,7 @@ public class AllButtonAction : MonoBehaviour
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
                         Destroy(GameObject.Find(spawanHero[i].transform.parent.name), 2f);
                         Globalvariable.WinningLosing = true;
-                        Globalvariable.After_Death_ReSequence += 1;
+                        //Globalvariable.After_Death_ReSequence += 1;;
                     }
 
                 }
@@ -2104,18 +2144,18 @@ public class AllButtonAction : MonoBehaviour
             float value = -1;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
 
-                }
-            }
-            catch (System.Exception)
-            {
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -2135,7 +2175,7 @@ public class AllButtonAction : MonoBehaviour
 
             PlayerAttackPower = value;
 
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }
@@ -2146,18 +2186,18 @@ public class AllButtonAction : MonoBehaviour
             float value = -1;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
 
-                }
-            }
-            catch (System.Exception)
-            {
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -2178,7 +2218,7 @@ public class AllButtonAction : MonoBehaviour
             PlayerAttackPower = value;
 
 
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }       
@@ -2188,18 +2228,18 @@ public class AllButtonAction : MonoBehaviour
             float value = -1;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
             //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            try
-            {
-                if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-                {
-                    value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
+            //try
+            //{
+            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
+            //    {
+            //        value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
 
-                }
-            }
-            catch (System.Exception)
-            {
+            //    }
+            //}
+            //catch (System.Exception)
+            //{
 
-            }
+            //}
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -2220,7 +2260,7 @@ public class AllButtonAction : MonoBehaviour
             PlayerAttackPower = value;
 
 
-            Globalvariable.After_Death_ReSequence += 1;
+            //Globalvariable.After_Death_ReSequence += 1;;
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "punch";
         }    
