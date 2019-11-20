@@ -28,7 +28,6 @@ public class AttackActionHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 catch (System.Exception)
                 {
                 }
-
             }
         }
         if (button.GetComponentInChildren<TMP_Text>().text == "ThunderStrom" || button.GetComponentInChildren<TMP_Text>().text == "Strom" || button.GetComponentInChildren<TMP_Text>().text == "FireBlast" || button.GetComponentInChildren<TMP_Text>().text == "EarthQuake" || button.GetComponentInChildren<TMP_Text>().text == "HeavenlyWorth")
@@ -45,18 +44,14 @@ public class AttackActionHover : MonoBehaviour, IPointerEnterHandler, IPointerEx
                 {                    
                        
                 }
-
             }
-        }
-
-       
+        }       
     }
     public void OnPointerExit(PointerEventData pointerEventData)
     {
         button.image.color = new Color(1, 1, 1, .224f);
         Globalvariable.All_Player_Hoverbutton = false;
-        Globalvariable.All_Enemy_Hoverbutton = false;
-        
+        Globalvariable.All_Enemy_Hoverbutton = false;        
     }
     void Start()
     {

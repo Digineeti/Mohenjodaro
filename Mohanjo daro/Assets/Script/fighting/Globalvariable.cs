@@ -77,14 +77,12 @@ public class Globalvariable
         set { _All_Enemy_Hoverbutton = value; }
     }
 
-
     //private static float  _After_Death_ReSequence;
     //public static float After_Death_ReSequence
     //{
     //    get { return _After_Death_ReSequence; }
     //    set { _After_Death_ReSequence = value; }
     //}
-
 
     private static bool _WinningLosing;
     public static bool WinningLosing

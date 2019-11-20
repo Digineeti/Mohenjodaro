@@ -48,9 +48,7 @@ public class ActivePlayer : MonoBehaviour
             catch (System.Exception)
             {
                 enemy++;
-
             }
-
         }
         if (Globalvariable.WinningLosing)
         {
@@ -84,7 +82,6 @@ public class ActivePlayer : MonoBehaviour
                 fixedHeroandenemy = false;
                 NoOfActiveEnemy.text = enemy.ToString();
                 NoOfActiveHero.text = Hero.ToString();
-
             }            
         }
         

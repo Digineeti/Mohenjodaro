@@ -209,16 +209,13 @@ public class Turn_Management : MonoBehaviour
                 }
                 Globalvariable.Index = 0;
 
+
             }
         }
     }
     private void LateUpdate()
     {       
-        //if(rearrange==true)
-        //{
-        //    rearrange = false;           
-        //    Player_Attribute_Sequence();
-        //}
+       
     }
 
     public void Player_Attribute_Sequence()

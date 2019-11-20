@@ -109,7 +109,6 @@ public class AllButtonAction : MonoBehaviour
 
             }
         }
-
         if (Name == "Heal")
         {
             Globalvariable.Active_Player_Action = true;
@@ -215,7 +214,6 @@ public class AllButtonAction : MonoBehaviour
 
             }
         }
-
         if (Name == "DefenceBoost")
         {
             //Globalvariable.After_Death_ReSequence += 1;           
@@ -305,8 +303,6 @@ public class AllButtonAction : MonoBehaviour
             }
 
         }
-
-
         if (Name == "AttackBoost")
         {
             //Globalvariable.After_Death_ReSequence += 1;;
