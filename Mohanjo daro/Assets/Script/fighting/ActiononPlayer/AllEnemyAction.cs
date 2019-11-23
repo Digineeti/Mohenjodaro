@@ -51,8 +51,7 @@ public class AllEnemyAction : MonoBehaviour
             catch (System.Exception)
             {
                 
-            }
-            
+            }           
         }
     }
     //set the button value and text
