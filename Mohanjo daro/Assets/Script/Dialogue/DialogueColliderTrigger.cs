@@ -9,6 +9,11 @@ public class DialogueColliderTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueMaster>().StartDialogue(dialogue);
     }
-   
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FindObjectOfType<DialogueMaster>().EndDialogue();       
+    }
+
 }
 

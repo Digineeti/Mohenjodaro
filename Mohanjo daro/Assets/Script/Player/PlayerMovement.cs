@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             h_Current_Speed = Mathf.SmoothStep(h_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
             float x_velocity = input.horizontal * h_Current_Speed;
-            Debug.Log("Speed: " + h_Current_Speed);
+            //Debug.Log("Speed: " + h_Current_Speed);
             //transform.Translate(new Vector2(x_velocity*Time.deltaTime, 0f));
             RD.velocity = new Vector2(input.horizontal * h_Current_Speed, 0f);
             playerMoving = true;

@@ -14,29 +14,34 @@ public class DialogueMaster:MonoBehaviour
     public GameObject Dialoguebox;
 
     private Queue<string> sentences;
-    private Queue<string> names;
+
+    public Sprite[] LeftPlayerContainer;
+    public Sprite[] RightPlayerContainer;
+
+    public Image leftPlayer;
+    public Image RightPlayer;
 
     // Use this for initialization
     void Start()
     {
         //animator.SetBool("IsOpen", false);
         //Dialoguebox.SetActive(false);
-        sentences = new Queue<string>(); names = new Queue<string>();
+        sentences = new Queue<string>(); //names = new Queue<string>();
     }
     int activeDialogue = 0;
     public void StartDialogue(Dialogue dialogue)
     {
         //animator.SetBool("IsOpen", true);
-        activeDialogue = 1;
-      
+        activeDialogue = 1;      
         
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
-            names.Enqueue(sentence);
+            //names.Enqueue(sentence);
             int index = sentence.ToString().IndexOf(":");
             //nameText.text = sentence.ToString().Substring(0, index);           
-            sentences.Enqueue(sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)));
+            //sentences.Enqueue(sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)));
+            sentences.Enqueue(sentence);
 
             //dialogueText.text = sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1));
         }
@@ -44,7 +49,9 @@ public class DialogueMaster:MonoBehaviour
     }
     private void Update()
     {
-        if(activeDialogue>0)
+        
+
+        if (activeDialogue>0)
         {
             Dialoguebox.SetActive(true);
         }
@@ -61,25 +68,41 @@ public class DialogueMaster:MonoBehaviour
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue(); 
-        string Name= names.Dequeue();
-        int index = Name.ToString().IndexOf(":");
-        nameText.text = Name.ToString().Substring(0, index);
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        string sentence = sentences.Dequeue();      
+        StopAllCoroutines();       
+        StartCoroutine(TypeSentence(sentence));       
     }
 
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
+        int index = sentence.ToString().IndexOf(":");
+        nameText.text = sentence.ToString().Substring(0, index);
+        sentence = sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1));
+
+        if (nameText.text == "Gopal")
+            leftPlayer.sprite = LeftPlayerContainer[0];
+        else
+            leftPlayer.sprite = LeftPlayerContainer[1];
+
+
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            if (Input.GetKeyDown("space"))
+            {
+                dialogueText.text = sentence;
+                sentence = "";
+                goto Exit;
+            }                
+            else
+                dialogueText.text += letter;
             yield return null;
         }
+        Exit:
+        yield return null;
     }
 
-    void EndDialogue()
+    public void EndDialogue()
     {
         //animator.SetBool("IsOpen", false);
         activeDialogue = 0;
