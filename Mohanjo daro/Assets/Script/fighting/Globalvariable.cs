@@ -70,20 +70,14 @@ public class Globalvariable
         get { return _All_Player_Hoverbutton; }
         set { _All_Player_Hoverbutton = value; }
     }
+
     private static bool _All_Enemy_Hoverbutton;
     public static bool All_Enemy_Hoverbutton
     {
         get { return _All_Enemy_Hoverbutton; }
         set { _All_Enemy_Hoverbutton = value; }
     }
-
-    //private static float  _After_Death_ReSequence;
-    //public static float After_Death_ReSequence
-    //{
-    //    get { return _After_Death_ReSequence; }
-    //    set { _After_Death_ReSequence = value; }
-    //}
-
+   
     private static bool _WinningLosing;
     public static bool WinningLosing
     {
@@ -110,5 +104,12 @@ public class Globalvariable
     {
         get { return _SP_Hero; }
         set { _SP_Hero = value; }
+    }
+
+    private static bool _Dialogue_Open;
+    public static bool Dialogue_Open
+    {
+        get{ return _Dialogue_Open; }
+        set { _Dialogue_Open = value; }
     }
 }

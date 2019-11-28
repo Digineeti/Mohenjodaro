@@ -52,68 +52,67 @@ public class PlayerMovement : MonoBehaviour
     void GroundMovement()
     {
 
-
-        playerMoving = false;
-        // Smooting the currentSpeed to the targetSpeed
-        if (input.horizontal > 0.5f || input.horizontal < -0.5f)
+        if (Globalvariable.Dialogue_Open == false)
         {
-            h_Current_Speed = Mathf.SmoothStep(h_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
-            float x_velocity = input.horizontal * h_Current_Speed;
-            //Debug.Log("Speed: " + h_Current_Speed);
-            //transform.Translate(new Vector2(x_velocity*Time.deltaTime, 0f));
-            RD.velocity = new Vector2(input.horizontal * h_Current_Speed, 0f);
-            playerMoving = true;
-            lastMove = new Vector2(input.horizontal, 0f);
-            //FindObjectOfType<AudioManager>().play("PlayerWalk");
+            playerMoving = false;
+            // Smooting the currentSpeed to the targetSpeed
+            if (input.horizontal > 0.5f || input.horizontal < -0.5f)
+            {
+                h_Current_Speed = Mathf.SmoothStep(h_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
+                float x_velocity = input.horizontal * h_Current_Speed;
+                //Debug.Log("Speed: " + h_Current_Speed);
+                //transform.Translate(new Vector2(x_velocity*Time.deltaTime, 0f));
+                RD.velocity = new Vector2(input.horizontal * h_Current_Speed, 0f);
+                playerMoving = true;
+                lastMove = new Vector2(input.horizontal, 0f);
+                //FindObjectOfType<AudioManager>().play("PlayerWalk");
 
-        }
-        if (input.vertical > 0.5f || input.vertical < -0.5f)
-        {
-            v_Current_Speed = Mathf.SmoothStep(v_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
-            float y_velocity = input.vertical * v_Current_Speed;
-           // Debug.Log("Speed: " + v_Current_Speed);
-            //transform.Translate(new Vector2(0f, y_velocity*Time.deltaTime));
-            RD.velocity = new Vector2(0f, input.vertical * v_Current_Speed);
-            playerMoving = true;
-            lastMove = new Vector2(0f, input.vertical);
-            
-        }
+            }
+            if (input.vertical > 0.5f || input.vertical < -0.5f)
+            {
+                v_Current_Speed = Mathf.SmoothStep(v_Current_Speed, max_Speed, acceleration_Speed * Time.deltaTime);
+                float y_velocity = input.vertical * v_Current_Speed;
+                // Debug.Log("Speed: " + v_Current_Speed);
+                //transform.Translate(new Vector2(0f, y_velocity*Time.deltaTime));
+                RD.velocity = new Vector2(0f, input.vertical * v_Current_Speed);
+                playerMoving = true;
+                lastMove = new Vector2(0f, input.vertical);
 
-        if ((input.horizontal > 0.5f || input.horizontal < -0.5f) && (input.vertical > 0.5f || input.vertical < -0.5f))
-        {
-            RD.velocity = new Vector2(0f, 0f);
+            }
 
-        }
+            if ((input.horizontal > 0.5f || input.horizontal < -0.5f) && (input.vertical > 0.5f || input.vertical < -0.5f))
+            {
+                RD.velocity = new Vector2(0f, 0f);
+               
+            }
 
-        if (input.horizontal < 0.5f && input.horizontal > -0.5f)
-        {
-            RD.velocity = new Vector2(0f, RD.velocity.y);
-            h_Current_Speed = 0;
+            if (input.horizontal < 0.5f && input.horizontal > -0.5f)
+            {
+                RD.velocity = new Vector2(0f, RD.velocity.y);
+                h_Current_Speed = 0;
+              
+
+            }
+            if (input.vertical < 0.5f && input.vertical > -0.5f)
+            {
+                RD.velocity = new Vector2(RD.velocity.x, 0f);
+                v_Current_Speed = 0;
+                
+
+            }
            
+            amin.SetFloat("MoveX", input.horizontal);
+            amin.SetFloat("MoveY", input.vertical);
+            amin.SetBool("PlayerMoving", playerMoving);
+            amin.SetFloat("LastMoveX", lastMove.x);
+            amin.SetFloat("LastMoveY", lastMove.y);
         }
-        if (input.vertical < 0.5f && input.vertical > -0.5f)
+        else
         {
-            RD.velocity = new Vector2(RD.velocity.x, 0f);
-            v_Current_Speed = 0;
-         
+            playerMoving = false;
+            amin.SetBool("PlayerMoving", playerMoving);
+            RD.velocity = new Vector2(0f, 0f);           
         }
-        //if (input.vertical == 0 && input.horizontal == 0)
-        //{
-        //    h_Current_Speed = 0;
-        //    v_Current_Speed = 0;
-
-        //}
-        //if (playerMoving)
-        //{
-           
-        //}
-        amin.SetFloat("MoveX", input.horizontal);
-        amin.SetFloat("MoveY", input.vertical);
-        amin.SetBool("PlayerMoving", playerMoving);
-        amin.SetFloat("LastMoveX", lastMove.x);
-        amin.SetFloat("LastMoveY", lastMove.y);
-
-
     }
 
 }
