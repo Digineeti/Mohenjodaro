@@ -24,25 +24,21 @@ public class DialogueMaster:MonoBehaviour
     public Image RightPlayer;
     bool stop_Next;
 
-    public Text DialogueBackLog;
-
-    // Use this for initialization
-    //save the dialogue variable 
-    //private static DialogueMaster dialogueMaster;
-
-    //private Dictionary<string, DialogueData> dialogueDictionary;
-    //private BinaryFormatter formatter;
-
-    //private const string DATA_FILENAME = "dialogueMaster.dat";
-    //
+    public Text DialogueBackLog;   
+    public GameObject DialogueLog;
+    public Scrollbar Scroll;
+    private bool Auto_play;
+    private bool scrolldown;
+    private float counter;
 
     void Start()
     {
         PlayerPrefs.DeleteKey("Dialogue");
-        //animator.SetBool("IsOpen", false);
-        //Dialoguebox.SetActive(false);
+        //DialogueBackLog.text = PlayerPrefs.GetString("Dialogue");
+        //DialogueLog.SetActive(true);
+        //Scroll.value = 0;
         stop_Next = false;
-        sentences = new Queue<string>(); //names = new Queue<string>();
+        sentences = new Queue<string>(); 
     }
     int activeDialogue = 0;
     public void StartDialogue(Dialogue dialogue)
@@ -53,13 +49,8 @@ public class DialogueMaster:MonoBehaviour
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
-            //names.Enqueue(sentence);
             int index = sentence.ToString().IndexOf(":");
-            //nameText.text = sentence.ToString().Substring(0, index);           
-            //sentences.Enqueue(sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)));
             sentences.Enqueue(sentence);
-
-            //dialogueText.text = sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1));
         }
         DisplayNextSentence();
     }
@@ -67,11 +58,24 @@ public class DialogueMaster:MonoBehaviour
     {
         if (activeDialogue>0)
         {
-            Dialoguebox.SetActive(true);
+            Dialoguebox.SetActive(true);            
         }
         else
         {
-            Dialoguebox.SetActive(false);
+            Dialoguebox.SetActive(false);           
+        }
+        if(Auto_play==true)
+        {
+            DisplayNextSentence();
+        }
+        counter += Time.deltaTime;
+        if (scrolldown == true)
+        {
+            Scroll.value = 0;
+            if (counter > 5)
+            {                
+                scrolldown = false;
+            }
         }
     }
 
@@ -85,8 +89,23 @@ public class DialogueMaster:MonoBehaviour
                 return;
             }
             string sentence = sentences.Dequeue();
+            int index = sentence.ToString().IndexOf(":");
+            if (PlayerPrefs.HasKey("Dialogue"))
+            {
+                string Dialogue = PlayerPrefs.GetString("Dialogue");
+                Dialogue += "[" + sentence.ToString().Substring(0, index) + "]" + "\n";
+                Dialogue += sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n";
+
+                PlayerPrefs.SetString("Dialogue", Dialogue);
+            }
+            else
+            {
+                PlayerPrefs.SetString("Dialogue", "[" + sentence.ToString().Substring(0, index) + "]" + "\n" + sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n");
+            }
+
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
+
             //saving the dialogue data in the file with the name of palyer and the dialogue.....
             //string destination = Application.persistentDataPath + "/DialogueLog.dat";
             //FileStream file;
@@ -111,18 +130,7 @@ public class DialogueMaster:MonoBehaviour
         nameText.text = sentence.ToString().Substring(0, index);
         sentence = sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1));
         //AddFriend(nameText.text,sentence);
-        if(PlayerPrefs.HasKey("Dialogue"))
-        {
-            string Dialogue = PlayerPrefs.GetString("Dialogue");
-            Dialogue += "[" + nameText.text + "]"+ "\n";
-            Dialogue += sentence + "\n\n";
-
-            PlayerPrefs.SetString("Dialogue", Dialogue);
-        }
-        else
-        {
-            PlayerPrefs.SetString("Dialogue", "[" + nameText.text + "]" + "\n" + sentence + "\n\n");
-        }
+        
         if (nameText.text == "Gopal")
             leftPlayer.sprite = LeftPlayerContainer[0];
         else
@@ -154,10 +162,15 @@ public class DialogueMaster:MonoBehaviour
         Globalvariable.Dialogue_Open = false;
         activeDialogue = 0;
         Dialoguebox.SetActive(false);
+        //Disable auto play...
+        Auto_play = false;
     }
 
     public void Open_Dialogue_Log()
     {
+        //Scroll.value = -100; 
+        scrolldown=true;
+        DialogueLog.SetActive(true);
         DialogueBackLog.text= PlayerPrefs.GetString("Dialogue");
         //Debug.Log(dialogue);
         //string destination = Application.persistentDataPath + "/DialogueLog.dat";
@@ -177,8 +190,37 @@ public class DialogueMaster:MonoBehaviour
 
         //Debug.Log(data.name);      
         //Debug.Log(data.Dialogue);
+    }   
+    public void Close_Dialogue_Log()
+    {       
+        DialogueLog.SetActive(false);
     }
-    
+
+    public void Auto_click()
+    {
+        Auto_play = true;
+    }
+
+    public void Skip_Button()
+    {
+
+    }
+    public void Hide_Button()
+    {
+        //Auto_play = true;
+        if(activeDialogue == 0)
+        {
+            activeDialogue = 1;
+        }
+        else
+        {
+            activeDialogue = 0;
+        }
+    }
+
+
+
+
     //saving using the data dictionary.....
 
     //public static DialogueMaster Instance()
@@ -277,7 +319,7 @@ public class DialogueMaster:MonoBehaviour
     //        //Console.WriteLine("Name, Email");
     //        foreach (DialogueData friend in this.dialogueDictionary.Values)
     //        {
-    //           Debug.Log(friend.name + ", " + friend.Dialogue);
+    //            Debug.Log(friend.name + ", " + friend.Dialogue);
     //        } // end foreach
     //    }
     //    else
