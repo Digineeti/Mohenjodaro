@@ -31,6 +31,10 @@ public class DialogueMaster:MonoBehaviour
     private bool scrolldown;
     private float counter;
 
+    //save the dialogue in file....
+    string  fileName = "Dialogue.txt";
+    
+
     void Start()
     {
         PlayerPrefs.DeleteKey("Dialogue");
@@ -38,7 +42,25 @@ public class DialogueMaster:MonoBehaviour
         //DialogueLog.SetActive(true);
         //Scroll.value = 0;
         stop_Next = false;
-        sentences = new Queue<string>(); 
+        sentences = new Queue<string>();
+
+        //reading the dialogue.....
+        
+
+        //save the dialogue in file ....
+        if (File.Exists(fileName))
+        {
+            Debug.Log(fileName + " already exists.");
+            return;
+        }
+        var sr = File.CreateText(fileName);
+        //sr.WriteLine("This is my file.");
+        //sr.WriteLine("I can write ints {0} or floats {1}, and so on.",
+        //    1, 4.2);
+        //sr.Close();
+
+       
+
     }
     int activeDialogue = 0;
     public void StartDialogue(Dialogue dialogue)
@@ -77,6 +99,55 @@ public class DialogueMaster:MonoBehaviour
                 scrolldown = false;
             }
         }
+
+
+
+        if (File.Exists(fileName))
+        {
+            var srr = File.OpenText(fileName);
+            var line = srr.ReadLine();
+            while (line != null)
+            {
+                //Debug.Log(line); // prints each line of the file
+                line = srr.ReadLine();
+                if (line == "" || line == null)
+                {
+
+                }
+                else
+                {
+                    int index = line.ToString().IndexOf(":");
+                    DialogueBackLog.text += "[" + line.ToString().Substring(0, index) + "]" + "\n" + line.ToString().Substring(index + 1, line.ToString().Length - (index + 1)) + "\n\n";
+                }
+            }
+            srr.Close();
+        }
+        else
+        {
+            Debug.Log("Could not Open the file: " + fileName + " for reading.");
+            return;
+        }
+
+        //if (counter < 5)
+        //{
+        //    var sw = new StreamWriter(fileName,true);
+        //    sw.WriteLine(counter);
+        //    sw.Close();
+
+        //}
+        //if (File.Exists(fileName))
+        //{
+        //    var srr = File.OpenText(fileName);
+        //    var line = srr.ReadLine();
+        //    while (line != null)
+        //    {
+        //        Debug.Log(line); // prints each line of the file
+        //        line = srr.ReadLine();
+        //    }
+        //    srr.Close();
+        //}
+
+
     }
 
     public void DisplayNextSentence()
@@ -88,20 +159,24 @@ public class DialogueMaster:MonoBehaviour
                 EndDialogue();
                 return;
             }
-            string sentence = sentences.Dequeue();
-            int index = sentence.ToString().IndexOf(":");
-            if (PlayerPrefs.HasKey("Dialogue"))
-            {
-                string Dialogue = PlayerPrefs.GetString("Dialogue");
-                Dialogue += "[" + sentence.ToString().Substring(0, index) + "]" + "\n";
-                Dialogue += sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n";
+            string sentence = sentences.Dequeue();           
 
-                PlayerPrefs.SetString("Dialogue", Dialogue);
-            }
-            else
-            {
-                PlayerPrefs.SetString("Dialogue", "[" + sentence.ToString().Substring(0, index) + "]" + "\n" + sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n");
-            }
+            //save the dialogue in the text file ..
+            var sw = new StreamWriter(fileName, true);
+            sw.WriteLine(sentence);
+            sw.Close();
+            //if (PlayerPrefs.HasKey("Dialogue"))
+            //{
+            //    string Dialogue = PlayerPrefs.GetString("Dialogue");
+            //    Dialogue += "[" + sentence.ToString().Substring(0, index) + "]" + "\n";
+            //    Dialogue += sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n";
+
+            //    PlayerPrefs.SetString("Dialogue", Dialogue);
+            //}
+            //else
+            //{
+            //    PlayerPrefs.SetString("Dialogue", "[" + sentence.ToString().Substring(0, index) + "]" + "\n" + sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n");
+            //}
 
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
