@@ -30,6 +30,8 @@ public class DialogueMaster:MonoBehaviour
     private bool Auto_play;
     private bool scrolldown;
     private float counter;
+    private bool Skip;
+    private bool skip_Active;
 
     //save the dialogue in file....
     string  fileName = "Dialogue.txt";
@@ -78,6 +80,9 @@ public class DialogueMaster:MonoBehaviour
     }
     private void Update()
     {
+        if (Skip == true)
+            Auto_play = true;
+
         if (activeDialogue>0)
         {
             Dialoguebox.SetActive(true);            
@@ -102,31 +107,7 @@ public class DialogueMaster:MonoBehaviour
 
 
 
-        if (File.Exists(fileName))
-        {
-            var srr = File.OpenText(fileName);
-            var line = srr.ReadLine();
-            while (line != null)
-            {
-                //Debug.Log(line); // prints each line of the file
-                line = srr.ReadLine();
-                if (line == "" || line == null)
-                {
-
-                }
-                else
-                {
-                    int index = line.ToString().IndexOf(":");
-                    DialogueBackLog.text += "[" + line.ToString().Substring(0, index) + "]" + "\n" + line.ToString().Substring(index + 1, line.ToString().Length - (index + 1)) + "\n\n";
-                }
-            }
-            srr.Close();
-        }
-        else
-        {
-            Debug.Log("Could not Open the file: " + fileName + " for reading.");
-            return;
-        }
+     
 
         //if (counter < 5)
         //{
@@ -162,9 +143,7 @@ public class DialogueMaster:MonoBehaviour
             string sentence = sentences.Dequeue();           
 
             //save the dialogue in the text file ..
-            var sw = new StreamWriter(fileName, true);
-            sw.WriteLine(sentence);
-            sw.Close();
+           
             //if (PlayerPrefs.HasKey("Dialogue"))
             //{
             //    string Dialogue = PlayerPrefs.GetString("Dialogue");
@@ -177,35 +156,58 @@ public class DialogueMaster:MonoBehaviour
             //{
             //    PlayerPrefs.SetString("Dialogue", "[" + sentence.ToString().Substring(0, index) + "]" + "\n" + sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1)) + "\n\n");
             //}
-
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
 
-            //saving the dialogue data in the file with the name of palyer and the dialogue.....
-            //string destination = Application.persistentDataPath + "/DialogueLog.dat";
-            //FileStream file;
-
-            //if (File.Exists(destination)) file = File.OpenWrite(destination);
-            //else file = File.Create(destination);
-
-            //DialogueData data = new DialogueData(nameText.text, dialogueText.text);
-            
-            //BinaryFormatter bf = new BinaryFormatter();
-            //bf.Serialize(file, data);
-            //file.Close();
-
-
+           
         }
     }
 
     IEnumerator TypeSentence(string sentence)
     {
+        skip_Active = false;
+        if (Skip == true)
+        {
+            if (File.Exists(fileName))
+            {
+                var srr = File.OpenText(fileName);
+                var line = srr.ReadLine();
+               
+                while (line != null)
+                {
+                    line = srr.ReadLine();
+                    if (line == sentence)
+                    {
+                        skip_Active = true;
+                    }                  
+                }
+                srr.Close();
+            }
+            if (skip_Active == true)
+            {
+                nameText.color = Color.red;
+                dialogueText.color = Color.red;
+            }
+            else
+            {
+                nameText.color = Color.white;
+                dialogueText.color = Color.white;
+                Skip = false;
+                Auto_play = false;
+            }
+        }
+       
+        var sw = new StreamWriter(fileName, true);
+        sw.WriteLine(sentence);
+        sw.Close();
+
         dialogueText.text = "";
         int index = sentence.ToString().IndexOf(":");
         nameText.text = sentence.ToString().Substring(0, index);
         sentence = sentence.ToString().Substring(index + 1, sentence.ToString().Length - (index + 1));
-        //AddFriend(nameText.text,sentence);
         
+        //AddFriend(nameText.text,sentence);
+
         if (nameText.text == "Gopal")
             leftPlayer.sprite = LeftPlayerContainer[0];
         else
@@ -246,26 +248,30 @@ public class DialogueMaster:MonoBehaviour
         //Scroll.value = -100; 
         scrolldown=true;
         DialogueLog.SetActive(true);
-        DialogueBackLog.text= PlayerPrefs.GetString("Dialogue");
-        //Debug.Log(dialogue);
-        //string destination = Application.persistentDataPath + "/DialogueLog.dat";
-        //FileStream file;
-
-        //if (File.Exists(destination)) file = File.OpenRead(destination);
-        //else
-        //{
-        //    Debug.LogError("File not found");
-        //    return;
-        //}
-
-        //BinaryFormatter bf = new BinaryFormatter();
-        //DialogueData data = (DialogueData)bf.Deserialize(file);
-        //file.Close();
-
-
-        //Debug.Log(data.name);      
-        //Debug.Log(data.Dialogue);
+        if (File.Exists(fileName))
+        {
+            var srr = File.OpenText(fileName);
+            var line = srr.ReadLine();
+            while (line != null)
+            {
+                line = srr.ReadLine();
+                if (line == "" || line == null){
+                }
+                else
+                {                    
+                    int index = line.ToString().IndexOf(":");                   
+                    DialogueBackLog.text += "[" + line.ToString().Substring(0, index) + "]" + "\n" + line.ToString().Substring(index + 1, line.ToString().Length - (index + 1)) + "\n\n";
+                }
+            }
+            srr.Close();
+        }
+        else
+        {
+            Debug.Log("Could not Open the file: " + fileName + " for reading.");
+            return;
+        }       
     }   
+
     public void Close_Dialogue_Log()
     {       
         DialogueLog.SetActive(false);
@@ -278,7 +284,8 @@ public class DialogueMaster:MonoBehaviour
 
     public void Skip_Button()
     {
-
+        Skip = true;
+       
     }
     public void Hide_Button()
     {
@@ -293,113 +300,5 @@ public class DialogueMaster:MonoBehaviour
         }
     }
 
-
-
-
-    //saving using the data dictionary.....
-
-    //public static DialogueMaster Instance()
-    //{
-    //    if (dialogueMaster == null)
-    //    {
-    //        dialogueMaster = new DialogueMaster();
-    //    } // end if
-
-    //    return dialogueMaster;
-    //} // end public static FriendsInformation Instance()
-
-    //private DialogueMaster()
-    //{
-    //    // Create a Dictionary to store friends at runtime
-    //    this.dialogueDictionary = new Dictionary<string, DialogueData>();
-    //    this.formatter = new BinaryFormatter();
-    //} // end private FriendsInformation()
-
-    //public void AddFriend(string name, string email)
-    //{
-    //    // If we already had added a friend with this name
-    //    if (this.dialogueDictionary.ContainsKey(name))
-    //    {
-    //        Debug.Log("You had already added " + name + " before.");
-    //    }
-    //    // Else if we do not have this friend details 
-    //    // in our dictionary
-    //    else
-    //    {
-
-    //        // Add him in the dictionary
-    //        this.dialogueDictionary.Add(name, new DialogueData(name, email));
-    //        //Console.WriteLine("Friend added successfully.");
-    //    } // end if
-    //} // end public bool AddFriend(string name, string email)
-
-    //public void Save()
-    //{
-    //    // Gain code access to the file that we are going
-    //    // to write to
-    //    try
-    //    {
-    //        // Create a FileStream that will write data to file.
-    //        FileStream writerFileStream =
-    //            new FileStream(DATA_FILENAME, FileMode.Create, FileAccess.Write);
-    //        // Save our dictionary of friends to file
-    //        this.formatter.Serialize(writerFileStream, this.dialogueDictionary);
-
-    //        // Close the writerFileStream when we are done.
-    //        writerFileStream.Close();
-    //    }
-    //    catch (Exception)
-    //    {
-    //        //Console.WriteLine("Unable to save our friends' information");
-    //    } // end try-catch
-    //} // end public bool Load()
-
-    //public void Load()
-    //{
-
-    //    // Check if we had previously Save information of our friends
-    //    // previously
-    //    if (File.Exists(DATA_FILENAME))
-    //    {
-
-    //        try
-    //        {
-    //            // Create a FileStream will gain read access to the 
-    //            // data file.
-    //            FileStream readerFileStream = new FileStream(DATA_FILENAME,
-    //                FileMode.Open, FileAccess.Read);
-    //            // Reconstruct information of our friends from file.
-    //            this.dialogueDictionary = (Dictionary<String, DialogueData>)
-    //                this.formatter.Deserialize(readerFileStream);
-    //            // Close the readerFileStream when we are done
-    //            readerFileStream.Close();
-
-    //        }
-    //        catch (Exception)
-    //        {
-    //            Console.WriteLine("There seems to be a file that contains " +
-    //                "friends information but somehow there is a problem " +
-    //                "with reading it.");
-    //        } // end try-catch
-
-    //    } // end if
-
-    //} // end public bool Load()
-
-    //public void Print()
-    //{
-    //    // If we have saved information about friends
-    //    if (this.dialogueDictionary.Count > 0)
-    //    {
-    //        //Console.WriteLine("Name, Email");
-    //        foreach (DialogueData friend in this.dialogueDictionary.Values)
-    //        {
-    //            Debug.Log(friend.name + ", " + friend.Dialogue);
-    //        } // end foreach
-    //    }
-    //    else
-    //    {
-    //        Console.WriteLine("There are no saved information about your friends");
-    //    } // end if
-    //} // end public void Print()
+  
 }

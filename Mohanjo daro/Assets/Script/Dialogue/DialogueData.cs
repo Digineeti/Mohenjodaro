@@ -10,7 +10,7 @@ public class DialogueData
 
     public DialogueData(string nameStr, string DialogueStr)
     {       
-        name = "["+nameStr+"]";
-        Dialogue = DialogueStr + "\n";
+        name = nameStr;
+        Dialogue = DialogueStr;
     }
 }

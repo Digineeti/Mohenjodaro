@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 85550881}
   - component: {fileID: 85550880}
   - component: {fileID: 85550882}
+  - component: {fileID: 85550883}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -190,7 +191,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85550878}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -200,7 +201,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -262.3}
+  m_SizeDelta: {x: 0, y: -271.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85550880
 MonoBehaviour:
@@ -258,6 +259,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &85550883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85550878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1001 &102537097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2339,9 +2360,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.89, y: 68.399994}
-  m_SizeDelta: {x: 198.07, y: 209.1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -15.549988}
+  m_SizeDelta: {x: 198.07, y: 31.100006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721263522
 MonoBehaviour:
@@ -2621,7 +2642,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 750461218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1071236057}
+        m_MethodName: Skip_Button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &750461218
@@ -2944,9 +2976,7 @@ MonoBehaviour:
     name: 
     sentences:
     - Gopal:hey my name is Gopal...
-    - 'Gopal:who r you.?
-
-'
+    - Gopal:who r you.?
     - Sima:hi.. my name ins sima...
     - Sima:nice to meet you..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     - Sima:ok bye talk you latter..
@@ -2955,6 +2985,8 @@ MonoBehaviour:
     - Rita:not for u
     - Mohen:ye...
     - Success:you done it....
+    - Amit:Checking skip action work or not
+    - skip:work perfectly.
 --- !u!1 &893472698
 GameObject:
   m_ObjectHideFlags: 0
