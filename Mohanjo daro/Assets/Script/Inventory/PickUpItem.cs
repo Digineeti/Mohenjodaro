@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PickUpItem : MonoBehaviour
 {
@@ -18,14 +19,33 @@ public class PickUpItem : MonoBehaviour
         {
             for (int i = 0; i < Inventory.Slots.Length; i++)
             {
-                if(Inventory.IsFull[i]==false)
+                if (Inventory.IsFull[i] == false)
                 {
                     Inventory.IsFull[i] = true;
-                    Instantiate(ItemsAction, Inventory.Slots[i].transform,false);
+                    Instantiate(ItemsAction, Inventory.Slots[i].transform, false);
+                    TMP_Text Counter = Inventory.Slots[i].GetComponentInChildren<TMP_Text>();                   
+                    Counter.text = 1.ToString();
                     Destroy(gameObject);
                     break;
 
                 }
+                else
+                {
+                    if (gameObject.name == Inventory.Slots[i].gameObject.transform.GetChild(1).name || gameObject.name+ "(Clone)" == Inventory.Slots[i].gameObject.transform.GetChild(1).name)
+                    {
+                        //add the item in the list ..... 
+                        TMP_Text Counter = Inventory.Slots[i].GetComponentInChildren<TMP_Text>();
+                        int NewValue = int.Parse(Counter.text)+1;
+                        Counter.text = NewValue.ToString();
+                        Destroy(gameObject);
+                        break;
+
+                    }
+                }
+               
+               
+               
+
             }
         }
     }
