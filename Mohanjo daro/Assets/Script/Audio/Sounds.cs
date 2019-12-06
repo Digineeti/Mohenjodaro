@@ -12,6 +12,7 @@ public class Sounds
     [Range(.1f,3f)]
     public float pitch;
     public bool loop;
+    public AudioMixerGroup AudiomixerGroup;
     [HideInInspector]
     public AudioSource source;
 }

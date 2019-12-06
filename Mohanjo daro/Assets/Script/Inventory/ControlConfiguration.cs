@@ -8,7 +8,7 @@ using TMPro;
 public class ControlConfiguration : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public AudioManager AM;
     public AudioMixer audioMixer;
     public  TMP_Dropdown resolutionDropdown;
     Resolution[] resolution_List;
@@ -16,7 +16,10 @@ public class ControlConfiguration : MonoBehaviour
     public Toggle fullscreen;
     public TMP_Dropdown Graphic;
     public Slider volume;
+    public Slider BGM;
+    public Slider BGS;
     private int reset_Resulution;
+    private bool sound_Active;
     private void Start()
     {
         resolution_List = Screen.resolutions;
@@ -74,6 +77,18 @@ public class ControlConfiguration : MonoBehaviour
             }
                 
         }
+        if (PlayerPrefs.HasKey("Menu_BackGroundMusic"))
+        {
+            AM.audiosource.volume = PlayerPrefs.GetFloat("Menu_BackGroundMusic");
+            BGM.value = PlayerPrefs.GetFloat("Menu_BackGroundMusic");
+            //Debug.Log("Menu_Graphic=" + PlayerPrefs.GetFloat("Menu_Graphic"));
+        }
+        if (PlayerPrefs.HasKey("Menu_BackgroundSound"))
+        {
+
+            AM.sounds[0].volume = PlayerPrefs.GetFloat("Menu_BackgroundSound");
+            BGS.value = PlayerPrefs.GetFloat("Menu_BackgroundSound");
+        }
 
 
     }
@@ -105,10 +120,14 @@ public class ControlConfiguration : MonoBehaviour
 
     public void Reset_Button()
     {
-        PlayerPrefs.SetFloat("Menu_MainAudio", 0);
+        PlayerPrefs.SetFloat("Menu_MainAudio", 5);
         PlayerPrefs.SetInt("Menu_Graphic", 5);
         PlayerPrefs.SetString("Menu_FullScreen", "true");
         PlayerPrefs.SetInt("Menu_Resolution", reset_Resulution);
+
+        PlayerPrefs.SetFloat("Menu_BackGroundMusic", 0.5f);
+        PlayerPrefs.SetFloat("Menu_BackgroundSound", 0.5f);
+
         resolutionDropdown.value = reset_Resulution;
         if (PlayerPrefs.HasKey("Menu_MainAudio"))
         {
@@ -134,7 +153,40 @@ public class ControlConfiguration : MonoBehaviour
             }
 
         }
+        if (PlayerPrefs.HasKey("Menu_BackGroundMusic"))
+        {
+            AM.audiosource.volume = PlayerPrefs.GetFloat("Menu_BackGroundMusic");
+            BGM.value = PlayerPrefs.GetFloat("Menu_BackGroundMusic");           
+        }
+        if (PlayerPrefs.HasKey("Menu_BackgroundSound"))
+        {
+            AM.sounds[0].volume = PlayerPrefs.GetFloat("Menu_BackgroundSound");
+            BGS.value = PlayerPrefs.GetFloat("Menu_BackgroundSound");
+        }
 
+    }
+
+    public void Set_BGM(float volume)
+    {
+        AM.audiosource.volume = volume;
+        PlayerPrefs.SetFloat("Menu_BackGroundMusic", volume);
+    }
+    public void Set_BGS(float volume)
+    {
+        AM.sounds[0].volume = volume;
+        sound_Active = true;
+        //AM.Sound_Change();
+        PlayerPrefs.SetFloat("Menu_BackgroundSound", volume);
+    }
+
+    private void LateUpdate()
+    {
+        if(sound_Active==true)
+        {
+            sound_Active = false;
+            AM.Sound_Change();
+
+        }
     }
 
 }
