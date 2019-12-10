@@ -20,6 +20,11 @@ public class ControlConfiguration : MonoBehaviour
     public Slider BGS;
     private int reset_Resulution;
     private bool sound_Active;
+
+    private void Awake()
+    {
+        
+    }
     private void Start()
     {
         resolution_List = Screen.resolutions;
@@ -77,6 +82,7 @@ public class ControlConfiguration : MonoBehaviour
             }
                 
         }
+
         if (PlayerPrefs.HasKey("Menu_BackGroundMusic"))
         {
             AM.audiosource.volume = PlayerPrefs.GetFloat("Menu_BackGroundMusic");

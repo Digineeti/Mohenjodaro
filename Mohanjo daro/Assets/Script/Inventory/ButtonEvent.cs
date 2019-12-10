@@ -38,4 +38,28 @@ public class ButtonEvent : MonoBehaviour
         AM.play("buttonClick");
     }
 
+
+    //new Option Menu event start form here ...
+
+    public GameObject MusicPanel;
+    public GameObject DisplayPanel;
+    public GameObject gameplayPanel;
+    //public GameObject MusicPanel;
+
+    public void New_Option_Music_Event()
+    {
+        MusicPanel.SetActive(true);
+        DisplayPanel.SetActive(false);
+    }
+    public void New_Option_Display_Event()
+    {
+        DisplayPanel.SetActive(true);
+        MusicPanel.SetActive(false);
+    }
+    public void New_Option_GamePlay_Event()
+    {
+        DisplayPanel.SetActive(false);
+        MusicPanel.SetActive(false);
+    }
+
 }

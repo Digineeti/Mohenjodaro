@@ -4,7 +4,7 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource audiosource;
+    public AudioSource audiosource;   
     public Sounds[] sounds;
     public static AudioManager instant;
     // Start is called before the first frame update
@@ -19,6 +19,13 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         Sound_Change();
+        if (PlayerPrefs.HasKey("Menu_BackGroundMusic"))
+        {
+            audiosource.volume = PlayerPrefs.GetFloat("Menu_BackGroundMusic");
+          // ControlConfiguration.BGM.value = PlayerPrefs.GetFloat("Menu_BackGroundMusic");
+            //Debug.Log("Menu_Graphic=" + PlayerPrefs.GetFloat("Menu_Graphic"));
+        }
+        //play();
     }
 
     // Update is called once per frame
