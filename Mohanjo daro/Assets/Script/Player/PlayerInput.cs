@@ -17,15 +17,15 @@ public class PlayerInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if(!playerExists)
-        //{
-        //    playerExists = true;
-        //    //DontDestroyOnLoad(transform.gameObject);           
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}       
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);           
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

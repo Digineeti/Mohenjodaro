@@ -10,17 +10,17 @@ public class Chinemachinecontroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (!cameraExists)
-        //{
-        //    cameraExists = true;
-        //    DontDestroyOnLoad(transform.gameObject);
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-      
-       
+        if (!cameraExists)
+        {
+            cameraExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 
     // Update is called once per frame
