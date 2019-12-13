@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ActivePlayer : MonoBehaviour
 {
@@ -20,13 +21,15 @@ public class ActivePlayer : MonoBehaviour
     private bool fixedHeroandenemy;
     private bool game_over_Exp;
 
-
+    //fight scene load unload
+   
     // Start is called before the first frame update
     void Start()
     {      
         fixedHeroandenemy = true;
         game_over_Exp = true;
         Globalvariable.WinningLosing = true;
+       
     }
 
     // Update is called once per frame
@@ -94,6 +97,9 @@ public class ActivePlayer : MonoBehaviour
             TMP_Text ActiveHero = Winningpanel.GetComponentInChildren<TMP_Text>();
             Globalvariable.Hang = false;
             ActiveHero.text = "Enemy wins";
+            //start the current scene from the begning ..
+            SceneManager.LoadScene(Globalvariable.Current_Scene);
+            Globalvariable.Player_win = false;
         }
         if (enemy <= 0)
         {
@@ -107,6 +113,10 @@ public class ActivePlayer : MonoBehaviour
             {
                 ExPValue+= PlayerPrefs.GetFloat(Globalvariable.SP[i] +"_Exp");
             }
+            //back to the current scene with player in the same position..
+            Globalvariable.Player_win = true ;
+            SceneManager.LoadScene(Globalvariable.Current_Scene);
+            
         }
         if(game_over_Exp==true)
         {

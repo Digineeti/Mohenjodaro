@@ -22,10 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator amin;
     private bool playerMoving;
-    private Vector2 lastMove = new Vector2(0f, 0f);
-   
-    #endregion
+    public  Vector2 lastMove;
 
+    #endregion
+    private void Awake()
+    {
+        lastMove = new Vector2(0f, 0f);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 playerMoving = true;
                 lastMove = new Vector2(input.horizontal, 0f);
                 //FindObjectOfType<AudioManager>().play("PlayerWalk");
+                Globalvariable.Fight_Scene_Load_freqency += Time.deltaTime;
 
             }
             if (input.vertical > 0.5f || input.vertical < -0.5f)
@@ -77,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
                 RD.velocity = new Vector2(0f, input.vertical * v_Current_Speed);
                 playerMoving = true;
                 lastMove = new Vector2(0f, input.vertical);
-
+                Globalvariable.Fight_Scene_Load_freqency += Time.deltaTime;
             }
 
             if ((input.horizontal > 0.5f || input.horizontal < -0.5f) && (input.vertical > 0.5f || input.vertical < -0.5f))
@@ -90,17 +94,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 RD.velocity = new Vector2(0f, RD.velocity.y);
                 h_Current_Speed = 0;
-              
 
+                //Globalvariable.Fight_Scene_Load_freqency += Time.deltaTime;
             }
             if (input.vertical < 0.5f && input.vertical > -0.5f)
             {
                 RD.velocity = new Vector2(RD.velocity.x, 0f);
                 v_Current_Speed = 0;
-                
+                //Globalvariable.Fight_Scene_Load_freqency += Time.deltaTime;
 
             }
-           
+
             amin.SetFloat("MoveX", input.horizontal);
             amin.SetFloat("MoveY", input.vertical);
             amin.SetBool("PlayerMoving", playerMoving);

@@ -9,7 +9,7 @@ public class SceneTransition : MonoBehaviour
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "ScenePlayer")
         {
             SceneManager.LoadScene(SceneToLoad);
         }
