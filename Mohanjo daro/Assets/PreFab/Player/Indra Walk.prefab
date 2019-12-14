@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 1531359505}
   m_Layer: 0
   m_Name: Indra Walk
-  m_TagString: Player
+  m_TagString: ScenePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,7 +193,7 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452639080915138279}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: d0c23781bac93df48a1209a527965d01, type: 2}
   m_InitialState: 1
@@ -243,6 +243,7 @@ MonoBehaviour:
   max_Speed: 4
   direction_X: 1
   direction_Y: 1
+  lastMove: {x: 0, y: 0}
 --- !u!114 &1531359505
 MonoBehaviour:
   m_ObjectHideFlags: 0

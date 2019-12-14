@@ -12,12 +12,12 @@ public class AudioManager : MonoBehaviour
     {
         if (instant == null)
             instant = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        DontDestroyOnLoad(gameObject);
+        //else
+        //{
+        //    Destroy(gameObject);
+        //    return;
+        //}
+        //DontDestroyOnLoad(gameObject);
         Sound_Change();
         if (PlayerPrefs.HasKey("Menu_BackGroundMusic"))
         {

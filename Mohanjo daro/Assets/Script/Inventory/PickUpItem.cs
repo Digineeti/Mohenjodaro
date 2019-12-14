@@ -10,7 +10,7 @@ public class PickUpItem : MonoBehaviour
     // Start is called before the first frame update
    private  void Start()
     {
-        Inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        //Inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

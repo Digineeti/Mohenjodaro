@@ -18,6 +18,7 @@ public class ControlConfiguration : MonoBehaviour
     public Slider volume;
     public Slider BGM;
     public Slider BGS;
+    float mainVolume;
     private int reset_Resulution;
     private bool sound_Active;
 
@@ -98,12 +99,37 @@ public class ControlConfiguration : MonoBehaviour
 
 
     }
+
+
+    //music option slider...
+    #region music optionsliders
     public void Set_Volume(float volume)
     {
         //Debug.Log(volume);
         audioMixer.SetFloat("volume", volume);
-        PlayerPrefs.SetFloat("Menu_MainAudio",volume);
+        mainVolume = volume;
     }
+    public void Set_BGM(float volume)
+    {
+        AM.audiosource.volume = volume;
+       
+    }
+    public void Set_BGS(float volume)
+    {
+        AM.sounds[0].volume = volume;
+        sound_Active = true;
+        //AM.Sound_Change();
+       
+    }
+
+    public void Save_Music_Option()
+    {
+        PlayerPrefs.SetFloat("Menu_MainAudio", mainVolume);
+        PlayerPrefs.SetFloat("Menu_BackGroundMusic", AM.audiosource.volume);
+        PlayerPrefs.SetFloat("Menu_BackgroundSound", AM.sounds[0].volume);
+    }
+    #endregion
+
 
     public void Set_Graphic(int qualityIndex)
     {
@@ -172,18 +198,7 @@ public class ControlConfiguration : MonoBehaviour
 
     }
 
-    public void Set_BGM(float volume)
-    {
-        AM.audiosource.volume = volume;
-        PlayerPrefs.SetFloat("Menu_BackGroundMusic", volume);
-    }
-    public void Set_BGS(float volume)
-    {
-        AM.sounds[0].volume = volume;
-        sound_Active = true;
-        //AM.Sound_Change();
-        PlayerPrefs.SetFloat("Menu_BackgroundSound", volume);
-    }
+  
 
     private void LateUpdate()
     {
@@ -194,5 +209,7 @@ public class ControlConfiguration : MonoBehaviour
 
         }
     }
+
+   
 
 }

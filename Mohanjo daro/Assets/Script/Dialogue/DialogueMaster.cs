@@ -33,6 +33,7 @@ public class DialogueMaster:MonoBehaviour
     private bool Skip;
     private bool skip_Active;
 
+    private bool IsDialogueOpen;
     //save the dialogue in file....
     string  fileName = "Dialogue.txt";
     
@@ -105,9 +106,24 @@ public class DialogueMaster:MonoBehaviour
             }
         }
 
+        if(Globalvariable.Dialogue_Open==true)
+        {
+            //not working when press enter key...
+            if (Input.GetKeyDown(KeyCode.Insert))
+            {
+                DisplayNextSentence();
+            }
 
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            if (IsDialogueOpen == false)
+                Open_Dialogue_Log();
+            else
+                Close_Dialogue_Log();
 
-     
+        }
+
 
         //if (counter < 5)
         //{
@@ -246,14 +262,17 @@ public class DialogueMaster:MonoBehaviour
     public void Open_Dialogue_Log()
     {
         //Scroll.value = -100; 
-        scrolldown=true;
+        IsDialogueOpen = true;
+        scrolldown =true;
         DialogueLog.SetActive(true);
         if (File.Exists(fileName))
         {
+            DialogueBackLog.text = "";
             var srr = File.OpenText(fileName);
             var line = srr.ReadLine();
             while (line != null)
             {
+               
                 line = srr.ReadLine();
                 if (line == "" || line == null){
                 }
@@ -273,7 +292,8 @@ public class DialogueMaster:MonoBehaviour
     }   
 
     public void Close_Dialogue_Log()
-    {       
+    {
+        IsDialogueOpen = false;
         DialogueLog.SetActive(false);
     }
 

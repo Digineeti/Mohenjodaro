@@ -163,5 +163,6 @@ public class Globalvariable
         set { _NotDestroyed_CineMachine = value; }
     }
 
-    private static string 
+    
+
 }
