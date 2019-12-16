@@ -10,16 +10,15 @@ using System;
 [SerializeField]
 public class DialogueMaster:MonoBehaviour
 {
+    [Header("dialogue Content")]
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public Animator animator;
     public GameObject Dialoguebox;
-
     private Queue<string> sentences;
-
+    [Header("Dialogue conversation Player Image")]
     public Sprite[] LeftPlayerContainer;
     public Sprite[] RightPlayerContainer;
-
     public Image leftPlayer;
     public Image RightPlayer;
     bool stop_Next;
@@ -27,6 +26,7 @@ public class DialogueMaster:MonoBehaviour
     public Text DialogueBackLog;   
     public GameObject DialogueLog;
     public Scrollbar Scroll;
+    [Header("Action properties")]
     private bool Auto_play;
     private bool scrolldown;
     private float counter;
@@ -262,33 +262,41 @@ public class DialogueMaster:MonoBehaviour
     public void Open_Dialogue_Log()
     {
         //Scroll.value = -100; 
-        IsDialogueOpen = true;
-        scrolldown =true;
-        DialogueLog.SetActive(true);
-        if (File.Exists(fileName))
+        IsDialogueOpen = !IsDialogueOpen;
+        if (IsDialogueOpen == true)
         {
-            DialogueBackLog.text = "";
-            var srr = File.OpenText(fileName);
-            var line = srr.ReadLine();
-            while (line != null)
+            scrolldown = true;
+            DialogueLog.SetActive(true);
+            if (File.Exists(fileName))
             {
-               
-                line = srr.ReadLine();
-                if (line == "" || line == null){
+                DialogueBackLog.text = "";
+                var srr = File.OpenText(fileName);
+                var line = srr.ReadLine();
+                while (line != null)
+                {
+
+                    line = srr.ReadLine();
+                    if (line == "" || line == null)
+                    {
+                    }
+                    else
+                    {
+                        int index = line.ToString().IndexOf(":");
+                        DialogueBackLog.text += "[" + line.ToString().Substring(0, index) + "]" + "\n" + line.ToString().Substring(index + 1, line.ToString().Length - (index + 1)) + "\n\n";
+                    }
                 }
-                else
-                {                    
-                    int index = line.ToString().IndexOf(":");                   
-                    DialogueBackLog.text += "[" + line.ToString().Substring(0, index) + "]" + "\n" + line.ToString().Substring(index + 1, line.ToString().Length - (index + 1)) + "\n\n";
-                }
+                srr.Close();
             }
-            srr.Close();
+            else
+            {
+                Debug.Log("Could not Open the file: " + fileName + " for reading.");
+                return;
+            }
         }
-        else
-        {
-            Debug.Log("Could not Open the file: " + fileName + " for reading.");
-            return;
-        }       
+        else {
+            DialogueLog.SetActive(false);
+        }
+        
     }   
 
     public void Close_Dialogue_Log()
