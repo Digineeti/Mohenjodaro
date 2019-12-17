@@ -22796,11 +22796,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
-    - target: {fileID: 5519916048772922343, guid: 1dbb525707f45f642a5f715a3bc8e762,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5519916048772922339, guid: 1dbb525707f45f642a5f715a3bc8e762,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22920,6 +22915,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainStartingMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6659723388094833191, guid: caf706ae576e5564897161707f19891b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6659723388094833195, guid: caf706ae576e5564897161707f19891b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23034,6 +23034,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659723389117353200, guid: caf706ae576e5564897161707f19891b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6659723388231254287, guid: caf706ae576e5564897161707f19891b,
         type: 3}
