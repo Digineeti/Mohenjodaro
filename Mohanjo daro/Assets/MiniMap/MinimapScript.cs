@@ -8,7 +8,7 @@ public class MinimapScript : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.Find("Indra Walk").transform;
+        Player = GameObject.Find("Indra").transform;
     }
 
     private void LateUpdate()
