@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: RiverWAve
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 21300000, guid: fdbf48be362e1d2438bc0575a18c811f, type: 3}
-  - {fileID: 21300000, guid: f4a7580490883634181db4b09bb7237f, type: 3}
+  - {fileID: 21300000, guid: cd918819e8c8d714b9465d455c0acb66, type: 3}
+  - {fileID: 21300000, guid: 9eb08ca2d62c5aa4f8bd1be6ace08096, type: 3}
+  - {fileID: 21300000, guid: c123a92536d2d0c44a00d90e077d206d, type: 3}
   m_MinSpeed: 3
   m_MaxSpeed: 3
   m_AnimationStartTime: 0
