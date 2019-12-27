@@ -55,7 +55,9 @@ public class AllButtonAction : MonoBehaviour
                 {
                     if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
-                        PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+
+                        //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
                     }
                 }
                 catch (System.Exception)
@@ -76,7 +78,8 @@ public class AllButtonAction : MonoBehaviour
                 {
                     if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
-                        PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                        //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                     }
                 }
                 catch (System.Exception)
@@ -518,7 +521,9 @@ public class AllButtonAction : MonoBehaviour
 
                             }
                             luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            //INCREASE THE SP ON ACTION PERFORM....(DONE IN IDLE AND ITEM)...
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                         }
                     }
                     catch (System.Exception)

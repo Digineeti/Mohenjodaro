@@ -317,7 +317,7 @@ public class Callingscriptableobject : MonoBehaviour
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         
     }
     private void LateUpdate()
