@@ -46,8 +46,13 @@ public class PA : MonoBehaviour
         Active,
         death,
     }
+
+    //moving toward to enemy
+    private float speed = 4;
+    private Vector3 targetPosition;
+    private bool isMoving = false;
     #endregion
-   
+
     private void Start()
     {
         state = State.busy;                             //make default state in busy state
@@ -130,7 +135,14 @@ public class PA : MonoBehaviour
             }
             //add the ap here to the player attribute.....
 
-            
+            if (Input.GetMouseButton(0))
+            {
+                SetTargetPosition();
+            }
+            if (isMoving)
+            {
+                move();
+            }
 
         }
         else
@@ -184,5 +196,20 @@ public class PA : MonoBehaviour
 
         //}
     }
+    void SetTargetPosition()
+    {
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPosition.z = transform.position.z;
+        isMoving = true;
+    }
 
+    void move()
+    {
+        //transform.rotation = Quaternion.LookRotation(Vector3.forward, targetPosition);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        if (transform.position == targetPosition)
+        {
+            isMoving = false;
+        }
+    }
 }

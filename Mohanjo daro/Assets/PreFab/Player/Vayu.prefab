@@ -43,6 +43,8 @@ MonoBehaviour:
   EActiveAction: 0
   InActive: 
   InActiveAction: 0
+  specialActioncount: 0
+  specialPActioncount: 0
 --- !u!1001 &3124889668846278372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,11 +72,21 @@ PrefabInstance:
       propertyPath: state
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2474590857048047335, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: HealingPower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233173, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 11d85423d6ad08f49ac364e9cfd45ace, type: 2}
+    - target: {fileID: 3388102705455233173, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -157,16 +169,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54402453787330939, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 54402453787330939, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2303181719297474622, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -202,21 +204,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4146683098700309827, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4146683098700309827, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4444662261397212209, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d480feea44955d04492487388517f1ea, type: 2}
+    - target: {fileID: 5498899625034425688, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_Name
+      value: HealButton1
+      objectReference: {fileID: 0}
     - target: {fileID: 7373037724651762022, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_IsActive
@@ -292,6 +289,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6378611615845404697, guid: fb81000594b3d0c4d862eb7780f48380,
         type: 3}
+    - target: {fileID: 54402453787330939, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54402453787330939, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146683098700309827, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146683098700309827, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2562825161303997447, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -354,16 +371,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3388102705455233172, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
-    - target: {fileID: 2474590857048047335, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: HealingPower
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498899625034425688, guid: bc80ef91776a2804299cc722c0bb4834,
-        type: 3}
-      propertyPath: m_Name
-      value: HealButton1
-      objectReference: {fileID: 0}
     - target: {fileID: 5352669198611304449, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -383,6 +390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095624404332793894, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 434463815549453403, guid: bc80ef91776a2804299cc722c0bb4834, type: 3}
