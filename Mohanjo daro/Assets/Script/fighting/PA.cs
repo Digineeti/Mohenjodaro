@@ -134,15 +134,16 @@ public class PA : MonoBehaviour
                 Turnstate = TurnState.Turnover;
             }
             //add the ap here to the player attribute.....
+            //player move on mouse clcik in the scene
 
-            if (Input.GetMouseButton(0))
-            {
-                SetTargetPosition();
-            }
-            if (isMoving)
-            {
-                move();
-            }
+            //if (Input.GetMouseButton(0))
+            //{
+            //    SetTargetPosition();
+            //}
+            //if (isMoving)
+            //{
+            //    move();
+            //}
 
         }
         else
