@@ -37,7 +37,7 @@ public class TileMapGrid : MonoBehaviour
         // Initialize our map tiles to be grass
         for (x = 0; x < mapSizeX; x++)
         {
-            for (y = 0; y < mapSizeX; y++)
+            for (y = 0; y < mapSizeY; y++)
             {
                 tiles[x, y] = 0;
             }
@@ -156,7 +156,7 @@ public class TileMapGrid : MonoBehaviour
     {
         for (int x = 0; x < mapSizeX; x++)
         {
-            for (int y = 0; y < mapSizeX; y++)
+            for (int y = 0; y < mapSizeY; y++)
             {
                 TileTypes tt = tileTypes[tiles[x, y]];
                 GameObject go = (GameObject)Instantiate(tt.tileVisualPrefab, new Vector3(x, y, 0), Quaternion.identity);
