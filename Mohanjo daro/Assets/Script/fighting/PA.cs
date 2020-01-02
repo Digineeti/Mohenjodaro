@@ -51,6 +51,8 @@ public class PA : MonoBehaviour
     private float speed = 4;
     private Vector3 targetPosition;
     private bool isMoving = false;
+
+   
     #endregion
 
     private void Start()
@@ -64,7 +66,7 @@ public class PA : MonoBehaviour
 
         Turnstate = TurnState.NextTurn;
 
-      
+        //GM = GetComponent<GridMaster>();
     }
     // Update is called once per frame
     void Update()
@@ -127,6 +129,8 @@ public class PA : MonoBehaviour
                     }
 
                 }
+
+              
             }
             if(DeathPlayer == Death.death)
             {

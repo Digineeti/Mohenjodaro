@@ -4935,6 +4935,7 @@ MonoBehaviour:
   state: 0
   Turnstate: 0
   DeathPlayer: 0
+  GM: {fileID: 5074669376921340491, guid: 83039e1ccdad95c43983719e85413999, type: 3}
 --- !u!61 &371044715248570729
 BoxCollider2D:
   m_ObjectHideFlags: 0

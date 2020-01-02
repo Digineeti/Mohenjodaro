@@ -265,6 +265,15 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
+  - first: {x: -10, y: -4, z: 0}
+    second:
+      m_TileIndex: 50
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
   - first: {x: -3, y: -4, z: 0}
     second:
       m_TileIndex: 33
@@ -979,8 +988,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 146fa58b4ee73d7409caf2294f04b5f2, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 7e229b3aef987e245819410aa28f7f57, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 2a3424f65eb6a914bafffe59d5352902, type: 2}
   - m_RefCount: 1
@@ -1062,8 +1071,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: bef01fae5c05ffe428984eaacff36372, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1944620467378236235, guid: b61bb405d7d95c742a18d7a746c0330e,
       type: 3}
@@ -1317,7 +1326,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 759013596694453247, guid: e0af474561205484fa1d065af49fbfab, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 88
+  - m_RefCount: 89
     m_Data:
       e00: 1
       e01: 0
@@ -1354,7 +1363,7 @@ Tilemap:
       e32: 8.32e-43
       e33: 0
   m_TileColorArray:
-  - m_RefCount: 87
+  - m_RefCount: 88
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 6.063816e-24, g: 6.063816e-24, b: 6.063816e-24, a: 6.063816e-24}
@@ -1405,7 +1414,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: -3.8970757, g: -3.8970757, b: -3.8970757, a: -3.8970757}
   - m_RefCount: 0
-    m_Data: {r: -7.8556725e+29, g: -7.8556725e+29, b: -7.8556725e+29, a: -7.8556725e+29}
+    m_Data: {r: -3.637555e+34, g: -3.637555e+34, b: -3.637555e+34, a: -3.637555e+34}
   - m_RefCount: 1
     m_Data: {r: 0, g: 0, b: 0, a: 0.38039216}
   m_AnimationFrameRate: 1
