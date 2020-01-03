@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PA : MonoBehaviour
 {
     #region variable
+    
     public GameObject ActiveCircle;                         //declaring the gameobject  for player turn circle
     public Callingscriptableobject callScriptObject;        //declaring the scriptable object 
   
