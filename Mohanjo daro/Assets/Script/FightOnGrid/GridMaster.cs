@@ -95,7 +95,7 @@ public class GridMaster : MonoBehaviour
                     for(int j=0;j<Grids.Length;j++)
                     {
                         Grids[j].GetComponent<SpriteRenderer>().color = Color.black;
-                        Grids[j].GetComponent<Button>().interactable = false;
+                       // Grids[j].GetComponent<Button>().image.color= Color.black;
                         //Grids[j].GetComponent<>().color = Color.black;
 
                     }
@@ -111,7 +111,7 @@ public class GridMaster : MonoBehaviour
                         if (row_Value_Plus <= 96)
                         {
                             Grids[row_Value_Plus].GetComponent<SpriteRenderer>().color = Color.green;
-                            Grids[row_Value_Plus].GetComponent<Button>().interactable = true;
+                            //Grids[row_Value_Plus].GetComponent<Button>().image.color = Color.green;
                         }
                           
                         row_Value_Plus += 8;
@@ -128,18 +128,19 @@ public class GridMaster : MonoBehaviour
                         //    Column_Effected++;
                         if (row_Value_Minus >= 0)
                             Grids[row_Value_Minus].GetComponent<SpriteRenderer>().color = Color.green;
+                       
 
 
                         if (Parent.name== Grids[row_Value_Up].transform.parent.gameObject.name)
                         {                           
-                            Grids[row_Value_Up].GetComponent<SpriteRenderer>().color = Color.green;                           
+                            Grids[row_Value_Up].GetComponent<SpriteRenderer>().color = Color.green;                            
                         }
                         if (row_Value_Up < 96)
                             row_Value_Up++; 
                        
                         if (Parent.name == Grids[row_Value_Down].transform.parent.gameObject.name)
                         {
-                            Grids[row_Value_Down].GetComponent<SpriteRenderer>().color = Color.green;
+                            Grids[row_Value_Down].GetComponent<SpriteRenderer>().color = Color.green;                          
                         }
                         if (row_Value_Down > 0)
                             row_Value_Down--;
@@ -241,6 +242,10 @@ public class GridMaster : MonoBehaviour
             }
         }
        
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(gameObject.name);
+        }
     }
     private int Max_possible_Moves(string Name)
     {
@@ -279,5 +284,9 @@ public class GridMaster : MonoBehaviour
         return value;
     }
 
-    
+    private void OnMouseDown()
+    {
+        Debug.Log(this.gameObject.name);
+    }
+
 }
