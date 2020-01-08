@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31171685f8860945b79dd04d001645d, type: 3}
+  m_Name: Hair
+  m_EditorClassIdentifier: 
+  icon: {fileID: -8926754384368108396, guid: 76306a1f74ccb7c4fa04e674f8f7d2bc, type: 3}
+  stackSize: 0
+  title: Hair
+  armorType: 1
+  intellect: 10
+  strenght: 25
+  stamina: 0
+  animationClip:
+  - {fileID: 7400000, guid: a0d52d8798a458642b12d5a97cdd903a, type: 2}
+  - {fileID: 7400000, guid: d68008ffdd76773428f2e82647f36fb6, type: 2}
+  - {fileID: 7400000, guid: 63e4cd285f165c6498dbe281c0439fed, type: 2}
+  - {fileID: 7400000, guid: 09c90fea95ed8e84b9c37508f1a383bf, type: 2}
+  - {fileID: 7400000, guid: f4cbe5141380cf44c979bcb8f7dfb4f4, type: 2}
+  - {fileID: 7400000, guid: bce945b38d9b0e94d8e1a42b45d12566, type: 2}
+  - {fileID: 7400000, guid: 7e4ebb603968926488d16e1b76df1803, type: 2}
+  - {fileID: 7400000, guid: da952399b17902e45a390887df16b7b1, type: 2}

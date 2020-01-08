@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: clothRight_Idel
+  m_Name: Idle_HairUp
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 8517764867327391640, guid: cc4b89fb6d7233a4c87c7f1bd563ae82,
+      value: {fileID: 6467205816228984078, guid: 76306a1f74ccb7c4fa04e674f8f7d2bc,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 8517764867327391640, guid: cc4b89fb6d7233a4c87c7f1bd563ae82, type: 3}
+    - {fileID: 6467205816228984078, guid: 76306a1f74ccb7c4fa04e674f8f7d2bc, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

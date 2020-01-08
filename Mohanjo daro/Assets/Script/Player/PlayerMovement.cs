@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     private bool playerMoving;
     public  Vector2 lastMove;
 
+
+    [SerializeField]
+    private GearSocket [] gearSocket;
     #endregion
     private void Awake()
     {
@@ -110,6 +113,13 @@ public class PlayerMovement : MonoBehaviour
             amin.SetBool("PlayerMoving", playerMoving);
             amin.SetFloat("LastMoveX", lastMove.x);
             amin.SetFloat("LastMoveY", lastMove.y);
+
+            foreach(GearSocket g in gearSocket)
+            {
+                g.SetXandY(input.horizontal, input.vertical, lastMove);
+                //g.Activate_Layer(layerName);
+            }
+
         }
         else
         {
@@ -117,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
             amin.SetBool("PlayerMoving", playerMoving);
             RD.velocity = new Vector2(0f, 0f);           
         }
+
     }
 
 }

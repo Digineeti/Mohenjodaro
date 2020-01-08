@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31171685f8860945b79dd04d001645d, type: 3}
+  m_Name: Cloth
+  m_EditorClassIdentifier: 
+  icon: {fileID: 6084734151251418682, guid: cc4b89fb6d7233a4c87c7f1bd563ae82, type: 3}
+  stackSize: 0
+  title: Cloth
+  armorType: 0
+  intellect: 10
+  strenght: 25
+  stamina: 4
+  animationClip:
+  - {fileID: 7400000, guid: eb5af5fe64003b143823569e43e4bb25, type: 2}
+  - {fileID: 7400000, guid: e261d43b97feec14c974de66b5100882, type: 2}
+  - {fileID: 7400000, guid: ab9cf404ace03b844988cab57cad7e65, type: 2}
+  - {fileID: 7400000, guid: 821c9a22527bb2d459abe3de65bc8aac, type: 2}
+  - {fileID: 7400000, guid: 442b0b5302465794890aaa8c55150b89, type: 2}
+  - {fileID: 7400000, guid: 3e5af864cd460fa46afa2a584485fdb7, type: 2}
+  - {fileID: 7400000, guid: 4c846c772ceecc1468d76ad512c89ee9, type: 2}
+  - {fileID: 7400000, guid: dab5e8dff186cb04782bdd3040546064, type: 2}
