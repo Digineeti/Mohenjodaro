@@ -71,12 +71,14 @@ public class GearSocket : MonoBehaviour
         spriteRenderer.color = c;
     }
 
-    public void SetXandY(float x, float y,Vector2 lastMove)
+    public void SetXandY(float x, float y,Vector2 lastMove, bool PlayerMoving)
     {
         myAnimator.SetFloat("MoveX", x);
         myAnimator.SetFloat("MoveY", y);
+        myAnimator.SetBool("PlayerMoving", PlayerMoving);
         myAnimator.SetFloat("LastMoveX", lastMove.x);
         myAnimator.SetFloat("LastMoveY", lastMove.y);
+
     }
 
     public void Activate_Layer(string layerName)

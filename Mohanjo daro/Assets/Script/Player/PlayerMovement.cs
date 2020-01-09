@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
             foreach(GearSocket g in gearSocket)
             {
-                g.SetXandY(input.horizontal, input.vertical, lastMove);
+                g.SetXandY(input.horizontal, input.vertical, lastMove,playerMoving);
                 //g.Activate_Layer(layerName);
             }
 
