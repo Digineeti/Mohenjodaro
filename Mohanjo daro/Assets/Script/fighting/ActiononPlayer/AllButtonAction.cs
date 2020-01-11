@@ -768,7 +768,7 @@ public class AllButtonAction : MonoBehaviour
                 {
                     if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                     {
-
+                        // add player sp value..
                     }
 
                 }
