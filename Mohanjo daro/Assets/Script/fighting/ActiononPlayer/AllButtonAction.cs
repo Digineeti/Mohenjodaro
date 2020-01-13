@@ -62,7 +62,7 @@ public class AllButtonAction : MonoBehaviour
                         PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
 
                         //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
-                        Instantiate(PlayerActionList.Effect[4], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
+                        Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
                        
                     }
                 }
@@ -588,7 +588,9 @@ public class AllButtonAction : MonoBehaviour
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
 
             //GameObject Parent = Button_Click_On_Player.transform.parent.gameObject;
-            //Instantiate(PlayerActionList.Effect[4], Parent.transform.position, Parent.transform.rotation);
+            //Vector3 position = Parent.transform.position;         
+
+            Instantiate(PlayerActionList.Effect[12], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
 
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
             {  
@@ -789,6 +791,8 @@ public class AllButtonAction : MonoBehaviour
                     damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
+                    Instantiate(PlayerActionList.Effect[29],new Vector3(spawanHero[i].transform.position.x, spawanHero[i].transform.position.y+1.65f, spawanHero[i].transform.position.z),Quaternion.Euler(90, spawanHero[i].transform.rotation.y, spawanHero[i].transform.rotation.z));
+
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
                     {
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
@@ -1009,6 +1013,9 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+                //instantiate the particle effect on the action..
+                Instantiate(PlayerActionList.Effect[12], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
@@ -1024,6 +1031,9 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
+                    //instantiate the particle effect on the action..
+                    Instantiate(PlayerActionList.Effect[12], secondplayer.transform.position, secondplayer.transform.rotation);
+
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
                         secondplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
@@ -1039,6 +1049,9 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
+                    //instantiate the particle effect on the action..
+                    Instantiate(PlayerActionList.Effect[12], thirdplayer.transform.position, thirdplayer.transform.rotation);
+
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
@@ -1054,6 +1067,9 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
+                    //instantiate the particle effect on the action..
+                    Instantiate(PlayerActionList.Effect[12], Forthplayer.transform.position, Forthplayer.transform.rotation);
+
                     if (PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
                         Forthplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
