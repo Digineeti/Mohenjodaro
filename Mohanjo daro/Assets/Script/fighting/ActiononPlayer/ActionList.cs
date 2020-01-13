@@ -42,6 +42,9 @@ public class ActionList : MonoBehaviour
     public string[] InActivePlayerActionList;
 
 
+    public Transform[] Effect;
+
+
     private void Start()
     {
         

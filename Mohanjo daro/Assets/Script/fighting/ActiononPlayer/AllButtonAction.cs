@@ -17,7 +17,9 @@ public class AllButtonAction : MonoBehaviour
     float EnemyDefenceValue;
     private string Name;
 
-   
+    public ActionList PlayerActionList;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class AllButtonAction : MonoBehaviour
             
             startup = false;
         }
+       
+       
     }
 
     public void Fight_Button_Action_Event()
@@ -58,6 +62,8 @@ public class AllButtonAction : MonoBehaviour
                         PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
 
                         //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
+                        Instantiate(PlayerActionList.Effect[4], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
+                       
                     }
                 }
                 catch (System.Exception)
@@ -580,6 +586,10 @@ public class AllButtonAction : MonoBehaviour
            
             //the enemy current Hp value           
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+
+            //GameObject Parent = Button_Click_On_Player.transform.parent.gameObject;
+            //Instantiate(PlayerActionList.Effect[4], Parent.transform.position, Parent.transform.rotation);
+
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
             {  
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);

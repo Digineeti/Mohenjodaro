@@ -6,6 +6,7 @@ public class UniqueEnemy : MonoBehaviour
 {
     private GameObject[] spawanHero;
     bool spawan ;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,7 @@ public class UniqueEnemy : MonoBehaviour
 
             }
         }
-       
+
        
     }
 }

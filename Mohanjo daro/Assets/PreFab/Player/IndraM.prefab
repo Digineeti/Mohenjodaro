@@ -357,6 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &292796274888519236
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,6 +1570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &1336563608516086581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,6 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &2045515717332125755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &2224920657595920145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,6 +3956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &2783828224521626914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,6 +4120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &2880144221695116307
 GameObject:
   m_ObjectHideFlags: 0
@@ -4935,7 +4941,6 @@ MonoBehaviour:
   state: 0
   Turnstate: 0
   DeathPlayer: 0
-  GM: {fileID: 5074669376921340491, guid: 83039e1ccdad95c43983719e85413999, type: 3}
 --- !u!61 &371044715248570729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5045,6 +5050,36 @@ MonoBehaviour:
   - AttackAllBoost
   - Revive
   - Protect
+  Effect:
+  - {fileID: 400004, guid: d319028747c74ba49811e6560cd985f6, type: 3}
+  - {fileID: 400004, guid: 3081d734af20c4c47be3bfc1d13808b6, type: 3}
+  - {fileID: 400000, guid: febab8b5e93e47543862b3787eb1c562, type: 3}
+  - {fileID: 400006, guid: bd928458ad8daca4b9203e36c8ffa4a1, type: 3}
+  - {fileID: 400006, guid: bf31402ca1f924a4592379774cf5105d, type: 3}
+  - {fileID: 400004, guid: 24f43fc71bd3fda4f82441c762e35521, type: 3}
+  - {fileID: 400008, guid: 877513897a9d826458eb11583d5dbb8b, type: 3}
+  - {fileID: 400014, guid: 0a0efd4b98650094eb311a320cc30b2b, type: 3}
+  - {fileID: 400000, guid: b186d680d5ff9644ba4ddaef06e2549f, type: 3}
+  - {fileID: 400006, guid: fe6611ca211988144a61e7054bd9ceda, type: 3}
+  - {fileID: 400008, guid: 5e7069d92a48a9e439f88298407b4906, type: 3}
+  - {fileID: 400002, guid: e711d659613f53946b03496b28c546a9, type: 3}
+  - {fileID: 400006, guid: ba30c26fe8a256342836827bba2db1a9, type: 3}
+  - {fileID: 400006, guid: 049e886e113173e4680fbc2aa60f43ec, type: 3}
+  - {fileID: 400004, guid: bd58d1d8ebd37b54596b0a41e5fe9413, type: 3}
+  - {fileID: 400004, guid: aabd1839af72f304190fcbcacc39415d, type: 3}
+  - {fileID: 400000, guid: aaf2b51a68a9c0d408a217bdb1ff0a72, type: 3}
+  - {fileID: 400002, guid: 688e97ff9d7176e47abe8a054780fa52, type: 3}
+  - {fileID: 400002, guid: aabcaf7705cb1f041a5b09ab9df9a6c1, type: 3}
+  - {fileID: 400008, guid: 84b6fcaa2433eef4cbc7e80fd873098e, type: 3}
+  - {fileID: 400000, guid: 1e602b792b67e9d41815080ce671f28d, type: 3}
+  - {fileID: 400010, guid: 83db717f5c9d1864b946796f408951aa, type: 3}
+  - {fileID: 400010, guid: 4cfe0a8e3097cd5438434b8020d69fe2, type: 3}
+  - {fileID: 400012, guid: b6d4e5ac81b87ea4d95612b11d865389, type: 3}
+  - {fileID: 400000, guid: 788ffbc1d90214244b7fa6f863ef6be3, type: 3}
+  - {fileID: 400006, guid: 1937e147a6809bd499fd3c8ec993af86, type: 3}
+  - {fileID: 400004, guid: aec825d01b6fca84ba61ccc0703199ca, type: 3}
+  - {fileID: 400006, guid: a727b5e8d8635c84e82c8f17923b835d, type: 3}
+  - {fileID: 400004, guid: f95f98f2fd39cd0439baea99e73cbc66, type: 3}
 --- !u!1 &3486319767666636701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,6 +5401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &3645576697883180353
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,6 +6016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &3769944478996968317
 GameObject:
   m_ObjectHideFlags: 0
@@ -8240,6 +8277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &5516107491376023029
 GameObject:
   m_ObjectHideFlags: 0
@@ -15403,6 +15441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawanHero: []
+  PlayerActionList: {fileID: 6522258301114136686}
 --- !u!1 &7496730903152515112
 GameObject:
   m_ObjectHideFlags: 0
