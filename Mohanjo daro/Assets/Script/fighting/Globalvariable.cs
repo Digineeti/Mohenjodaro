@@ -50,6 +50,7 @@ public class Globalvariable
         set { _turnUi = value; }
     }
 
+    //for player animation
     private static bool _Active_Player_Action;
     public static bool Active_Player_Action
     {
@@ -57,12 +58,30 @@ public class Globalvariable
         set { _Active_Player_Action = value; }
     }
 
+   
     private static string _Active_Player_Animation_Parameter;
     public static string Active_Player_Animation_Parameter
     {
         get { return _Active_Player_Animation_Parameter; }
         set { _Active_Player_Animation_Parameter = value; }
     }
+
+    //for enemy animation
+    private static bool _Effet_On_enemy;
+    public static bool Effect_On_Enemy
+    {
+        get { return _Effet_On_enemy; }
+        set { _Effet_On_enemy = value; }
+    }
+
+    private static string _Effect_Animation_On_Enemy;
+    public static string Effect_Animation_On_Enemy
+    {
+        get { return _Effect_Animation_On_Enemy; }
+        set { _Effect_Animation_On_Enemy = value; }
+    }
+
+
 
     private static bool _All_Player_Hoverbutton;
     public static bool All_Player_Hoverbutton

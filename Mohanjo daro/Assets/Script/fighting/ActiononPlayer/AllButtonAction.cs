@@ -49,8 +49,11 @@ public class AllButtonAction : MonoBehaviour
         if (Name == "Idle")
         {
             //Globalvariable.After_Death_ReSequence += 1;
+            
             Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
+            //Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
             //save defence value of that player who button is click.....
             //PlayerPrefs.SetFloat(Button_Click_On_Player.name+"_Defence_Apply",10);
             for (int i = 0; i < spawanHero.Length; i++)
@@ -62,7 +65,7 @@ public class AllButtonAction : MonoBehaviour
                         PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
 
                         //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
-                        Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
+                        //Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
                        
                     }
                 }
@@ -582,15 +585,16 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(damaged).ToString();
             damagepanel.SetActive(true);
 
-          
-           
+
+            Globalvariable.Effect_On_Enemy = true;
+            Globalvariable.Effect_Animation_On_Enemy = "Hurt";
             //the enemy current Hp value           
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
 
             //GameObject Parent = Button_Click_On_Player.transform.parent.gameObject;
             //Vector3 position = Parent.transform.position;         
 
-            Instantiate(PlayerActionList.Effect[12], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+            Instantiate(PlayerActionList.Effect[0], new Vector3(Button_Click_On_Player.transform.position.x-0.3f, Button_Click_On_Player.transform.position.y-0.4f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x+40, Button_Click_On_Player.transform.rotation.y,-200));
 
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
             {  

@@ -17,7 +17,7 @@ public class EnemyAction : MonoBehaviour
 
     float currentTime;
     float NextTime;
-    bool damage=true;
+    bool damage;
 
     public ActionList AL;
     //public GameObject []PlayerList;
@@ -84,6 +84,7 @@ public class EnemyAction : MonoBehaviour
                 Globalvariable.nextTime = Globalvariable.currentTime + 1f;
                 damage_Calculation();
                 action = false;
+                anim.SetBool("Punch", true);
                 //Globalvariable.After_Death_ReSequence += 1;
             }
             ActiveCircle.SetActive(true);
@@ -100,42 +101,32 @@ public class EnemyAction : MonoBehaviour
                 anim.SetBool("Punch", false);
             }
 
-        }
-        //else if (state == State.Death)
-        //{
-        //    Globalvariable.currentTime += Time.deltaTime;
-        //    if (action == true)
-        //    {
-        //        Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-        //        action = false;
-        //        anim.SetBool("Death", true);
-        //    }
-        //    if (Globalvariable.currentTime > Globalvariable.nextTime)
-        //    {
-        //        action = true;               
-        //        Turnstate = TurnState.Turnover;
-        //        Destroy(gameObject);
-        //        //gameObject.SetActive(false);
-                
-        //    }
-        //}
+        }       
         else
         {
             ActiveCircle.SetActive(false);
             currentTime += Time.deltaTime;
-            if (damage == true)
+            if(Globalvariable.Effect_On_Enemy==true) //(damage == true)
             {
                 if (gameObject.transform.GetChild(1).gameObject.activeSelf == true)
                 {                   
                     NextTime = currentTime + 1;
-                    damage = false;
+                    Globalvariable.Effect_On_Enemy = false;damage = true;
+                    anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, true);
                 }
             }
-            if(currentTime>NextTime)
+            if(damage==true && currentTime > NextTime)
             {
+                damage = false;
                 gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                damage = true;
+                anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, false);
+                Globalvariable.Effect_Animation_On_Enemy = null;
             }
+            //if(currentTime>NextTime)
+            //{
+               
+            //    //damage = true;
+            //}
             if (Globalvariable.All_Enemy_Hoverbutton == false)
                 Light.SetActive(false);
         }
