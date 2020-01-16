@@ -10,7 +10,7 @@ public class csDestroyEffect : MonoBehaviour {
     }
     void Update () {
         timeToDestroyeTheObject += Time.deltaTime;
-        if(timeToDestroyeTheObject>10)
+        if(timeToDestroyeTheObject>2)
         {
             Destroy(gameObject);
         }
