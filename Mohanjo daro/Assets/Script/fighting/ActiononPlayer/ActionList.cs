@@ -45,8 +45,9 @@ public class ActionList : MonoBehaviour
     public Transform[] Effect;
 
 
-    private void Start()
-    {
-        
-    }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Instantiate(Effect[6], collision.transform.position, collision.transform.rotation);
+    //}
 }

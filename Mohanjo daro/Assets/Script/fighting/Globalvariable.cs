@@ -183,5 +183,6 @@ public class Globalvariable
     }
 
     
+    public static Vector3 []TargetPosition;
 
 }

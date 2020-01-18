@@ -115,7 +115,7 @@ public class ActivePlayer : MonoBehaviour
             }
             //back to the current scene with player in the same position..
             Globalvariable.Player_win = true ;
-            SceneManager.LoadScene(Globalvariable.Current_Scene);
+            //SceneManager.LoadScene(Globalvariable.Current_Scene);
             
         }
         if(game_over_Exp==true)
