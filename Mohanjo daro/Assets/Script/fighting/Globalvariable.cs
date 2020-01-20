@@ -184,5 +184,7 @@ public class Globalvariable
 
     
     public static Vector3 []TargetPosition;
+    public static string[] TargetName;
+
 
 }
