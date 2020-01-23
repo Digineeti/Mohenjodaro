@@ -78,7 +78,10 @@ public class ArrowThrow : MonoBehaviour
         {
             float step = 35f * Time.deltaTime; // calculate distance to move
 
-            Arrow[i].transform.position = Vector3.MoveTowards(transform.position, Globalvariable.TargetPosition[i], step);
+            GameObject Target = GameObject.Find(Globalvariable.TargetName[i]);
+            //Arrow[i].transform.position = Target.transform.position;
+            Arrow[i].transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, step);
+
             //Globalvariable.TargetPosition[i] = new Vector3(0,0,0);
         }
     }

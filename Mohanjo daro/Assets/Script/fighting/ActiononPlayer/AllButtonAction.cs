@@ -1491,6 +1491,8 @@ public class AllButtonAction : MonoBehaviour
                     yvalue = -(yvalue);
                     Globalvariable.TargetPosition[TargetValue] = spawanHero[i].transform.position;
                     Globalvariable.TargetName[TargetValue] = spawanHero[i].name;
+
+                   
                     TargetValue++;
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
                     {
