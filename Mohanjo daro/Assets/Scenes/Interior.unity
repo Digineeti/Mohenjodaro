@@ -39382,12 +39382,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!95 &1551569170 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4018364131595426294, guid: 2e87b3f125edc854c8ea4a0e44f0d5d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6484492108439260698}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1555628077
 GameObject:
   m_ObjectHideFlags: 0
@@ -40200,7 +40194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneIndex: 5
-  transition: {fileID: 1551569170}
+  transition: {fileID: 6484492108439260699}
 --- !u!1 &2098354922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 54061464942460275, guid: df3c5787d9c4b6948b1ddadf2130883e,
@@ -40324,5 +40318,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3920844702899130047, guid: 2e87b3f125edc854c8ea4a0e44f0d5d7,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e87b3f125edc854c8ea4a0e44f0d5d7, type: 3}
+--- !u!95 &6484492108439260699 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8421126643422017633, guid: 2e87b3f125edc854c8ea4a0e44f0d5d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6484492108439260698}
+  m_PrefabAsset: {fileID: 0}
