@@ -69,14 +69,13 @@ public class LoadFightScene : MonoBehaviour
             //Globalvariable.NotDestroyed_Player = currentPosition;
             //Globalvariable.NotDestroyed_MainCamera = mainCamera;
             //Globalvariable.NotDestroyed_CineMachine = cinemachine;
-
-            currentPosition.SetActive(false);
-            mainCamera.SetActive(false);
-            cinemachine.SetActive(false);
+            StartCoroutine(LoadScene());
+         
 
            
             Globalvariable.Fight_Scene_Load_freqency = 0;
-            SceneManager.LoadScene(SceneToLoad);
+            //SceneManager.LoadScene(SceneToLoad);
+           
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -97,6 +96,20 @@ public class LoadFightScene : MonoBehaviour
            
 
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        cinemachine.GetComponent<AudioSource>().Play();
+       
+        cinemachine.GetComponent<Animator>().SetTrigger("end");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneToLoad);
+        cinemachine.GetComponent<Animator>().SetTrigger("start");
+
+        currentPosition.SetActive(false);
+        mainCamera.SetActive(false);
+        cinemachine.SetActive(false);
     }
 
     public void Load_Main_Menu()

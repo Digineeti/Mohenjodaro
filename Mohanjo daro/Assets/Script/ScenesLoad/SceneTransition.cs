@@ -8,6 +8,12 @@ public class SceneTransition : MonoBehaviour
     //public string SceneToLoad;
     public int SceneIndex;
     public Animator transition;
+    
+
+    private void Start()
+    {
+       
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "ScenePlayer")
@@ -19,9 +25,13 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        transition.SetTrigger("end");
+        gameObject.GetComponent<AudioSource>().Play();
+        
+        GameObject Cinemachine = GameObject.Find("CM vcam1");
+        Cinemachine.GetComponent<Animator>().SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneIndex);
+        Cinemachine.GetComponent<Animator>().SetTrigger("start");
     }
 
     //AsyncOperation operation = SceneManager.LoadSceneAsync(Sceneindex);
