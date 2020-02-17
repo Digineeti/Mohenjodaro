@@ -25,8 +25,6 @@ public class LoadFightScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-
         Globalvariable.Fight_Scene_Load_freqency = 0;
         if (Globalvariable.NotDestroyed_Player == null)
         {
@@ -42,7 +40,6 @@ public class LoadFightScene : MonoBehaviour
         cinemachine.SetActive(true);
         GamePlayMenu.SetActive(false);
         MainMenu.SetActive(false);
-
         
     }
 
@@ -70,16 +67,12 @@ public class LoadFightScene : MonoBehaviour
             //Globalvariable.NotDestroyed_MainCamera = mainCamera;
             //Globalvariable.NotDestroyed_CineMachine = cinemachine;
             StartCoroutine(LoadScene());
-         
-
-           
             Globalvariable.Fight_Scene_Load_freqency = 0;
             //SceneManager.LoadScene(SceneToLoad);
            
         }
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-           
+        {           
             MainMenu.SetActive(false);           
             IsMenuOpen = !IsMenuOpen;
             if(IsMenuOpen==true)

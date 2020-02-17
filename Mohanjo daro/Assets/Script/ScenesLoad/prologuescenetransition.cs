@@ -11,7 +11,7 @@ public class prologuescenetransition : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "ScenePlayer")
         {
             StartCoroutine(loadScene());
         }
@@ -19,8 +19,9 @@ public class prologuescenetransition : MonoBehaviour
     IEnumerator loadScene()
     {
         //tranmisionamin.SetFloat("transition", 1);
+        player = GameObject.FindGameObjectWithTag("ScenePlayer");
         tranmisionamin.SetBool("Start", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         player.transform.position = new Vector3(enterposition.transform.position.x,enterposition.transform.position.y,0f);
         
         tranmisionamin.SetBool("Start", false);

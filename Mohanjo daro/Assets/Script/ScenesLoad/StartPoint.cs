@@ -7,6 +7,8 @@ public class StartPoint : MonoBehaviour
     // Start is called before the first frame update
     private PlayerMovement thePlayer;
 
+    public GameObject []Starting_Positions;
+
     void Start()
     {
         thePlayer = FindObjectOfType<PlayerMovement>();
