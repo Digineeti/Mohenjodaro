@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FlickeringLight : MonoBehaviour
 {
-     public UnityEngine.Experimental.Rendering.LWRP.Light2D m_Light2D;
+     public UnityEngine.Experimental.Rendering.Universal.Light2D m_Light2D;
     Light light;
     public float mintime;
     public float maxtime;

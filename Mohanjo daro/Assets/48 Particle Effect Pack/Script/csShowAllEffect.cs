@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class csShowAllEffect : MonoBehaviour
 {
     public string[] EffectNames;
     public string[] Effect2Names;
     public Transform[] Effect;
-    public GUIText Text1;
+    //public GUIText Text1;
     int i = 0;
     int a = 0;
 
@@ -20,7 +21,7 @@ public class csShowAllEffect : MonoBehaviour
 
     void Update()
     {
-        Text1.text = i + 1 + ":" + EffectNames[i];
+        //Text1.text = i + 1 + ":" + EffectNames[i];
 
         if (Input.GetKeyDown(KeyCode.Z))
         {

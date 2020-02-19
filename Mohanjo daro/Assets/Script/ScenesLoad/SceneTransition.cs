@@ -26,10 +26,11 @@ public class SceneTransition : MonoBehaviour
     IEnumerator LoadScene()
     {
         //gameObject.GetComponent<AudioSource>().Play();
-
+        transition = GameObject.Find("CM vcam1").GetComponent<Animator>();
         //GameObject Cinemachine = GameObject.Find("CM vcam1");
         transition.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
+        StartPointGlobalData.Scene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(SceneIndex);
         //Cinemachine.GetComponent<Animator>().SetTrigger("start");
         transition.SetTrigger("start");
