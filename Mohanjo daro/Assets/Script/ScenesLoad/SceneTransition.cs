@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     //public string SceneToLoad;
-    public int SceneIndex;
+    public string SceneIndex;
+    //public string CurrentScene;
     public Animator transition;
     
 
@@ -17,8 +18,10 @@ public class SceneTransition : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "ScenePlayer")
-        {          
+        {
             //SceneManager.LoadScene(SceneIndex);
+            StartPointGlobalData.Scene = null;
+            StartPointGlobalData.Scene = SceneIndex + "Enter";
             StartCoroutine(LoadScene());
         }
     }
@@ -30,7 +33,7 @@ public class SceneTransition : MonoBehaviour
         //GameObject Cinemachine = GameObject.Find("CM vcam1");
         transition.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
-        StartPointGlobalData.Scene = SceneManager.GetActiveScene().name;
+        //StartPointGlobalData.Scene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(SceneIndex);
         //Cinemachine.GetComponent<Animator>().SetTrigger("start");
         transition.SetTrigger("start");
