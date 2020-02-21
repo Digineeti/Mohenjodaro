@@ -23,7 +23,7 @@ public class SceneTransitionExit : MonoBehaviour
     IEnumerator LoadScene()
     {
         //gameObject.GetComponent<AudioSource>().Play();
-        transition = GameObject.Find("CM vcam1").GetComponent<Animator>();
+        transition = GameObject.Find("CinemachineCamera").GetComponent<Animator>();
         //GameObject Cinemachine = GameObject.Find("CM vcam1");
         transition.SetTrigger("end");
         yield return new WaitForSeconds(0.5f);
