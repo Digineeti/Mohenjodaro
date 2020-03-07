@@ -22,6 +22,6 @@ public class LayerShorter : MonoBehaviour
         Color tmp = gameObject.transform.parent.GetComponent<SpriteRenderer>().color;
         tmp.a = 1f;
         gameObject.transform.parent.GetComponent<SpriteRenderer>().color = tmp;
-
+        gameObject.transform.parent.GetComponent<SpriteRenderer>().sortingOrder = 0;
     }
 }

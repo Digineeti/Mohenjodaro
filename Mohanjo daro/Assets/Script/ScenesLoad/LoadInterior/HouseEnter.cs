@@ -46,16 +46,21 @@ public class HouseEnter : MonoBehaviour
         if (check)
         {
             //collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 200;
-            ExteriorHouse.color = new Color(1, 1, 1, 0.1f);
-            ExteriorProps.color = new Color(1, 1, 1, 0.1f);
+            //ExteriorHouse.color = new Color(1, 1, 1, 0.1f);
+            //ExteriorProps.color = new Color(1, 1, 1, 0.1f);
+            ExteriorHouse.gameObject.SetActive(false);
+            ExteriorProps.gameObject.SetActive(false);
             InteriorHouse.gameObject.SetActive(true);
             InteriorProps.gameObject.SetActive(true);
         }
         else
         {
             //collision.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 200;
-            ExteriorHouse.color = new Color(1, 1, 1, 1f);
-            ExteriorProps.color = new Color(1, 1, 1, 1f);
+            //ExteriorHouse.color = new Color(1, 1, 1, 1f);
+            //ExteriorProps.color = new Color(1, 1, 1, 1f);
+            ExteriorHouse.gameObject.SetActive(true);
+            ExteriorProps.gameObject.SetActive(true);
+
             InteriorHouse.gameObject.SetActive(false);
             InteriorProps.gameObject.SetActive(false);
         }

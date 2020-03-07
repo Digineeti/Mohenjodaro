@@ -187,4 +187,12 @@ public class Globalvariable
     public static string[] TargetName;
 
 
+    //private static bool _Walkarea;
+    //public static bool Walkarea
+    //{
+    //    get { return _Walkarea; }
+    //    set { _Walkarea = value; }
+    //}
+
+
 }
