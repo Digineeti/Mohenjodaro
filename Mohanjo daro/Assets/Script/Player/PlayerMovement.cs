@@ -133,9 +133,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    //check the area is walkable or not
-
-
+  
 }
 
 

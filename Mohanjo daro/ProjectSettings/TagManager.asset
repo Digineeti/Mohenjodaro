@@ -21,11 +21,11 @@ TagManager:
   - 
   - 
   - Player
+  - House
   - Land
   - Wave
   - Props
   - Enemy
-  - 
   - 
   - 
   - 
@@ -60,9 +60,12 @@ TagManager:
   - name: Road
     uniqueID: 67367111
     locked: 0
-  - name: Player
+  - name: House
     uniqueID: 3709312537
     locked: 0
   - name: Props
     uniqueID: 2487195775
+    locked: 0
+  - name: Player
+    uniqueID: 3592554127
     locked: 0
