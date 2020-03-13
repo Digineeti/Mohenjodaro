@@ -9,6 +9,12 @@ public class ShiftingFloor : MonoBehaviour
     public Tilemap InteriorProps;
     public Tilemap InteriorFirstFloor;
 
+    public GameObject FirstFloor;
+    public GameObject GroundFloor;
+
+    public Tilemap stair;
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ScenePlayer")
@@ -22,25 +28,20 @@ public class ShiftingFloor : MonoBehaviour
     {
         
         yield return new WaitForSeconds(0f);
-        Globalvariable.FloorShifting = !Globalvariable.FloorShifting;
-        if (Globalvariable.FloorShifting)
-        {
-            InteriorFirstFloor.gameObject.SetActive(true);
+        //Globalvariable.FloorShifting = !Globalvariable.FloorShifting;
+        //if (FirstFloor.gameObject.activeSelf)
+        //{
+        FirstFloor.SetActive(false);
+        GroundFloor.SetActive(true);
+        InteriorFirstFloor.gameObject.SetActive(true);
+        stair.GetComponent<CompositeCollider2D>().isTrigger = true;
+        InteriorgroundFloor.transform.GetChild(0).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.3f);
+        InteriorgroundFloor.transform.GetChild(1).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.3f);
+        InteriorgroundFloor.transform.GetChild(0).GetComponent<CompositeCollider2D>().isTrigger = true;
 
-            InteriorgroundFloor.transform.GetChild(0).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.2f);
-            InteriorgroundFloor.transform.GetChild(1).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.2f);
-            InteriorgroundFloor.transform.GetChild(0).GetComponent<CompositeCollider2D>().isTrigger = true; 
-            InteriorProps.gameObject.SetActive(true);
-        }
-        else
-        {
-            InteriorFirstFloor.gameObject.SetActive(false);
-            InteriorgroundFloor.transform.GetChild(0).GetComponent<Tilemap>().color = new Color(1, 1, 1, 1f);
-            InteriorgroundFloor.transform.GetChild(1).GetComponent<Tilemap>().color = new Color(1, 1, 1, 1f);
-            InteriorgroundFloor.transform.GetChild(0).GetComponent<CompositeCollider2D>().isTrigger = false;
-          
-        }
-
+        InteriorProps.gameObject.SetActive(true);
+        //}
+      
         
     }
 }
