@@ -16,9 +16,13 @@ public class HouseExit : MonoBehaviour
     public GameObject Entry;
     public GameObject Exit;
 
+    public GameObject Entry2;
+    public GameObject Exit2;
 
+    public Animator ExteriorDoor;
+    public Animator ExteriorDoor2;
     //bool check;
-   
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,11 +36,25 @@ public class HouseExit : MonoBehaviour
     {      
         transition = GameObject.Find("TransitionCanvas").GetComponentInChildren<Image>().GetComponent<Animator>();       
         yield return new WaitForSeconds(0.3f);
+        GameObject player = GameObject.FindGameObjectWithTag("ScenePlayer").gameObject;
+
 
         if (Exit.gameObject.activeSelf)
         {
             Exit.SetActive(false);
             Entry.SetActive(true);
+
+            Exit2.SetActive(false);
+            Entry2.SetActive(true);
+
+            ExteriorDoor.SetTrigger("end");
+            ExteriorDoor2.SetTrigger("end");
+            ExteriorDoor.GetComponent<SpriteRenderer>().sortingLayerName ="Props";
+            ExteriorDoor.GetComponent<SpriteRenderer>().sortingOrder = 0;
+
+            ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = "Props";
+            ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = 0;
+
             ExteriorHouse.gameObject.SetActive(true);
             ExteriorProps.gameObject.SetActive(true);
             InteriorHouse.gameObject.SetActive(false);

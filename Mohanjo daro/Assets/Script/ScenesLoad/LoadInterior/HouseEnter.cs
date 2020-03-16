@@ -18,6 +18,13 @@ public class HouseEnter : MonoBehaviour
     public GameObject Entry;
     public GameObject Exit;
 
+    public GameObject Entry2;
+    public GameObject Exit2;
+
+
+    public Animator ExteriorDoor;
+    public Animator ExteriorDoor2;
+
     private void Start()
     {
        
@@ -33,14 +40,28 @@ public class HouseEnter : MonoBehaviour
     IEnumerator LoadScene()
     {
         //transition = GameObject.Find("TransitionCanvas").GetComponent<Animator>();
-        transition = GameObject.Find("TransitionCanvas").GetComponentInChildren<Image>().GetComponent<Animator>();
+        //transition = GameObject.Find("TransitionCanvas").GetComponentInChildren<Image>().GetComponent<Animator>();
         //transition.SetTrigger("start");
         //SceneManager.LoadScene(TransitionScene);
+        GameObject player = GameObject.FindGameObjectWithTag("ScenePlayer").gameObject;
+
         yield return new WaitForSeconds(0.3f);      
         if(Entry.gameObject.activeSelf)
         {
             Exit.SetActive(true);
             Entry.SetActive(false);
+
+            Exit2.SetActive(true);
+            Entry2.SetActive(false);
+
+
+            ExteriorDoor.SetTrigger("start");ExteriorDoor2.SetTrigger("start");
+            ExteriorDoor.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
+            ExteriorDoor.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder+1000;
+
+            ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
+            ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
+
             ExteriorHouse.gameObject.SetActive(false);
             ExteriorProps.gameObject.SetActive(false);
 
