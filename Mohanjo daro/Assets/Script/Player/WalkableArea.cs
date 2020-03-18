@@ -9,10 +9,12 @@ public class WalkableArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Base.GetComponent<CompositeCollider2D>().isTrigger=true;
+        if (Base.tag == "Walkable")
+            Base.GetComponent<CompositeCollider2D>().isTrigger = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Base.GetComponent<CompositeCollider2D>().isTrigger=false;
+        if (Base.tag == "Walkable")
+            Base.GetComponent<CompositeCollider2D>().isTrigger=false;
     }
 }

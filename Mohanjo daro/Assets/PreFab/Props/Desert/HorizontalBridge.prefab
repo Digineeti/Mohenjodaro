@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 7401511053951942450}
   - component: {fileID: 7401511053951942451}
   - component: {fileID: 3299424186652763074}
+  - component: {fileID: 339550693}
   m_Layer: 0
   m_Name: base
   m_TagString: Walkable
@@ -505,7 +506,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.034912013}
@@ -521,6 +522,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3299157}
   m_EdgeRadius: 0
+--- !u!114 &339550693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7401511053951942449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb97d87e711ed44e994afa905bc0192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Base: {fileID: 0}
 --- !u!1 &7401511054452675645
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7401511054760917679
 Transform:
   m_ObjectHideFlags: 0

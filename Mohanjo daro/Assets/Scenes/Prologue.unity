@@ -18219,7 +18219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a405c36c0c8395a42be4b2eff883d26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionScene: Desert
+  TransitionScene: Act1
   GlobalData: {fileID: 396116862}
 --- !u!4 &419012665 stripped
 Transform:
@@ -21252,7 +21252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a405c36c0c8395a42be4b2eff883d26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TransitionScene: Desert
+  TransitionScene: Act1
   GlobalData: {fileID: 1613039659}
 --- !u!1 &1626520351
 GameObject:
