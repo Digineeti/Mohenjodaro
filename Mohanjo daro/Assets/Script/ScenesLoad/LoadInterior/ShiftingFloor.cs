@@ -12,7 +12,8 @@ public class ShiftingFloor : MonoBehaviour
     public GameObject FirstFloor;
     public GameObject GroundFloor;
 
-    public Tilemap stair;
+    public GameObject stair;
+    public GameObject stair2;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,7 +35,8 @@ public class ShiftingFloor : MonoBehaviour
         FirstFloor.SetActive(false);
         GroundFloor.SetActive(true);
         InteriorFirstFloor.gameObject.SetActive(true);
-        stair.GetComponent<CompositeCollider2D>().isTrigger = true;
+        stair.GetComponent<EdgeCollider2D>().isTrigger = true;
+        stair2.GetComponent<EdgeCollider2D>().isTrigger = true;
         InteriorgroundFloor.transform.GetChild(0).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.3f);
         InteriorgroundFloor.transform.GetChild(1).GetComponent<Tilemap>().color = new Color(1, 1, 1, 0.3f);
         InteriorgroundFloor.transform.GetChild(0).GetComponent<CompositeCollider2D>().isTrigger = true;
