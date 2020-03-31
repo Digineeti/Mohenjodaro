@@ -32,75 +32,6 @@ Transform:
   m_Father: {fileID: 6488878383131960474}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &111763653204668832
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7620740236042943522}
-  - component: {fileID: 3439116253866023716}
-  - component: {fileID: 557266417497169571}
-  m_Layer: 12
-  m_Name: ShiftingFirstfloor1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7620740236042943522
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111763653204668832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8243428819355651193}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3439116253866023716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111763653204668832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abf216a63afa26448a2bb15711f5dfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteriorgroundFloor: {fileID: 0}
-  InteriorProps: {fileID: 0}
-  InteriorFirstFloor: {fileID: 0}
-  FirstFloor: {fileID: 111763653204668832}
-  GroundFloor: {fileID: 5978602198526828422}
-  stair: {fileID: 0}
-  stair2: {fileID: 0}
---- !u!68 &557266417497169571
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111763653204668832}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.2589965, y: -0.36688054}
-  - {x: -0.2637024, y: 0.28120428}
 --- !u!1 &241739724315524331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1519,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2721453403698296696}
   - component: {fileID: 8257305004924760420}
+  - component: {fileID: 6732832321012278090}
+  - component: {fileID: 3882598340882490224}
+  - component: {fileID: 3742344751166581196}
   m_Layer: 12
   m_Name: Stair Down 1st
   m_TagString: Untagged
@@ -1602,8 +1536,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2400267518428242288}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5852976, y: -0.50047636, z: 2.6386719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.48, y: -5.328, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 244429966116123015}
@@ -1647,7 +1581,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -585654759
   m_SortingLayer: 5
-  m_SortingOrder: 6
+  m_SortingOrder: 30
   m_Sprite: {fileID: -549789443665989942, guid: 49dae0b3de5a42c4480457ebbb559468,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1660,6 +1594,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6732832321012278090
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400267518428242288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.26166224, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4766755, y: 1}
+  m_EdgeRadius: 0
+--- !u!68 &3882598340882490224
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400267518428242288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.02035904, y: -0.3658657}
+  - {x: -0.017565727, y: 0.37255812}
+--- !u!114 &3742344751166581196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400267518428242288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abf216a63afa26448a2bb15711f5dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Visible_floor: {fileID: 2704123056339834728}
+  Hide_Floor: {fileID: 99273559295129923}
 --- !u!1 &2704123056339834728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2475,7 @@ GameObject:
   - component: {fileID: 1995246452897081536}
   - component: {fileID: 855923102922194449}
   m_Layer: 12
-  m_Name: Basement Wall
+  m_Name: SecondFloor Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,7 +3351,7 @@ MonoBehaviour:
   InteriorgroundFloor: {fileID: 0}
   InteriorProps: {fileID: 0}
   InteriorFirstFloor: {fileID: 0}
-  FirstFloor: {fileID: 111763653204668832}
+  FirstFloor: {fileID: 0}
   GroundFloor: {fileID: 5978602198526828422}
   stair: {fileID: 0}
   stair2: {fileID: 0}
@@ -3412,6 +3404,8 @@ GameObject:
   - component: {fileID: 8243428819355651193}
   - component: {fileID: 7662093073456758815}
   - component: {fileID: 7013711752451968447}
+  - component: {fileID: 1773452815350029997}
+  - component: {fileID: 5047092035609275021}
   m_Layer: 12
   m_Name: Stair Up Ground
   m_TagString: Untagged
@@ -3429,8 +3423,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.47, y: -5.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7620740236042943522}
+  m_Children: []
   m_Father: {fileID: 8536152951683734809}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3495,14 +3488,63 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.4989779, y: -0.49882066}
-  - {x: 0.4989028, y: -0.49934763}
+  - {x: 0.45926094, y: 0.49381638}
+  - {x: 0.46450424, y: -0.10130978}
+--- !u!114 &1773452815350029997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785537296196895640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abf216a63afa26448a2bb15711f5dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Visible_floor: {fileID: 99273559295129923}
+  Hide_Floor: {fileID: 2704123056339834728}
+--- !u!60 &5047092035609275021
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6785537296196895640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.24985027, y: -0.15848255}
+      - {x: 0.25184917, y: -0.28877926}
+      - {x: 0.015425205, y: -0.29777527}
+      - {x: 0.01268959, y: -0.38288116}
+      - {x: -0.23995352, y: -0.3753147}
+      - {x: -0.24802876, y: -0.45444632}
+      - {x: -0.49603987, y: -0.46719027}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.4901719, y: -0.17813826}
 --- !u!1 &6865194779687667480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4135,13 +4177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4abf216a63afa26448a2bb15711f5dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteriorgroundFloor: {fileID: 0}
-  InteriorProps: {fileID: 0}
-  InteriorFirstFloor: {fileID: 0}
-  FirstFloor: {fileID: 7269343253975236938}
-  GroundFloor: {fileID: 4136350469122829062}
-  stair: {fileID: 0}
-  stair2: {fileID: 0}
+  Visible_floor: {fileID: 0}
+  Hide_Floor: {fileID: 0}
 --- !u!68 &5254396303976276870
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4172,7 +4209,7 @@ GameObject:
   - component: {fileID: 2680675127090322466}
   - component: {fileID: 2806500528413237217}
   m_Layer: 12
-  m_Name: Basement Floor
+  m_Name: ' Second Floor'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

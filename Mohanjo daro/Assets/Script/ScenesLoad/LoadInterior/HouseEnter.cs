@@ -112,8 +112,10 @@ public class HouseEnter : MonoBehaviour
 
             Exterior.GetComponent<CompositeCollider2D>().isTrigger = true;
             //Roof.GetComponent<TilemapCollider2D>().isTrigger = true;
-            Exterior.color=new Color(1f,1f,1f,0.2f);
-            Roof.color = new Color(1f, 1f, 1f, 0.2f);
+
+
+            Exterior.color=new Color(1f,1f,1f,0.4f);
+            Roof.color = new Color(1f, 1f, 1f, 0.4f);
 
             //InteriorHouse.gameObject.SetActive(true);
             //InteriorProps.gameObject.SetActive(true);
