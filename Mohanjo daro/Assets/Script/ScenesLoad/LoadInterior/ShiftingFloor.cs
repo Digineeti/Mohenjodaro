@@ -39,6 +39,39 @@ public class ShiftingFloor : MonoBehaviour
         Visible_floor.SetActive(true);
         Hide_Floor.SetActive(false);
 
+        GameObject Exterior_Door1 = GameObject.Find("ExteriorDoor");
+        GameObject Exterior_Door2 = GameObject.Find("ExteriorDoor2");
+
+      
+        if(Visible_floor.name== "GroundFloor")
+        {
+            if(Visible_floor.activeSelf)
+            {
+                Exterior_Door1.SetActive(true);
+                Exterior_Door2.SetActive(true);
+            }
+            else
+            {
+                Exterior_Door1.SetActive(false);
+                Exterior_Door2.SetActive(false);
+            }
+        }
+
+        if (Hide_Floor.name == "GroundFloor")
+        {
+            if (Hide_Floor.activeSelf)
+            {
+                Exterior_Door1.SetActive(true);
+                Exterior_Door2.SetActive(true);
+            }
+            else
+            {
+                Exterior_Door1.SetActive(false);
+                Exterior_Door2.SetActive(false);
+            }
+        }
+
+
         //Globalvariable.FloorShifting = !Globalvariable.FloorShifting;
         //if (FirstFloor.gameObject.activeSelf)
         //{

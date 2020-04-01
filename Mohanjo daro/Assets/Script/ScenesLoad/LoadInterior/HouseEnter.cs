@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Experimental.Rendering.Universal;
 
 
 public class HouseEnter : MonoBehaviour
@@ -11,17 +13,17 @@ public class HouseEnter : MonoBehaviour
     public Tilemap Exterior;
     public Tilemap Roof;
 
-    public GameObject ActiveGroundFloor; 
-
+    public GameObject ActiveGroundFloor;
     public GameObject Entry;
     public GameObject Exit;
-
     public GameObject Entry2;
     public GameObject Exit2;
 
 
     public Animator ExteriorDoor;
     public Animator ExteriorDoor2;
+
+
 
     private void Start()
     {
@@ -89,7 +91,8 @@ public class HouseEnter : MonoBehaviour
     {
        
         GameObject player = GameObject.FindGameObjectWithTag("ScenePlayer").gameObject;
-
+        GameObject Main_Light = GameObject.Find("GlobalLight");
+        Main_Light.GetComponent<Light2D>().intensity = 0.2f;
         yield return new WaitForSeconds(0.3f);
         if (Entry.gameObject.activeSelf)
         {

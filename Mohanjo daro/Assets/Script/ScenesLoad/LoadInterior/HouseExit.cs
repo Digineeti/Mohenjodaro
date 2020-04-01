@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class HouseExit : MonoBehaviour
 {
@@ -46,6 +47,9 @@ public class HouseExit : MonoBehaviour
 
             Exit2.SetActive(false);
             Entry2.SetActive(true);
+
+            GameObject Main_Light = GameObject.Find("GlobalLight");
+            Main_Light.GetComponent<Light2D>().intensity = 0.8f;
 
             ExteriorDoor.SetTrigger("end");
             ExteriorDoor2.SetTrigger("end");
