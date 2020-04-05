@@ -13,7 +13,9 @@ public class HouseEnter : MonoBehaviour
     public Tilemap Exterior;
     public Tilemap Roof;
 
+    //public GameObject Exterior;
     public GameObject ActiveGroundFloor;
+
     public GameObject Entry;
     public GameObject Exit;
     public GameObject Entry2;
@@ -92,7 +94,7 @@ public class HouseEnter : MonoBehaviour
        
         GameObject player = GameObject.FindGameObjectWithTag("ScenePlayer").gameObject;
         GameObject Main_Light = GameObject.Find("GlobalLight");
-        Main_Light.GetComponent<Light2D>().intensity = 0.2f;
+        Main_Light.GetComponent<Light2D>().intensity = 0.05f;
         yield return new WaitForSeconds(0.3f);
         if (Entry.gameObject.activeSelf)
         {
@@ -112,16 +114,15 @@ public class HouseEnter : MonoBehaviour
             ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
             ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
 
+           
 
+            
             Exterior.GetComponent<CompositeCollider2D>().isTrigger = true;
             //Roof.GetComponent<TilemapCollider2D>().isTrigger = true;
+            Exterior.color=new Color(1f,1f,1f,0f);
+            Roof.color = new Color(1f, 1f, 1f, 0f);
 
 
-            Exterior.color=new Color(1f,1f,1f,0.4f);
-            Roof.color = new Color(1f, 1f, 1f, 0.4f);
-
-            //InteriorHouse.gameObject.SetActive(true);
-            //InteriorProps.gameObject.SetActive(true);
         }
     }
 }

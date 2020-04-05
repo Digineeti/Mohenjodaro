@@ -7,11 +7,16 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class HouseExit : MonoBehaviour
 {
-    public Tilemap ExteriorHouse;
-    public Tilemap ExteriorProps;
+    //public Tilemap ExteriorHouse;
+    //public Tilemap ExteriorProps;
 
-    public Tilemap InteriorHouse;
-    public Tilemap InteriorProps;
+    //public Tilemap InteriorHouse;
+    //public Tilemap InteriorProps;
+
+    public Tilemap Exterior;
+    public Tilemap Roof;
+   
+    public GameObject Interiror;
     private Animator transition;
 
     public GameObject Entry;
@@ -22,6 +27,9 @@ public class HouseExit : MonoBehaviour
 
     public Animator ExteriorDoor;
     public Animator ExteriorDoor2;
+
+    public GameObject Exterior_Door1;
+    public GameObject Exterior_Door2;
     //bool check;
 
 
@@ -53,16 +61,24 @@ public class HouseExit : MonoBehaviour
 
             ExteriorDoor.SetTrigger("end");
             ExteriorDoor2.SetTrigger("end");
+
             ExteriorDoor.GetComponent<SpriteRenderer>().sortingLayerName ="Props";
             ExteriorDoor.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
             ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = "Props";
             ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
-            ExteriorHouse.gameObject.SetActive(true);
-            ExteriorProps.gameObject.SetActive(true);
-            InteriorHouse.gameObject.SetActive(false);
-            InteriorProps.gameObject.SetActive(false);
+           
+            Interiror.SetActive(false);
+
+            Exterior.GetComponent<CompositeCollider2D>().isTrigger = false;
+            //Roof.GetComponent<TilemapCollider2D>().isTrigger = true;
+            Exterior.color = new Color(1f, 1f, 1f, 1f);
+            Roof.color = new Color(1f, 1f, 1f, 1f);
+
+            
+            Exterior_Door1.SetActive(true);
+            Exterior_Door2.SetActive(true);
         }
 
     }
