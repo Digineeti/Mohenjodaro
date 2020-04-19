@@ -42,26 +42,32 @@ public class ShiftingFloor : MonoBehaviour
         GameObject Exterior_Door1 = GameObject.Find("ExteriorDoor");
         GameObject Exterior_Door2 = GameObject.Find("ExteriorDoor2");
 
-        Exterior_Door1.SetActive(false);
-        Exterior_Door2.SetActive(false);
+        //Exterior_Door1.SetActive(false);
+        //Exterior_Door2.SetActive(false);
+
+
+        Exterior_Door1.GetComponent<SpriteRenderer>().color= new Color(1f, 1f, 1f, 0f); 
+        Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 
         if (Visible_floor.name== "GroundFloor")
         {
-            if(Visible_floor.activeSelf)
-            {
-                Exterior_Door1.SetActive(true);
-                Exterior_Door2.SetActive(true);
-            }
-            
+            Exterior_Door1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            //if(Visible_floor.activeSelf)
+            //{
+            //    Exterior_Door1.SetActive(true);
+            //    Exterior_Door2.SetActive(true);
+            //}
+
         }
-        if (Hide_Floor.name == "GroundFloor")
-        {
-            if (Hide_Floor.activeSelf)
-            {
-                Exterior_Door1.SetActive(true);
-                Exterior_Door2.SetActive(true);
-            }          
-        }
+        //if (Hide_Floor.name == "GroundFloor")
+        //{
+        //    if (Hide_Floor.activeSelf)
+        //    {
+        //        Exterior_Door1.SetActive(true);
+        //        Exterior_Door2.SetActive(true);
+        //    }          
+        //}
 
 
         //Globalvariable.FloorShifting = !Globalvariable.FloorShifting;

@@ -28,8 +28,7 @@ public class HouseExit : MonoBehaviour
     public Animator ExteriorDoor;
     public Animator ExteriorDoor2;
 
-    public GameObject Exterior_Door1;
-    public GameObject Exterior_Door2;
+    
     //bool check;
 
 
@@ -50,6 +49,7 @@ public class HouseExit : MonoBehaviour
 
         if (Exit.gameObject.activeSelf)
         {
+
             Exit.SetActive(false);
             Entry.SetActive(true);
 
@@ -77,8 +77,7 @@ public class HouseExit : MonoBehaviour
             Roof.color = new Color(1f, 1f, 1f, 1f);
 
             
-            Exterior_Door1.SetActive(true);
-            Exterior_Door2.SetActive(true);
+          
         }
 
     }
