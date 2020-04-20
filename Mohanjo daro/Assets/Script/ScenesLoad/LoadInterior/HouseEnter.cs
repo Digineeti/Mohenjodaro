@@ -94,7 +94,7 @@ public class HouseEnter : MonoBehaviour
        
         GameObject player = GameObject.FindGameObjectWithTag("ScenePlayer").gameObject;
         GameObject Main_Light = GameObject.Find("GlobalLight");
-        Main_Light.GetComponent<Light2D>().intensity = 0.05f;
+        Main_Light.GetComponent<Light2D>().intensity = 0.6f;
         yield return new WaitForSeconds(0.3f);
         if (Entry.gameObject.activeSelf)
         {
