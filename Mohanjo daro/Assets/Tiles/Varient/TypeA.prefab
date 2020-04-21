@@ -31,6 +31,7 @@ Transform:
   - {fileID: 2721453403698296696}
   - {fileID: 5574230512352984980}
   - {fileID: 7123614043213131209}
+  - {fileID: 2649571957692508798}
   m_Father: {fileID: 6488878383131960474}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,12 +82,12 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
@@ -105,8 +106,8 @@ MonoBehaviour:
   - {x: -0.45170784, y: -0.035424232, z: 0}
   - {x: 0.37270737, y: -0.035399437, z: 0}
   - {x: 0.34833813, y: 0.9039459, z: 0}
-  - {x: 0.98191166, y: 2.4506998, z: 0}
-  - {x: -0.82250786, y: 2.497614, z: 0}
+  - {x: 0.76078653, y: 1.9347415, z: 0}
+  - {x: -0.78565407, y: 1.9448018, z: 0}
   - {x: -0.4081049, y: 0.8939638, z: 0}
 --- !u!1 &241739724315524331
 GameObject:
@@ -773,12 +774,12 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.8
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
-  m_LightOrder: 0
+  m_LightOrder: 1
   m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
@@ -797,8 +798,8 @@ MonoBehaviour:
   - {x: -0.45170784, y: -0.035424232, z: 0}
   - {x: 0.37270737, y: -0.035399437, z: 0}
   - {x: 0.34833813, y: 0.9039459, z: 0}
-  - {x: 0.98191166, y: 2.4506998, z: 0}
-  - {x: -0.82250786, y: 2.497614, z: 0}
+  - {x: 0.8160677, y: 1.9900227, z: 0}
+  - {x: -0.7672272, y: 1.9816556, z: 0}
   - {x: -0.4081049, y: 0.8939638, z: 0}
 --- !u!1 &696553595425106335
 GameObject:
@@ -2468,6 +2469,7 @@ Transform:
   - {fileID: 5392868750633320799}
   - {fileID: 981739227702848057}
   - {fileID: 5706347284480879594}
+  - {fileID: 3632116955492589706}
   m_Father: {fileID: 6488878383131960474}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4006,6 +4008,78 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.37129784, y: -0.2788353}
   - {x: 0.61394405, y: -0.27575874}
+--- !u!1 &3893902781553428074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2649571957692508798}
+  - component: {fileID: 2897518618516047918}
+  m_Layer: 12
+  m_Name: FirstfloorRoomLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2649571957692508798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893902781553428074}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.44, y: -5.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 244429966116123015}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2897518618516047918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893902781553428074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 1
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -5.047903, y: -2.6206517, z: 0}
+  - {x: 4.996803, y: -2.5184512, z: 0}
+  - {x: 4.945703, y: 2.4162512, z: 0}
+  - {x: -5.047903, y: 2.390701, z: 0}
 --- !u!1 &4138302105517380523
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,9 +4647,82 @@ Transform:
   - {fileID: 7486572321619498319}
   - {fileID: 3697433968592393260}
   - {fileID: 8684038337669741389}
+  - {fileID: 1213149497946370455}
   m_Father: {fileID: 6488878383131960474}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4752813347960088204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3632116955492589706}
+  - component: {fileID: 8702292927915104733}
+  m_Layer: 12
+  m_Name: SecondfloorRoomLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3632116955492589706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752813347960088204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.44, y: -5.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7978760625407744139}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8702292927915104733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752813347960088204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 1
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -5.047903, y: -2.6206517, z: 0}
+  - {x: 4.996803, y: -2.5184512, z: 0}
+  - {x: 4.945703, y: 2.4162512, z: 0}
+  - {x: -5.047903, y: 2.390701, z: 0}
 --- !u!1 &5142162515583517698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5697,6 +5844,78 @@ CompositeCollider2D:
       - {x: -6, y: -5.0000296}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
+--- !u!1 &7282566927222835682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213149497946370455}
+  - component: {fileID: 1620108013325689747}
+  m_Layer: 12
+  m_Name: BasmentRoomLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213149497946370455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282566927222835682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.44, y: -5.81, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2655958831933910784}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1620108013325689747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282566927222835682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Intensity: 0.8
+  m_LightVolumeOpacity: 0
+  m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 1
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -5.047903, y: -2.6206517, z: 0}
+  - {x: 4.996803, y: -2.5184512, z: 0}
+  - {x: 4.945703, y: 2.4162512, z: 0}
+  - {x: -5.047903, y: 2.390701, z: 0}
 --- !u!1 &7477614786698885335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7726,7 +7945,7 @@ GameObject:
   - component: {fileID: 4751125429204764548}
   - component: {fileID: 598063265059677446}
   m_Layer: 12
-  m_Name: Freeform Light 2D
+  m_Name: GroundfloorRoomLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7761,14 +7980,14 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.047169805, g: 0, b: 0, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  m_Intensity: 0.8
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000397929e3a54450c79db2f815c7f00304199e17dd7f983f948f0622d6
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
+  m_AlphaBlendOnOverlap: 1
   m_ShadowIntensity: 0
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
@@ -8098,6 +8317,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tourch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205959701622201338, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205959701622201338, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_LightOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7069511062787704562, guid: 0f6d0feb91dd7d044914112a91a532f5,
         type: 3}
