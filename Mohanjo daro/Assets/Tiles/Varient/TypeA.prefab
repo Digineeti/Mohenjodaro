@@ -8383,6 +8383,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: -483821255
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -951040859
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 368620189
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[4]
+      value: 67367111
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[5]
+      value: -585654759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[6]
+      value: -1807771521
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[7]
+      value: -702413169
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_LightOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7665164406731427963, guid: 0f6d0feb91dd7d044914112a91a532f5,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6d0feb91dd7d044914112a91a532f5, type: 3}
 --- !u!4 &673335050520306157 stripped
