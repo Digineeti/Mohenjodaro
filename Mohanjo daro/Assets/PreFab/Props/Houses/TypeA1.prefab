@@ -4598,6 +4598,11 @@ PrefabInstance:
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.data[3].y
       value: -5.0000296
       objectReference: {fileID: 0}
+    - target: {fileID: 9202705945484589946, guid: 1f6b3db98aa68dd429e54adc79575014,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6b3db98aa68dd429e54adc79575014, type: 3}
 --- !u!19719996 &8007073849023840590 stripped
