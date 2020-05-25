@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -252,6 +252,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829300, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
       propertyPath: m_Name
@@ -332,6 +337,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 385839547, guid: 55aea632e7a4aa74e873d54e83d3d7a7, type: 3}
+      propertyPath: maxCharInWidth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532574278751990512, guid: 55aea632e7a4aa74e873d54e83d3d7a7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -52.05005
+      objectReference: {fileID: 0}
     - target: {fileID: 6785578101798425344, guid: 55aea632e7a4aa74e873d54e83d3d7a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,6 +455,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NewDailogueSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785578102023480667, guid: 55aea632e7a4aa74e873d54e83d3d7a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785578102271034573, guid: 55aea632e7a4aa74e873d54e83d3d7a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55aea632e7a4aa74e873d54e83d3d7a7, type: 3}
