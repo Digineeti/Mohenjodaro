@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924939279868995902}
   - component: {fileID: 1924939279868995903}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RootBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09436548, y: 0.0094765425}
+  m_Offset: {x: -0.09436548, y: 0.08422685}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53405595, y: 0.36733794}
+  m_Size: {x: 0.53405595, y: 0.06414223}
   m_EdgeRadius: 0
 --- !u!1 &1924939281724413985
 GameObject:
@@ -67,7 +67,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1924939281724413990}
   - component: {fileID: 1924939281724413991}
-  m_Layer: 0
+  - component: {fileID: 4388162241663701433}
+  m_Layer: 12
   m_Name: DeathTreeTrunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,3 +140,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!210 &4388162241663701433
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924939281724413985}
+  m_Enabled: 1
+  m_SortingLayerID: -702413169
+  m_SortingLayer: 7
+  m_SortingOrder: 0

@@ -30,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private GearSocket[] gearSocket;
 
-
+    [SerializeField]
+    private LayerMask ground_Check;
     #endregion
     private void Awake()
     {
@@ -54,13 +55,14 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //calling the Groundmovement function
-        GroundMovement();
+       
+            GroundMovement();
     }
 
     //player movement script 
     void GroundMovement()
     {
-        if (Globalvariable.Dialogue_Open == false)
+        if (Globalvariable.Dialogue_Open == false )
         {
             playerMoving = false;
             // Smooting the currentSpeed to the targetSpeed
@@ -131,7 +133,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+   private bool Check_Ground()
+    {
+        float extraheight = 0.1f;
+        RaycastHit2D raycasthit = Physics2D.Raycast(gameObject.GetComponent<BoxCollider2D>().bounds.center, new Vector2(0,1), gameObject.GetComponent<BoxCollider2D>().bounds.extents.y+extraheight,ground_Check);
+        Color rayColor;
+        if(raycasthit.collider!=null)
+        {
+            rayColor = Color.green;
+        }
+        else
+        {
+            rayColor = Color.red;
+        }
+        Debug.DrawRay(gameObject.GetComponent<BoxCollider2D>().bounds.center, Vector2.down* (gameObject.GetComponent<BoxCollider2D>().bounds.extents.y + extraheight),rayColor);
+        Debug.Log(raycasthit.collider);
+        return raycasthit.collider != null;
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
 }
 
 

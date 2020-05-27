@@ -8,6 +8,7 @@ public class Cameracontroll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(transform.gameObject);
         if (!cameraExists)
         {
             cameraExists = true;
