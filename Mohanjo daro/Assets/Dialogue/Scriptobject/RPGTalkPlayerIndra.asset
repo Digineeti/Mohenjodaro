@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: RPGTalkPlayerIndra
   m_EditorClassIdentifier: 
   dialoger: Indra
-  photo: {fileID: 21300000, guid: ca51410ce9307b54b8833a4d14f4f886, type: 3}
+  photo: {fileID: 21300000, guid: 1c17c1264c40ae14aa1152c9f3678f61, type: 3}
   expressions:
   - name: Happy
-    photo: {fileID: 21300000, guid: ca51410ce9307b54b8833a4d14f4f886, type: 3}
-    boolInAnimator: true
+    photo: {fileID: 21300000, guid: b04d76baa2baf44479598a0d6c485236, type: 3}
+    boolInAnimator: Happy
     audio: {fileID: 0}
   - name: sad
-    photo: {fileID: 21300000, guid: bb96cbd10d8a4054b91987d570e3eba0, type: 3}
-    boolInAnimator: 
+    photo: {fileID: 21300000, guid: f4857efe53d71ee46986c6dba780c507, type: 3}
+    boolInAnimator: sad
     audio: {fileID: 0}
   - name: crying
-    photo: {fileID: 21300000, guid: bd48239bbf9b8704ea1d7615bfa11001, type: 3}
-    boolInAnimator: 
+    photo: {fileID: 21300000, guid: c7e369fbb9ecfd142934a2de130c20c3, type: 3}
+    boolInAnimator: crying
     audio: {fileID: 0}
   - name: playing
-    photo: {fileID: 21300000, guid: b909c5fd7e3561f4dafda7f6d612060a, type: 3}
-    boolInAnimator: 
+    photo: {fileID: 21300000, guid: b35d1fb6498f7054ea5e465790817ac5, type: 3}
+    boolInAnimator: playing
     audio: {fileID: 0}
   - name: romentic
-    photo: {fileID: 21300000, guid: f6e5514147149f34c876f1257c394ead, type: 3}
-    boolInAnimator: 
+    photo: {fileID: 21300000, guid: 549f2456303797a41a7883a7ee89b746, type: 3}
+    boolInAnimator: romentic
     audio: {fileID: 0}
