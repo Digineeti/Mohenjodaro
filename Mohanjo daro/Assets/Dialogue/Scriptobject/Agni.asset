@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Agni
   m_EditorClassIdentifier: 
   dialoger: Agni
-  photo: {fileID: 21300000, guid: bb96cbd10d8a4054b91987d570e3eba0, type: 3}
+  type: Enemy
+  photo: {fileID: 21300000, guid: c7e369fbb9ecfd142934a2de130c20c3, type: 3}
   expressions:
-  - name: normal
-    photo: {fileID: 21300000, guid: a568a600255ff2549906d1adbf9062b6, type: 3}
-    boolInAnimator: 
-    audio: {fileID: 0}
+  - photo: {fileID: 21300000, guid: cbfded3c5a3255f49ba94be268939abd, type: 3}
