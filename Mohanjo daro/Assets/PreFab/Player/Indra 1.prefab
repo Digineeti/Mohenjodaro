@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 4367049879018031628}
   - component: {fileID: 4367049879018031627}
   - component: {fileID: 4367049879018031631}
-  m_Layer: 11
+  - component: {fileID: 1737893060}
+  m_Layer: 12
   m_Name: Indra 1
   m_TagString: ScenePlayer
   m_Icon: {fileID: 0}
@@ -117,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1fe1d8d2416114190e621613f4e0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  h_Current_Speed: 1
-  v_Current_Speed: 1
+  h_Current_Speed: 0.5
+  v_Current_Speed: 0.5
   acceleration_Speed: 2
   max_Speed: 3
   direction_X: 1
@@ -129,7 +130,7 @@ MonoBehaviour:
   - {fileID: 4367049880150327310}
   ground_Check:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!50 &4367049879018031628
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +150,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &4367049879018031627
 BoxCollider2D:
@@ -196,6 +197,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!210 &1737893060
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4367049879018031634}
+  m_Enabled: 1
+  m_SortingLayerID: -702413169
+  m_SortingLayer: 5
+  m_SortingOrder: 0
 --- !u!1 &4367049879644773056
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,7 +220,7 @@ GameObject:
   - component: {fileID: 4367049879644773181}
   - component: {fileID: 4367049879644773182}
   - component: {fileID: 4367049879644773180}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Cloth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +337,7 @@ GameObject:
   - component: {fileID: 4367049880150327311}
   - component: {fileID: 4367049880150327312}
   - component: {fileID: 4367049880150327310}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
