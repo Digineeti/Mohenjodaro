@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6523478627810522697}
   - component: {fileID: 4705129826904474414}
   m_Layer: 0
-  m_Name: Tourch
+  m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,8 @@ SpriteRenderer:
   m_SortingLayerID: -1807771521
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 19052218466296406, guid: d18a978b8ac36e44f9e6b83d20b336be, type: 3}
+  m_Sprite: {fileID: 7663773263482962354, guid: 82bb5f655e1f25e4ea532fb05f3e295b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -233,8 +234,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 61.160004
   m_PointLightOuterAngle: 201.63
-  m_PointLightInnerRadius: 0.89126605
-  m_PointLightOuterRadius: 3.4557967
+  m_PointLightInnerRadius: 1.5
+  m_PointLightOuterRadius: 6
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
