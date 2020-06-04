@@ -181,7 +181,7 @@ TextureImporter:
     second: Shell1
   - first:
       213: 6181747386848707086
-    second: all_2
+    second: Rock3
   - first:
       213: 7562248844036489813
     second: Shell2
@@ -191,6 +191,15 @@ TextureImporter:
   - first:
       213: 2597250382203401853
     second: Shell4
+  - first:
+      213: 9142550116060975994
+    second: Rock1
+  - first:
+      213: 2700305890573812649
+    second: Rock2
+  - first:
+      213: 4178722539803452060
+    second: Rock4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -1039,7 +1048,7 @@ TextureImporter:
         width: 30
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1047,6 +1056,90 @@ TextureImporter:
       bones: []
       spriteID: d763bf736794b0420800000000000000
       internalID: 2597250382203401853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1093
+        width: 49
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73550924ecd0ee70800000000000000
+      internalID: 9142550116060975994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1052
+        width: 42
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a30c8096e9697520800000000000000
+      internalID: 2700305890573812649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1005
+        width: 30
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02015cfe7af9c550800000000000000
+      internalID: 6181747386848707086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1070
+        width: 98
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9227e7920ecdf930800000000000000
+      internalID: 4178722539803452060
       vertices: []
       indices: 
       edges: []

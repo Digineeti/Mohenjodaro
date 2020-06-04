@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4444313250762035659}
   - component: {fileID: 4444313250762035658}
   - component: {fileID: 4444313249884726682}
+  - component: {fileID: 9150501888631451060}
   m_Layer: 12
   m_Name: PalmTree1
   m_TagString: Props
@@ -28,8 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.681, y: 0.694, z: 0}
   m_LocalScale: {x: 2.7, y: 2.5, z: 1}
-  m_Children:
-  - {fileID: 4444313251666787711}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -702413169
-  m_SortingLayer: 7
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7115054174534175819, guid: d18a978b8ac36e44f9e6b83d20b336be,
     type: 3}
@@ -93,62 +93,31 @@ SortingGroup:
   m_GameObject: {fileID: 4444313250762035656}
   m_Enabled: 1
   m_SortingLayerID: -702413169
-  m_SortingLayer: 7
+  m_SortingLayer: 5
   m_SortingOrder: 0
---- !u!1 &4444313251666787710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4444313251666787711}
-  - component: {fileID: 4444313251666787696}
-  m_Layer: 12
-  m_Name: RootBLock
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4444313251666787711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444313251666787710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4444313250762035659}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4444313251666787696
+--- !u!61 &9150501888631451060
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444313251666787710}
+  m_GameObject: {fileID: 4444313250762035656}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008871168, y: 0.018521564}
+  m_Offset: {x: -0.02, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.703125, y: 1.1875}
+    newSize: {x: 0.703125, y: 1.1875}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.21548441, y: 0.028210495}
+  m_Size: {x: 0.21, y: 0.2}
   m_EdgeRadius: 0
