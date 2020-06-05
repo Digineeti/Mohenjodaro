@@ -401,6 +401,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6365634999266417333, guid: c6d985521ff2af544ba5e26138676d0e,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6365634999266417334, guid: c6d985521ff2af544ba5e26138676d0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -414,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 6365634999266417334, guid: c6d985521ff2af544ba5e26138676d0e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 6365634999266417334, guid: c6d985521ff2af544ba5e26138676d0e,
         type: 3}
@@ -662,6 +667,7 @@ GameObject:
   - component: {fileID: 740417516}
   - component: {fileID: 740417515}
   - component: {fileID: 740417519}
+  - component: {fileID: 740417520}
   m_Layer: 5
   m_Name: DialogueSystemFantasy_2
   m_TagString: Untagged
@@ -772,9 +778,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dc3babc1ee5928340be7dfa8ba68c062, type: 2}
   player_Name: {fileID: 1987652353}
   player_Image: {fileID: 1836627272}
-  player_anim: {fileID: 1836627276}
+  active_Dialoguer: {fileID: 740417520}
   enemy_Image: {fileID: 1873480152}
-  enemy_anim: {fileID: 1873480155}
+--- !u!95 &740417520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740417514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a811ecb8c1cc34e4aa79a3d78d054ed2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &870233545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,9 +1147,8 @@ MonoBehaviour:
   enemy_character: []
   player_Name: {fileID: 987185636}
   player_Image: {fileID: 1438628204}
-  player_anim: {fileID: 0}
+  active_Dialoguer: {fileID: 0}
   enemy_Image: {fileID: 0}
-  enemy_anim: {fileID: 0}
 --- !u!1 &1463048990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,7 +1983,6 @@ GameObject:
   - component: {fileID: 1836627275}
   - component: {fileID: 1836627274}
   - component: {fileID: 1836627272}
-  - component: {fileID: 1836627276}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -1980,7 +2002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_Material: {fileID: 2100000, guid: 8c0d2ca82420b6743832720bfeeed6c1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -2020,28 +2042,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 223, y: -50}
+  m_AnchoredPosition: {x: 170, y: -50}
   m_SizeDelta: {x: 490, y: 570}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1836627276
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1836627271}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6948b57038d7b75498b2b86ed41bf486, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1873480151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,7 +2056,6 @@ GameObject:
   - component: {fileID: 1873480154}
   - component: {fileID: 1873480153}
   - component: {fileID: 1873480152}
-  - component: {fileID: 1873480155}
   m_Layer: 5
   m_Name: NPC
   m_TagString: Untagged
@@ -2073,7 +2075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_Material: {fileID: 2100000, guid: 406d87220d833d14cbce0a32265b0dd1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -2113,28 +2115,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -222, y: -50}
+  m_AnchoredPosition: {x: -180, y: -50}
   m_SizeDelta: {x: 490, y: 570}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1873480155
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873480151}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e1693919c362d8c4a9138dfe364d2898, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1973475056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2155,7 +2138,7 @@ PrefabInstance:
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
@@ -2196,16 +2179,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
-        type: 3}
-      propertyPath: orthographic size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822502958274829299, guid: deb8769508b8e0b45ab2521240dbda80,
-        type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829300, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}

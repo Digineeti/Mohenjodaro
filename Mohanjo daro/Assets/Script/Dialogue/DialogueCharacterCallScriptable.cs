@@ -11,9 +11,10 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     public Text player_Name;
 
     public Image player_Image;
-    public Animator player_anim;
+    public Animator active_Dialoguer;
+    //public Animator player_anim;
     public Image enemy_Image;
-    public Animator enemy_anim;
+    //public Animator enemy_anim;
 
     string p_Name="";
     string e_Name= "";
@@ -44,8 +45,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 {
                     active_Player = true;
                     player_Image.sprite = character[i].expressions[int.Parse(expression)].photo;
-                    player_anim.SetBool("active",true);
-                    enemy_anim.SetBool("active", false);
+                    active_Dialoguer.SetBool("active",true);
+                    //enemy_anim.SetBool("active", false);
                     for (int j = 0; j < enemy_character.Length; j++)
                     {
                         if (t_Name == enemy_character[j].dialoger)
@@ -76,8 +77,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 {
                     active_Player = true;
                     enemy_Image.sprite = enemy_character[i].expressions[int.Parse(expression)].photo;
-                    enemy_anim.SetBool("active", true);
-                    player_anim.SetBool("active", false);
+                    active_Dialoguer.SetBool("active", false);
+                    //player_anim.SetBool("active", false);
                     for (int j = 0; j < character.Length; j++)
                     {
                         if (t_Name == character[j].dialoger)
