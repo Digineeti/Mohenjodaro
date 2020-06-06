@@ -19,6 +19,7 @@ public class DialogueCharacter : ScriptableObject
     {
         //public string name;
         public GameObject photo;
+        public Material material;
         //public string boolInAnimator;
         // AudioClip audio;
     }

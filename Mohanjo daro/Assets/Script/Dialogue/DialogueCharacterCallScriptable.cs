@@ -44,14 +44,17 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 if (p_Name == character[i].dialoger)
                 {
                     active_Player = true;
-                    player_Image = character[i].expressions[int.Parse(expression)].photo;
+                    player_Image.GetComponent<Image>().sprite = character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                    player_Image.GetComponent<Image>().material = character[i].expressions[int.Parse(expression)].material;
                     active_Dialoguer.SetBool("active",true);
                     //enemy_anim.SetBool("active", false);
                     for (int j = 0; j < enemy_character.Length; j++)
                     {
                         if (t_Name == enemy_character[j].dialoger)
                         {
-                            enemy_Image = enemy_character[j].expressions[int.Parse(t_expression)].photo;
+                            enemy_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                            enemy_Image.GetComponent<Image>().material = null;// enemy_character[j].expressions[int.Parse(expression)].material;
+                            //enemy_Image = enemy_character[j].expressions[int.Parse(t_expression)].photo;
                             //enemy_Image.GetComponent<Material>().
                         }
                     }                   
@@ -77,7 +80,11 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 if (p_Name == enemy_character[i].dialoger)
                 {
                     active_Player = true;
-                    enemy_Image = enemy_character[i].expressions[int.Parse(expression)].photo;
+                    //enemy_Image = enemy_character[i].expressions[int.Parse(expression)].photo;
+                    enemy_Image.GetComponent<Image>().sprite = enemy_character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                    enemy_Image.GetComponent<Image>().material = enemy_character[i].expressions[int.Parse(expression)].material;
+
+
                     active_Dialoguer.SetBool("active", false);
                     //player_anim.SetBool("active", false);
                     for (int j = 0; j < character.Length; j++)
@@ -85,7 +92,9 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                         if (t_Name == character[j].dialoger)
                         {
                             //enemy_Image
-                            player_Image = character[j].expressions[int.Parse(t_expression)].photo;
+                            player_Image.GetComponent<Image>().sprite = character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                            player_Image.GetComponent<Image>().material = null;// character[j].expressions[int.Parse(t_expression)].material;
+                            //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
                         }
                     }
                 }
