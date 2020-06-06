@@ -18,7 +18,7 @@ public class DialogueCharacter : ScriptableObject
     public class Expression
     {
         //public string name;
-        public Sprite photo;
+        public GameObject photo;
         //public string boolInAnimator;
         // AudioClip audio;
     }
