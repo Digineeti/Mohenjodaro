@@ -13,6 +13,7 @@ public class prologuescenetransition : MonoBehaviour
     {
         if (collision.gameObject.tag == "ScenePlayer")
         {
+           
             StartCoroutine(loadScene());
         }
     }

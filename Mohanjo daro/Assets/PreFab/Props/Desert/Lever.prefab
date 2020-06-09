@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5555212780624139404}
   - component: {fileID: 1089585893882235176}
   - component: {fileID: 4833211494778277888}
-  - component: {fileID: 106001378638177152}
+  - component: {fileID: 2134443240330346330}
   m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -130,7 +130,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &106001378638177152
+--- !u!114 &2134443240330346330
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,6 +139,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6215753255563789091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b3b63eeb0dec74a81e7dacbc7d52dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 48869f2e5243359428094b034d965d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
