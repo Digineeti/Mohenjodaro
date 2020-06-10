@@ -10,6 +10,7 @@ public class Chest : MonoBehaviour
     //
     public int receive_item_count;
     public GameObject[] items_prefab;
+    bool item_receive;
 
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -36,6 +37,8 @@ public class Chest : MonoBehaviour
         }
 
     }
+
+
 
 
 
