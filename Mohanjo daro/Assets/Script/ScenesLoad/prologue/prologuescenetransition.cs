@@ -21,8 +21,15 @@ public class prologuescenetransition : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("ScenePlayer");
         tranmisionamin.SetBool("Start", true);
-        yield return new WaitForSeconds(0.5f);
-        player.transform.position = new Vector3(enterposition.transform.position.x,enterposition.transform.position.y,0f);        
+        yield return new WaitForSeconds(.5f);
+        player.transform.position = new Vector3(enterposition.transform.position.x, enterposition.transform.position.y, 0f);
+        StartCoroutine(Transition_end());
+       
+    }
+    IEnumerator Transition_end()
+    {
+        yield return new WaitForSeconds(.5f);
         tranmisionamin.SetBool("Start", false);
     }
+
 }
