@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4130d487d37e0048a85a696b6893f37, type: 3}
+  m_Name: Krav Agni
+  m_EditorClassIdentifier: 
+  dialoger: Krav Agni
+  photo: {fileID: 21300000, guid: c7e369fbb9ecfd142934a2de130c20c3, type: 3}
+  expressions:
+  - photo: {fileID: 5705390425161692188, guid: a88c56f666a7e1c41add284b908cd40c, type: 3}
+    material: {fileID: 2100000, guid: 406d87220d833d14cbce0a32265b0dd1, type: 2}
