@@ -856,6 +856,7 @@ MonoBehaviour:
   player_Image: {fileID: 0}
   active_Dialoguer: {fileID: 583317902}
   enemy_Image: {fileID: 0}
+  dialogue_panel: {fileID: 0}
 --- !u!114 &583317904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,11 +1168,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
-        type: 3}
-      propertyPath: orthographic size
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829300, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
@@ -1641,6 +1637,7 @@ MonoBehaviour:
   player_Image: {fileID: 0}
   active_Dialoguer: {fileID: 0}
   enemy_Image: {fileID: 0}
+  dialogue_panel: {fileID: 0}
 --- !u!1 &1463048990
 GameObject:
   m_ObjectHideFlags: 0

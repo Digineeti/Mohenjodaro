@@ -84,6 +84,25 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag=="ScenePlayer")
+        {
+            
+            GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+            if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
+            {
+               
+            }
+            else
+            {               
+                    Destroy(gameObject,3f);
+            }
+
+        }
+        //enemy ai movement script ....goes here 
+
+    }
     //private void OnDrawGizmosSelected()
     //{
     //    Gizmos.color = Color.red;

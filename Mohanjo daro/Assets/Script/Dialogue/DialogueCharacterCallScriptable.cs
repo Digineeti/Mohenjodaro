@@ -45,6 +45,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
         else
             Globalvariable.Dialogue_Open = false;
 
+
         for (int i = 0; i < character.Length; i++)
         {
             int index = player_Name.text.IndexOf("[");
