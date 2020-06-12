@@ -130,6 +130,8 @@ public class PlayerMovement : MonoBehaviour
             playerMoving = false;
             amin.SetBool("PlayerMoving", playerMoving);
             RD.velocity = new Vector2(0f, 0f);
+            amin.SetFloat("LastMoveX", lastMove.x);
+            amin.SetFloat("LastMoveY", lastMove.y);
         }
     }
 

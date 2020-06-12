@@ -19,11 +19,31 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     string p_Name="";
     string e_Name= "";
     bool active_Player;
-   
+
+    //test the dialoger is active or not
+    public GameObject dialogue_panel;
+
+    private static bool DialogueExists;
+    private void Start()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+        if (!DialogueExists)
+        {
+            DialogueExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-
+        if(dialogue_panel.activeSelf)
+            Globalvariable.Dialogue_Open = true;
+        else
+            Globalvariable.Dialogue_Open = false;
 
         for (int i = 0; i < character.Length; i++)
         {
