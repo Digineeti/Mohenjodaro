@@ -34,7 +34,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     float time = 20;
     //test the dialoger is active or not
     public GameObject dialogue_panel;
-    public GameObject main_camera;
+   
     private static bool DialogueExists;
     private void Start()
     {
@@ -53,20 +53,12 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        main_camera = GameObject.Find("CinemachineCamera");
+       
       
         if (dialogue_text.text == "*Bang*")
         {
-            while(time>0)
-            {
-                //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5.5f;
-                //StartCoroutine(shaking());
-                //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6.5f;
-                //StartCoroutine(shaking());
-                time -= Time.deltaTime;
-                gameObject.GetComponent<Animator>().SetBool("shake", true);
-            }
-            gameObject.GetComponent<Animator>().SetBool("shake", false);
+            StartCoroutine(shaking());
+           
         }
         //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6f;
         //
@@ -185,7 +177,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
 
    IEnumerator shaking()
     {
-
-        yield return new WaitForSeconds(1f);
+        active_Dialoguer.SetBool("shake", true);
+        yield return new WaitForSeconds(3f);
+        active_Dialoguer.SetBool("shake", false);
     }
 }
