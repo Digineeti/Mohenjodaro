@@ -13,11 +13,24 @@ public class EnemyMovement : MonoBehaviour
     #endregion
 
     #region enemy_ineract_payer
-    //public float look_Radius;
-    //public Transform traget;
+    public float look_Radius;
+    public Transform traget;
+    public float speed;
+    public enum enemytype
+    {
+        horiontal,
+        vertical,
+        ideal,      
+    }
+    public enemytype type;
+    #endregion
+    #region random_movement
+
+    //public float timer;
+    //public int newtarget;    
+    //public Vector2 target;
 
     #endregion
-
     //
     //amin.SetFloat("MoveX", input.horizontal);
     //amin.SetFloat("MoveY", input.vertical);
@@ -65,30 +78,88 @@ public class EnemyMovement : MonoBehaviour
 
         #endregion
         #region move_toward_to_player
-        //float distance = Vector2.Distance(traget.position,transform.position);
-        //if(distance<look_Radius)
-        //{
+        if (Globalvariable.Dialogue_Open == false)
+        {
+            float distance = Vector2.Distance(traget.position, transform.position);
+            if (distance < look_Radius)
+            {
+                if(type.ToString()== "horiontal")
+                {
+                    RD.velocity = new Vector2(2f, 0f);
+                    amin.SetBool("EnemyMoving", true);
+                    amin.SetFloat("MoveX", 2f);
+                }
+                if(type.ToString() == "vertical")
+                {
+                    RD.velocity = new Vector2(0f, -2f);
+                    amin.SetBool("EnemyMoving", true);
+                    amin.SetFloat("MoveY", -2f);
+                }
+                if(type.ToString() == "ideal")
+                {
+                    RD.velocity = new Vector2(0f, 0f);
+                    amin.SetBool("EnemyMoving", false);
+                    amin.SetFloat("MoveY", -2f);
+                }
+               
+               
+                //apply the trigonomatric eqution to find the path in horizontal and vertical way ...
 
-        //        RD.velocity = new Vector2(0f, -3f);
-        //    amin.SetBool("EnemyMoving", true);
-        //    amin.SetFloat("MoveY", -3f);
-        //    if(distance<1)
-        //    {
-        //        RD.velocity = new Vector2(0f, 0f);
-        //        amin.SetFloat("LastMoveY", -1f);
-        //        amin.SetBool("EnemyMoving", false);
-        //        Globalvariable.Dialogue_Open = true;
-        //    }
-        //}
+                //float h = distance;
+
+                //float x = Mathf.Cos(60) * h;
+                //float y = Mathf.Sin(30) * h;
+
+
+
+
+            }
+        }
         #endregion
+        //timer += Time.deltaTime;
+        //if(timer>= newtarget)
+        //{
+        //    searchtarget();
+        //    timer = 0;
 
+        //}
     }
 
+    void searchtarget()
+    {
+        //float myx = gameObject.transform.position.x;
+        //float myy = gameObject.transform.position.y;
+        //float xpos = myx + Random.Range(myx - 5, myx + 5);
+        //float ypos = myy + Random.Range(myy - 5, myy + 5);
+        //target = new Vector2(xpos, gameObject.transform.position.y);
+
+        //RD.velocity = new Vector2(target.x, speed);
+        
+
+
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="ScenePlayer")
         {
+
+            if (type.ToString() == "horiontal")
+            {
+                RD.velocity = new Vector2(0f, 0f);
+                amin.SetBool("EnemyMoving", true);
+                amin.SetFloat("MoveX", 1f);
+            }
+            if (type.ToString() == "vertical")
+            {
+                RD.velocity = new Vector2(0f, 0f);
+                amin.SetFloat("FaceY", -1f);
+                amin.SetBool("EnemyMoving", false);
+            }
+           
             
+            Globalvariable.Dialogue_Open = true;
+
             GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
             if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
             {
@@ -96,16 +167,26 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {               
-                    Destroy(gameObject,3f);
+                    Destroy(gameObject,1f);
             }
 
         }
         //enemy ai movement script ....goes here 
 
     }
-    //private void OnDrawGizmosSelected()
+
+    //private void OnCollisionEnter2D(Collision2D collision)
     //{
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(transform.position, look_Radius);
+    //    if (collision.collider.CompareTag("ScenePlayer"))
+    //        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+    //    else
+    //    {
+
+    //    }
     //}
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, look_Radius);
+    }
 }

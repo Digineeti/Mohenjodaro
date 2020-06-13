@@ -882,7 +882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -235.00002, y: -290.35928}
+  m_AnchoredPosition: {x: -235.00002, y: -290}
   m_SizeDelta: {x: 246.90002, y: 46.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8205078306569985930
@@ -1067,7 +1067,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -702413169
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &8205078307038689167
 MonoBehaviour:
@@ -1124,13 +1124,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7f593efd73621964da1bf009c263c165, type: 2}
   enemy_character:
   - {fileID: 11400000, guid: dc3babc1ee5928340be7dfa8ba68c062, type: 2}
-  - {fileID: 11400000, guid: 8db2ee70b408dbf4b980c134699b6740, type: 2}
-  - {fileID: 11400000, guid: f874a1f08cb7b6245ae068c112adb757, type: 2}
+  - {fileID: 11400000, guid: 5b527cb6ee542a4438c8de7295bfa65b, type: 2}
+  - {fileID: 11400000, guid: 4207cf949be3eda4097c68634e5bac07, type: 2}
+  - {fileID: 11400000, guid: 3665cc41c878df84a988ee44c1e7f1d6, type: 2}
   player_Name: {fileID: 8205078305860551522}
+  dialogue_text: {fileID: 8205078306939308497}
   player_Image: {fileID: 8205078305944411428}
   active_Dialoguer: {fileID: 8205078307038689171}
   enemy_Image: {fileID: 8205078305989665204}
   dialogue_panel: {fileID: 8205078305144825202}
+  main_camera: {fileID: 0}
 --- !u!95 &8205078307038689171
 Animator:
   serializedVersion: 3

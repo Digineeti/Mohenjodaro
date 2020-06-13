@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShaking : MonoBehaviour
 {
     //place some condittion to active shaking the camera
-    //try bool option..
+    //try bool option..    
 
     public IEnumerator Shake(float duration, float magnitude)
     {
@@ -22,4 +23,8 @@ public class CameraShaking : MonoBehaviour
         }
         transform.position = orignalPosition;
     }
+
+
+  
+  
 }

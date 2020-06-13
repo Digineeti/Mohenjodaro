@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
+
 
 public class DialogueCharacterCallScriptable : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     public DialogueCharacter[] enemy_character;
 
     public Text player_Name;
+    public Text dialogue_text;
 
     public GameObject player_Image;
     public Animator active_Dialoguer;
@@ -20,12 +23,22 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     string e_Name= "";
     bool active_Player;
 
+    //int p=-1;
+    //int p_exp;
+    //int e=-1;
+    //int e_exp;
+
+    //int lap;
+    //int aP = -1;
+    //bool change;
+    float time = 20;
     //test the dialoger is active or not
     public GameObject dialogue_panel;
-
+    public GameObject main_camera;
     private static bool DialogueExists;
     private void Start()
     {
+      
         DontDestroyOnLoad(transform.gameObject);
         if (!DialogueExists)
         {
@@ -40,7 +53,25 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogue_panel.activeSelf)
+        main_camera = GameObject.Find("CinemachineCamera");
+      
+        if (dialogue_text.text == "*Bang*")
+        {
+            while(time>0)
+            {
+                //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 5.5f;
+                //StartCoroutine(shaking());
+                //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6.5f;
+                //StartCoroutine(shaking());
+                time -= Time.deltaTime;
+                gameObject.GetComponent<Animator>().SetBool("shake", true);
+            }
+            gameObject.GetComponent<Animator>().SetBool("shake", false);
+        }
+        //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6f;
+        //
+        //change = true;
+        if (dialogue_panel.activeSelf)
             Globalvariable.Dialogue_Open = true;
         else
             Globalvariable.Dialogue_Open = false;
@@ -51,6 +82,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             int index = player_Name.text.IndexOf("[");
             if (player_Name.text != "" && index > 0)
             {
+                
                 p_Name = player_Name.text.Substring(0, index);
                 string expression = player_Name.text.Substring(index + 1, 1);
 
@@ -60,33 +92,38 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 string t_Name = talker_Name.Substring(0, index2);
                 string t_expression = talker_Name.Substring(index2 + 1, 1);
 
-                //Debug.Log(talker_Name);
-                
+                //if(p_Name== character[i].expressions[int.Parse(expression)].Name)
+                //{ }
                 if (p_Name == character[i].dialoger)
                 {
                     active_Player = true;
                     player_Image.GetComponent<Image>().sprite = character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     player_Image.GetComponent<Image>().material = character[i].expressions[int.Parse(expression)].material;
-                    active_Dialoguer.SetBool("active",true);
-                    //enemy_anim.SetBool("active", false);
+                    active_Dialoguer.SetBool("active",true);                   
+
                     for (int j = 0; j < enemy_character.Length; j++)
                     {
                         if (t_Name == enemy_character[j].dialoger)
                         {
-                            enemy_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                            //Talk_check = 1;
+                            enemy_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
                             enemy_Image.GetComponent<Image>().material = null;// enemy_character[j].expressions[int.Parse(expression)].material;
                             //enemy_Image = enemy_character[j].expressions[int.Parse(t_expression)].photo;
-                            //enemy_Image.GetComponent<Material>().
+                            //enemy_Image.GetComponent<Material>()                           
                         }
-                    }                   
+                    }
+                   
                 }
             }
         }
+
+        #region privious code
         for (int i = 0; i < enemy_character.Length; i++)
         {
             int index = player_Name.text.IndexOf("[");
             if (player_Name.text != "" && index > 0)
             {
+
                 p_Name = player_Name.text.Substring(0, index);
                 string expression = player_Name.text.Substring(index + 1, 1);
 
@@ -95,6 +132,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 int index2 = talker_Name.IndexOf("[");
                 string t_Name = talker_Name.Substring(0, index2);
                 string t_expression = talker_Name.Substring(index2 + 1, 1);
+
 
                 //Debug.Log(talker_Name);
 
@@ -108,39 +146,46 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
 
                     active_Dialoguer.SetBool("active", false);
                     //player_anim.SetBool("active", false);
+                    int count = 0;
                     for (int j = 0; j < character.Length; j++)
                     {
                         if (t_Name == character[j].dialoger)
                         {
+                            count = 1;
                             //enemy_Image
                             player_Image.GetComponent<Image>().sprite = character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
                             player_Image.GetComponent<Image>().material = null;// character[j].expressions[int.Parse(t_expression)].material;
                             //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
                         }
                     }
+
+                    if(count<=0)
+                    {
+                        for (int j = 0; j < enemy_character.Length; j++)
+                        {
+                            if (t_Name == enemy_character[j].dialoger)
+                            {
+                                count = 1;
+                                //enemy_Image
+                                player_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
+                                player_Image.GetComponent<Image>().material = null;// character[j].expressions[int.Parse(t_expression)].material;
+                                                                                   //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
+                            }
+                        }
+                    }
                 }
             }
         }
-
-        //for (int i = 0; i < enemy_character.Length; i++)
-        //{
-        //    int index = player_Name.text.IndexOf("[");
-        //    if (player_Name.text != "" && index > 0)
-        //    {
-        //        e_Name = player_Name.text.Substring(0, index);
-        //        string expression = player_Name.text.Substring(index + 1, 1);
-
-        //        if (e_Name == enemy_character[i].dialoger)
-        //        {
-        //            active_Player = false;
-        //            enemy_Image.sprite = enemy_character[i].expressions[int.Parse(expression)].photo;                    
-        //        }
-        //    }
-        //}
+        #endregion
         if (active_Player)
             player_Name.text = p_Name;
         else
             player_Name.text = e_Name;
     }
 
+   IEnumerator shaking()
+    {
+
+        yield return new WaitForSeconds(1f);
+    }
 }

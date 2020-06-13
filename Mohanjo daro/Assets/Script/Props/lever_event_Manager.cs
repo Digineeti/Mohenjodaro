@@ -73,7 +73,7 @@ public class lever_event_Manager : MonoBehaviour
             }
                
         }
-        Debug.Log(count);
+        //Debug.Log(count);
         if (count > 0)
         {
             cutscene_play = true;

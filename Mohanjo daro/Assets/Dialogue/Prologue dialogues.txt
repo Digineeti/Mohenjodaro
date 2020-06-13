@@ -1,76 +1,75 @@
 Indra[0,Agni[0]] : Are you sure we're in right place?
 Indra[0,Agni[0]] : It looks like bunch of weaklings not even good for proper fight.
-Jata Agni[0,Indra[0]] : Yes...yes...we're in right place.
-Jata Agni[0,Indra[0]] : We've scouted and searched this entire area and this is the only logical place for bandits to hide.
-Krav Agni[0,Indra[0]] : However, I am convinced that the other place had stronger fighters and more gold.
-Krav Agni[0,Indra[0]] : Now I am stuck here with bunch of wimps and this good for nothing hotheaded brute.
-Krav Agni[0,Indra[0]] : We could've easily defeated them and kept all the gold for ourselves.
-Indra[0,Agni[0]] : Agni, are you talking to yourself agian?
-Jata Agni[0,Indra[0]] : Ya, after a accident it felt I was divided into two people.
-Jata Agni[0,Indra[0]] : One is me that is calm and logical and other.....
-Krav Agni[0,Indra[0]] : I can be too be calm and logical, mamma's boy.
-Jata Agni[0,Indra[0]] : can be bit more aggressive.
+Agni[0,Indra[0]] : *Bang*
+Agni[0,Indra[0]] : We've scouted and searched this entire area and this is the only logical place for bandits to hide.
+Agni[1,Indra[0]] : However, I am convinced that the other place had stronger fighters and more gold.
+Agni[1,Indra[0]] : Now I am stuck here with bunch of wimps and this good for nothing hotheaded brute.
+Agni[1,Indra[0]] : We could've easily defeated them and kept all the gold for ourselves.
+Indra[0,Agni[1]] : Agni, are you talking to yourself agian?
+Agni[0,Indra[0]] : Ya, after a accident it felt I was divided into two people.
+Agni[0,Indra[0]] : One is me that is calm and logical and other.....
+Agni[1,Indra[0]] : I can be too be calm and logical, mamma's boy.
+Agni[0,Indra[0]] : can be bit more aggressive.
 Indra[0,Agni[0]] : ( It's like talking to a lunatic but he is crazy strong.)
 Indra[0,Agni[0]] : Alright let's round them up and get that gold.
 
 Indra[0,Agni[0]] : How can you shoot fire from your hand?
-Jata Agni[0,Indra[0]] : Don't know, since birth I guess.
+Agni[0,Indra[0]] : Don't know, since birth I guess.
+Agni[0,Indra[0]] : Look at these scars, I got them from these flames when I couldn't control them and from then on.....
+Agni[1,Indra[0]] : We're born hurling fire bolts everywhere.
+Agni[1,indra[0]] : I see you too have special ability of your own.
+Indra[0,Agni[1]] : Ya, I can control lightening. Some say it is meant for great thing.
+Indra[0,Agni[1]] : But all I want to be is rich and fat.
+Indra[0,Agni[1]] : Let's search this area and look for their leader and loot.
+Agni[0,Indra[0]] : They were pretty easy but they got decient armour and weapons.
+Agni[0,Indra[0]] : Lets take them?
 
-Jata Agni[0,Indra[0]] : Look at these scars, I got them from these flames when I couldn't control them and from then on.....
-Krav Agni[0,Indra[0]] : We're born hurling fire bolts everywhere.
-Krav Agni[0,indra[0]] : I see you too have special ability of your own.
-Indra[0,Agni[0]] : Ya, I can control lightening. Some say it is meant for great thing.
-Indra[0,Agni[0]] : But all I want to be is rich and fat.
-Indra[0,Agni[0]] : Let's search this area and look for their leader and loot.
-Jata Agni[0,Indra[0]] : They were pretty easy but they got decient armour and weapons.
-Krav Agni[0,Indra[0]] : Lets take them?
+Indra[0,Bandit[0]] : Hey, tell me where is your boss hiding.
+Bandit[0,Indra[0]] : I...I do not know. He has a secrect room in this cave somewhere. He usually stays there and comes out only to raid the villages.
+Bandit[0,Indra[0]] : There are three switches proctected by his lieutenants. Maybe thats how he gets in and out.
+Indra[0,Bandit[0]] : Thanks for the information. Time to sleep. Nighty- Night.
+Indra[0,Bandit[0]]: *Bang*
+Indra[0,Agni[1]] : Well then let's get to work.
+Agni[1,Indra[0]]: I am all fired up.
 
-Indra[0,Agni[0]] : Hey, tell me where is your boss hiding.
-Bandit : I...I do not know. He has a secrect room in this cave somewhere. He usually stays there and comes out only to raid the villages.
-Bandit : There are three switches proctected by his lieutenants. Maybe thats how he gets in and out.
-Indra : Thanks for the information. Time to sleep. Nighty- Night.
-*Bang*
-Indra : Well then let's get to work.
-Krav Agni : I am all fired up.
+Lieutenant[0,Indra[0]] : Who is there???
+Indra[0,Lieutenant[0]] : Yours worst nightmare.
 
-Lieutenant : Who is there???
-Indra : Yours worst nightmare.
+Lieutenant[0,Indra[0]] : Don't come any closer?
+Indra[0,Lieutenant[0]] : Nighty-Night.
 
-Lieutenant : Don't come any closer?
-Indra : Nighty-Night.
+Lieutenant[0,Indra[0]] : You don't look so tough.
+Agni[1,Lieutenant[0]] : I am going to beat you up.
+Indra[0,Lieutenant[0]] : All the big ones are mine.
+Agni[1,Lieutenant[0]] : You have beaten the last two. He is mine.
+Indra[0,Agni[1]] : Ok..Ok.. But I beat the leader.
+Lieutenant[0,Indra[0]] : Are you gonna fight or what???
 
-Lieutenant : You don't look so tough.
-Karv Agni : I am going to beat you up.
-Indra : All the big ones are mine.
-Krav Agni : You have beaten the last two. He is mine.
-Indra : Ok..Ok.. But I beat the leader.
-Lieutenant : Are you gonna fight or what???
+Leader[0,Indra[0]] : Coming here without permmision. Do you have death wish???
+Indra[0,Leader[0]] : Nah... I am here to bring you justice. Your time for tormenting the innocent has come to an end.
+Agni[0,Leader[0]] : There is a handsome reward on your head.
+Indra[0,Leader[0]] : Thats TOO!!!
+Leader[0,Indra[0]] : You are the one with big mouth.
+Leader[0,Indra[0]] : GUARDS!!!!
 
-Leader : Coming here without permmision. Do you have death wish???
-Indra : Nah... I am here to bring you justice. Your time for tormenting the innocent has come to an end.
-Jata Agni : There is a handsome reward on your head.
-Indra : Thats TOO!!!
-Leader : You are the one with big mouth.
-Leader : GUARDS!!!!
-
-Indra : Wow!!! Look at the gold here... I can be the richest person in Mehrgath.
-Jata Agni : Are you going to Mehrgath???
-Indra : Yes, I am going marry the most beautiful girl there and live like a king.
-Jata Agni : Best of Luck with that plan. Anyways, I will going to Mohenjo daro.
-Jata Agni : As agreed between us you can take the first pick of the treasure.
-Indra : O yes!!! I will take that one and that one. I like this one the most....
-Karv Agni : Enough!!! you have taken alot. now it's our turn.
-Indra : No way. There is lot more the treasure is here.
-Leader : ( I won't be able to beat them now. While they are squabbling over the gold, I should escape.)
-Leader : ( Slowly open a trap door and escape from the dungeon)
-Indra : And you are suppose to collect the reward for capture the leader.
-Karv Agni : Yes, that is suppose to be over half of loot we find here. This is not even a third of what we found here.
-Karv Agni : where is the leader anyways???
-Indra : I cannot find him here. Did he escape???
-Karv Agni : It was your duty to tie him up. I am taking those Diamonds for this.
-Indra : It is not my fault that he got away. Let's just do half-half be on our way.
-Jata Agni : Let's just do that.
-.....................
-..............
-.......
-...
+Indra[0,Jata Agni[0]] : Wow!!! Look at the gold here... I can be the richest person in Mehrgath.
+Jata Agni[0,Indra[0]] : Are you going to Mehrgath???
+Indra[0,Jata Agni[0]] : Yes, I am going marry the most beautiful girl there and live like a king.
+Jata Agni[0,Indra[0]] : Best of Luck with that plan. Anyways, I will going to Mohenjo daro.
+Jata Agni[0,Indra[0]] : As agreed between us you can take the first pick of the treasure.
+Indra[0,Karv Agni[0]] : O yes!!! I will take that one and that one. I like this one the most....
+Karv Agni[0,Indra[0]] : Enough!!! you have taken alot. now it's our turn.
+Indra[0,Karv Agni[0] : No way. There is lot more the treasure is here.
+Leader[0,Indra[0]] : ( I won't be able to beat them now. While they are squabbling over the gold, I should escape.)
+Leader[0,Indra[0]] : ( Slowly open a trap door and escape from the dungeon)
+Indra[0,Leader[0]] : And you are suppose to collect the reward for capture the leader.
+Karv Agni[0,Indra[0]] : Yes, that is suppose to be over half of loot we find here. This is not even a third of what we found here.
+Karv Agni[0,Indra[0]] : where is the leader anyways???
+Indra[0,Karv Agni[0]] : I cannot find him here. Did he escape???
+Karv Agni[0,Indra[0]] : It was your duty to tie him up. I am taking those Diamonds for this.
+Indra[0,Karv Agni[0]] : It is not my fault that he got away. Let's just do half-half be on our way.
+Jata Agni[0,Indra[0]] : Let's just do that.
+Jata Agni[0,Indra[0]] :.....................
+Jata Agni[0,Indra[0]] :..............
+Jata Agni[0,Indra[0]] :.......
+Jata Agni[0,Indra[0]] :...

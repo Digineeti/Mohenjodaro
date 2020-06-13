@@ -15,5 +15,9 @@ MonoBehaviour:
   dialoger: Agni
   photo: {fileID: 21300000, guid: c7e369fbb9ecfd142934a2de130c20c3, type: 3}
   expressions:
-  - photo: {fileID: 5705390425161692188, guid: a88c56f666a7e1c41add284b908cd40c, type: 3}
-    material: {fileID: 2100000, guid: 406d87220d833d14cbce0a32265b0dd1, type: 2}
+  - photo: {fileID: 5983710974669321237, guid: 35729271fc4895248b622c753477e671, type: 3}
+    material: {fileID: 2100000, guid: 1e55b17b93b61fd43acecfecdd5d9a1c, type: 2}
+    Name: Agni
+  - photo: {fileID: 922664034701432297, guid: 99939abcd45f92b42a884ec665c2b0cf, type: 3}
+    material: {fileID: 2100000, guid: b0534fffae794b84faeb20f0103eb4df, type: 2}
+    Name: Agni
