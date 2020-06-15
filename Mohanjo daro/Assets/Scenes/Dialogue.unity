@@ -853,6 +853,7 @@ MonoBehaviour:
   enemy_character:
   - {fileID: 11400000, guid: dc3babc1ee5928340be7dfa8ba68c062, type: 2}
   player_Name: {fileID: 419395026}
+  dialogue_text: {fileID: 0}
   player_Image: {fileID: 0}
   active_Dialoguer: {fileID: 583317902}
   enemy_Image: {fileID: 0}
@@ -1634,6 +1635,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7f593efd73621964da1bf009c263c165, type: 2}
   enemy_character: []
   player_Name: {fileID: 987185636}
+  dialogue_text: {fileID: 0}
   player_Image: {fileID: 0}
   active_Dialoguer: {fileID: 0}
   enemy_Image: {fileID: 0}
@@ -2514,6 +2516,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8205078305965850439, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 448352c0942b72e40b884ecfed527e57,
+        type: 3}
+    - target: {fileID: 8205078305965850439, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205078305965850439, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8205078307038689161, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
       propertyPath: m_Name

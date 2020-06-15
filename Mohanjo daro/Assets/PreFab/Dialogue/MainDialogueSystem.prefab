@@ -449,10 +449,10 @@ RectTransform:
   m_Father: {fileID: 8205078305144825201}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 792.15, y: 135.92}
+  m_SizeDelta: {x: 0, y: 135.92}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8205078305965850438
 CanvasRenderer:
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
-  m_UseSpriteMesh: 0
+  m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8205078305989665204
 GameObject:
@@ -1133,7 +1133,6 @@ MonoBehaviour:
   active_Dialoguer: {fileID: 8205078307038689171}
   enemy_Image: {fileID: 8205078305989665204}
   dialogue_panel: {fileID: 8205078305144825202}
-  main_camera: {fileID: 0}
 --- !u!95 &8205078307038689171
 Animator:
   serializedVersion: 3
