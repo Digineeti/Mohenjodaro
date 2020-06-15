@@ -31,7 +31,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     //int lap;
     //int aP = -1;
     //bool change;
-    float time = 20;
+    float time = 200;
+    bool one_Shake;
     //test the dialoger is active or not
     public GameObject dialogue_panel;
    
@@ -53,13 +54,9 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+
       
-        if (dialogue_text.text == "*Bang*")
-        {
-            StartCoroutine(shaking());
-           
-        }
         //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6f;
         //
         //change = true;
@@ -173,12 +170,33 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             player_Name.text = p_Name;
         else
             player_Name.text = e_Name;
+
+        if (dialogue_text.text == "*Bang*")
+        {
+
+            StartCoroutine(shaking());
+            dialogue_text.text += " ";
+        }
     }
 
    IEnumerator shaking()
     {
-        active_Dialoguer.SetBool("shake", true);
-        yield return new WaitForSeconds(3f);
-        active_Dialoguer.SetBool("shake", false);
+
+
+       
+        if (active_Dialoguer.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Player_Dialogue_Active")
+        {
+            active_Dialoguer.SetBool("Player_shake", true);
+            yield return new WaitForSeconds(.3f);
+            active_Dialoguer.SetBool("Player_shake", false);
+        }
+        else
+        {
+            active_Dialoguer.SetBool("NPc_Shake", true);
+            yield return new WaitForSeconds(.3f);
+            active_Dialoguer.SetBool("NPc_Shake", false);
+        }
+            
+        
     }
 }
