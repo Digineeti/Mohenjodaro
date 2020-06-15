@@ -1911,6 +1911,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5519916048772922336, guid: 1dbb525707f45f642a5f715a3bc8e762,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519916048772922336, guid: 1dbb525707f45f642a5f715a3bc8e762,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1982125429}
+    - target: {fileID: 5519916048772922336, guid: 1dbb525707f45f642a5f715a3bc8e762,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -702413169
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519916048772922336, guid: 1dbb525707f45f642a5f715a3bc8e762,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5519916048772922339, guid: 1dbb525707f45f642a5f715a3bc8e762,
         type: 3}
       propertyPath: m_LocalPosition.x
