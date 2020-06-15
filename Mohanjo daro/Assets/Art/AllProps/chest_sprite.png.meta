@@ -11,6 +11,18 @@ TextureImporter:
   - first:
       213: -7436463646785590554
     second: chest_sprite_2
+  - first:
+      213: -1575206867710496797
+    second: chest_sprite_0
+  - first:
+      213: 3748315256821020823
+    second: chest_sprite_1
+  - first:
+      213: -4082041436876640947
+    second: chest_sprite_2
+  - first:
+      213: -63772947297202046
+    second: chest_sprite_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -123,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -133,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d9bbbc5869335fd0800000000000000
-      internalID: -2354475059789448744
+      spriteID: 3ef2c5a13bdb32ae0800000000000000
+      internalID: -1575206867710496797
       vertices: []
       indices: 
       edges: []
@@ -144,7 +156,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -154,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87617f14382d0d580800000000000000
-      internalID: -8804305810320058760
+      spriteID: 7987efcddd0b40430800000000000000
+      internalID: 3748315256821020823
       vertices: []
       indices: 
       edges: []
@@ -165,7 +177,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -175,8 +187,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ea2d3c96bf5cc890800000000000000
-      internalID: -7436463646785590554
+      spriteID: d4dea84d0fca957c0800000000000000
+      internalID: -4082041436876640947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2801212a7de6d1ff0800000000000000
+      internalID: -63772947297202046
       vertices: []
       indices: 
       edges: []

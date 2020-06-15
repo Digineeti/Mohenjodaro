@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainDialogueSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 8205078307038689161, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8205078307038689165, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44563,6 +44568,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6365634999266417333, guid: c6d985521ff2af544ba5e26138676d0e,
+        type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 905407153}
     - target: {fileID: 6365634999266417334, guid: c6d985521ff2af544ba5e26138676d0e,
         type: 3}
       propertyPath: m_LocalPosition.x
