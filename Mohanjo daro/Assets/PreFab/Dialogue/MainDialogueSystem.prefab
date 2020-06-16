@@ -1132,7 +1132,6 @@ MonoBehaviour:
   player_Image: {fileID: 8205078305944411428}
   active_Dialoguer: {fileID: 8205078307038689171}
   enemy_Image: {fileID: 8205078305989665204}
-  dialogue_panel: {fileID: 8205078305144825202}
 --- !u!95 &8205078307038689171
 Animator:
   serializedVersion: 3
@@ -1200,7 +1199,7 @@ MonoBehaviour:
   textAudio: {fileID: 0}
   passAudio: {fileID: 0}
   passWithMouse: 1
-  passWithInputButton: 
+  passWithInputButton: DialoguePass
   passWithKey: 13
   enablePass: 1
   autoPass: 0

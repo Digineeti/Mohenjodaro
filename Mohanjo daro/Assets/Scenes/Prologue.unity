@@ -468,7 +468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 71099824, guid: 3514bcdd3c0a48c40b7859d2a4df99ec, type: 3}
       propertyPath: passWithInputButton
-      value: DialoguePass
+      value: ActionEnter
       objectReference: {fileID: 0}
     - target: {fileID: 8205078307038689161, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
@@ -797,11 +797,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inventory
-      objectReference: {fileID: 0}
-    - target: {fileID: 5519916048772922343, guid: 1dbb525707f45f642a5f715a3bc8e762,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1dbb525707f45f642a5f715a3bc8e762, type: 3}
@@ -20067,6 +20062,49 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &281289004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 281289005}
+  - component: {fileID: 281289006}
+  m_Layer: 0
+  m_Name: Gamemanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &281289005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281289004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16715956, y: -10.510511, z: -6.421875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281289006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281289004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d34268c1dfc734598f4cb8bff6f4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &286519458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5020559846173573364, guid: f2d6cb37611a84342934e50590c1a0fc,
@@ -20648,9 +20686,9 @@ GameObject:
   - component: {fileID: 506157897}
   - component: {fileID: 506157896}
   - component: {fileID: 506157895}
-  m_Layer: 0
-  m_Name: Bandit (3)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Lieutenant
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20759,6 +20797,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 2
+  lieutenant: []
+  count_check: 0
 --- !u!210 &506157899
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -24096,9 +24136,9 @@ GameObject:
   - component: {fileID: 1199522267}
   - component: {fileID: 1199522266}
   - component: {fileID: 1199522265}
-  m_Layer: 0
-  m_Name: Bandit (4)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Lieutenant
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24207,6 +24247,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 2
+  lieutenant: []
+  count_check: 0
 --- !u!210 &1199522269
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -25156,9 +25198,9 @@ GameObject:
   - component: {fileID: 1623190215}
   - component: {fileID: 1623190214}
   - component: {fileID: 1623190213}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bandit (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25267,6 +25309,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 1
+  lieutenant: []
+  count_check: 0
 --- !u!210 &1623190217
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -28473,8 +28517,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3206011065927914266, guid: 0480961cf0435f9489f98cc8cc5ef4f3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0480961cf0435f9489f98cc8cc5ef4f3, type: 3}
 --- !u!1 &1696698949
 GameObject:
@@ -28766,9 +28809,9 @@ GameObject:
   - component: {fileID: 1818902185}
   - component: {fileID: 1818902184}
   - component: {fileID: 1818902183}
-  m_Layer: 0
-  m_Name: Bandit (2)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Lieutenant
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28877,6 +28920,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 2
+  lieutenant: []
+  count_check: 0
 --- !u!210 &1818902187
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -29003,9 +29048,9 @@ GameObject:
   - component: {fileID: 1832706697}
   - component: {fileID: 1832706698}
   - component: {fileID: 1832706699}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bandit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29151,6 +29196,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 1
+  lieutenant: []
+  count_check: 0
 --- !u!114 &1832706697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29474,9 +29521,9 @@ GameObject:
   - component: {fileID: 1989809222}
   - component: {fileID: 1989809221}
   - component: {fileID: 1989809220}
-  m_Layer: 0
-  m_Name: Bandit (5)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Leader
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29585,6 +29632,8 @@ MonoBehaviour:
   traget: {fileID: 905407153}
   speed: 2
   type: 0
+  lieutenant: []
+  count_check: 0
 --- !u!210 &1989809224
 SortingGroup:
   m_ObjectHideFlags: 0

@@ -12,27 +12,33 @@ public class Chest : MonoBehaviour
     public GameObject[] items_prefab;
     bool item_receive;
 
+    [HideInInspector] public bool enter;
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ScenePlayer")
         {
             chest_activation_section = true;
+           
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        chest_activation_section = false;
-    }
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    chest_activation_section = false;
+
+    //}
 
     private void Update()
     {
+       
         if (chest_activation_section)
         {
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            enter = enter || Input.GetButtonDown("ActionEnter");
+            if (enter)
             {
                 active = !active;
-                gameObject.GetComponent<Animator>().SetBool("active", active);
+                gameObject.GetComponent<Animator>().SetBool("active", true);
             }
         }
 

@@ -23,21 +23,15 @@ public class EnemyMovement : MonoBehaviour
         ideal,      
     }
     public enemytype type;
+    public GameObject[] lieutenant;
+    private int lieutenant_count;
+    public int count_check;
     #endregion
     #region random_movement
 
-    //public float timer;
-    //public int newtarget;    
-    //public Vector2 target;
-
+   
     #endregion
-    //
-    //amin.SetFloat("MoveX", input.horizontal);
-    //amin.SetFloat("MoveY", input.vertical);
-    //amin.SetBool("PlayerMoving", playerMoving);
-    //amin.SetFloat("LastMoveX", lastMove.x);
-    //amin.SetFloat("LastMoveY", lastMove.y);
-    // Start is called before the first frame update
+   
     void Start()
     {
         RD= GetComponent<Rigidbody2D>();
@@ -48,34 +42,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         #region enemy_Horiontal_Movement
-        //if (enemy.transform.position.x <= midPoint.transform.position.x + 5 && flip)
-        //{
-
-        //    RD.velocity = new Vector2(3f, 0f);
-        //    amin.SetFloat("MoveX", 3f);
-        //    //movement 
-
-        //    //move in positive direction
-        //}
-        //else
-        //{
-        //    if (flip == true)
-        //    {
-        //        enemy.transform.localScale.Scale(new Vector3(-1, 0, 0));
-        //    }
-        //    flip = false;
-        //    if (enemy.transform.position.x <= midPoint.transform.position.x - 5)
-        //    {
-        //        flip = true;
-        //        enemy.transform.localScale.Scale(new Vector3(-1, 0, 0));
-        //    }
-
-        //    RD.velocity = new Vector2(-3f, 0f);
-        //    amin.SetFloat("MoveX", -3f);
-        //    //call negative mov
-
-        //}
-
+        
         #endregion
         #region move_toward_to_player
         if (Globalvariable.Dialogue_Open == false)
@@ -125,20 +92,7 @@ public class EnemyMovement : MonoBehaviour
         //}
     }
 
-    void searchtarget()
-    {
-        //float myx = gameObject.transform.position.x;
-        //float myy = gameObject.transform.position.y;
-        //float xpos = myx + Random.Range(myx - 5, myx + 5);
-        //float ypos = myy + Random.Range(myy - 5, myy + 5);
-        //target = new Vector2(xpos, gameObject.transform.position.y);
-
-        //RD.velocity = new Vector2(target.x, speed);
-        
-
-
-
-    }
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="ScenePlayer")
@@ -159,6 +113,8 @@ public class EnemyMovement : MonoBehaviour
            
             
             Globalvariable.Dialogue_Open = true;
+            Search_the_Lieutenant();
+            Rearrange_the_dialogue_Sequence();
 
             GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
             if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
@@ -166,27 +122,61 @@ public class EnemyMovement : MonoBehaviour
                
             }
             else
-            {               
-                    Destroy(gameObject,1f);
+            {
+                //destroyed the enemy after talk.
+               
+                Destroy(gameObject, 1f);
             }
+
+           
+           
 
         }
         //enemy ai movement script ....goes here 
 
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.CompareTag("ScenePlayer"))
-    //        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-    //    else
-    //    {
-
-    //    }
-    //}
+  
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, look_Radius);
     }
+
+
+    protected void Search_the_Lieutenant()
+    {
+        lieutenant = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < lieutenant.Length; i++)
+        {
+            // find the number of lieutenant in the scene..
+            if (lieutenant[i].name == "Lieutenant")
+                lieutenant_count++;
+        }
+    }
+    protected void Rearrange_the_dialogue_Sequence()
+    {
+        //change the talk line number as par the sequence 
+        if (gameObject.name == "Lieutenant" && lieutenant_count == 3)
+        {
+            gameObject.GetComponent<RPGTalkArea>().lineToStart = "35";
+            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "36";
+            count_check--;
+        }
+        if (gameObject.name == "Lieutenant" && lieutenant_count == 2)
+        {
+            gameObject.GetComponent<RPGTalkArea>().lineToStart = "38";
+            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "39";
+            count_check--;
+        }
+        if (gameObject.name == "Lieutenant" && lieutenant_count == 1)
+        {
+            gameObject.GetComponent<RPGTalkArea>().lineToStart = "41";
+            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "46";
+            count_check--;
+        }
+    }
+
+    
+
 }

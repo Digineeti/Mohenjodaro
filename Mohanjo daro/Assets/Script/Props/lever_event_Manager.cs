@@ -23,17 +23,6 @@ public class lever_event_Manager : MonoBehaviour
     void Update()
     {
 
-        //foreach (var item in event_Depend_on)
-        //{
-        //    if (item.active)
-        //        val = true;
-        //    else
-        //    {
-        //        val = false;
-        //        cutscene_play = true;
-        //    }
-
-        //}
         val = Check_all_Lever_Active();
 
         if (val && cutscene_play)

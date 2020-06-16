@@ -21,50 +21,17 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
 
     string p_Name="";
     string e_Name= "";
-    bool active_Player;
-
-    //int p=-1;
-    //int p_exp;
-    //int e=-1;
-    //int e_exp;
-
-    //int lap;
-    //int aP = -1;
-    //bool change;
+    bool active_Player;   
     float time = 200;
-    bool one_Shake;
-    //test the dialoger is active or not
-    public GameObject dialogue_panel;
-   
-    private static bool DialogueExists;
+    bool one_Shake;   
+    //private static bool DialogueExists;
     private void Start()
     {
       
-        DontDestroyOnLoad(transform.gameObject);
-        if (!DialogueExists)
-        {
-            DialogueExists = true;
-            DontDestroyOnLoad(transform.gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
     // Update is called once per frame
     void Update()
     {
-
-
-      
-        //main_camera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 6f;
-        //
-        //change = true;
-        if (dialogue_panel.activeSelf)
-            Globalvariable.Dialogue_Open = true;
-        else
-            Globalvariable.Dialogue_Open = false;
-
 
         for (int i = 0; i < character.Length; i++)
         {
@@ -128,7 +95,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 if (p_Name == enemy_character[i].dialoger)
                 {
                     active_Player = true;
-                    //enemy_Image = enemy_character[i].expressions[int.Parse(expression)].photo;
+                    //enemy_Image = enemy_character[i].expressions[int.Parse(expression)].photo;                   
                     enemy_Image.GetComponent<Image>().sprite = enemy_character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     enemy_Image.GetComponent<Image>().material = enemy_character[i].expressions[int.Parse(expression)].material;
 
@@ -199,4 +166,6 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             
         
     }
+
+ 
 }

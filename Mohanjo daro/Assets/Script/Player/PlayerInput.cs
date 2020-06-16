@@ -10,6 +10,7 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public bool  kick;                            //Declare bool variable for kick the enemy
     [HideInInspector] public bool attack;                           //Declare bool variable for attack to enemy 
 
+
                       bool          readyToClear;                   //Bool used to keep input in sync  
                       private static bool playerExists;
     #endregion
