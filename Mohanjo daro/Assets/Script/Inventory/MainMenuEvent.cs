@@ -16,6 +16,8 @@ public class MainMenuEvent : MonoBehaviour
     public Animator transition;
     public float transitionTime;
 
+    //
+   
     public void Main_Menu_NewGame_button_Click()
     {       
         AM.play("buttonClick");
@@ -42,6 +44,10 @@ public class MainMenuEvent : MonoBehaviour
         AM.play("buttonClick");
         Application.Quit();
     }
+
+
+
+   
 
     #endregion
     //#region Option Menu button
@@ -82,7 +88,7 @@ public class MainMenuEvent : MonoBehaviour
 
     IEnumerator LoadScene(int Sceneindex)
     {
-        transition.SetTrigger("Start");
+        transition.SetTrigger("start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(Sceneindex);
 
@@ -96,10 +102,14 @@ public class MainMenuEvent : MonoBehaviour
     }
     IEnumerator Load_Scene(int Index)
     {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(1f);       
+        transition.SetTrigger("start");
+        yield return new WaitForSeconds(.5f);
         //yield return null;
+
         SceneManager.LoadScene(Index);
+
+
     }
 
+   
 }
