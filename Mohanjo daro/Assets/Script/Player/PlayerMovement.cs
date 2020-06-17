@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using RPGTALK.Localization;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -32,6 +33,25 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private LayerMask ground_Check;
+
+    private static PlayerMovement instance;
+    public static PlayerMovement MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            { instance = FindObjectOfType<PlayerMovement>(); }
+            return instance;
+        }
+    }
+
+    private static int level;
+    public static int MyLevel
+    {
+        get { return level; }
+        set { level = SceneManager.GetActiveScene().buildIndex; }
+    }
+
     #endregion
     private void Awake()
     {
@@ -55,8 +75,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //calling the Groundmovement function
-       
-            GroundMovement();
+        GroundMovement();
     }
 
     //player movement script 
@@ -157,7 +176,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name);
     }
+
+   
+   
 }
+
 
 
 

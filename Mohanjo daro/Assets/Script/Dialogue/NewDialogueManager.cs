@@ -12,9 +12,6 @@ using UnityEditor;
 
 public class NewDialogueManager : MonoBehaviour
 {
-    
-   
-
     [Header("Dialogue start ")]
     public int startLine;
     public int endLine=10;
