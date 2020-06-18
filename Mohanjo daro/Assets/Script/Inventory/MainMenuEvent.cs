@@ -7,6 +7,7 @@ public class MainMenuEvent : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionMenu;
+    public GameObject LoadMenu;
     public AudioManager AM;
     public string NewGameScene;
     #region MainMenu buttton
@@ -28,9 +29,18 @@ public class MainMenuEvent : MonoBehaviour
 
     }   
     public void Main_Menu_LoadGame_button_Click()
-    {     
+    {
+        mainMenu.SetActive(false);
+        LoadMenu.SetActive(true);
         AM.play("buttonClick");
 
+    }
+
+    public void Main_Menu_LoadGame_Panel_Back_Click()
+    {
+        mainMenu.SetActive(true);
+        LoadMenu.SetActive(false);
+        AM.play("buttonClick");
     }
     public void Main_Menu_option_button_Click()
     {
@@ -45,6 +55,7 @@ public class MainMenuEvent : MonoBehaviour
         Application.Quit();
     }
 
+   
 
 
    
