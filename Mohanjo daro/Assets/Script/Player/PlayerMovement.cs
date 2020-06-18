@@ -6,7 +6,7 @@ using RPGTALK.Localization;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour,IUnit
 {
     #region variable_Declaration_Section
     [Header("Walk and Run section")]
@@ -34,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask ground_Check;
 
+   
+
     //private static PlayerMovement instance;
     //public static PlayerMovement MyInstance
     //{
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
     private void Awake()
     {
+        
         lastMove = new Vector2(0f, 0f);
     }
 
@@ -76,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //calling the Groundmovement function
         GroundMovement();
+       
     }
 
     //player movement script 
@@ -177,8 +181,50 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(collision.gameObject.name);
     }
 
-   
-   
+
+
+  
+
+    
+    public Vector2 GetPosition()
+    {
+        return new Vector2(transform.position.x,transform.position.y);
+    }
+
+    public void SetPosition(Vector2 position)
+    {
+        transform.position = position;
+    }
+
+    public int GetLevel()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void SetLevel(int level)
+    {
+        
+    }
+
+    public GameObject GetChest()
+    {
+        return null;
+    }
+
+    public void SetChest(GameObject chestid)
+    {
+        
+    }
+
+    public GameObject Dialogue()
+    {
+        return null;
+    }
+
+    public void SetDialogue(GameObject Dialogueid)
+    {
+        
+    }
 }
 
 

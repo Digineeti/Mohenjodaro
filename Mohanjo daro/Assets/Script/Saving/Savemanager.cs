@@ -3,21 +3,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Savemanager : MonoBehaviour
 {
 
-    private const string SAVE_SAPARATOR = "#SAVE-VALUE#";
     [SerializeField]
     private GameObject unitGameObject;
-    private SaveData unit;
+    private IUnit unit;
 
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        unit = unitGameObject.GetComponent<SaveData>();
-    }
+        unit = unitGameObject.GetComponent<IUnit>();
+        SaveSystem.Init();
+        
+        //SaveObject saveobject = new SaveObject
+        //{
+        //    level = SceneManager.GetActiveScene().buildIndex,
+        //};
+        //string json=JsonUtility.ToJson(saveobject);
+        //Debug.Log(json);
+
+        //SaveObject loadedsaveobject = JsonUtility.FromJson<SaveObject>(json);
+        //Debug.Log(loadedsaveobject.level);
+        
+    }    
 
     // Update is called once per frame
     void Update()
@@ -40,8 +53,18 @@ public class Savemanager : MonoBehaviour
         {
 
             //save
-            //Vector2 player_position = unit.Position();
+            Vector2 playerposition = unit.GetPosition();
+            int level = unit.GetLevel();
+            SaveObject saveobject = new SaveObject()
+            {
+                level = level,
+                playerPosition = playerposition,
 
+            };
+            string json = JsonUtility.ToJson(saveobject);
+            SaveSystem.save(json);
+            Debug.Log("data save");
+           
         }
         catch (System.Exception)
         {
@@ -54,6 +77,16 @@ public class Savemanager : MonoBehaviour
     {
         try
         {
+            string savestring = SaveSystem.load();
+            if (savestring != null)
+            {
+                Debug.Log(savestring);
+                SaveObject saveobject = JsonUtility.FromJson<SaveObject>(savestring);
+                unit.SetPosition(saveobject.playerPosition);
+                unit.SetLevel(saveobject.level);
+
+            }else
+            { Debug.Log("nothing is save"); }
 
         }
         catch (System.Exception)
@@ -64,5 +97,12 @@ public class Savemanager : MonoBehaviour
     }
 
 
-   
+   private class SaveObject
+    {
+        public int level;
+        public Vector2 playerPosition;
+
+
+    }
+
 }
