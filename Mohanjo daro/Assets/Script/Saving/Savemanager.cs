@@ -7,67 +7,62 @@ using UnityEngine;
 
 public class Savemanager : MonoBehaviour
 {
+
+    private const string SAVE_SAPARATOR = "#SAVE-VALUE#";
+    [SerializeField]
+    private GameObject unitGameObject;
+    private SaveData unit;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Application.persistentDataPath);
+        unit = unitGameObject.GetComponent<SaveData>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //for save the game stat..
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            Save();
+        }
+        //for load the game stat...
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Load();
+        }
     }
 
     private void Save()
     {
         try
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath+"/"+ "SaveData.dat",FileMode.Create);
 
-            SaveData data = new SaveData();
-            SavePlayer(data);
-            bf.Serialize(file, data);
-            file.Close();
-
+            //save
+            //Vector2 player_position = unit.Position();
 
         }
         catch (System.Exception)
         {
 
-            //this for erro handle
+            
         }
-    }
-
-    private void SavePlayer(SaveData data)
-    {
-       //data.MyPlayerData = new PlayerData(PlayerMovement.MyLevel, PlayerMovement.MyInstance.transform.position);
-       
-    }
+    }    
 
     private void Load()
     {
         try
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/" + "SaveData.dat", FileMode.Open);
 
-            SaveData data = (SaveData)bf.Deserialize(file);
-            
-            file.Close();
-            LoadPlayer(data);
         }
         catch (System.Exception)
         {
-            //this for erro handle
+
+            throw;
         }
     }
 
 
-    private void LoadPlayer(SaveData data)
-    {
-        //PlayerMovement.MyLevel = data.MyPlayerData.MyLevel;
-        //PlayerMovement.MyInstance.transform.position = new Vector2(data.MyPlayerData.Myx,data.MyPlayerData.Myy);
-    }
+   
 }

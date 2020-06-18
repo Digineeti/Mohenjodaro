@@ -34,23 +34,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask ground_Check;
 
-    private static PlayerMovement instance;
-    public static PlayerMovement MyInstance
-    {
-        get
-        {
-            if (instance == null)
-            { instance = FindObjectOfType<PlayerMovement>(); }
-            return instance;
-        }
-    }
+    //private static PlayerMovement instance;
+    //public static PlayerMovement MyInstance
+    //{
+    //    get
+    //    {
+    //        if (instance == null)
+    //        { instance = FindObjectOfType<PlayerMovement>(); }
+    //        return instance;
+    //    }
+    //}
 
-    private static int level;
-    public static int MyLevel
-    {
-        get { return level; }
-        set { level = SceneManager.GetActiveScene().buildIndex; }
-    }
+    //private static int level;
+    //public static int MyLevel
+    //{
+    //    get { return level; }
+    //    set { level = SceneManager.GetActiveScene().buildIndex; }
+    //}
 
     #endregion
     private void Awake()

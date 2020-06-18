@@ -2,27 +2,21 @@
 using UnityEngine;
 
 [Serializable]
-public class SaveData 
+public class SaveData :MonoBehaviour
 {
-    public PlayerData MyPlayerData { get; set; }
-    public SaveData()
+    private static int level;
+    public static int Level
     {
+        get { return level; }
+        set { level = value; }
+    }
 
+    private static Vector2 position;
+    public static Vector2 Position
+    {
+        get { return position; }
+        set { position = value; }
     }
 }
 
-[Serializable]
-public class PlayerData
-{
-    public int MyLevel { get; set; }
 
-    public float Myx { get; set; }
-    public float Myy { get; set; }
-
-    public PlayerData( int level,Vector2 Position)
-    {
-        this.MyLevel = level;
-        this.Myx = Position.x;
-        this.Myy = Position.y;
-    }
-}
