@@ -22,6 +22,8 @@ public class Gamemanager : MonoBehaviour
 
         //initialize the dialogue system
         dialogue_system = GameObject.Find("DialogueBar");
+
+
     }
 
     // Update is called once per frame Inventory

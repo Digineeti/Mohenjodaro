@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using RPGTALK.Localization;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerMovement : MonoBehaviour,IUnit
 {
@@ -203,27 +204,19 @@ public class PlayerMovement : MonoBehaviour,IUnit
 
     public void SetLevel(int level)
     {
-        
+     //load the save lavel ....
     }
 
-    public GameObject GetChest()
+    public string GetDate()
     {
-        return null;
+        return System.DateTime.UtcNow.ToLocalTime().ToString("dd-MM-yyyy");
+        //throw new NotImplementedException();
     }
 
-    public void SetChest(GameObject chestid)
+    public void SetDate(string date)
     {
-        
-    }
-
-    public GameObject Dialogue()
-    {
-        return null;
-    }
-
-    public void SetDialogue(GameObject Dialogueid)
-    {
-        
+        //nothing to set
+        //set date in the ui  if required.
     }
 }
 

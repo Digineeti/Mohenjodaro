@@ -12,7 +12,7 @@ public class Savemanager : MonoBehaviour
     [SerializeField]
     private GameObject unitGameObject;
     private IUnit unit;
-
+  
     // Start is called before the first frame update
 
     private void Awake()
@@ -45,6 +45,12 @@ public class Savemanager : MonoBehaviour
         {
             Load();
         }
+        if(Globalvariable.LoadGameOpen==true)
+        {
+            Globalvariable.LoadGameOpen = false;
+            Load_game();
+            
+        }
     }
 
     private void Save()
@@ -55,10 +61,12 @@ public class Savemanager : MonoBehaviour
             //save
             Vector2 playerposition = unit.GetPosition();
             int level = unit.GetLevel();
+            string Date = unit.GetDate();
             SaveObject saveobject = new SaveObject()
             {
                 level = level,
                 playerPosition = playerposition,
+                Date=Date,
 
             };
             string json = JsonUtility.ToJson(saveobject);
@@ -84,25 +92,56 @@ public class Savemanager : MonoBehaviour
                 SaveObject saveobject = JsonUtility.FromJson<SaveObject>(savestring);
                 unit.SetPosition(saveobject.playerPosition);
                 unit.SetLevel(saveobject.level);
-
-            }else
+                unit.SetDate(saveobject.Date);
+                //new section for testing
+                
+            }
+            else
             { Debug.Log("nothing is save"); }
 
         }
         catch (System.Exception)
         {
 
-            throw;
+           
         }
     }
 
 
-   private class SaveObject
+    private void Load_game()
+    {
+        try
+        {
+            string savestring = SaveSystem.game_load(Globalvariable.LoadfileOpen);
+            if (savestring != null)
+            {
+                Debug.Log(savestring);
+                SaveObject saveobject = JsonUtility.FromJson<SaveObject>(savestring);
+                unit.SetPosition(saveobject.playerPosition);
+                unit.SetLevel(saveobject.level);
+                unit.SetDate(saveobject.Date);
+                //new section for testing
+
+            }
+            else
+            { Debug.Log("nothing is save"); }
+
+        }
+        catch (System.Exception)
+        {
+
+
+        }
+    }
+
+    private class SaveObject
     {
         public int level;
         public Vector2 playerPosition;
 
+        public string Date;}
 
-    }
+    //string[] chest = { "box1", "box2", "box3", "box4", "box4" };
+   
 
 }

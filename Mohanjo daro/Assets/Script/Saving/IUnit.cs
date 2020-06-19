@@ -10,12 +10,11 @@ public interface IUnit
     Vector2 GetPosition();
     void SetPosition(Vector2 position);
     //chest that alread grab..
-    GameObject GetChest();
-    void SetChest(GameObject chestid);
-    //dialogue that already diliver
-    GameObject Dialogue();
-    void SetDialogue(GameObject Dialogueid);
 
+    string GetDate();
+    void SetDate(string date);
+    
+   
    
 }
 

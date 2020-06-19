@@ -187,6 +187,19 @@ public class Globalvariable
     public static string[] TargetName;
 
 
+
+    private static bool load_game_open;
+    public static bool LoadGameOpen
+    {
+        get{ return load_game_open; }
+        set { load_game_open = value; }
+    }
+    private static string load_file;
+    public static string LoadfileOpen
+    {
+        get { return load_file; }
+        set { load_file = value; }
+    }
     //private static bool _Walkarea;
     //public static bool Walkarea
     //{
