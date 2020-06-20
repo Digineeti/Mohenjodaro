@@ -16,9 +16,14 @@ public static class SaveSystem
     }
     public static void save(string savestring)
     {
+
         int savenumber = 1;
-        while(File.Exists(SAVE_FOLDER +"save_" +savenumber+ ".txt"))
-        { savenumber++; }
+        //check 
+        while (File.Exists(SAVE_FOLDER + "save_" + savenumber + ".txt"))
+        {
+            //File.ReadAllText(SAVE_FOLDER + "save_" + savenumber + ".txt");           
+            savenumber++; }
+
         File.WriteAllText(SAVE_FOLDER + "save_"+ savenumber+ ".txt", savestring); 
     }
     public static string load()
@@ -57,4 +62,45 @@ public static class SaveSystem
         //    return null;
         //}
     }
+
+
+    public static string game_load(string file_name)
+    {
+
+        DirectoryInfo directoryInfo = new DirectoryInfo(SAVE_FOLDER);
+        FileInfo[] savefile = directoryInfo.GetFiles();
+        FileInfo mostrecentfile = null;
+        foreach (FileInfo files in savefile)
+        {
+            if (files.FullName == file_name)
+            {
+                mostrecentfile = files;
+            }           
+
+        }
+
+        if (mostrecentfile != null)
+        {
+            string savestring = File.ReadAllText(mostrecentfile.FullName);
+            return savestring;
+        }
+        else { return null; }
+
+        //if (File.Exists(SAVE_FOLDER + "save.txt")){
+        //    string savestring = File.ReadAllText(SAVE_FOLDER + "save.txt");
+        //    return savestring;
+        //}else{
+        //    return null;
+        //}
+    }
+
+
+    //save and load the chest 
+
+
+    ///save and load the dialogue here.
+    ///single save system is used ..
+    ///
+
+
 }

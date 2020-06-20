@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using UnityEngine.UI;
 
 public class MainMenuEvent : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class MainMenuEvent : MonoBehaviour
     public float transitionTime;
 
     //
+    public GameObject load_game_prefab;
+    public GameObject parent;
+   
    
     public void Main_Menu_NewGame_button_Click()
     {       
@@ -32,14 +37,17 @@ public class MainMenuEvent : MonoBehaviour
     {
         mainMenu.SetActive(false);
         LoadMenu.SetActive(true);
+        load();
         AM.play("buttonClick");
 
     }
 
     public void Main_Menu_LoadGame_Panel_Back_Click()
     {
+       
         mainMenu.SetActive(true);
         LoadMenu.SetActive(false);
+       
         AM.play("buttonClick");
     }
     public void Main_Menu_option_button_Click()
@@ -55,10 +63,10 @@ public class MainMenuEvent : MonoBehaviour
         Application.Quit();
     }
 
-   
 
 
-   
+  
+
 
     #endregion
     //#region Option Menu button
@@ -122,5 +130,57 @@ public class MainMenuEvent : MonoBehaviour
 
     }
 
-   
+    public void  load()
+    {
+
+        DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + "/save/");
+        FileInfo[] savefile = directoryInfo.GetFiles();
+        FileInfo mostrecentfile = null;
+        foreach (FileInfo files in savefile)
+        {
+            //spwan the prefab
+            try
+            {
+                string savestring = File.ReadAllText(files.FullName);
+                SaveObject saveobject = JsonUtility.FromJson<SaveObject>(savestring);
+
+                GameObject myBrick = Instantiate(load_game_prefab, parent.transform.position, Quaternion.identity) as GameObject;
+                myBrick.transform.SetParent(parent.transform, true);
+                myBrick.transform.localScale = new Vector3(1, 1, 0);
+
+
+
+                myBrick.GetComponent<LoadsavePrefabvalue>().level.text = saveobject.level.ToString();
+                myBrick.GetComponent<LoadsavePrefabvalue>().gold.text = saveobject.level.ToString();
+                myBrick.GetComponent<LoadsavePrefabvalue>().date.text = saveobject.Date.ToString();
+                myBrick.GetComponent<LoadsavePrefabvalue>().file_Name = files.FullName;
+            }
+            catch (System.Exception)
+            {
+
+                
+            }
+           
+
+            //string savestring = File.ReadAllText(mostrecentfile.FullName);
+
+        }
+
+        //if (mostrecentfile != null)
+        //{
+        //    string savestring = File.ReadAllText(mostrecentfile.FullName);
+        //    return savestring;
+        //}
+        //else { return null; }
+
+      
+    }
+
+    private class SaveObject
+    {
+        public int level;
+        public Vector2 playerPosition;
+        public string Date;
+    }
+
 }

@@ -52,6 +52,9 @@ public class lever_event_Manager : MonoBehaviour
 
     protected bool Check_all_Lever_Active()
     {
+        //check the dialogue from the list of array in the save data 
+        /* if dialogue exists in the save list then set the animation to active mode else not*/
+
         int count = 0;
         foreach (var item in event_Depend_on)
         {         

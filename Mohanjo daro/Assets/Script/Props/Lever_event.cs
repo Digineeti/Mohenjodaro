@@ -25,6 +25,8 @@ public class Lever_event : MonoBehaviour
 
     private void Update()
     {
+
+
         if(lever_activation_section)
         {
             enter = enter || Input.GetButtonDown("ActionEnter");
@@ -36,4 +38,6 @@ public class Lever_event : MonoBehaviour
         }
         
     }
+
+   
 }
