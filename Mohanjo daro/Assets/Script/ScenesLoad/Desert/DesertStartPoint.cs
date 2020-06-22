@@ -10,17 +10,22 @@ public class DesertStartPoint : MonoBehaviour
 
     void Start()
     {
+      
+    }
+
+    private void LateUpdate()
+    {
         thePlayer = FindObjectOfType<PlayerMovement>();
         //if (gameObject.name == "ExitCave")
-       
+
         for (int i = 0; i < Starting_Positions.Length; i++)
         {
-            if (StartPointGlobalData.Scene== Starting_Positions[i].gameObject.name)
+            if (StartPointGlobalData.Scene == Starting_Positions[i].gameObject.name)
             {
-                thePlayer.transform.position = Starting_Positions[i].transform.position;
+                thePlayer.gameObject.transform.position = Starting_Positions[i].transform.position;
                 StartPointGlobalData.Scene = null;
-            }               
-        }      
-        thePlayer.lastMove = new Vector2(0f,1f);
-    }   
+            }
+        }
+        thePlayer.lastMove = new Vector2(0f, 1f);
+    }
 }

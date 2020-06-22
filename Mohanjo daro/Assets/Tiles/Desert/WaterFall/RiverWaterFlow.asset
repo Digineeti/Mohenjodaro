@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: RiverWaterFlow
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 2605158448188664732, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 5168641048784201537, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 2060747885686247859, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 4311241767048612576, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 8098564875154574851, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -3961940102851057777, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -6626451680191655821, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -1393782937280922293, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -1572861215407420061, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -2561412457612953158, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: -2409254791083485762, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 3187250358723287937, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  - {fileID: 469426547404277690, guid: 3356c2a3a2e9d4b43bba2342955d85a3, type: 3}
+  m_MinSpeed: 4
+  m_MaxSpeed: 4
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0

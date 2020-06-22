@@ -18,7 +18,7 @@ public class DesertSceneTransition : MonoBehaviour
             StartPointGlobalData.Scene = null;
             StartPointGlobalData.Scene = TransitionScene + "Enter";
             StartCoroutine(LoadScene());
-        }
+        } 
     }
 
     IEnumerator LoadScene()

@@ -14,7 +14,7 @@ public class PrologueExit : MonoBehaviour
         {
             StartPointGlobalData.Scene = GlobalData.name;
             StartCoroutine(LoadScene());
-        }
+        } 
     }
 
     IEnumerator LoadScene()
