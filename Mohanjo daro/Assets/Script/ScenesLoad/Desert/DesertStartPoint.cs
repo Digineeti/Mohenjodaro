@@ -24,8 +24,9 @@ public class DesertStartPoint : MonoBehaviour
             {
                 thePlayer.gameObject.transform.position = Starting_Positions[i].transform.position;
                 StartPointGlobalData.Scene = null;
+                thePlayer.lastMove = new Vector2(0f, 1f);
             }
         }
-        thePlayer.lastMove = new Vector2(0f, 1f);
+       
     }
 }
