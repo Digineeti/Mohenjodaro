@@ -25,6 +25,9 @@ public class DesertStartPoint : MonoBehaviour
                 thePlayer.gameObject.transform.position = Starting_Positions[i].transform.position;
                 StartPointGlobalData.Scene = null;
                 thePlayer.lastMove = new Vector2(0f, 1f);
+                //make the global variable for player face direction after every scene transition.
+                //assign the global variable with the last face direction of the player while triggering the scene transition event..
+
             }
         }
        
