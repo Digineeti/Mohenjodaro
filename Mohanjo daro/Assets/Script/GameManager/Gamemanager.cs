@@ -57,11 +57,24 @@ public class Gamemanager : MonoBehaviour
             inventory_action = !inventory_action;
             if (inventory_action)
             {
-                inventory_system.SetActive(true);               
+                inventory_system.SetActive(true);      
+                
             }
             else
             {
                 inventory_system.SetActive(false);
+                for (int i = 0; i < inventory_system.transform.childCount; i++)
+                {
+                    if(i==0)
+                    {
+                        inventory_system.transform.GetChild(i).gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        inventory_system.transform.GetChild(i).gameObject.SetActive(false);
+                    }
+                   
+                }
             }
         }
     }
