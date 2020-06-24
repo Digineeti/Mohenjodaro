@@ -29,16 +29,25 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame Inventory
     void Update()
     {
+        try
+        {
+            Open_Inventory_system();
+            if (dialogue_system.activeSelf || inventory_system.activeSelf)
+            {
+                Globalvariable.Dialogue_Open = true;
+            }
+            else
+            {
+                Globalvariable.Dialogue_Open = false;
+            }
+           
+        }
+        catch (System.Exception)
+        {
 
-        if(dialogue_system.activeSelf ||inventory_system.activeSelf)
-        {
-            Globalvariable.Dialogue_Open = true;
+           
         }
-        else
-        {
-            Globalvariable.Dialogue_Open = false;
-        }
-        Open_Inventory_system();
+      
     }
 
     protected void Open_Inventory_system()

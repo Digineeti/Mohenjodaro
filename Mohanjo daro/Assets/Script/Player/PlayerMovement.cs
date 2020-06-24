@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour,IUnit
     {
         if (Globalvariable.Dialogue_Open == false )
         {
+
             playerMoving = false;
             // Smooting the currentSpeed to the targetSpeed
             if (input.horizontal > 0.5f || input.horizontal < -0.5f)
@@ -179,14 +180,15 @@ public class PlayerMovement : MonoBehaviour,IUnit
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.collider.tag);
+
     }
 
 
+   
 
-  
 
-    
+
     public Vector2 GetPosition()
     {
         return new Vector2(transform.position.x,transform.position.y);

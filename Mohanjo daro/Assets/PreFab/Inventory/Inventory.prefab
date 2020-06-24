@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &117230471
 RectTransform:
   m_ObjectHideFlags: 0
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to menu
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -895,10 +895,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 869544686}
-    characterCount: 12
+    characterCount: 9
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1190,7 +1190,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1167252070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4097440722561294651}
+        m_MethodName: In_Game_Menu_ExitPanel_Cancel_button_Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1233556940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3346,7 +3357,6 @@ RectTransform:
   - {fileID: 5519916050048267702}
   - {fileID: 5519916048907374999}
   - {fileID: 5519916049343968693}
-  - {fileID: 4879221408880913642}
   m_Father: {fileID: 5519916048772922339}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4869,6 +4879,7 @@ GameObject:
   - component: {fileID: 5519916048772922336}
   - component: {fileID: 5519916048772922337}
   - component: {fileID: 5519916048772922342}
+  - component: {fileID: 4097440722561294651}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -4893,6 +4904,7 @@ RectTransform:
   - {fileID: 327346610}
   - {fileID: 665655658}
   - {fileID: 2037009231}
+  - {fileID: 4879221408880913642}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4961,6 +4973,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4097440722561294651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519916048772922343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1610591c15a1dca40b1c755d15fc931f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  In_Game_Menu: {fileID: 3360401198319285731}
+  Exit_Panel: {fileID: 5729889098998442896}
+  Quest_Panel: {fileID: 117230470}
+  Status_Panel: {fileID: 1242170646}
+  Item_Panel: {fileID: 327346609}
+  Option_Panel: {fileID: 665655657}
+  Load_Panel: {fileID: 2037009230}
 --- !u!1 &5519916048797897288
 GameObject:
   m_ObjectHideFlags: 0
@@ -6115,7 +6146,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5519916049490995205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4097440722561294651}
+        m_MethodName: In_Game_Menu_Exit_button_Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5519916049549848634
 GameObject:
   m_ObjectHideFlags: 0
@@ -7250,7 +7292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4879221408880913642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7258,19 +7300,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5729889098998442896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 67421063}
   - {fileID: 1233556941}
   - {fileID: 1167252068}
-  m_Father: {fileID: 6821586588991345340}
-  m_RootOrder: 3
+  m_Father: {fileID: 5519916048772922339}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 458.6, y: 346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4792890625386562698
