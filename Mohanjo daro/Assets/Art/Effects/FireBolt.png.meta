@@ -32,6 +32,54 @@ TextureImporter:
   - first:
       213: -2091823711381449188
     second: FireBolt_9
+  - first:
+      213: 2344356779421163206
+    second: FireBolt_0
+  - first:
+      213: 4206099666889421046
+    second: FireBolt_1
+  - first:
+      213: 2670713487134156648
+    second: FireBolt_2
+  - first:
+      213: 558529360869368137
+    second: FireBolt_3
+  - first:
+      213: 723509254997426463
+    second: FireBolt_4
+  - first:
+      213: -2643203748089758348
+    second: FireBolt_5
+  - first:
+      213: 7397029166623112737
+    second: FireBolt_6
+  - first:
+      213: 1184324716270800646
+    second: FireBolt_7
+  - first:
+      213: 7771710568265787075
+    second: FireBolt_8
+  - first:
+      213: -2316233639556934757
+    second: FireBolt_9
+  - first:
+      213: -2521205073297452697
+    second: FireBolt_10
+  - first:
+      213: -5167675498369384013
+    second: FireBolt_11
+  - first:
+      213: -5537812261956370603
+    second: FireBolt_12
+  - first:
+      213: -7709376625198571803
+    second: FireBolt_10
+  - first:
+      213: 8019710539270206992
+    second: FireBolt_11
+  - first:
+      213: -3224745080906364017
+    second: FireBolt_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -142,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5584ba3211852f6d0800000000000000
-      internalID: -2958205174592878507
+      spriteID: 6ce5d28e114d88020800000000000000
+      internalID: 2344356779421163206
       vertices: []
       indices: 
       edges: []
@@ -163,8 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f17b9e23247c5ca0800000000000000
-      internalID: -6026814506873949711
+      spriteID: 6f035d6bc511f5a30800000000000000
+      internalID: 4206099666889421046
       vertices: []
       indices: 
       edges: []
@@ -184,8 +232,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3723fa0f306891410800000000000000
-      internalID: 1448336106657362547
+      spriteID: 867e97934c7401520800000000000000
+      internalID: 2670713487134156648
       vertices: []
       indices: 
       edges: []
@@ -205,8 +253,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b0f4ad701b962900800000000000000
-      internalID: 659384890586099894
+      spriteID: 941ae379e7b40c700800000000000000
+      internalID: 558529360869368137
       vertices: []
       indices: 
       edges: []
@@ -226,8 +274,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b3ac42cd26010aa0800000000000000
-      internalID: -6196664818681994320
+      spriteID: f1144d785db6a0a00800000000000000
+      internalID: 723509254997426463
       vertices: []
       indices: 
       edges: []
@@ -247,8 +295,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c27abd7c3b651f90800000000000000
-      internalID: -6983557739616505146
+      spriteID: 47df0260234715bd0800000000000000
+      internalID: -2643203748089758348
       vertices: []
       indices: 
       edges: []
@@ -268,8 +316,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecefc6f62df57cc80800000000000000
-      internalID: -8302562030617035058
+      spriteID: 12e36cdf5d687a660800000000000000
+      internalID: 7397029166623112737
       vertices: []
       indices: 
       edges: []
@@ -289,8 +337,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18b867a6be31b2800800000000000000
-      internalID: 588586078126377857
+      spriteID: 60f490cfd019f6010800000000000000
+      internalID: 1184324716270800646
       vertices: []
       indices: 
       edges: []
@@ -310,8 +358,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd9501001812576f0800000000000000
-      internalID: -687606530168563233
+      spriteID: 3c6a1a6e599aadb60800000000000000
+      internalID: 7771710568265787075
       vertices: []
       indices: 
       edges: []
@@ -331,8 +379,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c169e5eda6958f2e0800000000000000
-      internalID: -2091823711381449188
+      spriteID: b931669d6c51bdfd0800000000000000
+      internalID: -2316233639556934757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBolt_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eed65f2ecac20590800000000000000
+      internalID: -7709376625198571803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBolt_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01638a6ce3cbb4f60800000000000000
+      internalID: 8019710539270206992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireBolt_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b43613f676f33d0800000000000000
+      internalID: -3224745080906364017
       vertices: []
       indices: 
       edges: []
