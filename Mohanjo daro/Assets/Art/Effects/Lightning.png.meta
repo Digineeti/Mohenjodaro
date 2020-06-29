@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5619dfc9f66c624448576ad08d526d64
+guid: 2005617464accb94580e0a86e244ae77
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -38,12 +38,6 @@ TextureImporter:
   - first:
       213: 4521703798281543773
     second: Lightning3_11
-  - first:
-      213: -1374528293367565144
-    second: Lightning3_12
-  - first:
-      213: 6673317151521813257
-    second: Lightning3_13
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -387,48 +381,6 @@ TextureImporter:
       bones: []
       spriteID: d502b14c5a150ce30800000000000000
       internalID: 4521703798281543773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lightning3_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a43a1cbcc1bcece0800000000000000
-      internalID: -1374528293367565144
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Lightning3_13
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 903baf1b7926c9c50800000000000000
-      internalID: 6673317151521813257
       vertices: []
       indices: 
       edges: []

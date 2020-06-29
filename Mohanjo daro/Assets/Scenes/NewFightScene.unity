@@ -10783,5 +10783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThunderingParticalEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3771313768724150430, guid: 16cf5b59055671b4c84a12eedd7864e5,
+        type: 3}
+      propertyPath: UVModule.tilesX
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16cf5b59055671b4c84a12eedd7864e5, type: 3}
