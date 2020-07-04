@@ -1,7 +1,127 @@
 fileFormatVersion: 2
 guid: 29d31680c9a892144b116d3d11142514
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8399435509222546307
+    second: AgniFightCharacter_0
+  - first:
+      213: -1180231108928148164
+    second: AgniFightCharacter_1
+  - first:
+      213: -9087622860036765243
+    second: AgniFightCharacter_2
+  - first:
+      213: -8114266709269920417
+    second: AgniFightCharacter_3
+  - first:
+      213: 4406726119429113617
+    second: AgniFightCharacter_4
+  - first:
+      213: -939008764462660085
+    second: AgniFightCharacter_5
+  - first:
+      213: -5445306079129264649
+    second: AgniFightCharacter_6
+  - first:
+      213: -5008952135372193483
+    second: AgniFightCharacter_7
+  - first:
+      213: -7663367304843123204
+    second: AgniFightCharacter_8
+  - first:
+      213: -9201509427928381946
+    second: AgniFightCharacter_9
+  - first:
+      213: -3460639795206132916
+    second: AgniFightCharacter_10
+  - first:
+      213: 4045670538238084529
+    second: AgniFightCharacter_11
+  - first:
+      213: -3162822951863266494
+    second: AgniFightCharacter_12
+  - first:
+      213: 3310350856386919128
+    second: AgniFightCharacter_13
+  - first:
+      213: 2749636716784489882
+    second: AgniFightCharacter_14
+  - first:
+      213: -580390519405795793
+    second: AgniFightCharacter_15
+  - first:
+      213: 2355973420075569747
+    second: AgniFightCharacter_16
+  - first:
+      213: -1354984585139041975
+    second: AgniFightCharacter_17
+  - first:
+      213: -8238017139067355090
+    second: AgniFightCharacter_18
+  - first:
+      213: -7817742921990917945
+    second: AgniFightCharacter_19
+  - first:
+      213: -8676648626589888969
+    second: AgniFightCharacter_20
+  - first:
+      213: 2108145331609759349
+    second: AgniFightCharacter_21
+  - first:
+      213: 5811565947685454353
+    second: AgniFightCharacter_0
+  - first:
+      213: 5753058327635126624
+    second: AgniFightCharacter_1
+  - first:
+      213: -4544257007557684126
+    second: AgniFightCharacter_2
+  - first:
+      213: 3944343016277905381
+    second: AgniFightCharacter_3
+  - first:
+      213: 5006885730877975563
+    second: AgniFightCharacter_4
+  - first:
+      213: -3292281294398233167
+    second: AgniFightCharacter_5
+  - first:
+      213: 2465280568022887826
+    second: AgniFightCharacter_6
+  - first:
+      213: 154377647344362856
+    second: AgniFightCharacter_7
+  - first:
+      213: 7514544660546712583
+    second: AgniFightCharacter_8
+  - first:
+      213: 8136010111675930904
+    second: AgniFightCharacter_9
+  - first:
+      213: -4920525467089798225
+    second: AgniFightCharacter_10
+  - first:
+      213: 6159511597743624754
+    second: AgniFightCharacter_11
+  - first:
+      213: 3783283040989245763
+    second: AgniFightCharacter_12
+  - first:
+      213: -2094497773709255172
+    second: AgniFightCharacter_13
+  - first:
+      213: 9068175762492779431
+    second: AgniFightCharacter_14
+  - first:
+      213: -5348005566922246007
+    second: AgniFightCharacter_15
+  - first:
+      213: 2020991555984914004
+    second: AgniFightCharacter_16
+  - first:
+      213: 4294193118805518752
+    second: AgniFightCharacter_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +160,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,7 +216,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AgniFightCharacter_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 261
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1124c8c3074d6a050800000000000000
+      internalID: 5811565947685454353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 261
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0696bc66118f6df40800000000000000
+      internalID: 5753058327635126624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 261
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264d170045e8fe0c0800000000000000
+      internalID: -4544257007557684126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef8985431f1db630800000000000000
+      internalID: 3944343016277905381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c24fb6b080c7540800000000000000
+      internalID: 5006885730877975563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5eab22b977f42d0800000000000000
+      internalID: -3292281294398233167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d6da07d9f663220800000000000000
+      internalID: 2465280568022887826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865a83ff6a5742200800000000000000
+      internalID: 154377647344362856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_8
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 174
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704f1b41e86094860800000000000000
+      internalID: 7514544660546712583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8191e63171ae8e070800000000000000
+      internalID: 8136010111675930904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_10
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 87
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab79d16828c6bbb0800000000000000
+      internalID: -4920525467089798225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 87
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2325865e92bfa7550800000000000000
+      internalID: 6159511597743624754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 87
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3417cee81ebe08430800000000000000
+      internalID: 3783283040989245763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 87
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd96373f59dee2e0800000000000000
+      internalID: -2094497773709255172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab603c8fc1a8dd70800000000000000
+      internalID: 9068175762492779431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988b9c6954118c5b0800000000000000
+      internalID: -5348005566922246007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4567b8ccc110c0c10800000000000000
+      internalID: 2020991555984914004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AgniFightCharacter_17
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a96453d3e9089b30800000000000000
+      internalID: 4294193118805518752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
