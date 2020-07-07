@@ -392,6 +392,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Indra
       objectReference: {fileID: 0}
+    - target: {fileID: 3388102705455233173, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d2a7da8365693eb4d94168406247f18a, type: 2}
     - target: {fileID: 3388102705455233174, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -415,12 +420,12 @@ PrefabInstance:
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
@@ -430,7 +435,7 @@ PrefabInstance:
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000008742278
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
@@ -445,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3388102705455233175, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}

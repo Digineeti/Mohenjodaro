@@ -31,7 +31,7 @@ public class Playeranimator : MonoBehaviour
 
         if(timetoReturnback<punchtime)
         {
-            ani.SetBool("punch", false);
+            //ani.SetBool("punch", false);// make false 07-07-2020
         }
         //StartCoroutine(wait());
         //if (punch == true)
