@@ -1,0 +1,3355 @@
+fileFormatVersion: 2
+guid: 5f3a5d9ed4c5e17488d874972e96579d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -831176694922938055
+    second: lake_0
+  - first:
+      213: -2022720005571000242
+    second: lake_1
+  - first:
+      213: 3765802249977219853
+    second: lake_2
+  - first:
+      213: 3961416156048561581
+    second: lake_3
+  - first:
+      213: -5275952702232424916
+    second: lake_4
+  - first:
+      213: 2435226491746569809
+    second: lake_5
+  - first:
+      213: 7446956970439009903
+    second: lake_6
+  - first:
+      213: -3879550247210299725
+    second: lake_7
+  - first:
+      213: 1437856924853372137
+    second: lake_8
+  - first:
+      213: -2238285831861779396
+    second: lake_9
+  - first:
+      213: -1479751965151319603
+    second: lake_10
+  - first:
+      213: 7363592352952629549
+    second: lake_11
+  - first:
+      213: 6703758519647114582
+    second: lake_12
+  - first:
+      213: -6354662613150663718
+    second: lake_13
+  - first:
+      213: 7268572869679344431
+    second: lake_14
+  - first:
+      213: 6668049802109310887
+    second: lake_15
+  - first:
+      213: 3673238436337242298
+    second: lake_16
+  - first:
+      213: 8306909901417594754
+    second: lake_17
+  - first:
+      213: -6288387398999180685
+    second: lake_18
+  - first:
+      213: 7629955054114616818
+    second: lake_19
+  - first:
+      213: -2002503480414751114
+    second: lake_20
+  - first:
+      213: 7647522440315225118
+    second: lake_21
+  - first:
+      213: -3949438017696590030
+    second: lake_22
+  - first:
+      213: 6867761419727896318
+    second: lake_23
+  - first:
+      213: -9173215486304217627
+    second: lake_24
+  - first:
+      213: -1264495488143149615
+    second: lake_25
+  - first:
+      213: 5650481235577791012
+    second: lake_26
+  - first:
+      213: 7958393103758082579
+    second: lake_27
+  - first:
+      213: -6948723426913969502
+    second: lake_28
+  - first:
+      213: -3106496421875269650
+    second: lake_29
+  - first:
+      213: -3642963169458964452
+    second: lake_30
+  - first:
+      213: -4480117385933344219
+    second: lake_31
+  - first:
+      213: -4203068101844455468
+    second: lake_32
+  - first:
+      213: 2023097795062300200
+    second: lake_33
+  - first:
+      213: -6657704909275978403
+    second: lake_34
+  - first:
+      213: -8420423397177561791
+    second: lake_35
+  - first:
+      213: 6037988293871074017
+    second: lake_36
+  - first:
+      213: 2620333986778947974
+    second: lake_37
+  - first:
+      213: -6167310848203290397
+    second: lake_38
+  - first:
+      213: -5699564350210392360
+    second: lake_39
+  - first:
+      213: -6825255895766815235
+    second: lake_40
+  - first:
+      213: -8714717906912638949
+    second: lake_41
+  - first:
+      213: 7699547821623529733
+    second: lake_42
+  - first:
+      213: -3103765043302326023
+    second: lake_43
+  - first:
+      213: 999668594952674257
+    second: lake_44
+  - first:
+      213: 6169946760365659115
+    second: lake_45
+  - first:
+      213: 4017698002792576871
+    second: lake_46
+  - first:
+      213: -5471153375657545676
+    second: lake_47
+  - first:
+      213: 8143791054668787817
+    second: lake_48
+  - first:
+      213: 120887010583773514
+    second: lake_49
+  - first:
+      213: 7572019707300001615
+    second: lake_50
+  - first:
+      213: 3306985956879730090
+    second: lake_51
+  - first:
+      213: -3598225530193132586
+    second: lake_52
+  - first:
+      213: 1596237390536581472
+    second: lake_53
+  - first:
+      213: 6965575803692218175
+    second: lake_54
+  - first:
+      213: 4144696016548314998
+    second: lake_55
+  - first:
+      213: 1051674441693081023
+    second: lake_56
+  - first:
+      213: 4042952107228326363
+    second: lake_57
+  - first:
+      213: 3177013291546758330
+    second: lake_58
+  - first:
+      213: 8040645741493131734
+    second: lake_59
+  - first:
+      213: 6134008216417401976
+    second: lake_60
+  - first:
+      213: 4985216422404523555
+    second: lake_61
+  - first:
+      213: -3408746552788485402
+    second: lake_62
+  - first:
+      213: -102546042845073824
+    second: lake_63
+  - first:
+      213: 838086995034513697
+    second: lake_64
+  - first:
+      213: -6647125942332661006
+    second: lake_65
+  - first:
+      213: 1795467533346539359
+    second: lake_66
+  - first:
+      213: -2990823510944943184
+    second: lake_67
+  - first:
+      213: -5421311994212376711
+    second: lake_68
+  - first:
+      213: 763206340179901676
+    second: lake_69
+  - first:
+      213: -7013396698989978235
+    second: lake_70
+  - first:
+      213: -1699155875594875342
+    second: lake_71
+  - first:
+      213: 8953220545441078485
+    second: lake_72
+  - first:
+      213: -4895680125631067311
+    second: lake_73
+  - first:
+      213: 7606987854591331322
+    second: lake_74
+  - first:
+      213: 4321363436412448928
+    second: lake_75
+  - first:
+      213: -2137081618167870708
+    second: lake_76
+  - first:
+      213: 8228718164358196996
+    second: lake_77
+  - first:
+      213: 3709374456478371429
+    second: lake_78
+  - first:
+      213: 6456495952471202267
+    second: lake_79
+  - first:
+      213: 7678935409827556766
+    second: lake_80
+  - first:
+      213: 5234958941898319898
+    second: lake_81
+  - first:
+      213: 2852469226489284444
+    second: lake_82
+  - first:
+      213: -5474898429728489329
+    second: lake_83
+  - first:
+      213: -7313324747096113370
+    second: lake_84
+  - first:
+      213: -5320979518558073664
+    second: lake_85
+  - first:
+      213: -3657433393060128599
+    second: lake_86
+  - first:
+      213: -2399555176243182976
+    second: lake_87
+  - first:
+      213: -998635767591807309
+    second: lake_88
+  - first:
+      213: 6359602837053014331
+    second: lake_89
+  - first:
+      213: -5147996684409351040
+    second: lake 1_0
+  - first:
+      213: -4059909049883374537
+    second: lake 1_1
+  - first:
+      213: -8718645435350974083
+    second: lake 1_2
+  - first:
+      213: 306341133998877478
+    second: lake 1_3
+  - first:
+      213: 1542348168816612461
+    second: lake 1_4
+  - first:
+      213: -2973736171933882602
+    second: lake 1_5
+  - first:
+      213: 7138689102763812537
+    second: lake 1_6
+  - first:
+      213: 3204162059460739816
+    second: lake 1_7
+  - first:
+      213: -2931178841320031787
+    second: lake 1_8
+  - first:
+      213: 3965357266699525892
+    second: lake 1_9
+  - first:
+      213: -6006404999816773165
+    second: lake 1_10
+  - first:
+      213: 5881348836820195196
+    second: lake 1_11
+  - first:
+      213: -5491254109005849112
+    second: lake 1_12
+  - first:
+      213: 1225270076011276253
+    second: lake 1_13
+  - first:
+      213: 4031067164114116300
+    second: lake 1_14
+  - first:
+      213: -6226759288096565150
+    second: lake 1_15
+  - first:
+      213: 1653640475669646737
+    second: lake 1_16
+  - first:
+      213: -498899720729178022
+    second: lake 1_17
+  - first:
+      213: -4835763263304375337
+    second: lake 1_18
+  - first:
+      213: 6661124250942578106
+    second: lake 1_19
+  - first:
+      213: -5197955918502307651
+    second: lake 1_20
+  - first:
+      213: -7596533997303629513
+    second: lake 1_21
+  - first:
+      213: -3250831203662693769
+    second: lake 1_22
+  - first:
+      213: 6722681406938951142
+    second: lake 1_23
+  - first:
+      213: -1029181313539293825
+    second: lake 1_24
+  - first:
+      213: -617718800509073653
+    second: lake 1_25
+  - first:
+      213: -8256801254409333087
+    second: lake 1_26
+  - first:
+      213: -6229177614742789293
+    second: lake 1_27
+  - first:
+      213: -8507314806946852786
+    second: lake 1_28
+  - first:
+      213: -9025702763578213248
+    second: lake 1_29
+  - first:
+      213: -4924978938035930535
+    second: lake 1_30
+  - first:
+      213: 2876471697731622095
+    second: lake 1_31
+  - first:
+      213: -768862721397554177
+    second: lake 1_32
+  - first:
+      213: -6895433389979958059
+    second: lake 1_33
+  - first:
+      213: -4665801062213509905
+    second: lake 1_34
+  - first:
+      213: 2560788013036615992
+    second: lake 1_35
+  - first:
+      213: 3733823678515540783
+    second: lake 1_36
+  - first:
+      213: -1036210987283729677
+    second: lake 1_37
+  - first:
+      213: -7580414324623122655
+    second: lake 1_38
+  - first:
+      213: 9115077513670888216
+    second: lake 1_39
+  - first:
+      213: 5870023278405179340
+    second: lake 1_40
+  - first:
+      213: -2727592110355702831
+    second: lake 1_41
+  - first:
+      213: 2777701438301905549
+    second: lake 1_42
+  - first:
+      213: 4983399850910708755
+    second: lake 1_43
+  - first:
+      213: -2452948282557976565
+    second: lake 1_44
+  - first:
+      213: 7376376515821348916
+    second: lake 1_45
+  - first:
+      213: -8932077068314259003
+    second: lake 1_46
+  - first:
+      213: 8533624437884036287
+    second: lake 1_47
+  - first:
+      213: -7865478911233574764
+    second: lake 1_48
+  - first:
+      213: 6705225543869290538
+    second: lake 1_49
+  - first:
+      213: 6963568942458530129
+    second: lake 1_50
+  - first:
+      213: -2749780704963653040
+    second: lake 1_51
+  - first:
+      213: 5169983518278359259
+    second: lake 1_52
+  - first:
+      213: -6371494034222288933
+    second: lake 1_53
+  - first:
+      213: 7348063285159370536
+    second: lake 1_54
+  - first:
+      213: 4655159652340890342
+    second: lake 1_55
+  - first:
+      213: 5177314633728698006
+    second: lake 1_56
+  - first:
+      213: -3923208260476535924
+    second: lake 1_57
+  - first:
+      213: -3961503629502482623
+    second: lake 1_58
+  - first:
+      213: -6165739544952545594
+    second: lake 1_59
+  - first:
+      213: 3880291688127445337
+    second: lake 1_60
+  - first:
+      213: -5680384510439372737
+    second: lake 1_61
+  - first:
+      213: 9194673590075118707
+    second: lake 1_62
+  - first:
+      213: 6050117841099878610
+    second: lake 1_63
+  - first:
+      213: 3365748250699019633
+    second: lake 1_64
+  - first:
+      213: -3940541495537494481
+    second: lake 1_65
+  - first:
+      213: -8213401448071802822
+    second: lake 1_66
+  - first:
+      213: -4326205714414247183
+    second: lake 1_67
+  - first:
+      213: 4609496437930570953
+    second: lake 1_68
+  - first:
+      213: 450299413472484551
+    second: lake 1_69
+  - first:
+      213: -5229609564146239692
+    second: lake 1_70
+  - first:
+      213: -6866013645515003474
+    second: lake 1_71
+  - first:
+      213: -8876810885812818389
+    second: lake 1_72
+  - first:
+      213: 1845479719540236559
+    second: lake 1_73
+  - first:
+      213: 1752462708729771929
+    second: lake 1_74
+  - first:
+      213: -720560382366268416
+    second: lake 1_75
+  - first:
+      213: -7034528764417399080
+    second: lake 1_76
+  - first:
+      213: -4839845370206167505
+    second: lake 1_77
+  - first:
+      213: 4022543122172908691
+    second: lake 1_78
+  - first:
+      213: -8177768324875437562
+    second: lake 1_79
+  - first:
+      213: 2690015596923845771
+    second: lake 1_80
+  - first:
+      213: 5772076624329348612
+    second: lake 1_81
+  - first:
+      213: 5878726344418302813
+    second: lake 1_82
+  - first:
+      213: 3964683203584266390
+    second: lake 1_83
+  - first:
+      213: 8429350197966374892
+    second: lake 1_84
+  - first:
+      213: 909377407056674075
+    second: lake 1_85
+  - first:
+      213: 7231271243157696843
+    second: lake 1_86
+  - first:
+      213: -529987567218587208
+    second: lake 1_87
+  - first:
+      213: 101008692434698790
+    second: lake 1_88
+  - first:
+      213: -2559559930389187091
+    second: lake 1_89
+  - first:
+      213: -3141857424750788608
+    second: lake 1_90
+  - first:
+      213: 2944083496163503889
+    second: lake 1_91
+  - first:
+      213: 5661229292315847354
+    second: lake 1_92
+  - first:
+      213: -1869919230461181146
+    second: lake 1_93
+  - first:
+      213: -948609607399606464
+    second: lake 1_94
+  - first:
+      213: -5022859281465825124
+    second: lake 1_95
+  - first:
+      213: -41389861973472096
+    second: lake 1_96
+  - first:
+      213: 3352120608568355260
+    second: lake 1_97
+  - first:
+      213: -8400186782811909241
+    second: lake 1_98
+  - first:
+      213: 3365322443645466968
+    second: lake 1_99
+  - first:
+      213: -9194707110513429106
+    second: lake 1_100
+  - first:
+      213: -5861661337317492846
+    second: lake 1_101
+  - first:
+      213: -1320129077892422411
+    second: lake 1_102
+  - first:
+      213: 5299619222373468905
+    second: lake 1_103
+  - first:
+      213: 7707874504594054615
+    second: lake 1_104
+  - first:
+      213: 3160517637842764818
+    second: lake 1_105
+  - first:
+      213: -6876468365235319813
+    second: lake 1_106
+  - first:
+      213: 7994917033836611749
+    second: lake 1_107
+  - first:
+      213: -8404484595817435731
+    second: lake 1_108
+  - first:
+      213: 7971408077107091418
+    second: lake 1_109
+  - first:
+      213: -3412937372785969372
+    second: lake 1_110
+  - first:
+      213: -2507319559890596910
+    second: lake 1_111
+  - first:
+      213: 4712702646198468104
+    second: lake 1_112
+  - first:
+      213: 5644848757959024832
+    second: lake 1_113
+  - first:
+      213: 1841375450888511379
+    second: lake 1_114
+  - first:
+      213: -4752425707958779753
+    second: lake 1_115
+  - first:
+      213: -7186252976471885344
+    second: lake 1_116
+  - first:
+      213: 3851291883247048179
+    second: lake 1_117
+  - first:
+      213: -776034869125389687
+    second: lake 1_118
+  - first:
+      213: 3321184036586739195
+    second: lake 1_119
+  - first:
+      213: -8572725424975751538
+    second: lake 1_120
+  - first:
+      213: -7130194417406280329
+    second: lake 1_121
+  - first:
+      213: -4743671386189965391
+    second: lake 1_122
+  - first:
+      213: 2043840797248574393
+    second: lake 1_123
+  - first:
+      213: -1573460370933933416
+    second: lake 1_124
+  - first:
+      213: 992067870175849098
+    second: lake 1_125
+  - first:
+      213: 4775366268505360067
+    second: lake 1_126
+  - first:
+      213: -4815800286116839701
+    second: lake 1_127
+  - first:
+      213: -5658958226451069886
+    second: lake 1_128
+  - first:
+      213: 4134266529797017313
+    second: lake 1_129
+  - first:
+      213: -7077435509841391338
+    second: lake 1_130
+  - first:
+      213: 6021703079533079778
+    second: lake 1_131
+  - first:
+      213: -6226806153652849318
+    second: lake 1_132
+  - first:
+      213: -3656082306695746689
+    second: lake 1_133
+  - first:
+      213: 4655359392365130360
+    second: lake 1_134
+  - first:
+      213: 6119145199856892075
+    second: lake 1_135
+  - first:
+      213: -7038601450656759528
+    second: lake 1_136
+  - first:
+      213: 5529965144691784916
+    second: lake 1_137
+  - first:
+      213: 8841002577398773536
+    second: lake 1_138
+  - first:
+      213: 1568837562327504047
+    second: lake 1_139
+  - first:
+      213: -7593858458184897347
+    second: lake 1_140
+  - first:
+      213: 2247059292428215460
+    second: lake 1_141
+  - first:
+      213: -5053383196543208843
+    second: lake 1_142
+  - first:
+      213: -2319408819480428904
+    second: lake 1_143
+  - first:
+      213: -1007767071717507015
+    second: lake 1_144
+  - first:
+      213: 3627034189311990137
+    second: lake 1_145
+  - first:
+      213: 3339153296065457696
+    second: lake 1_146
+  - first:
+      213: 20479181675556068
+    second: lake 1_147
+  - first:
+      213: -1799476668368962488
+    second: lake 1_148
+  - first:
+      213: -8479810025582285541
+    second: lake 1_149
+  - first:
+      213: 2991803198496318443
+    second: lake 1_150
+  - first:
+      213: -3257279683431809046
+    second: lake 1_151
+  - first:
+      213: -6465134482186877649
+    second: lake 1_152
+  - first:
+      213: 625654367066895488
+    second: lake 1_153
+  - first:
+      213: -7222745783779943167
+    second: lake 1_154
+  - first:
+      213: -3890049513905211615
+    second: lake 1_155
+  - first:
+      213: -7639139064672371598
+    second: lake 1_156
+  - first:
+      213: 4058857060926219826
+    second: lake 1_157
+  - first:
+      213: -1492877206320232824
+    second: lake 1_158
+  - first:
+      213: -2410879458724627547
+    second: lake 1_159
+  - first:
+      213: 675372086489366804
+    second: lake 1_160
+  - first:
+      213: 1499470510331347758
+    second: lake 1_161
+  - first:
+      213: 6537144202360939499
+    second: lake 1_162
+  - first:
+      213: 1625692701652293644
+    second: lake 1_163
+  - first:
+      213: 7692996156125217588
+    second: lake 1_164
+  - first:
+      213: -1404051170414162228
+    second: lake 1_165
+  - first:
+      213: 6856512534397273991
+    second: lake 1_166
+  - first:
+      213: -4924622618761549493
+    second: lake 1_167
+  - first:
+      213: -8164877456320227993
+    second: lake 1_168
+  - first:
+      213: -1236186055435202417
+    second: lake 1_169
+  - first:
+      213: -3279708909770449309
+    second: lake 1_170
+  - first:
+      213: 7340395720567748509
+    second: lake 1_171
+  - first:
+      213: 3108058940956329784
+    second: lake 1_172
+  - first:
+      213: -6926874651098552312
+    second: lake 1_173
+  - first:
+      213: 7385629477324792537
+    second: lake 1_174
+  - first:
+      213: 6552609286825085383
+    second: lake 1_175
+  - first:
+      213: -4032938408805580962
+    second: lake 1_176
+  - first:
+      213: -892754610722569005
+    second: lake 1_177
+  - first:
+      213: -9054153421071683917
+    second: lake 1_178
+  - first:
+      213: -396027536600437462
+    second: lake 1_179
+  - first:
+      213: -2258523204069403808
+    second: lake 1_180
+  - first:
+      213: -8098430195123835007
+    second: lake 1_181
+  - first:
+      213: 3125244577392565251
+    second: lake 1_182
+  - first:
+      213: -3843813195159537186
+    second: lake 1_183
+  - first:
+      213: 715220248585130341
+    second: lake 1_184
+  - first:
+      213: -8169003399001192699
+    second: lake 1_185
+  - first:
+      213: 6855623018914322185
+    second: lake 1_186
+  - first:
+      213: 7467447411149514789
+    second: lake 1_187
+  - first:
+      213: 8010766631034160295
+    second: lake 1_188
+  - first:
+      213: -8968467622921820820
+    second: lake 1_189
+  - first:
+      213: -7005711378597049818
+    second: lake 1_190
+  - first:
+      213: 2352231275096079807
+    second: lake 1_191
+  - first:
+      213: -1125535895390241225
+    second: lake 1_192
+  - first:
+      213: -3330198998661457098
+    second: lake 1_193
+  - first:
+      213: 3156819149199146268
+    second: lake 1_194
+  - first:
+      213: 5557151257508155222
+    second: lake 1_195
+  - first:
+      213: 1222405860813248336
+    second: lake 1_196
+  - first:
+      213: -8426549783064659727
+    second: lake 1_197
+  - first:
+      213: -5977045686420389290
+    second: lake 1_198
+  - first:
+      213: 1100859261243378127
+    second: lake 1_199
+  - first:
+      213: 4845811263860807524
+    second: lake 1_200
+  - first:
+      213: -1760627546670042767
+    second: lake 1_201
+  - first:
+      213: 452198955990152549
+    second: lake 1_202
+  - first:
+      213: -2309740677871263163
+    second: lake 1_203
+  - first:
+      213: -6244350834438093734
+    second: lake 1_204
+  - first:
+      213: 5862885290487574508
+    second: lake 1_205
+  - first:
+      213: -3180343308121088198
+    second: lake 1_206
+  - first:
+      213: 6730490378189409368
+    second: lake 1_207
+  - first:
+      213: 5324945622997068367
+    second: lake 1_208
+  - first:
+      213: -2969051490970574150
+    second: lake 1_209
+  - first:
+      213: 3305739744915863763
+    second: lake 1_210
+  - first:
+      213: -6633047464049234009
+    second: lake 1_211
+  - first:
+      213: 4269425044378213885
+    second: lake 1_212
+  - first:
+      213: 2618255839740496511
+    second: lake 1_213
+  - first:
+      213: -73728165420380323
+    second: lake 1_214
+  - first:
+      213: -2265735206729569291
+    second: lake 1_215
+  - first:
+      213: 8334937743240046552
+    second: lake 1_216
+  - first:
+      213: -894806039576459774
+    second: lake 1_217
+  - first:
+      213: 2255523528851362987
+    second: lake 1_218
+  - first:
+      213: -4844938660259645036
+    second: lake 1_219
+  - first:
+      213: 9206618081017204939
+    second: lake 1_220
+  - first:
+      213: -5213094334201214796
+    second: lake 1_221
+  - first:
+      213: 7780074638686358857
+    second: lake 1_222
+  - first:
+      213: 8471400947652150186
+    second: lake 1_223
+  - first:
+      213: 7460740941327483097
+    second: lake 1_224
+  - first:
+      213: -4344998051954660359
+    second: lake 1_225
+  - first:
+      213: 983679467028165784
+    second: lake 1_226
+  - first:
+      213: -8859884556342825617
+    second: lake 1_227
+  - first:
+      213: -5925023441418603087
+    second: lake 1_228
+  - first:
+      213: -1941263840566540407
+    second: lake 1_229
+  - first:
+      213: 6599095601488479160
+    second: lake 1_230
+  - first:
+      213: 5144233665709161099
+    second: lake 1_231
+  - first:
+      213: -7749300289522226153
+    second: lake 1_232
+  - first:
+      213: -6094060553662238550
+    second: lake 1_233
+  - first:
+      213: 150422845052408874
+    second: lake 1_234
+  - first:
+      213: -1353391888104257826
+    second: lake 1_235
+  - first:
+      213: 2070491494204598142
+    second: lake 1_236
+  - first:
+      213: -3006510701966199251
+    second: lake 1_237
+  - first:
+      213: 211374201400632929
+    second: lake 1_238
+  - first:
+      213: 7775224451356638531
+    second: lake 1_239
+  - first:
+      213: -3266516805323105483
+    second: lake 1_240
+  - first:
+      213: 3293143292135765865
+    second: lake 1_241
+  - first:
+      213: 2397950847371644818
+    second: lake 1_242
+  - first:
+      213: -4484254511285315031
+    second: lake 1_243
+  - first:
+      213: 9177569797447746336
+    second: lake 1_244
+  - first:
+      213: -126148944418801922
+    second: lake 1_245
+  - first:
+      213: 319143412211613825
+    second: lake 1_246
+  - first:
+      213: -3260350643720794964
+    second: lake 1_247
+  - first:
+      213: -1063393368660372729
+    second: lake 1_248
+  - first:
+      213: -208133293405345699
+    second: lake 1_249
+  - first:
+      213: 2146052462257420542
+    second: lake 1_250
+  - first:
+      213: -6271916651166073520
+    second: lake 1_251
+  - first:
+      213: -4012492332839784268
+    second: lake 1_252
+  - first:
+      213: -693564006904240808
+    second: lake 1_253
+  - first:
+      213: 3119453969019484395
+    second: lake 1_254
+  - first:
+      213: -5794949472570728382
+    second: lake 1_255
+  - first:
+      213: -362307068267424134
+    second: lake 1_256
+  - first:
+      213: -5414274893969636654
+    second: lake 1_257
+  - first:
+      213: 1559207477272709031
+    second: lake 1_258
+  - first:
+      213: 2475295916700888605
+    second: lake 1_259
+  - first:
+      213: -6980179083675998872
+    second: lake 1_260
+  - first:
+      213: -3595065033317908016
+    second: lake 1_261
+  - first:
+      213: -7095908296396506389
+    second: lake 1_262
+  - first:
+      213: 4251809253265268931
+    second: lake 1_263
+  - first:
+      213: 1963020288549853625
+    second: lake 1_264
+  - first:
+      213: -8651753589554000858
+    second: lake 1_265
+  - first:
+      213: -5914977613099670557
+    second: lake 1_266
+  - first:
+      213: -5406315496072049365
+    second: lake 1_267
+  - first:
+      213: 5126074554344254939
+    second: lake 1_268
+  - first:
+      213: 4490167272477420428
+    second: lake 1_269
+  - first:
+      213: 3564448917948765737
+    second: lake 1_270
+  - first:
+      213: 3522606204823093347
+    second: lake 1_271
+  - first:
+      213: -1050967470197420366
+    second: lake 1_272
+  - first:
+      213: 5779144709591876986
+    second: lake 1_273
+  - first:
+      213: 1716966793008474658
+    second: lake 1_274
+  - first:
+      213: 8630404526371301233
+    second: lake 1_275
+  - first:
+      213: -8387224494891717222
+    second: lake 1_276
+  - first:
+      213: 4449379616281412546
+    second: lake 1_277
+  - first:
+      213: 3107866219676280732
+    second: lake 1_278
+  - first:
+      213: 264593377319519321
+    second: lake 1_279
+  - first:
+      213: -802657942643533947
+    second: lake 1_280
+  - first:
+      213: -1245691585298345995
+    second: lake 1_281
+  - first:
+      213: 3484896367838906323
+    second: lake 1_282
+  - first:
+      213: -3677115785463663455
+    second: lake 1_283
+  - first:
+      213: 3704669897382326886
+    second: lake 1_284
+  - first:
+      213: 2076320928436856712
+    second: lake 1_285
+  - first:
+      213: -5772103652256441121
+    second: lake 1_286
+  - first:
+      213: -949576766154523411
+    second: lake 1_287
+  - first:
+      213: -1343379233073298413
+    second: lake 1_288
+  - first:
+      213: 5436142346942776515
+    second: lake 1_289
+  - first:
+      213: -7694363294665711449
+    second: lake 1_290
+  - first:
+      213: -8975922119973807802
+    second: lake 1_291
+  - first:
+      213: 4424419067526645530
+    second: lake 1_292
+  - first:
+      213: -1756775455693614999
+    second: lake 1_293
+  - first:
+      213: -8312871247638249656
+    second: lake 1_294
+  - first:
+      213: -5792600901106309338
+    second: lake 1_295
+  - first:
+      213: -539271550022347811
+    second: lake 1_296
+  - first:
+      213: 27442061503331140
+    second: lake 1_297
+  - first:
+      213: 4590195023361983434
+    second: lake 1_298
+  - first:
+      213: -1399152048568244877
+    second: lake 1_299
+  - first:
+      213: -4857231096294954735
+    second: lake 1_300
+  - first:
+      213: 670648607650949483
+    second: lake 1_301
+  - first:
+      213: 6112865752203553255
+    second: lake 1_302
+  - first:
+      213: 8705852993543343826
+    second: lake 1_303
+  - first:
+      213: -8831283216627475997
+    second: lake 1_304
+  - first:
+      213: 1995178200651128615
+    second: lake 1_305
+  - first:
+      213: 1166495801095081995
+    second: lake 1_306
+  - first:
+      213: 5169494988228382392
+    second: lake 1_307
+  - first:
+      213: 1316296527998170960
+    second: lake 1_308
+  - first:
+      213: 3342140871731267846
+    second: lake 1_309
+  - first:
+      213: 8752244471408562899
+    second: lake 1_310
+  - first:
+      213: -3259358193420729388
+    second: lake 1_311
+  - first:
+      213: -8951485103806334191
+    second: lake 1_312
+  - first:
+      213: 4828627291150749656
+    second: lake 1_313
+  - first:
+      213: -6449186015736872397
+    second: lake 1_314
+  - first:
+      213: 7378886296960962871
+    second: lake 1_315
+  - first:
+      213: 6215720563774190643
+    second: lake 1_316
+  - first:
+      213: 3893812706407561490
+    second: lake 1_317
+  - first:
+      213: -702854434786031465
+    second: lake 1_318
+  - first:
+      213: 7887208570028066191
+    second: lake 1_319
+  - first:
+      213: -755089910014627439
+    second: lake 1_320
+  - first:
+      213: -4860912222958321546
+    second: lake 1_321
+  - first:
+      213: 7713060983198324263
+    second: lake 1_322
+  - first:
+      213: -1561781096255044568
+    second: lake 1_323
+  - first:
+      213: 4015152323360517452
+    second: lake 1_324
+  - first:
+      213: 4362473560851507586
+    second: lake 1_325
+  - first:
+      213: 8101877393045573950
+    second: lake 1_326
+  - first:
+      213: -2336110606839411183
+    second: lake 1_327
+  - first:
+      213: 5196977010890736161
+    second: lake 1_328
+  - first:
+      213: 6201976778030617085
+    second: lake 1_329
+  - first:
+      213: 1816798066135241667
+    second: lake 1_330
+  - first:
+      213: 1312206159028527125
+    second: lake 1_331
+  - first:
+      213: -3723573023801120495
+    second: lake 1_332
+  - first:
+      213: -8845806245852405731
+    second: lake 1_333
+  - first:
+      213: -1119262876668170408
+    second: lake 1_334
+  - first:
+      213: 8631575727583431148
+    second: lake 1_335
+  - first:
+      213: -7309919644547859502
+    second: lake 1_336
+  - first:
+      213: 272260111793613223
+    second: lake 1_337
+  - first:
+      213: 453180919883222938
+    second: lake 1_338
+  - first:
+      213: -8971105905289581584
+    second: lake 1_339
+  - first:
+      213: -7860472663132702561
+    second: lake 1_340
+  - first:
+      213: -5246569061609980320
+    second: lake 1_341
+  - first:
+      213: -2910564390446103430
+    second: lake 1_342
+  - first:
+      213: 7259488799049470916
+    second: lake 1_343
+  - first:
+      213: -8909083067013708145
+    second: lake 1_344
+  - first:
+      213: -7369910557069900297
+    second: lake 1_345
+  - first:
+      213: 5221311457504640286
+    second: lake 1_346
+  - first:
+      213: 623358326467081999
+    second: lake 1_347
+  - first:
+      213: 1377976801812775832
+    second: lake 1_348
+  - first:
+      213: 1421823282033467288
+    second: lake 1_349
+  - first:
+      213: -2980337321546220361
+    second: lake 1_350
+  - first:
+      213: 182723655941858731
+    second: lake 1_351
+  - first:
+      213: 328253456085742723
+    second: lake 1_352
+  - first:
+      213: -2905575182056995152
+    second: lake 1_353
+  - first:
+      213: -1856003295165541874
+    second: lake 1_354
+  - first:
+      213: -3926757916114787406
+    second: lake 1_355
+  - first:
+      213: -968176890581679089
+    second: lake 1_356
+  - first:
+      213: 1237751953419985049
+    second: lake 1_357
+  - first:
+      213: 9044104038216795213
+    second: lake 1_358
+  - first:
+      213: -878160976096602226
+    second: lake 1_359
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lake 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08454e07a44ae88b0800000000000000
+      internalID: -5147996684409351040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cce4dba3e48a7c0800000000000000
+      internalID: -4059909049883374537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71035f7b26210780800000000000000
+      internalID: -8718645435350974083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62be71863a7504400800000000000000
+      internalID: 306341133998877478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64d942ec75876510800000000000000
+      internalID: 1542348168816612461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617a62805ba2bb6d0800000000000000
+      internalID: -2973736171933882602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b66034aae7b11360800000000000000
+      internalID: 7138689102763812537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e201fcaa68777c20800000000000000
+      internalID: 3204162059460739816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d97af5bf5c5257d0800000000000000
+      internalID: -2931178841320031787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f9329bc67c70730800000000000000
+      internalID: 3965357266699525892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d18ac8d976f4aca0800000000000000
+      internalID: -6006404999816773165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7713da3b9fbe9150800000000000000
+      internalID: 5881348836820195196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed5d455b752bc3b0800000000000000
+      internalID: -5491254109005849112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7619274a8010110800000000000000
+      internalID: 1225270076011276253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce53ce6a3a31f730800000000000000
+      internalID: 4031067164114116300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 268d3231b6b1699a0800000000000000
+      internalID: -6226759288096565150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d4f725049e2f610800000000000000
+      internalID: 1653640475669646737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a505567e85d8319f0800000000000000
+      internalID: -498899720729178022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_18
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3ebd8deeae3ecb0800000000000000
+      internalID: -4835763263304375337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_19
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd1c2ec631117c50800000000000000
+      internalID: 6661124250942578106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_20
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8d78fc1a62dd7b0800000000000000
+      internalID: -5197955918502307651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_21
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739f98ed390b39690800000000000000
+      internalID: -7596533997303629513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_22
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77afde07e3ab2e2d0800000000000000
+      internalID: -3250831203662693769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_23
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed28be0f13cb4d50800000000000000
+      internalID: 6722681406938951142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d35055c0d97b1f0800000000000000
+      internalID: -1029181313539293825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b078394160c6d67f0800000000000000
+      internalID: -617718800509073653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_26
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a69ee96103f96d80800000000000000
+      internalID: -8256801254409333087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_27
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353e07686f38d89a0800000000000000
+      internalID: -6229177614742789293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_28
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40138bb142ffe980800000000000000
+      internalID: -8507314806946852786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_29
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cb8a028234eb280800000000000000
+      internalID: -9025702763578213248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95a7610efb5f6abb0800000000000000
+      internalID: -4924978938035930535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc412c5d4c74be720800000000000000
+      internalID: 2876471697731622095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff30f02bd637455f0800000000000000
+      internalID: -768862721397554177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d480e98ddf7e40a0800000000000000
+      internalID: -6895433389979958059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec9f1687aebf3fb0800000000000000
+      internalID: -4665801062213509905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8393026512fb98320800000000000000
+      internalID: 2560788013036615992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f237cdb5ad431d330800000000000000
+      internalID: 3733823678515540783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_37
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2b89ed893ae91f0800000000000000
+      internalID: -1036210987283729677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f5e82a555fcc690800000000000000
+      internalID: -7580414324623122655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b018674b24f7e70800000000000000
+      internalID: 9115077513670888216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_40
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc75d9c2213867150800000000000000
+      internalID: 5870023278405179340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_41
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db17125d65a52ad0800000000000000
+      internalID: -2727592110355702831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82a312cdb06c8620800000000000000
+      internalID: 2777701438301905549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_43
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314744fd2c7982540800000000000000
+      internalID: 4983399850910708755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_44
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b003ab5888065fdd0800000000000000
+      internalID: -2452948282557976565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438a0130c572e5660800000000000000
+      internalID: 7376376515821348916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_46
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c157b40b33ea0480800000000000000
+      internalID: -8932077068314259003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_47
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4aba296368d6670800000000000000
+      internalID: 8533624437884036287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_48
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498b8937a9438d290800000000000000
+      internalID: -7865478911233574764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_49
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2854393b1fbd0d50800000000000000
+      internalID: 6705225543869290538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_50
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159ee200f0193a060800000000000000
+      internalID: 6963568942458530129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_51
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0521b6e8401d6d9d0800000000000000
+      internalID: -2749780704963653040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_52
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd81b9d3e987fb740800000000000000
+      internalID: 5169983518278359259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_53
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdfe8a9fee7e397a0800000000000000
+      internalID: -6371494034222288933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f930b40a099f560800000000000000
+      internalID: 7348063285159370536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_55
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea728a2a037a9040800000000000000
+      internalID: 4655159652340890342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_56
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696a4d19a3489d740800000000000000
+      internalID: 5177314633728698006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_57
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8bfa668fd6fd89c0800000000000000
+      internalID: -3923208260476535924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_58
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147751b1079e509c0800000000000000
+      internalID: -3961503629502482623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_59
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce56852d84ee6aa0800000000000000
+      internalID: -6165739544952545594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959bcbf4bb099d530800000000000000
+      internalID: 3880291688127445337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_61
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3841ab32683b21b0800000000000000
+      internalID: -5680384510439372737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_62
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374d71a2aea0a9f70800000000000000
+      internalID: 9194673590075118707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_63
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0f2002f1656f350800000000000000
+      internalID: 6050117841099878610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_64
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175be46933a85be20800000000000000
+      internalID: 3365748250699019633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f261dcf33626059c0800000000000000
+      internalID: -3940541495537494481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30500246e2240e80800000000000000
+      internalID: -8213401448071802822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_67
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f2e21fe2da36f3c0800000000000000
+      internalID: -4326205714414247183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_68
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4b740969838ff30800000000000000
+      internalID: 4609496437930570953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc18964ee8cf3600800000000000000
+      internalID: 450299413472484551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_70
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437f31f1fc1bc67b0800000000000000
+      internalID: -5229609564146239692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9e71497f407b0a0800000000000000
+      internalID: -6866013645515003474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_72
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e6eccd78b3fc480800000000000000
+      internalID: -8876810885812818389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_73
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f012263f6067c9910800000000000000
+      internalID: 1845479719540236559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_74
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997f4f37c8ff15810800000000000000
+      internalID: 1752462708729771929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_75
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004c6d1662e0006f0800000000000000
+      internalID: -720560382366268416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_76
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d622aafb55506e90800000000000000
+      internalID: -7034528764417399080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_77
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2eda05474a65dcb0800000000000000
+      internalID: -4839845370206167505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_78
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3949ec248a1f2d730800000000000000
+      internalID: 4022543122172908691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_79
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60abb54490bb28e80800000000000000
+      internalID: -8177768324875437562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_80
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cf7eedeead45520800000000000000
+      internalID: 2690015596923845771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_81
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4069c79ab198a1050800000000000000
+      internalID: 5772076624329348612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_82
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b98c2a67e659150800000000000000
+      internalID: 5878726344418302813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_83
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690199c2e52650730800000000000000
+      internalID: 3964683203584266390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_84
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7872d28511bf470800000000000000
+      internalID: 8429350197966374892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_85
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1df0620fe1ce9c00800000000000000
+      internalID: 909377407056674075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_86
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4179eaf1e2aa5460800000000000000
+      internalID: 7231271243157696843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_87
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b900989d1b15a8f0800000000000000
+      internalID: -529987567218587208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_88
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6220ccfdedad66100800000000000000
+      internalID: 101008692434698790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lake 1_89
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de534dfedcd9a7cd0800000000000000
+      internalID: -2559559930389187091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
