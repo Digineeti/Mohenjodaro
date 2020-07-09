@@ -1891,13 +1891,7 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 7340315747331877936}
     m_ColliderPaths:
-    - - X: -69999900
-        Y: -90000041
-      - X: -69999900
-        Y: -90000000
-      - X: -50000000
-        Y: -90000000
-      - X: -50000000
+    - - X: -50000000
         Y: -70000000
       - X: -160000000
         Y: -70000000
@@ -1911,14 +1905,8 @@ CompositeCollider2D:
         Y: -80000000
       - X: -130000000
         Y: -90000000
-      - X: -80000100
+      - X: -50000000
         Y: -90000000
-      - X: -80000100
-        Y: -90000041
-      - X: -80000041
-        Y: -90000100
-      - X: -69999959
-        Y: -90000100
   m_CompositePaths:
     m_Paths:
     - - {x: -14.000029, y: -9}
@@ -7291,6 +7279,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExteriorDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 2816967882846654627, guid: 628f2571646d3924d8e06344465247b4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5213229242370633579, guid: 4e4c14bb88b81324e9adc975aa9c023c,
+        type: 3}
+    - target: {fileID: 2816967882846654627, guid: 628f2571646d3924d8e06344465247b4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816967882846654627, guid: 628f2571646d3924d8e06344465247b4,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3801613583569594068, guid: 628f2571646d3924d8e06344465247b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7345,6 +7349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7465456529966234231, guid: 628f2571646d3924d8e06344465247b4,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.3333334
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628f2571646d3924d8e06344465247b4, type: 3}
