@@ -7561,6 +7561,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2453857524891077321, guid: 1f6b3db98aa68dd429e54adc79575014,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 2680675127090322466, guid: 1f6b3db98aa68dd429e54adc79575014,
         type: 3}
       propertyPath: m_Tiles.Array.size
