@@ -1,34 +1,31 @@
 fileFormatVersion: 2
-guid: 0a6e9e104062e9f4883bc1bb5af17306
+guid: 9ba3a63a0cf3ea34a9cef65270f446ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5973099476450865318
-    second: Door48_0
+      213: 5213229242370633579
+    second: Door_0
   - first:
-      213: -8936675943576173781
-    second: Door48_1
+      213: 436563815456543028
+    second: Door_1
   - first:
-      213: -3090623361988297374
-    second: Door48_2
+      213: -8689009931745917929
+    second: Door_2
   - first:
-      213: -7548075329824657735
-    second: Door48_3
+      213: 289144848352645085
+    second: Door_3
   - first:
-      213: -2012654223896702446
-    second: Door48_0
+      213: -2302327988271558475
+    second: Door_0
   - first:
-      213: 7626059220320436107
-    second: Door48_1
+      213: 2220189004445039950
+    second: Door_1
   - first:
-      213: 1511365603633890799
-    second: Door48_2
+      213: -8377262835530034992
+    second: Door_2
   - first:
-      213: 6719987456044036753
-    second: Door48_3
-  - first:
-      213: -3290976003359173565
-    second: Door48_4
+      213: 2730455109505347158
+    second: Door_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -72,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 48
+  spritePixelsToUnits: 36
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,16 +118,40 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Door48_0
+      name: Door_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 36
         height: 48
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -139,19 +160,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21292f895ad9114e0800000000000000
-      internalID: -2012654223896702446
+      spriteID: 5b052a694ec7c00e0800000000000000
+      internalID: -2302327988271558475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door48_1
+      name: Door_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 36
         y: 0
-        width: 48
+        width: 36
         height: 48
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -160,19 +181,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8fba4fc47435d960800000000000000
-      internalID: 7626059220320436107
+      spriteID: e4dbc20f222bfce10800000000000000
+      internalID: 2220189004445039950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door48_2
+      name: Door_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 72
         y: 0
-        width: 48
+        width: 36
         height: 48
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -181,19 +202,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe5875a420379f410800000000000000
-      internalID: 1511365603633890799
+      spriteID: 0d09622f5dbfdbb80800000000000000
+      internalID: -8377262835530034992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Door48_3
+      name: Door_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 108
         y: 0
-        width: 48
+        width: 36
         height: 48
       alignment: 8
       pivot: {x: 1, y: 0}
@@ -202,29 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 192f59cbcf0324d50800000000000000
-      internalID: 6719987456044036753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Door48_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3441173e2ca1452d0800000000000000
-      internalID: -3290976003359173565
+      spriteID: 65e673d947684e520800000000000000
+      internalID: 2730455109505347158
       vertices: []
       indices: 
       edges: []
