@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2486043698752393383}
   - component: {fileID: 1381172922274746516}
   m_Layer: 14
-  m_Name: Stair Down basment
+  m_Name: Stair Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7176389574967394879}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -14.52, y: -5.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
