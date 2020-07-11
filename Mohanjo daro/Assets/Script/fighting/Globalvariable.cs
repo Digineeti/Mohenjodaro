@@ -203,12 +203,12 @@ public class Globalvariable
 
 
 
-    //private static bool walkable_Area;
-    //public static bool Walkable_Area
-    //{
-    //    get { return walkable_Area; }
-    //    set { walkable_Area = value; }
-    //}
+    private static bool walkable_Area;
+    public static bool Walkable_Area
+    {
+        get { return walkable_Area; }
+        set { walkable_Area = value; }
+    }
     //private static bool _Walkarea;
     //public static bool Walkarea
     //{

@@ -22,15 +22,23 @@ public class ShiftingFloor : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "ScenePlayer")
-        {
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "ScenePlayer")
+    //    {
 
-            StartCoroutine(LoadScene());
+    //        StartCoroutine(LoadScene());
+    //    }
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag== "ScenePlayer")
+        {
+            Visible_floor.SetActive(true);
+            Hide_Floor.SetActive(false);
         }
     }
-
     IEnumerator LoadScene()
     {
         
@@ -39,27 +47,27 @@ public class ShiftingFloor : MonoBehaviour
         Visible_floor.SetActive(true);
         Hide_Floor.SetActive(false);
 
-        GameObject Exterior_Door1 = GameObject.Find("ExteriorDoor");
-        GameObject Exterior_Door2 = GameObject.Find("ExteriorDoor2");
+        //GameObject Exterior_Door1 = GameObject.Find("ExteriorDoor");
+        //GameObject Exterior_Door2 = GameObject.Find("ExteriorDoor2");
 
-        //Exterior_Door1.SetActive(false);
-        //Exterior_Door2.SetActive(false);
+        ////Exterior_Door1.SetActive(false);
+        ////Exterior_Door2.SetActive(false);
 
 
-        Exterior_Door1.GetComponent<SpriteRenderer>().color= new Color(1f, 1f, 1f, 0f); 
-        Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        //Exterior_Door1.GetComponent<SpriteRenderer>().color= new Color(1f, 1f, 1f, 0f); 
+        //Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
 
-        if (Visible_floor.name== "GroundFloor")
-        {
-            Exterior_Door1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-            Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-            //if(Visible_floor.activeSelf)
-            //{
-            //    Exterior_Door1.SetActive(true);
-            //    Exterior_Door2.SetActive(true);
-            //}
+        //if (Visible_floor.name== "GroundFloor")
+        //{
+        //    Exterior_Door1.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        //    Exterior_Door2.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        //    //if(Visible_floor.activeSelf)
+        //    //{
+        //    //    Exterior_Door1.SetActive(true);
+        //    //    Exterior_Door2.SetActive(true);
+        //    //}
 
-        }
+        //}
         //if (Hide_Floor.name == "GroundFloor")
         //{
         //    if (Hide_Floor.activeSelf)

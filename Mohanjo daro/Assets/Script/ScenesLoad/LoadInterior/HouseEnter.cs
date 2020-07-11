@@ -34,6 +34,7 @@ public class HouseEnter : MonoBehaviour
     {
         if (collision.gameObject.tag == "ScenePlayer")
         {
+           
             StartCoroutine(EnterIntoHouse());
         }
     }
@@ -47,7 +48,10 @@ public class HouseEnter : MonoBehaviour
         //GameObject Main_Light = GameObject.Find("GlobalLight");
         //Main_Light.GetComponent<Light2D>().intensity = 0.6f;
         ExteriorDoor.SetTrigger("start");
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.12f);
+
+        Deactive.SetActive(false);
+        Active.SetActive(true);
         //if (Entry.gameObject.activeSelf)
         //{
         //    Exit.SetActive(true);
@@ -55,26 +59,31 @@ public class HouseEnter : MonoBehaviour
 
         //    Exit2.SetActive(true);
         //    Entry2.SetActive(false);
-        Deactive.SetActive(false);
-        Active.SetActive(true);
-           
-            //ExteriorDoor2.SetTrigger("start");
 
-            //ExteriorDoor.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
-            //ExteriorDoor.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
 
-            //ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
-            //ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
+        //ExteriorDoor2.SetTrigger("start");
 
-           
+        //ExteriorDoor.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
+        //ExteriorDoor.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
 
-            
-            //Exterior.GetComponent<CompositeCollider2D>().isTrigger = true;
-            //Roof.GetComponent<TilemapCollider2D>().isTrigger = true;
-            //Exterior.color=new Color(1f,1f,1f,0f);
-            //Roof.color = new Color(1f, 1f, 1f, 0f);
+        //ExteriorDoor2.GetComponent<SpriteRenderer>().sortingLayerName = player.GetComponent<SpriteRenderer>().sortingLayerName;
+        //ExteriorDoor2.GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1000;
+
+
+
+
+        //Exterior.GetComponent<CompositeCollider2D>().isTrigger = true;
+        //Roof.GetComponent<TilemapCollider2D>().isTrigger = true;
+        //Exterior.color=new Color(1f,1f,1f,0f);
+        //Roof.color = new Color(1f, 1f, 1f, 0f);
 
 
         //}
+    }
+
+
+    public void End_Animation()
+    {
+       
     }
 }

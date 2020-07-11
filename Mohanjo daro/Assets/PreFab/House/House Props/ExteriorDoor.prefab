@@ -101,7 +101,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8816010624499318408
@@ -116,15 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f9c0a1bc3d7994397f8555ca07fb49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Exterior: {fileID: 0}
-  Roof: {fileID: 0}
-  ActiveGroundFloor: {fileID: 0}
-  Entry: {fileID: 0}
-  Exit: {fileID: 0}
-  Entry2: {fileID: 0}
-  Exit2: {fileID: 0}
+  Deactive: {fileID: 0}
+  Active: {fileID: 0}
   ExteriorDoor: {fileID: 0}
-  ExteriorDoor2: {fileID: 0}
 --- !u!61 &7465456529966234231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +129,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.5, y: 1}

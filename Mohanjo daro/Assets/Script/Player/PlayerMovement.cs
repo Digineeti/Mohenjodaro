@@ -6,6 +6,7 @@ using RPGTALK.Localization;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.Tilemaps;
 
 public class PlayerMovement : MonoBehaviour,IUnit
 {
@@ -178,14 +179,34 @@ public class PlayerMovement : MonoBehaviour,IUnit
         return raycasthit.collider != null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Debug.Log(collision.collider.tag);
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.collider.tag == "Walkable")
+    //    {
+    //        Globalvariable.Walkable_Area = true;
+    //        //collision.gameObject.GetComponent<CompositeCollider2D>().isTrigger = true;
+    //    }
+    //    else
+    //        Globalvariable.Walkable_Area = false;
+        
+    //    Debug.Log(collision.gameObject.name);
+    //    Debug.Log(collision.collider.tag);
 
+    //}
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Walkable")
+        {
+            Globalvariable.Walkable_Area = true;
+            //collision.gameObject.GetComponent<CompositeCollider2D>().isTrigger = true;
+        }
+        else
+            Globalvariable.Walkable_Area = false;
     }
 
 
-   
+
 
 
 
