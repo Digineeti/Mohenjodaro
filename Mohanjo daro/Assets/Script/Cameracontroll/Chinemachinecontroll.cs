@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class Chinemachinecontroll : MonoBehaviour
 {
     private static bool cameraExists;
    
-    public GameObject follow;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,9 @@ public class Chinemachinecontroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        GameObject shape = GameObject.Find("CameraBoundary");
+        gameObject.GetComponent<CinemachineConfiner>().m_BoundingShape2D = shape.GetComponent<PolygonCollider2D>();
     }
 }
