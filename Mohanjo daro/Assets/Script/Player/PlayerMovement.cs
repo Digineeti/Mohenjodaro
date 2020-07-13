@@ -188,22 +188,38 @@ public class PlayerMovement : MonoBehaviour,IUnit
     //    }
     //    else
     //        Globalvariable.Walkable_Area = false;
-        
+
     //    Debug.Log(collision.gameObject.name);
     //    Debug.Log(collision.collider.tag);
 
     //}
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Walkable")
+        try
         {
-            Globalvariable.Walkable_Area = true;
-            //collision.gameObject.GetComponent<CompositeCollider2D>().isTrigger = true;
+            //if (collision.collider.tag == "Walkable")
+            //{
+            //    collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+            //}
         }
-        else
-            Globalvariable.Walkable_Area = false;
+        catch (Exception)
+        {
+           
+        }
+       
     }
+   
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.collider.tag == "Walkable")
+    //    {
+    //        Globalvariable.Walkable_Area = true;
+    //        //collision.gameObject.GetComponent<CompositeCollider2D>().isTrigger = true;
+    //    }
+    //    else
+    //        Globalvariable.Walkable_Area = false;
+    //}
 
 
 

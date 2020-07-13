@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class Ground_WalkableArea : MonoBehaviour
 {
-    private void OnCollisionStay2D(Collision2D collision)
+    //GameObject[] gos;
+
+    void Start()
     {
-        Debug.Log(collision.gameObject.name);
+
+        //gos = GameObject.FindGameObjectsWithTag("Respawn");
     }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    foreach (GameObject go in gos)
+    //    {
+    //        go.transform.GetChild(0).GetComponent<BoxCollider2D>().isTrigger = false;
+    //    }
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    foreach (GameObject go in gos)
+    //    {
+    //        go.transform.GetChild(0).GetComponent<BoxCollider2D>().isTrigger = true;
+    //    }
+    //}
 }
