@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -23,7 +24,6 @@ public class Gamemanager : MonoBehaviour
         //initialize the dialogue system
         dialogue_system = GameObject.Find("DialogueBar");
 
-
     }
 
     // Update is called once per frame Inventory
@@ -40,7 +40,12 @@ public class Gamemanager : MonoBehaviour
             {
                 Globalvariable.Dialogue_Open = false;
             }
-           
+
+            GameObject leader = GameObject.Find("Leader");
+            if(leader==null && Globalvariable.Dialogue_Open == false)
+            {
+                Scene_Transition();
+            }
         }
         catch (System.Exception)
         {
@@ -77,5 +82,20 @@ public class Gamemanager : MonoBehaviour
                 }
             }
         }
+    }
+
+    protected void Scene_Transition()
+    {        
+        StartPointGlobalData.Scene = null;
+        StartPointGlobalData.Scene = "Surkotada 1Enter";
+        StartCoroutine(Load_FristScene());
+
+    }
+
+    IEnumerator Load_FristScene()
+    {
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene("Surkotada");
     }
 }
