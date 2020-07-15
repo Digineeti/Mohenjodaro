@@ -87,7 +87,7 @@ public class Gamemanager : MonoBehaviour
     protected void Scene_Transition()
     {        
         StartPointGlobalData.Scene = null;
-        StartPointGlobalData.Scene = "Surkotada 1Enter";
+        StartPointGlobalData.Scene = "Surkotada Enter";
         StartCoroutine(Load_FristScene());
 
     }
