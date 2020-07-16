@@ -7406,11 +7406,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 6365634999266417331, guid: c6d985521ff2af544ba5e26138676d0e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6365634999266417333, guid: c6d985521ff2af544ba5e26138676d0e,
         type: 3}
       propertyPath: m_Follow
@@ -54605,12 +54600,12 @@ PrefabInstance:
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.302414
+      value: -29.306915
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.376703
+      value: -24.376709
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
@@ -54661,11 +54656,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822502958274829300, guid: deb8769508b8e0b45ab2521240dbda80,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb8769508b8e0b45ab2521240dbda80, type: 3}
