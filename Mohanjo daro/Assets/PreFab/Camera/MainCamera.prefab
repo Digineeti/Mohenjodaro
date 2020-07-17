@@ -135,6 +135,7 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
     m_Time: 2
@@ -175,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 540
-  m_RefResolutionY: 256
+  m_AssetsPPU: 18
+  m_RefResolutionX: 340
+  m_RefResolutionY: 190
   m_UpscaleRT: 0
   m_PixelSnapping: 0
   m_CropFrameX: 0
