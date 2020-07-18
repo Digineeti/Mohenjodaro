@@ -134,7 +134,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 1
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272fa06a5fb64be469c7a545d62e4d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pixelScale: 1
 --- !u!114 &635302055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,11 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 18
-  m_RefResolutionX: 340
-  m_RefResolutionY: 190
+  m_AssetsPPU: 36
+  m_RefResolutionX: 768
+  m_RefResolutionY: 432
   m_UpscaleRT: 0
   m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
+  m_CropFrameX: 1
+  m_CropFrameY: 1
   m_StretchFill: 0

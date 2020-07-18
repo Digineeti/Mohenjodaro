@@ -30,4 +30,6 @@ public class Chinemachinecontroll : MonoBehaviour
         GameObject shape = GameObject.Find("CameraBoundary");
         gameObject.GetComponent<CinemachineConfiner>().m_BoundingShape2D = shape.GetComponent<PolygonCollider2D>();
     }
+
+
 }
