@@ -192,6 +192,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7730300569090613784, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: Effect.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730300569090613784, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: Effect.Array.data[30]
+      value: 
+      objectReference: {fileID: 3030641847337965902, guid: 523a62660ec61bc4da33492e3b9febbf,
+        type: 3}
     - target: {fileID: 7934364509210656149, guid: 3f0b940c2ce881d4bae94a413644a57c,
         type: 3}
       propertyPath: Enemy.Array.data[3]

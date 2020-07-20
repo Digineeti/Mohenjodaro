@@ -598,11 +598,16 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.TargetPosition = new Vector3[1];
             Globalvariable.TargetName = new string[1];
             //Vector3 position = Parent.transform.position;         
-            Transform clone = Instantiate(PlayerActionList.Effect[7], new Vector3(spawanHero[ActivePlayerValue].transform.position.x + (2f + 1), spawanHero[ActivePlayerValue].transform.position.y, spawanHero[ActivePlayerValue].transform.position.z), Quaternion.Euler(spawanHero[ActivePlayerValue].transform.rotation.x, 0f, spawanHero[ActivePlayerValue].transform.rotation.z));
-            clone.name = "Arrow0" ;
+            //..Transform clone = Instantiate(PlayerActionList.Effect[7], new Vector3(spawanHero[ActivePlayerValue].transform.position.x + (2f + 1), spawanHero[ActivePlayerValue].transform.position.y, spawanHero[ActivePlayerValue].transform.position.z), Quaternion.Euler(spawanHero[ActivePlayerValue].transform.rotation.x, 0f, spawanHero[ActivePlayerValue].transform.rotation.z));
+            //..clone.name = "Arrow0" ;
             //Vector3 direction = spawanHero[ActivePlayerId].transform.position - spawanHero[i].transform.position;
+            //new animator
+            Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x , Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(spawanHero[ActivePlayerValue].transform.rotation.x, 0f, spawanHero[ActivePlayerValue].transform.rotation.z));
+            //clone.transform.localScale=new Vector3(.2f,.2f,0f);
+            clone.gameObject.GetComponent<Animator>().SetTrigger("Attack");
+            clone.name = "Arrow0";
             //clone.GetComponent<Rigidbody2D>().AddForce(direction*0.5f, ForceMode2D.Impulse);
-          
+
             Globalvariable.TargetPosition[0] = Button_Click_On_Player.transform.position;
             Globalvariable.TargetName[0] = Button_Click_On_Player.name;
             //Instantiate(PlayerActionList.Effect[0], new Vector3(Button_Click_On_Player.transform.position.x-0.3f, Button_Click_On_Player.transform.position.y-0.4f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x+50, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
@@ -700,8 +705,11 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
             damagepanel.SetActive(true);
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-            Instantiate(PlayerActionList.Effect[3],new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
+            //Instantiate(PlayerActionList.Effect[3],new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
 
+            Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
+            clone.gameObject.GetComponent<Animator>().SetTrigger("LightingAttack");
+            clone.name = "Arrow0";
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
             {
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
@@ -806,7 +814,10 @@ public class AllButtonAction : MonoBehaviour
                     damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[2],new Vector3(spawanHero[i].transform.position.x, spawanHero[i].transform.position.y, spawanHero[i].transform.position.z),Quaternion.Euler(spawanHero[i].transform.rotation.x, spawanHero[i].transform.rotation.y, spawanHero[i].transform.rotation.z));
+                    //Instantiate(PlayerActionList.Effect[2],new Vector3(spawanHero[i].transform.position.x, spawanHero[i].transform.position.y, spawanHero[i].transform.position.z),Quaternion.Euler(spawanHero[i].transform.rotation.x, spawanHero[i].transform.rotation.y, spawanHero[i].transform.rotation.z));
+                    Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
+                    clone.gameObject.GetComponent<Animator>().SetTrigger("ThunderStrom");
+                    clone.name = "Arrow0";
 
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
                     {
@@ -919,8 +930,10 @@ public class AllButtonAction : MonoBehaviour
                     damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[4], new Vector3(spawanHero[i].transform.position.x, spawanHero[i].transform.position.y + 0.4f, spawanHero[i].transform.position.z), Quaternion.Euler(spawanHero[i].transform.rotation.x, spawanHero[i].transform.rotation.y, spawanHero[i].transform.rotation.z));
-
+                    //Instantiate(PlayerActionList.Effect[4], new Vector3(spawanHero[i].transform.position.x, spawanHero[i].transform.position.y + 0.4f, spawanHero[i].transform.position.z), Quaternion.Euler(spawanHero[i].transform.rotation.x, spawanHero[i].transform.rotation.y, spawanHero[i].transform.rotation.z));
+                    Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
+                    clone.gameObject.GetComponent<Animator>().SetTrigger("Strom");
+                    clone.name = "Arrow0";
                     if (PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") <= 0)
                     {
                         spawanHero[i].GetComponent<Animator>().SetBool("Death", true);
@@ -1031,7 +1044,10 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
                 //instantiate the particle effect on the action..
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
 
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
@@ -1049,7 +1065,11 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
                     //instantiate the particle effect on the action..
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1067,7 +1087,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
                     //instantiate the particle effect on the action..
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1085,8 +1108,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
                     //instantiate the particle effect on the action..
-                    Instantiate(PlayerActionList.Effect[5], Forthplayer.transform.position, Forthplayer.transform.rotation);
-
+                    //Instantiate(PlayerActionList.Effect[5], Forthplayer.transform.position, Forthplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], Forthplayer.transform.position, Forthplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
                     if (PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
                         Forthplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
@@ -1104,7 +1129,10 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
@@ -1120,7 +1148,12 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
+
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1137,7 +1170,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1156,8 +1192,11 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
 
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
                     Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
@@ -1173,7 +1212,10 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1190,7 +1232,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1209,7 +1254,10 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
 
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
@@ -1226,7 +1274,10 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1243,8 +1294,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
-
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
                         thirdplayer.transform.GetChild(0).GetComponent<Animator>().SetBool("Death", true);
@@ -1260,7 +1313,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], Forthplayer.transform.position, Forthplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], Forthplayer.transform.position, Forthplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], Forthplayer.transform.position, Forthplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(Forthplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1279,7 +1335,10 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
 
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
@@ -1296,7 +1355,10 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1313,7 +1375,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1332,7 +1397,10 @@ public class AllButtonAction : MonoBehaviour
                 damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                 damagepanel.SetActive(true);
                 PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
-                Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                //Instantiate(PlayerActionList.Effect[5], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                clone.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                clone.name = "Arrow0";
 
                 if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
                 {
@@ -1349,7 +1417,10 @@ public class AllButtonAction : MonoBehaviour
                     sdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     sdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], secondplayer.transform.position, secondplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], secondplayer.transform.position, secondplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(secondplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1366,7 +1437,10 @@ public class AllButtonAction : MonoBehaviour
                     thdamagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     thdamagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive), 0f, PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPMax")));
-                    Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    //Instantiate(PlayerActionList.Effect[5], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    Transform clone2 = Instantiate(PlayerActionList.Effect[30], thirdplayer.transform.position, thirdplayer.transform.rotation);
+                    clone2.gameObject.GetComponent<Animator>().SetTrigger("FireBall");
+                    clone2.name = "Arrow1";
 
                     if (PlayerPrefs.GetFloat(thirdplayer.transform.GetChild(0).gameObject.name + "_HPValue") <= 0)
                     {
@@ -1484,8 +1558,12 @@ public class AllButtonAction : MonoBehaviour
                     damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
                     damagepanel.SetActive(true);
                     PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
-                    Transform clone = Instantiate(PlayerActionList.Effect[7], new Vector3(spawanHero[ActivePlayerId].transform.position.x + (2f+TargetValue+1), spawanHero[ActivePlayerId].transform.position.y, spawanHero[ActivePlayerId].transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
-                    clone.name = "Arrow"+ TargetValue;
+                    //Transform clone = Instantiate(PlayerActionList.Effect[7], new Vector3(spawanHero[ActivePlayerId].transform.position.x + (2f+TargetValue+1), spawanHero[ActivePlayerId].transform.position.y, spawanHero[ActivePlayerId].transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
+                    //clone.name = "Arrow"+ TargetValue;
+                    Transform clone = Instantiate(PlayerActionList.Effect[30], Button_Click_On_Player.transform.position, Button_Click_On_Player.transform.rotation);
+                    clone.gameObject.GetComponent<Animator>().SetTrigger("FireBlast");
+                    clone.name = "Arrow0";
+
                     //Vector3 direction = spawanHero[ActivePlayerId].transform.position - spawanHero[i].transform.position;
                     //clone.GetComponent<Rigidbody2D>().AddForce(direction*0.5f, ForceMode2D.Impulse);
                     yvalue = -(yvalue);
