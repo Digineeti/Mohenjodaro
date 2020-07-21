@@ -13,6 +13,10 @@ public class Gamemanager : MonoBehaviour
     //[HideInInspector] public bool escape;
 
 
+    private void Awake()
+    {
+        Load_Dialogue_Scene();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -97,5 +101,13 @@ public class Gamemanager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene("Surkotada");
+    }
+
+
+    //awake funtion load the dialogue scene for loading starting dialogue.
+    protected void Load_Dialogue_Scene()
+    {
+        SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
+        
     }
 }
