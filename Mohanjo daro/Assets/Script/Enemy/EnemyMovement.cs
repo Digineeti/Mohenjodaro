@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class EnemyMovement : MonoBehaviour
     public GameObject[] lieutenant;
     private int lieutenant_count;
     public int count_check;
+
+    public int dialogue_StartLine;
+    public int dialogue_EndLine;
+    bool trigger_Active;
     #endregion
     #region random_movement
 
@@ -90,6 +95,26 @@ public class EnemyMovement : MonoBehaviour
         //    timer = 0;
 
         //}
+        try
+        {
+            GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+            gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
+            gameObject.GetComponent<RPGTalkArea>().lineToStart = dialogue_StartLine.ToString();
+            gameObject.GetComponent<RPGTalkArea>().lineToBreak = dialogue_EndLine.ToString();
+        }
+        catch (System.Exception)
+        {
+
+          
+        }
+        //if(trigger_Active)
+        //{
+        //    trigger_Active = false;
+           
+
+        //}
+
+
     }
 
    
@@ -113,23 +138,38 @@ public class EnemyMovement : MonoBehaviour
            
             
             Globalvariable.Dialogue_Open = true;
-            Search_the_Lieutenant();
-            Rearrange_the_dialogue_Sequence();
+            //SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
+            StartCoroutine(Trigger_Event());
+           
+            //var objs = from GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)) where go.scene.name == sceneName select go;
+            //SceneManager.GetSceneByBuildIndex(sceneIndex).GetRootGameObjects();
 
-            GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
-            if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
-            {
-               
-            }
-            else
-            {
-                //destroyed the enemy after talk.
-               
-                Destroy(gameObject, 1f);
-            }
-
+            //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
            
            
+            
+            //dialoguebar.GetComponent<RPGTalk>().lineToStart=gameObject.GetComponent<RPGTalk>()
+
+            //Search_the_Lieutenant();
+            //Rearrange_the_dialogue_Sequence();
+
+
+           
+
+            //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+            //if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
+            //{
+
+            //}
+            //else
+            //{
+            //    //destroyed the enemy after talk.
+
+            //    Destroy(gameObject, 1f);
+            //}
+            //new code for dialogue system...
+
+
 
         }
         //enemy ai movement script ....goes here 
@@ -177,6 +217,13 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    
+    IEnumerator Trigger_Event()
+    {
+        //yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Dialogue", LoadSceneMode.Additive);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Dialogue"));
+        yield return new WaitForEndOfFrame();
+        trigger_Active = true;
 
+    }
 }

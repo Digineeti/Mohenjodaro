@@ -16,6 +16,7 @@ public class Gamemanager : MonoBehaviour
     private void Awake()
     {
         Load_Dialogue_Scene();
+        //Globalvariable.Dialogue_Open = true;
     }
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,13 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame Inventory
     void Update()
     {
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    AddRoom("Dialogue");
+        //}
+
+        
+
         try
         {
             Open_Inventory_system();
@@ -107,7 +115,18 @@ public class Gamemanager : MonoBehaviour
     //awake funtion load the dialogue scene for loading starting dialogue.
     protected void Load_Dialogue_Scene()
     {
+
+        StartCoroutine(Load_Dialogue());
+    }
+
+   IEnumerator Load_Dialogue()
+    {
         SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
-        
+        SceneManager.LoadSceneAsync("Prologue", LoadSceneMode.Additive);
+        yield return new WaitForEndOfFrame();
+        //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+        ////dialoguebar.GetComponent<RPGTalk>().startOnAwake = false;
+        //dialoguebar.GetComponent<RPGTalk>().lineToStart = "1";
+        //dialoguebar.GetComponent<RPGTalk>().lineToBreak = "14";
     }
 }

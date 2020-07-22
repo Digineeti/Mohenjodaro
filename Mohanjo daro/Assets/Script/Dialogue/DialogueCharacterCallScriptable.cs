@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 
 public class DialogueCharacterCallScriptable : MonoBehaviour
@@ -167,5 +168,15 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
         
     }
 
- 
+
+    private void LateUpdate()
+    {
+        //GameObject DialogueScene = GameObject.Find("DialogueBar");
+        if (player_Image.activeSelf == false)
+        {
+            //GameObject DialogueScene = GameObject.Find("Dialogue");
+            Globalvariable.Dialogue_Open = false;
+            SceneManager.UnloadSceneAsync("Dialogue");
+        }
+    }
 }

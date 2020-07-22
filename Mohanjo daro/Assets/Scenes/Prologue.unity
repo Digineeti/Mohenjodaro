@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -20815,6 +20815,8 @@ MonoBehaviour:
   type: 2
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 0
+  dialogue_EndLine: 0
 --- !u!210 &506157899
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -24516,6 +24518,8 @@ MonoBehaviour:
   type: 2
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 0
+  dialogue_EndLine: 0
 --- !u!210 &1199522269
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -24686,6 +24690,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
+        type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
+        type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3822502958274829297, guid: deb8769508b8e0b45ab2521240dbda80,
+        type: 3}
+      propertyPath: orthographic size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829300, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}
@@ -25781,6 +25805,8 @@ MonoBehaviour:
   type: 1
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 0
+  dialogue_EndLine: 0
 --- !u!210 &1623190217
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -29510,6 +29536,8 @@ MonoBehaviour:
   type: 2
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 0
+  dialogue_EndLine: 0
 --- !u!210 &1818902187
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -29786,6 +29814,8 @@ MonoBehaviour:
   type: 1
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 16
+  dialogue_EndLine: 25
 --- !u!114 &1832706697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30278,6 +30308,8 @@ MonoBehaviour:
   type: 0
   lieutenant: []
   count_check: 0
+  dialogue_StartLine: 0
+  dialogue_EndLine: 0
 --- !u!210 &1989809224
 SortingGroup:
   m_ObjectHideFlags: 0
