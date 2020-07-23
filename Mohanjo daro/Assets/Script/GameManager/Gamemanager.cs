@@ -5,86 +5,112 @@ using UnityEngine.SceneManagement;
 
 public class Gamemanager : MonoBehaviour
 {
-    //inventory variable
-    private GameObject inventory_system;
-    private bool inventory_action;
+    bool Active_Dialogue;
+    bool Active_Inventory;
+
+    public int dialogue_StartLine;
+    public int dialogue_EndLine;
     //dialogue variable
-    private GameObject dialogue_system;
-    //[HideInInspector] public bool escape;
 
-
+    // Start is called before the first frame update
     private void Awake()
     {
-        //Load_Dialogue_Scene();
-        //Globalvariable.Dialogue_Open = true;
+        StartCoroutine(Load_Dialogue());
     }
-    // Start is called before the first frame update
     void Start()
     {
-        //initialize the inventory system
-        inventory_system = GameObject.Find("Inventory");
-        inventory_system.SetActive(false);
-        inventory_action = false;
+        if (Active_Dialogue)
+        {
+            Active_Dialogue = false;
+            try
+            {
+                GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+                //GameObject cam = GameObject.Find();
+                //gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
+                //GameObject player_Position = GameObject.Find("Indra 1");
+                // dialoguebar.transform.position = player_Position.transform.position;
 
-        //initialize the dialogue system
-        dialogue_system = GameObject.Find("DialogueBar");
+                dialoguebar.GetComponent<RPGTalk>().lineToStart = dialogue_StartLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().lineToBreak = dialogue_EndLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().NewTalk();
+                Destroy(gameObject);
+                //RPGTalk.NewTalk();
+
+            }
+            catch (System.Exception)
+            {
+
+            }
+
+        }
     }
 
     // Update is called once per frame Inventory
     void Update()
     {
+
+
+
+        //try
+        //{
        
-        try
-        {
             Open_Inventory_system();
-            if (dialogue_system.activeSelf || inventory_system.activeSelf)
-            {
-                Globalvariable.Dialogue_Open = true;
-            }
-            else
-            {
-                Globalvariable.Dialogue_Open = false;
-            }
+        //    if (dialogue_system.activeSelf || Action_Inventory.activeSelf)
+        //    {
+        //        Globalvariable.Dialogue_Open = true;
+        //    }
+        //    else
+        //    {
+        //        Globalvariable.Dialogue_Open = false;
+        //    }
 
-            GameObject leader = GameObject.Find("Leader");
-            if(leader==null && Globalvariable.Dialogue_Open == false)
-            {
-                Scene_Transition();
-            }
-        }
-        catch (System.Exception)
+        //    GameObject leader = GameObject.Find("Leader");
+
+        if (GameObject.Find("Leader") == null && Globalvariable.Dialogue_Open == false)
         {
-
-           
+            Scene_Transition();
         }
-      
+        
+        //}
+        //catch (System.Exception)
+        //{
+
+
+        //}
+
     }
 
     protected void Open_Inventory_system()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            inventory_action = !inventory_action;
-            if (inventory_action)
+            Active_Inventory = !Active_Inventory;
+            if (Active_Inventory)
             {
-                inventory_system.SetActive(true);      
-                
+                //inventory_system.SetActive(true);      
+                StartCoroutine(Load_Inventory());
+                Globalvariable.Dialogue_Open = true;
             }
             else
             {
-                inventory_system.SetActive(false);
-                for (int i = 0; i < inventory_system.transform.childCount; i++)
-                {
-                    if(i==0)
-                    {
-                        inventory_system.transform.GetChild(i).gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        inventory_system.transform.GetChild(i).gameObject.SetActive(false);
-                    }
-                   
-                }
+                Globalvariable.Dialogue_Open = true;
+                SceneManager.UnloadSceneAsync("Inventory");
+
+                //inventory_system.SetActive(false);
+
+
+                //for (int i = 0; i < inventory_system.transform.childCount; i++)
+                //{
+                //    if(i==0)
+                //    {
+                //        inventory_system.transform.GetChild(i).gameObject.SetActive(true);
+                //    }
+                //    else
+                //    {
+                //        inventory_system.transform.GetChild(i).gameObject.SetActive(false);
+                //    }
+
+                //}
             }
         }
     }
@@ -106,21 +132,22 @@ public class Gamemanager : MonoBehaviour
 
 
     //awake funtion load the dialogue scene for loading starting dialogue.
-    protected void Load_Dialogue_Scene()
-    {
-
-        //StartCoroutine(Load_Dialogue());
-    }
-
+   
    IEnumerator Load_Dialogue()
     {
-        SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
-        //SceneManager.LoadSceneAsync("Prologue", LoadSceneMode.Additive);
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Prologue"));
+        //yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Dialogue", LoadSceneMode.Additive);
+        Globalvariable.Dialogue_Open = true;
         yield return new WaitForEndOfFrame();
-        //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
-        ////dialoguebar.GetComponent<RPGTalk>().startOnAwake = false;
-        //dialoguebar.GetComponent<RPGTalk>().lineToStart = "1";
-        //dialoguebar.GetComponent<RPGTalk>().lineToBreak = "14";
+       
+        Active_Dialogue = true;
+
+    }
+    IEnumerator Load_Inventory()
+    {
+        SceneManager.LoadScene("Inventory", LoadSceneMode.Additive);
+        //Globalvariable.Dialogue_Open = true;
+        yield return new WaitForEndOfFrame();
+       
     }
 }

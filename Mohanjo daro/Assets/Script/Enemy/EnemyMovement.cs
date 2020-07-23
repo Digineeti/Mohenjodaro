@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
     public int dialogue_StartLine;
     public int dialogue_EndLine;
-    bool trigger_Active;
+    bool trigger_Active_Dialogue;
     #endregion
     #region random_movement
 
@@ -88,13 +88,17 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         #endregion
-        if (trigger_Active)
+        if (trigger_Active_Dialogue)
         {
-            trigger_Active = false;
+            trigger_Active_Dialogue = false;
             try
             {
                 GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+                //GameObject cam = GameObject.Find();
                 //gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
+                //GameObject player_Position = GameObject.Find("Indra 1");
+                // dialoguebar.transform.position = player_Position.transform.position;
+
                 dialoguebar.GetComponent<RPGTalk>().lineToStart = dialogue_StartLine.ToString();
                 dialoguebar.GetComponent<RPGTalk>().lineToBreak = dialogue_EndLine.ToString();
                 dialoguebar.GetComponent<RPGTalk>().NewTalk();
@@ -193,7 +197,7 @@ public class EnemyMovement : MonoBehaviour
         SceneManager.LoadScene("Dialogue", LoadSceneMode.Additive);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Dialogue"));
         yield return new WaitForEndOfFrame();
-        trigger_Active = true;      
+        trigger_Active_Dialogue = true;      
 
     }
 }

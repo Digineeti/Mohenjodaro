@@ -62,6 +62,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                     active_Player = true;
                     player_Image.GetComponent<Image>().sprite = character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     player_Image.GetComponent<Image>().material = character[i].expressions[int.Parse(expression)].material;
+                    player_Image.GetComponent<Image>().color = Color.white;
                     active_Dialoguer.SetBool("active",true);                   
 
                     for (int j = 0; j < enemy_character.Length; j++)
@@ -71,6 +72,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                             //Talk_check = 1;
                             enemy_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
                             enemy_Image.GetComponent<Image>().material = null;// enemy_character[j].expressions[int.Parse(expression)].material;
+                            enemy_Image.GetComponent<Image>().color = Color.gray;
                             //enemy_Image = enemy_character[j].expressions[int.Parse(t_expression)].photo;
                             //enemy_Image.GetComponent<Material>()                           
                         }
@@ -105,7 +107,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                     //enemy_Image = enemy_character[i].expressions[int.Parse(expression)].photo;                   
                     enemy_Image.GetComponent<Image>().sprite = enemy_character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     enemy_Image.GetComponent<Image>().material = enemy_character[i].expressions[int.Parse(expression)].material;
-
+                    enemy_Image.GetComponent<Image>().color = Color.white;
 
                     active_Dialoguer.SetBool("active", false);
                     //player_anim.SetBool("active", false);
@@ -117,7 +119,9 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                             count = 1;
                             //enemy_Image
                             player_Image.GetComponent<Image>().sprite = character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
-                            player_Image.GetComponent<Image>().material = null;// character[j].expressions[int.Parse(t_expression)].material;
+                            player_Image.GetComponent<Image>().material = null;     // character[j].expressions[int.Parse(t_expression)].material;
+                            player_Image.GetComponent<Image>().color = Color.gray;
+                            
                             //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
                         }
                     }
@@ -132,7 +136,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                                 //enemy_Image
                                 player_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
                                 player_Image.GetComponent<Image>().material = null;// character[j].expressions[int.Parse(t_expression)].material;
-                                                                                   //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
+                                player_Image.GetComponent<Image>().color = Color.gray;                                                   //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
                             }
                         }
                     }
