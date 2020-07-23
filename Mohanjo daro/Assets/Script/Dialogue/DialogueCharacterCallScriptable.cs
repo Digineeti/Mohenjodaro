@@ -24,7 +24,13 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     string e_Name= "";
     bool active_Player;   
     float time = 200;
-    bool one_Shake;   
+    bool one_Shake;
+
+   
+    private void Awake()
+    {
+       
+    }
     //private static bool DialogueExists;
     private void Start()
     {
@@ -33,7 +39,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         for (int i = 0; i < character.Length; i++)
         {
             int index = player_Name.text.IndexOf("[");
@@ -145,6 +151,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             StartCoroutine(shaking());
             dialogue_text.text += " ";
         }
+       
+
     }
 
    IEnumerator shaking()

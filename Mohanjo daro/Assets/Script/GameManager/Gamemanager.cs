@@ -15,7 +15,7 @@ public class Gamemanager : MonoBehaviour
 
     private void Awake()
     {
-        Load_Dialogue_Scene();
+        //Load_Dialogue_Scene();
         //Globalvariable.Dialogue_Open = true;
     }
     // Start is called before the first frame update
@@ -28,19 +28,12 @@ public class Gamemanager : MonoBehaviour
 
         //initialize the dialogue system
         dialogue_system = GameObject.Find("DialogueBar");
-
     }
 
     // Update is called once per frame Inventory
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    AddRoom("Dialogue");
-        //}
-
-        
-
+       
         try
         {
             Open_Inventory_system();
@@ -116,13 +109,14 @@ public class Gamemanager : MonoBehaviour
     protected void Load_Dialogue_Scene()
     {
 
-        StartCoroutine(Load_Dialogue());
+        //StartCoroutine(Load_Dialogue());
     }
 
    IEnumerator Load_Dialogue()
     {
         SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync("Prologue", LoadSceneMode.Additive);
+        //SceneManager.LoadSceneAsync("Prologue", LoadSceneMode.Additive);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Prologue"));
         yield return new WaitForEndOfFrame();
         //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
         ////dialoguebar.GetComponent<RPGTalk>().startOnAwake = false;

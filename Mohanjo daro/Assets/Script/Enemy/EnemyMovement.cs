@@ -88,31 +88,26 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         #endregion
-        //timer += Time.deltaTime;
-        //if(timer>= newtarget)
-        //{
-        //    searchtarget();
-        //    timer = 0;
-
-        //}
-        try
+        if (trigger_Active)
         {
-            GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
-            gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
-            gameObject.GetComponent<RPGTalkArea>().lineToStart = dialogue_StartLine.ToString();
-            gameObject.GetComponent<RPGTalkArea>().lineToBreak = dialogue_EndLine.ToString();
-        }
-        catch (System.Exception)
-        {
+            trigger_Active = false;
+            try
+            {
+                GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+                //gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
+                dialoguebar.GetComponent<RPGTalk>().lineToStart = dialogue_StartLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().lineToBreak = dialogue_EndLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().NewTalk();
+                Destroy(gameObject);
+                //RPGTalk.NewTalk();
+                
+            }
+            catch (System.Exception)
+            {
 
+            }
           
         }
-        //if(trigger_Active)
-        //{
-        //    trigger_Active = false;
-           
-
-        //}
 
 
     }
@@ -139,41 +134,10 @@ public class EnemyMovement : MonoBehaviour
             
             Globalvariable.Dialogue_Open = true;
             //SceneManager.LoadSceneAsync("Dialogue", LoadSceneMode.Additive);
+            Search_the_Lieutenant();
+            Rearrange_the_dialogue_Sequence();
             StartCoroutine(Trigger_Event());
-           
-            //var objs = from GameObject go in GameObject.FindObjectsOfType(typeof(GameObject)) where go.scene.name == sceneName select go;
-            //SceneManager.GetSceneByBuildIndex(sceneIndex).GetRootGameObjects();
-
-            //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
-           
-           
-            
-            //dialoguebar.GetComponent<RPGTalk>().lineToStart=gameObject.GetComponent<RPGTalk>()
-
-            //Search_the_Lieutenant();
-            //Rearrange_the_dialogue_Sequence();
-
-
-           
-
-            //GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
-            //if (dialoguebar.transform.GetChild(3).gameObject.activeSelf)
-            //{
-
-            //}
-            //else
-            //{
-            //    //destroyed the enemy after talk.
-
-            //    Destroy(gameObject, 1f);
-            //}
-            //new code for dialogue system...
-
-
-
         }
-        //enemy ai movement script ....goes here 
-
     }
 
   
@@ -199,20 +163,26 @@ public class EnemyMovement : MonoBehaviour
         //change the talk line number as par the sequence 
         if (gameObject.name == "Lieutenant" && lieutenant_count == 3)
         {
-            gameObject.GetComponent<RPGTalkArea>().lineToStart = "35";
-            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "36";
+            //gameObject.GetComponent<RPGTalkArea>().lineToStart = "35";
+            //gameObject.GetComponent<RPGTalkArea>().lineToBreak = "36";
+            dialogue_StartLine = 35;
+            dialogue_EndLine = 36;
             count_check--;
         }
         if (gameObject.name == "Lieutenant" && lieutenant_count == 2)
         {
-            gameObject.GetComponent<RPGTalkArea>().lineToStart = "38";
-            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "39";
+            dialogue_StartLine = 38;
+            dialogue_EndLine = 39;
+            //gameObject.GetComponent<RPGTalkArea>().lineToStart = "38";
+            //gameObject.GetComponent<RPGTalkArea>().lineToBreak = "39";
             count_check--;
         }
         if (gameObject.name == "Lieutenant" && lieutenant_count == 1)
         {
-            gameObject.GetComponent<RPGTalkArea>().lineToStart = "41";
-            gameObject.GetComponent<RPGTalkArea>().lineToBreak = "46";
+            dialogue_StartLine = 41;
+            dialogue_EndLine = 46;
+            //gameObject.GetComponent<RPGTalkArea>().lineToStart = "41";
+            //gameObject.GetComponent<RPGTalkArea>().lineToBreak = "46";
             count_check--;
         }
     }
@@ -223,7 +193,7 @@ public class EnemyMovement : MonoBehaviour
         SceneManager.LoadScene("Dialogue", LoadSceneMode.Additive);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Dialogue"));
         yield return new WaitForEndOfFrame();
-        trigger_Active = true;
+        trigger_Active = true;      
 
     }
 }
