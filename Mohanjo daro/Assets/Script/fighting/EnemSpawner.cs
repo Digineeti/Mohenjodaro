@@ -18,7 +18,7 @@ public class EnemSpawner : MonoBehaviour
         int value = Random.Range(1, MaxNoOfEnemy + 1);
         //Debug.Log(value);
 
-        Melee = Random.Range(0, value);
+        Melee = Random.Range(1, value);
         if(Melee==0)
         {           
             Range = Random.Range(1, value);
