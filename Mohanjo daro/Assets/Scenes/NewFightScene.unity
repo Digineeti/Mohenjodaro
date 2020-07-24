@@ -4367,7 +4367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.505, y: 0.14254792}
   m_AnchorMax: {x: 0.9916667, y: 0.98446584}
-  m_AnchoredPosition: {x: 0.65145874, y: 0.23413086}
+  m_AnchoredPosition: {x: 0.65148926, y: 0.23413086}
   m_SizeDelta: {x: -1.845459, y: 1.9977417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526203159
@@ -5085,7 +5085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.41900003, y: 1}
-  m_AnchoredPosition: {x: 0.05000305, y: 0}
+  m_AnchoredPosition: {x: 0.049987793, y: 0}
   m_SizeDelta: {x: 0.10000038, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &721926502
@@ -6900,7 +6900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 1.9999161}
+  m_AnchoredPosition: {x: -3, y: 1.9999123}
   m_SizeDelta: {x: 2.1179504, y: -1.871227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165713545
@@ -7560,7 +7560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.1349945, y: 0.75299835}
+  m_AnchoredPosition: {x: -0.1349945, y: 0.7529907}
   m_SizeDelta: {x: -0.598999, y: -1.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1209235599
@@ -8572,7 +8572,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.14370728, y: 3.9999313}
+  m_AnchoredPosition: {x: -0.14370728, y: 3.999939}
   m_SizeDelta: {x: -0.58200073, y: -2.4821203}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351392626
@@ -9542,7 +9542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7083916}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 1.0000076}
+  m_AnchoredPosition: {x: 1, y: 1}
   m_SizeDelta: {x: 2.1179504, y: -2.5112798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675853533
@@ -12332,11 +12332,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThunderingParticalEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 3771313768724150430, guid: 16cf5b59055671b4c84a12eedd7864e5,
-        type: 3}
-      propertyPath: UVModule.tilesX
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16cf5b59055671b4c84a12eedd7864e5, type: 3}
