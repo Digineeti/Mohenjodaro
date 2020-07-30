@@ -318,7 +318,10 @@ public class Callingscriptableobject : MonoBehaviour
     private void Awake()
     {
         //PlayerPrefs.DeleteAll();
-        
+        if (PlayerPrefs.GetFloat(gameObject.name + "_HPValue") <= 0)
+        {
+            PlayerPrefs.SetFloat(gameObject.name + "_HPValue", PlayerPrefs.GetFloat(gameObject.name + "_HPMax"));
+        }
     }
     private void LateUpdate()
     {
@@ -398,10 +401,13 @@ public class Callingscriptableobject : MonoBehaviour
         }
         else
         {
+
+           
             Name.text = PlayerPrefs.GetString(gameObject.name);
 
             HPHealthBar.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             HPHealthBar.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");
+           
             //Player PlayerUI
             HPValue.maxValue = PlayerPrefs.GetFloat(gameObject.name + "_HPMax");
             HPValue.value = PlayerPrefs.GetFloat(gameObject.name + "_HPValue");

@@ -74,61 +74,67 @@ public class EnemyAction : MonoBehaviour
         {
             TurnUiPanel.SetActive(false);
         }
-        if (state == State.Action)
+        //enemy animation after the player animation over
+        if (Globalvariable.Active_Player_Animation_Parameter == null)
         {
-            
-            Globalvariable.currentTime += Time.deltaTime;
-           
-            if (action == true)
+            if (state == State.Action)
             {
-                Globalvariable.nextTime = Globalvariable.currentTime + 1f;
-                damage_Calculation();
-                action = false;
-                anim.SetBool("Punch", true);
-                //Globalvariable.After_Death_ReSequence += 1;
-            }
-            ActiveCircle.SetActive(true);
-            Light.SetActive(true);
-            //damagepanel.SetActive(true);
-            if (Globalvariable.currentTime > Globalvariable.nextTime)
-            {
-                action = true;
-                //damagepanel.SetActive(false);
-                Globalvariable.Index=0;
-                state = State.busy;
-                Turnstate = TurnState.Turnover;
-                anim.SetBool("Happy", false);
-                anim.SetBool("Punch", false);
-            }
 
-        }       
-        else
-        {
-            ActiveCircle.SetActive(false);
-            currentTime += Time.deltaTime;
-            if(Globalvariable.Effect_On_Enemy==true) //(damage == true)
-            {
-                if (gameObject.transform.GetChild(1).gameObject.activeSelf == true)
-                {                   
-                    NextTime = currentTime + 1;
-                    Globalvariable.Effect_On_Enemy = false;damage = true;
-                    anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, true);
+                Globalvariable.currentTime += Time.deltaTime;
+                //set the trun only if enemy has the positive health value ...
+                if (PlayerPrefs.GetFloat(gameObject.name + "_HPValue") > 0)
+                {
+                    if (action == true)
+                    {
+                        Globalvariable.nextTime = Globalvariable.currentTime + 1f;
+                        damage_Calculation();
+                        action = false;
+                        anim.SetBool("Punch", true);
+                        //Globalvariable.After_Death_ReSequence += 1;
+                    }
+                    ActiveCircle.SetActive(true);
+                    Light.SetActive(true);
+                    //damagepanel.SetActive(true);
+                    if (Globalvariable.currentTime > Globalvariable.nextTime)
+                    {
+                        action = true;
+                        //damagepanel.SetActive(false);
+                        Globalvariable.Index = 0;
+                        state = State.busy;
+                        Turnstate = TurnState.Turnover;
+                        anim.SetBool("Happy", false);
+                        anim.SetBool("Punch", false);
+                    }
                 }
             }
-            if(damage==true && currentTime > NextTime)
+            else
             {
-                damage = false;
-                gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, false);
-                Globalvariable.Effect_Animation_On_Enemy = null;
+                ActiveCircle.SetActive(false);
+                currentTime += Time.deltaTime;
+                if (Globalvariable.Effect_On_Enemy == true) //(damage == true)
+                {
+                    if (gameObject.transform.GetChild(1).gameObject.activeSelf == true)
+                    {
+                        NextTime = currentTime + 1;
+                        Globalvariable.Effect_On_Enemy = false; damage = true;
+                        anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, true);
+                    }
+                }
+                if (damage == true && currentTime > NextTime)
+                {
+                    damage = false;
+                    gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                    anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, false);
+                    Globalvariable.Effect_Animation_On_Enemy = null;
+                }
+                //if(currentTime>NextTime)
+                //{
+
+                //    //damage = true;
+                //}
+                if (Globalvariable.All_Enemy_Hoverbutton == false)
+                    Light.SetActive(false);
             }
-            //if(currentTime>NextTime)
-            //{
-               
-            //    //damage = true;
-            //}
-            if (Globalvariable.All_Enemy_Hoverbutton == false)
-                Light.SetActive(false);
         }
 
     }

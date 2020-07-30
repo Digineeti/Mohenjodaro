@@ -666,6 +666,88 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: Effect.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: ActivePlayerActionsList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: EnemyActionsList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: InActivePlayerActionList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: ActivePlayerActionsList.Array.data[0]
+      value: HpPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: ActivePlayerActionsList.Array.data[1]
+      value: SpPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: EnemyActionsList.Array.data[3]
+      value: UltimateLighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: InActivePlayerActionList.Array.data[0]
+      value: HpPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: InActivePlayerActionList.Array.data[1]
+      value: SpPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: Effect.Array.data[0]
+      value: 
+      objectReference: {fileID: 4603723584339177622, guid: 190b6e7c16e42874fa0c468fe957e4c0,
+        type: 3}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: Effect.Array.data[1]
+      value: 
+      objectReference: {fileID: 3030641847337965902, guid: 523a62660ec61bc4da33492e3b9febbf,
+        type: 3}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: ActivePlayerActionsList.Array.data[2]
+      value: RunAway
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: InActivePlayerActionList.Array.data[2]
+      value: RunAway
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: EnemyActionsList.Array.data[0]
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: EnemyActionsList.Array.data[1]
+      value: LightingAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: EnemyActionsList.Array.data[2]
+      value: ThunderStrom
+      objectReference: {fileID: 0}
     - target: {fileID: 6708269184893395256, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: Enemys.Array.size

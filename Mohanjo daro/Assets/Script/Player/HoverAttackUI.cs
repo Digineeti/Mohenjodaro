@@ -17,7 +17,8 @@ public class HoverAttackUI : MonoBehaviour
     }
     void OnMouseOver()
     {
-        if (Globalvariable.AttackUi)
+        //if ()
+        if (Globalvariable.Active_Player_Animation_Parameter == null && Globalvariable.AttackUi)
             PanelToShow.SetActive(true);
         else
             PanelToShow.SetActive(false);

@@ -126,7 +126,8 @@ public class PA : MonoBehaviour
                         Globalvariable.Index = 0;
                         Turnstate = TurnState.Turnover;
                         Globalvariable.Active_Player_Animation_Parameter = null;
-                        
+                       
+
                     }
 
                 }

@@ -46,6 +46,80 @@ public class AllButtonAction : MonoBehaviour
         spawanHero = GameObject.FindGameObjectsWithTag("Player");
         //Debug.Log(Button_Click_On_Player.name);
         //Hero Ation
+        if (Name == "HpPotion")
+        {
+            //Globalvariable.After_Death_ReSequence += 1;
+
+            Globalvariable.Active_Player_Action = true;
+            //Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //save defence value of that player who button is click.....
+            //PlayerPrefs.SetFloat(Button_Click_On_Player.name+"_Defence_Apply",10);
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_HPValue") + Mathf.RoundToInt(100), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_HPMax")));
+                        //
+                        //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
+                        //Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
+
+                        //action effect on enemy 
+                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x + 0.2f, Button_Click_On_Player.transform.position.y + 0.6f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
+                        clone.gameObject.GetComponent<Animator>().SetTrigger("HpPotion");                        
+                        Destroy(clone.gameObject, 1.5f);
+                    }
+                }
+                catch (System.Exception)
+                {
+
+                }
+            }
+            Globalvariable.Active_Player_Action = true;
+            Globalvariable.Active_Player_Animation_Parameter = "Attack";
+
+
+        }
+
+        if (Name == "SpPotion")
+        {
+            //Globalvariable.After_Death_ReSequence += 1;
+
+            Globalvariable.Active_Player_Action = true;
+            //Globalvariable.Active_Player_Animation_Parameter = "punch";
+
+
+            //save defence value of that player who button is click.....
+            //PlayerPrefs.SetFloat(Button_Click_On_Player.name+"_Defence_Apply",10);
+            for (int i = 0; i < spawanHero.Length; i++)
+            {
+                try
+                {
+                    if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
+                    {
+                        PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(2), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+
+                        //PlayerPrefs.SetFloat(spawanHero[i].name+ "Action_SP",1);
+                        //Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
+
+
+                        //action effect on enemy 
+                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x + 0.2f, Button_Click_On_Player.transform.position.y + 0.6f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
+                        clone.gameObject.GetComponent<Animator>().SetTrigger("SpPotion");
+                        Destroy(clone.gameObject, 1.5f);
+                    }
+                }
+                catch (System.Exception)
+                {
+
+                }
+            }
+           
+
+        }
         if (Name == "Idle")
         {
             //Globalvariable.After_Death_ReSequence += 1;
@@ -494,24 +568,8 @@ public class AllButtonAction : MonoBehaviour
             float value = -1;
             float luckValue = 0;        
             int ActivePlayerValue=0;
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            //try
-            //{
-            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-            //    {
-            //        //no sp reduction here ...
-            //        //PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2), 0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-
-            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-            //        luckValue= PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
-            //    }
-            //}
-            //catch (System.Exception)
-            //{
-
-            //}
+           
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");           
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -521,20 +579,51 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");                           
+                            //value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");                           
 
-                            if (PlayerPrefs.HasKey(spawanHero[i].name + "Attack_Boost"))
+                            //if (PlayerPrefs.HasKey(spawanHero[i].name + "Attack_Boost"))
+                            //{
+                            //    float Action_Attack_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Attack_Boost");
+                            //    value += Action_Attack_Value;
+                            //    PlayerPrefs.DeleteKey(spawanHero[i].name + "Attack_Boost");
+
+                            //}
+                            //luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+
+                            //check the attack value present in the save list or not.
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "_ATK"))
                             {
-                                float Action_Attack_Value = PlayerPrefs.GetFloat(spawanHero[i].name + "Attack_Boost");
-                                value += Action_Attack_Value;
-                                PlayerPrefs.DeleteKey(spawanHero[i].name + "Attack_Boost");
-
+                                value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
                             }
-                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            //if not then extract from the scriptable initial value data.
+                            else
+                            {
+                                value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            }
+                            //value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");                           
+
+                            //check the Luck value present in the save list or not...
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "_Luk"))
+                            {
+                                luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            }
+                            //if not  then extract from the scriptable initial value data.
+                            else
+                            {
+                                luckValue = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.Luk;
+                            }
+
+                            //action effect on enemy 
+                            Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[0], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(0f, 0f, 0f));                            
+                            Destroy(clone.gameObject, 1.5f);
+
                             //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                             //INCREASE THE SP ON ACTION PERFORM....(DONE IN IDLE AND ITEM)...
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             ActivePlayerValue = i;
+
+                          //spawanHero[i].GetComponent<HoverAttackUI>().PanelToShow.SetActive(false);
+                          
                         }
                     }
                     catch (System.Exception)
@@ -548,9 +637,9 @@ public class AllButtonAction : MonoBehaviour
            
             //player animation on hit
             Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
+            Globalvariable.Active_Player_Animation_Parameter = "Attack";
 
-            // Extract ata on the click game object value
+            // Extract data on the click game object value
             // EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
             //damaged on the basis of luck value 
             float missvalue=100-luckValue;
@@ -602,10 +691,7 @@ public class AllButtonAction : MonoBehaviour
             //..clone.name = "Arrow0" ;
             //Vector3 direction = spawanHero[ActivePlayerId].transform.position - spawanHero[i].transform.position;
             //new animator
-            Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x , Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(spawanHero[ActivePlayerValue].transform.rotation.x, 0f, spawanHero[ActivePlayerValue].transform.rotation.z));
-            //clone.transform.localScale=new Vector3(.2f,.2f,0f);
-            clone.gameObject.GetComponent<Animator>().SetTrigger("Attack");
-            clone.name = "Arrow0";
+            
             //clone.GetComponent<Rigidbody2D>().AddForce(direction*0.5f, ForceMode2D.Impulse);
 
             Globalvariable.TargetPosition[0] = Button_Click_On_Player.transform.position;
@@ -628,22 +714,7 @@ public class AllButtonAction : MonoBehaviour
             float value = -1;
             float luckValue = 0;
             spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            //try
-            //{
-            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-            //    {
-            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp( PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
-            //    }
-            //}
-            //catch (System.Exception)
-            //{
-
-            //}
+           
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
@@ -653,10 +724,34 @@ public class AllButtonAction : MonoBehaviour
                         if (spawanHero[i].GetComponent<PA>().state.ToString() == "waitingforinput")
                         {
                             //value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
-                            value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            //value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "_ATK"))
+                            {
+                                value = PlayerPrefs.GetFloat(spawanHero[i].name + "_ATK");
+                            }
+                            //if not then extract from the scriptable initial value data.
+                            else
+                            {
+                                value = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.ATK;
+                            }
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") - Mathf.RoundToInt(2),0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
-                            luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
-                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            //luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            //check the Luck value present in the save list or not...
+                            if (PlayerPrefs.HasKey(spawanHero[i].name + "_Luk"))
+                            {
+                                luckValue = PlayerPrefs.GetFloat(spawanHero[i].name + "_Luk");
+                            }
+                            //if not  then extract from the scriptable initial value data.
+                            else
+                            {
+                                luckValue = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.Luk;
+                            }
+                            //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            //action effect on enemy 
+                            Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y+.5f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
+                            clone.gameObject.GetComponent<Animator>().SetTrigger("LightingAttack");
+                            //clone.name = "Arrow0";
+                            Destroy(clone.gameObject, 1f);
                         }
                     }
                     catch (System.Exception)
@@ -707,9 +802,7 @@ public class AllButtonAction : MonoBehaviour
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
             //Instantiate(PlayerActionList.Effect[3],new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
 
-            Transform clone = Instantiate(PlayerActionList.Effect[30], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
-            clone.gameObject.GetComponent<Animator>().SetTrigger("LightingAttack");
-            clone.name = "Arrow0";
+           
             if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
             {
                 Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
@@ -723,23 +816,7 @@ public class AllButtonAction : MonoBehaviour
         {
             float value = -1;
             float luckValue = 0;
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            //GameObject Button_Click_On_Player = gameObject.transform.parent.parent.parent.parent.parent.gameObject;
-            //try
-            //{
-            //    if (Button_Click_On_Player.GetComponent<PA>().state.ToString() == "waitingforinput")
-            //    {
-            //        //value = Button_Click_On_Player.GetComponent<Callingscriptableobject>().Attribute.ATK;
-            //        value = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_ATK");
-            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_SPValue",Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPValue") - Mathf.RoundToInt(4),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_SPMax")));
-            //        luckValue = PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_Luk");
-            //        PlayerPrefs.SetFloat(Button_Click_On_Player.name + "Action_SP", 1);
-            //    }
-            //}
-            //catch (System.Exception)
-            //{
-
-            //}
+            spawanHero = GameObject.FindGameObjectsWithTag("Player");            
             if (value < 0)
             {
                 for (int i = 0; i < spawanHero.Length; i++)
