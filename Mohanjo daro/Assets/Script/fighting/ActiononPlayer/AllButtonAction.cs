@@ -78,8 +78,8 @@ public class AllButtonAction : MonoBehaviour
 
                 }
             }
-            Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "Attack";
+            //Globalvariable.Active_Player_Action = true;
+            //Globalvariable.Active_Player_Animation_Parameter = "Attack";
 
 
         }
@@ -617,7 +617,7 @@ public class AllButtonAction : MonoBehaviour
                             Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[0], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z), Quaternion.Euler(0f, 0f, 0f));                            
                             Destroy(clone.gameObject, 1.5f);
 
-                            //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                             //INCREASE THE SP ON ACTION PERFORM....(DONE IN IDLE AND ITEM)...
                             PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + Mathf.RoundToInt(1), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
                             ActivePlayerValue = i;
@@ -638,6 +638,7 @@ public class AllButtonAction : MonoBehaviour
             //player animation on hit
             Globalvariable.Active_Player_Action = true;
             Globalvariable.Active_Player_Animation_Parameter = "Attack";
+
 
             // Extract data on the click game object value
             // EnemyDefenceValue = Button_Click_On_Player.GetComponent<En_Callingscriptableobject>().Attribute.DEF;
@@ -698,12 +699,12 @@ public class AllButtonAction : MonoBehaviour
             Globalvariable.TargetName[0] = Button_Click_On_Player.name;
             //Instantiate(PlayerActionList.Effect[0], new Vector3(Button_Click_On_Player.transform.position.x-0.3f, Button_Click_On_Player.transform.position.y-0.4f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x+50, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
 
-            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue")<=0)
-            {  
-                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
-                Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name),2f);
-                Globalvariable.WinningLosing = true;               
-            }
+            //if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            //{
+            //    Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+            //    Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
+            //    Globalvariable.WinningLosing = true;
+            //}
 
 
         }
@@ -746,10 +747,11 @@ public class AllButtonAction : MonoBehaviour
                             {
                                 luckValue = spawanHero[i].GetComponent<Callingscriptableobject>().Attribute.Luk;
                             }
-                            //PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
+                            PlayerPrefs.SetFloat(spawanHero[i].name + "Action_SP", 1);
                             //action effect on enemy 
                             Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y+.5f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
                             clone.gameObject.GetComponent<Animator>().SetTrigger("LightingAttack");
+                            clone.localScale = new Vector3(1,2,0);
                             //clone.name = "Arrow0";
                             Destroy(clone.gameObject, 1f);
                         }
@@ -763,7 +765,7 @@ public class AllButtonAction : MonoBehaviour
             PlayerAttackPower = value;
           
             Globalvariable.Active_Player_Action = true;
-            Globalvariable.Active_Player_Animation_Parameter = "punch";
+            Globalvariable.Active_Player_Animation_Parameter = "Attack";
 
 
             //sp used =20 one 
@@ -800,16 +802,20 @@ public class AllButtonAction : MonoBehaviour
             damagepanel.GetComponentInChildren<TMP_Text>().text = Mathf.RoundToInt(DamagedReceive).ToString();
             damagepanel.SetActive(true);
             PlayerPrefs.SetFloat(Button_Click_On_Player.name + "_HPValue", Mathf.Clamp(PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") - Mathf.RoundToInt(DamagedReceive),0f, PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPMax")));
+
+            Globalvariable.Effect_On_Enemy = true;
+            Globalvariable.Effect_Animation_On_Enemy = "Hurt";
+
             //Instantiate(PlayerActionList.Effect[3],new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y, Button_Click_On_Player.transform.position.z),Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, Button_Click_On_Player.transform.rotation.y, Button_Click_On_Player.transform.rotation.z));
 
-           
-            if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
-            {
-                Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
-                Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
-                Globalvariable.WinningLosing = true;
-                
-            }
+
+            //if (PlayerPrefs.GetFloat(Button_Click_On_Player.name + "_HPValue") <= 0)
+            //{
+            //    Button_Click_On_Player.GetComponent<Animator>().SetBool("Death", true);
+            //    Destroy(GameObject.Find(Button_Click_On_Player.transform.parent.name), 2f);
+            //    Globalvariable.WinningLosing = true;
+
+            //}
 
         }
         if (Name == "ThunderStrom")

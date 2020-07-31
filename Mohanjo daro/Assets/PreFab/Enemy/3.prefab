@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 6656412784998303842, guid: 3f0b940c2ce881d4bae94a413644a57c,
         type: 3}
       propertyPath: state
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6693489339767546689, guid: 3f0b940c2ce881d4bae94a413644a57c,
         type: 3}
@@ -162,6 +162,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6470460504253458178, guid: a1bae21885493b5409cd08a49ff81a6f,
         type: 3}
+    - target: {fileID: 6693489339767546689, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -585654759
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693489339767546689, guid: 3f0b940c2ce881d4bae94a413644a57c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7050653314387481007, guid: 3f0b940c2ce881d4bae94a413644a57c,
         type: 3}
       propertyPath: m_AnchorMax.x

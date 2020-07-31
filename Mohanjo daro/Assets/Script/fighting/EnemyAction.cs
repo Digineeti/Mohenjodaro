@@ -13,7 +13,7 @@ public class EnemyAction : MonoBehaviour
 
     public GameObject ActiveCircle;
     private Animator anim;
-    bool action=true;
+    bool action = true;
 
     float currentTime;
     float NextTime;
@@ -25,7 +25,7 @@ public class EnemyAction : MonoBehaviour
     internal string ActionName;
     GameObject damagepanel;
     int Hiton;
-    public State state;   
+    public State state;
     public enum State
     {
         Action,
@@ -75,8 +75,8 @@ public class EnemyAction : MonoBehaviour
             TurnUiPanel.SetActive(false);
         }
         //enemy animation after the player animation over
-        if (Globalvariable.Active_Player_Animation_Parameter == null)
-        {
+        //if (Globalvariable.Active_Player_Animation_Parameter == null)
+        //{
             if (state == State.Action)
             {
 
@@ -106,16 +106,18 @@ public class EnemyAction : MonoBehaviour
                         anim.SetBool("Punch", false);
                     }
                 }
+
             }
             else
             {
+
                 ActiveCircle.SetActive(false);
                 currentTime += Time.deltaTime;
                 if (Globalvariable.Effect_On_Enemy == true) //(damage == true)
                 {
                     if (gameObject.transform.GetChild(1).gameObject.activeSelf == true)
                     {
-                        NextTime = currentTime + 1;
+                        NextTime = currentTime + 1f;
                         Globalvariable.Effect_On_Enemy = false; damage = true;
                         anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, true);
                     }
@@ -126,20 +128,20 @@ public class EnemyAction : MonoBehaviour
                     gameObject.transform.GetChild(1).gameObject.SetActive(false);
                     anim.SetBool(Globalvariable.Effect_Animation_On_Enemy, false);
                     Globalvariable.Effect_Animation_On_Enemy = null;
-                }
-                //if(currentTime>NextTime)
-                //{
 
-                //    //damage = true;
-                //}
+
+                }
+
                 if (Globalvariable.All_Enemy_Hoverbutton == false)
                     Light.SetActive(false);
             }
-        }
+          
+
+        //}
 
     }
 
-    public void  damage_Calculation()
+    public void damage_Calculation()
     {
         //Heros[0]= GameObject.Find("Agni");
         //Heros[1]= GameObject.Find("Dyaus");
@@ -147,12 +149,12 @@ public class EnemyAction : MonoBehaviour
         //Heros[3]= GameObject.Find("Prithvi");
         //Heros[4]= GameObject.Find("Sachi");
         //Heros[5]= GameObject.Find("Vayu");
-        Heros= GameObject.FindGameObjectsWithTag("Player");
+        Heros = GameObject.FindGameObjectsWithTag("Player");
         List<GameObject> PlayerList = new List<GameObject>();
         float damaged = 0;
         int Action = Random.Range(0, AL.EnemyActionsList.Length);
-        GameObject[] Active_Player_List=new GameObject[6];
-        for(int i=0;i<Heros.Length;i++)
+        GameObject[] Active_Player_List = new GameObject[6];
+        for (int i = 0; i < Heros.Length; i++)
         {
             try
             {
@@ -163,15 +165,15 @@ public class EnemyAction : MonoBehaviour
             }
             catch (System.Exception)
             {
-               
+
             }
-           
+
         }
         Heros = null;
         Heros = PlayerList.ToArray();
 
         ActionName = AL.EnemyActionsList[Action];
-    //step:
+        //step:
         int Hiton = Random.Range(0, Heros.Length);
         try
         {
@@ -184,9 +186,9 @@ public class EnemyAction : MonoBehaviour
             {
                 string protector_Name = PlayerPrefs.GetString(Heros[Hiton].name + "Protect_Player");
                 int value = 0;
-               for(int i=0;i<Heros.Length;i++)
+                for (int i = 0; i < Heros.Length; i++)
                 {
-                    if(Heros[i].name==protector_Name)
+                    if (Heros[i].name == protector_Name)
                     {
                         value = i;
                     }
@@ -218,7 +220,7 @@ public class EnemyAction : MonoBehaviour
 
                 float currentvalue = 0;
                 float savevalue = PlayerPrefs.GetFloat(Heros[value].name + "_HPValue");
-                currentvalue =Mathf.Clamp(PlayerPrefs.GetFloat(Heros[value].name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Heros[value].name + "_HPMax"));
+                currentvalue = Mathf.Clamp(PlayerPrefs.GetFloat(Heros[value].name + "_HPValue") - Mathf.RoundToInt(damaged), 0f, PlayerPrefs.GetFloat(Heros[value].name + "_HPMax"));
                 //the hero set new Hp value after damage receive.
                 PlayerPrefs.SetFloat(Heros[value].name + "_HPValue", currentvalue);
 
@@ -231,7 +233,7 @@ public class EnemyAction : MonoBehaviour
                     //Destroy(Heros[Hiton]);
                 }
                 PlayerPrefs.DeleteKey(Heros[value].name + "Protect_Player");
-                Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name+ " NewPlayer: " + Heros[value].name + " Damage: " + damaged);
+                Debug.Log("Action: " + ActionName + " player: " + Heros[Hiton].name + " NewPlayer: " + Heros[value].name + " Damage: " + damaged);
                 //player distroy her if it hp value is less or eual to zero.
 
             }
@@ -263,7 +265,7 @@ public class EnemyAction : MonoBehaviour
 
                 float currentvalue = 0;
                 float savevalue = PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue");
-                currentvalue = Mathf.Clamp(PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged),0f, PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPMax"));
+                currentvalue = Mathf.Clamp(PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPValue") - Mathf.RoundToInt(damaged), 0f, PlayerPrefs.GetFloat(Heros[Hiton].name + "_HPMax"));
                 //the hero set new Hp value after damage receive.
                 PlayerPrefs.SetFloat(Heros[Hiton].name + "_HPValue", currentvalue);
 
@@ -283,12 +285,17 @@ public class EnemyAction : MonoBehaviour
             //goto step;
 
         }
-     
-
-        
-      
-
     }
 
+    void Enemy_dead_Event()
+    {
 
+        if (PlayerPrefs.GetFloat(gameObject.name + "_HPValue") <= 0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("Death", true);
+            Destroy(GameObject.Find(gameObject.transform.parent.name), 2f);
+            Globalvariable.WinningLosing = true;
+        }
+
+    }
 }

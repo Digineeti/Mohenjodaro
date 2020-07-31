@@ -48,174 +48,177 @@ public class Turn_Management : MonoBehaviour
         {
             string[] tags = new[] { "Player", "Enemy" };
             int turn_again = 0;
-            if (playerspawancount == true)
-            { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
-            spawanHero = GameObject.FindGameObjectsWithTag("Player");
-            AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
-            if (AfterDestroy.Length == spawanHero.Length)
+            if (Globalvariable.Active_Player_Animation_Parameter == null && Globalvariable.Effect_Animation_On_Enemy == null)
             {
-                if (extract)
+                if (playerspawancount == true)
+                { playerspawancount = false; spawanHero = GameObject.FindGameObjectsWithTag("Player"); }
+                spawanHero = GameObject.FindGameObjectsWithTag("Player");
+                AfterDestroy = GameObject.FindGameObjectsWithTag("Player");
+                if (AfterDestroy.Length == spawanHero.Length)
                 {
-                    extract = false;
-                    Player_Attribute_Sequence();
-                }
-                if (Globalvariable.Index == 0)
-                {
-                    //Destroy(startmassage);
-                    if (characterQueue.Count > 0)
+                    if (extract)
                     {
-                        Globalvariable.Index++;
-                        CharacterMoveChoice characterAbility = characterQueue.Dequeue();
-
-                        //Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
-                        for (int i = 0; i < spawanHero.Length; i++)
+                        extract = false;
+                        Player_Attribute_Sequence();
+                    }
+                    if (Globalvariable.Index == 0)
+                    {
+                        //Destroy(startmassage);
+                        if (characterQueue.Count > 0)
                         {
-                            //Debug.Log(spawanHero[i].name);
-                            if (spawanHero[i].gameObject == characterAbility.character.Name)
+                            Globalvariable.Index++;
+                            CharacterMoveChoice characterAbility = characterQueue.Dequeue();
+
+                            //Debug.Log(characterAbility.character.Name + "'s speed = " + characterAbility.character.AGI);
+                            for (int i = 0; i < spawanHero.Length; i++)
                             {
-                                try
+                                //Debug.Log(spawanHero[i].name);
+                                if (spawanHero[i].gameObject == characterAbility.character.Name)
                                 {
-                                    spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
-                                    //changing the state of prefeb 
-                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                    try
                                     {
-                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                        spawanHero[i].GetComponent<PA>().state = PA.State.waitingforinput;
+                                        //changing the state of prefeb 
+                                        for (int j = 0; j < ChangeInPrefab.Length; j++)
                                         {
-                                            ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
+                                            if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                            {
+                                                ChangeInPrefab[j].GetComponent<PA>().state = PA.State.waitingforinput;
+                                            }
                                         }
-                                    }           
-                                    //adding the sp value in the next turn in the fight scene...
-                                    if(PlayerPrefs.HasKey(spawanHero[i].name + "Sp_Adding_Status"))
-                                    {
-                                        if(PlayerPrefs.HasKey(spawanHero[i].name + "Action_SP"))
+                                        //adding the sp value in the next turn in the fight scene...
+                                        if (PlayerPrefs.HasKey(spawanHero[i].name + "Sp_Adding_Status"))
                                         {
-                                            PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + PlayerPrefs.GetFloat(spawanHero[i].name + "Action_SP"), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
-                                            PlayerPrefs.DeleteKey(spawanHero[i].name + "Sp_Adding_Status"); PlayerPrefs.DeleteKey(spawanHero[i].name + "Action_SP");
+                                            if (PlayerPrefs.HasKey(spawanHero[i].name + "Action_SP"))
+                                            {
+                                                PlayerPrefs.SetFloat(spawanHero[i].name + "_SPValue", Mathf.Clamp(PlayerPrefs.GetFloat(spawanHero[i].name + "_SPValue") + PlayerPrefs.GetFloat(spawanHero[i].name + "Action_SP"), 0f, PlayerPrefs.GetFloat(spawanHero[i].name + "_SPMax")));
+                                                PlayerPrefs.DeleteKey(spawanHero[i].name + "Sp_Adding_Status"); PlayerPrefs.DeleteKey(spawanHero[i].name + "Action_SP");
+                                            }
+                                        }
+                                    }
+                                    catch (System.Exception)
+                                    {
+                                        Globalvariable.AttackUi = false;
+
+                                        spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                                        for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                        {
+                                            if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                            {
+                                                ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                                            }
                                         }
                                     }
                                 }
-                                catch (System.Exception)
+                                else
                                 {
                                     Globalvariable.AttackUi = false;
-
-                                    spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
-                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                    try
                                     {
-                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                        spawanHero[i].GetComponent<PA>().state = PA.State.busy;
+                                        //changing the state of prefeb 
+                                        for (int j = 0; j < ChangeInPrefab.Length; j++)
                                         {
-                                            ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.Action;
+                                            if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                            {
+                                                ChangeInPrefab[j].GetComponent<PA>().state = PA.State.busy;
+                                            }
+                                        }
+
+                                    }
+                                    catch (System.Exception)
+                                    {
+                                        spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                                        for (int j = 0; j < ChangeInPrefab.Length; j++)
+                                        {
+                                            if (spawanHero[i].name == ChangeInPrefab[j].name)
+                                            {
+                                                ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else
-                            {
-                                Globalvariable.AttackUi = false;
                                 try
                                 {
-                                    spawanHero[i].GetComponent<PA>().state = PA.State.busy;
-                                    //changing the state of prefeb 
-                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
-                                    {
-                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
-                                        {
-                                            ChangeInPrefab[j].GetComponent<PA>().state = PA.State.busy;
-                                        }
-                                    }
-                                    
+                                    if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
+                                        spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                                    else
+                                        spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
                                 }
                                 catch (System.Exception)
                                 {
-                                    spawanHero[i].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
-                                    for (int j = 0; j < ChangeInPrefab.Length; j++)
-                                    {
-                                        if (spawanHero[i].name == ChangeInPrefab[j].name)
-                                        {
-                                            ChangeInPrefab[j].GetComponent<EnemyAction>().state = EnemyAction.State.busy;
-                                        }
-                                    }
+                                    if (spawanHero[i].GetComponent<EnemyAction>().Turnstate.ToString() == "NextTurn")
+                                        spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
+                                    else
+                                        spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+
                                 }
                             }
-                            try
+                        }
+                        else
+                        {
+                            //Player_Attribute_Sequence();
+                            for (int i = 0; i < spawanHero.Length; i++)
                             {
-                                if (spawanHero[i].GetComponent<PA>().Turnstate.ToString() == "NextTurn")
-                                    spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
-                                else
-                                    spawanHero[i].GetComponent<PA>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
+                                try
+                                {
+                                    spawanHero[i].GetComponent<PA>().Turnstate = PA.TurnState.NextTurn;
+                                }
+                                catch (System.Exception)
+                                {
+                                    spawanHero[i].GetComponent<EnemyAction>().Turnstate = EnemyAction.TurnState.NextTurn;
+                                }
                             }
-                            catch (System.Exception)
+                            for (int i = 0; i < selectedChoice.Count; i++)
                             {
-                                if (spawanHero[i].GetComponent<EnemyAction>().Turnstate.ToString() == "NextTurn")
-                                    spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.red;
-                                else
-                                    spawanHero[i].GetComponent<EnemyAction>().TurnUiPanel.GetComponentInChildren<TMP_Text>().color = Color.black;
-
+                                characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);
                             }
                         }
                     }
-                    else
-                    {
-                        //Player_Attribute_Sequence();
-                        for (int i = 0; i < spawanHero.Length; i++)
-                        {
-                            try
-                            {
-                                spawanHero[i].GetComponent<PA>().Turnstate = PA.TurnState.NextTurn;
-                            }
-                            catch (System.Exception)
-                            {
-                                spawanHero[i].GetComponent<EnemyAction>().Turnstate = EnemyAction.TurnState.NextTurn;
-                            }
-                        }
-                        for (int i = 0; i < selectedChoice.Count; i++)
-                        {
-                            characterQueue.Enqueue(selectedChoice[i]); TurnQueue.Enqueue(selectedChoice[i]);
-                        }
-                    }
                 }
-            }
-            for (int i = 0; i < spawanHero.Length; i++)
-            {
-                try
-                {
-                    if (spawanHero[i].GetComponent<PA>().state == PA.State.busy)
-                        turn_again++;
-                }
-                catch (System.Exception)
-                {
-                    if (spawanHero[i].GetComponent<EnemyAction>().state == EnemyAction.State.busy)
-                        turn_again++;
-                }
-
-            }
-            if (spawanHero.Length == turn_again)
-            {               
-                Player_Attribute_Sequence();
                 for (int i = 0; i < spawanHero.Length; i++)
                 {
                     try
                     {
-                        if (spawanHero[i].GetComponent<PA>().state == PA.State.busy || spawanHero[i].GetComponent<PA>().state == PA.State.waitingforinput)
-                        {
-                            PlayerPrefs.SetString(spawanHero[i].name+"Sp_Adding_Status","Yes");
-                        }
-                           
+                        if (spawanHero[i].GetComponent<PA>().state == PA.State.busy)
+                            turn_again++;
                     }
                     catch (System.Exception)
                     {
-                      
+                        if (spawanHero[i].GetComponent<EnemyAction>().state == EnemyAction.State.busy)
+                            turn_again++;
                     }
 
                 }
-                Globalvariable.Index = 0;
+                if (spawanHero.Length == turn_again)
+                {
+                    Player_Attribute_Sequence();
+                    for (int i = 0; i < spawanHero.Length; i++)
+                    {
+                        try
+                        {
+                            if (spawanHero[i].GetComponent<PA>().state == PA.State.busy || spawanHero[i].GetComponent<PA>().state == PA.State.waitingforinput)
+                            {
+                                PlayerPrefs.SetString(spawanHero[i].name + "Sp_Adding_Status", "Yes");
+                            }
+
+                        }
+                        catch (System.Exception)
+                        {
+
+                        }
+
+                    }
+                    Globalvariable.Index = 0;
 
 
+                }
             }
         }
     }
     private void LateUpdate()
-    {       
-       
+    {
+
     }
 
     public void Player_Attribute_Sequence()
