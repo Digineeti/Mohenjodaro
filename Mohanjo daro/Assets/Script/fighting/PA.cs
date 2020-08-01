@@ -219,4 +219,9 @@ public class PA : MonoBehaviour
             isMoving = false;
         }
     }
+
+    void Health_Potion()
+    {
+
+    }
 }

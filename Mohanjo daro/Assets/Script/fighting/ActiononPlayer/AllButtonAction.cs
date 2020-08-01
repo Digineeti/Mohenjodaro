@@ -27,6 +27,7 @@ public class AllButtonAction : MonoBehaviour
     }
 
     // Update is called once per frame
+   
     void Update()
     {
         if(startup==true)
@@ -35,10 +36,10 @@ public class AllButtonAction : MonoBehaviour
             
             startup = false;
         }
-       
+
        
     }
-
+    
     public void Fight_Button_Action_Event()
     {
         Name = EventSystem.current.currentSelectedGameObject.GetComponentInChildren<TMP_Text>().text;
@@ -68,9 +69,11 @@ public class AllButtonAction : MonoBehaviour
                         //Instantiate(PlayerActionList.Effect[0], spawanHero[i].transform.position, spawanHero[i].transform.rotation);
 
                         //action effect on enemy 
-                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x + 0.2f, Button_Click_On_Player.transform.position.y + 0.6f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
-                        clone.gameObject.GetComponent<Animator>().SetTrigger("HpPotion");                        
-                        Destroy(clone.gameObject, 1.5f);
+                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[2], new Vector3(Button_Click_On_Player.transform.position.x , Button_Click_On_Player.transform.position.y - 0.5f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(-90f, 0f, 0f));
+                        //clone.gameObject.GetComponent<Animator>().SetTrigger("HpPotion");                        
+                        Destroy(clone.gameObject, 4f);
+                      
+                        
                     }
                 }
                 catch (System.Exception)
@@ -84,6 +87,7 @@ public class AllButtonAction : MonoBehaviour
 
         }
 
+       
         if (Name == "SpPotion")
         {
             //Globalvariable.After_Death_ReSequence += 1;
@@ -107,9 +111,10 @@ public class AllButtonAction : MonoBehaviour
 
 
                         //action effect on enemy 
-                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[1], new Vector3(Button_Click_On_Player.transform.position.x + 0.2f, Button_Click_On_Player.transform.position.y + 0.6f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(Button_Click_On_Player.transform.rotation.x, 0f, Button_Click_On_Player.transform.rotation.z));
-                        clone.gameObject.GetComponent<Animator>().SetTrigger("SpPotion");
-                        Destroy(clone.gameObject, 1.5f);
+                        Transform clone = Instantiate(spawanHero[i].GetComponent<ActionList>().Effect[3], new Vector3(Button_Click_On_Player.transform.position.x, Button_Click_On_Player.transform.position.y - 0.5f, Button_Click_On_Player.transform.position.z), Quaternion.Euler(-90f, 0f, 0f));
+                        //clone.gameObject.GetComponent<Animator>().SetTrigger("HpPotion");                        
+                        Destroy(clone.gameObject, 4f);
+
                     }
                 }
                 catch (System.Exception)

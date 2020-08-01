@@ -669,7 +669,7 @@ PrefabInstance:
     - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: Effect.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
@@ -748,6 +748,18 @@ PrefabInstance:
       propertyPath: EnemyActionsList.Array.data[2]
       value: ThunderStrom
       objectReference: {fileID: 0}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: Effect.Array.data[2]
+      value: 
+      objectReference: {fileID: 7012099254961897619, guid: 14bee50fd11a3c44685d3d689d515224,
+        type: 3}
+    - target: {fileID: 6522258301114136686, guid: bc80ef91776a2804299cc722c0bb4834,
+        type: 3}
+      propertyPath: Effect.Array.data[3]
+      value: 
+      objectReference: {fileID: 4928187955574737570, guid: 2243adcb8c27b7f4cb95fd89e3046b14,
+        type: 3}
     - target: {fileID: 6708269184893395256, guid: bc80ef91776a2804299cc722c0bb4834,
         type: 3}
       propertyPath: Enemys.Array.size
