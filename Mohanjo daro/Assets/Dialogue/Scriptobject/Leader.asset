@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Leader
   m_EditorClassIdentifier: 
   dialoger: Leader
+  tag: Enemy
   photo: {fileID: 21300000, guid: f608ea1f69fc8a04c9fc75e560719d18, type: 3}
   expressions:
   - photo: {fileID: 5163005824217018335, guid: f613cac8dd67eca449577d36cc017bcc, type: 3}

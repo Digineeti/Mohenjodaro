@@ -31,6 +31,9 @@ public class IndraAction : MonoBehaviour
         specialPActioncount = 0;
         SpPAction = new string[specialPActioncount, 2];
 
+        //check  level from save data ..
+        //if save data is not available then check from the attribute list (initial value...)
+
         if (int.Parse(attributeCall.Attribute.Level)<10)
         {
             //Active player action
@@ -50,6 +53,7 @@ public class IndraAction : MonoBehaviour
             InActive = new int[InActiveAction];
           
         }
+
         if (int.Parse(attributeCall.Attribute.Level) > 10 && int.Parse(attributeCall.Attribute.Level) > 20)
         {
             //Active player action

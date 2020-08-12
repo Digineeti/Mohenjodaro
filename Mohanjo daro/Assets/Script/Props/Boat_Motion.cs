@@ -21,6 +21,7 @@ public class Boat_Motion : MonoBehaviour
     {
         RD = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        the_Main_Camera = GameObject.Find("MainCamera");
         the_Main_Camera.SetActive(false);
         cut_scene_Camera.SetActive(true);
 
@@ -46,7 +47,7 @@ public class Boat_Motion : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         anim.SetBool("reach", true);
-        the_Main_Camera= GameObject.Find("MainCamera");
+       
         the_Main_Camera.SetActive(true);
         //StartCoroutine(Play_CutScene());
         //vcam.GetComponent<CinemachineVirtualCamera>().LookAt = tPlayer.transform;

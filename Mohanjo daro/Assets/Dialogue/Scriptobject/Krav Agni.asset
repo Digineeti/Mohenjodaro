@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Krav Agni
   m_EditorClassIdentifier: 
   dialoger: Krav Agni
+  tag: Player
   photo: {fileID: 21300000, guid: c7e369fbb9ecfd142934a2de130c20c3, type: 3}
   expressions:
   - photo: {fileID: 922664034701432297, guid: 99939abcd45f92b42a884ec665c2b0cf, type: 3}

@@ -8,7 +8,8 @@ public class DialogueCharacter : ScriptableObject
 {
 
     [Header("Dialogue conversation Player Image")]
-    public string dialoger;   
+    public string dialoger;
+    public string tag;
     public Sprite photo;
 
 

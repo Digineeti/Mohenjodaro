@@ -20,32 +20,31 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     public GameObject enemy_Image;
     //public Animator enemy_anim;
 
-    string p_Name="";
-    string e_Name= "";
-    bool active_Player;   
+    string p_Name = "";
+    string e_Name = "";
+    bool active_Player;
     float time = 200;
     bool one_Shake;
 
-   
+
     private void Awake()
     {
-       
+
     }
     //private static bool DialogueExists;
     private void Start()
     {
-      
+
     }
     // Update is called once per frame
     void Update()
     {
-        
         for (int i = 0; i < character.Length; i++)
         {
             int index = player_Name.text.IndexOf("[");
             if (player_Name.text != "" && index > 0)
             {
-                
+
                 p_Name = player_Name.text.Substring(0, index);
                 string expression = player_Name.text.Substring(index + 1, 1);
 
@@ -59,11 +58,12 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 //{ }
                 if (p_Name == character[i].dialoger)
                 {
+
                     active_Player = true;
                     player_Image.GetComponent<Image>().sprite = character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     player_Image.GetComponent<Image>().material = character[i].expressions[int.Parse(expression)].material;
                     player_Image.GetComponent<Image>().color = Color.white;
-                    active_Dialoguer.SetBool("active",true);                   
+                    active_Dialoguer.SetBool("active", true);
 
                     for (int j = 0; j < enemy_character.Length; j++)
                     {
@@ -77,7 +77,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                             //enemy_Image.GetComponent<Material>()                           
                         }
                     }
-                   
+
                 }
             }
         }
@@ -88,7 +88,6 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             int index = player_Name.text.IndexOf("[");
             if (player_Name.text != "" && index > 0)
             {
-
                 p_Name = player_Name.text.Substring(0, index);
                 string expression = player_Name.text.Substring(index + 1, 1);
 
@@ -98,9 +97,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 string t_Name = talker_Name.Substring(0, index2);
                 string t_expression = talker_Name.Substring(index2 + 1, 1);
 
-
                 //Debug.Log(talker_Name);
-
                 if (p_Name == enemy_character[i].dialoger)
                 {
                     active_Player = true;
@@ -121,12 +118,12 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                             player_Image.GetComponent<Image>().sprite = character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
                             player_Image.GetComponent<Image>().material = null;     // character[j].expressions[int.Parse(t_expression)].material;
                             player_Image.GetComponent<Image>().color = Color.gray;
-                            
+
                             //player_Image = character[j].expressions[int.Parse(t_expression)].photo;
                         }
                     }
 
-                    if(count<=0)
+                    if (count <= 0)
                     {
                         for (int j = 0; j < enemy_character.Length; j++)
                         {
@@ -141,6 +138,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                         }
                     }
                 }
+
             }
         }
         #endregion
@@ -155,15 +153,15 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             StartCoroutine(shaking());
             dialogue_text.text += " ";
         }
-       
+
 
     }
 
-   IEnumerator shaking()
+    IEnumerator shaking()
     {
 
 
-       
+
         if (active_Dialoguer.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Player_Dialogue_Active")
         {
             active_Dialoguer.SetBool("Player_shake", true);
@@ -176,8 +174,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
             yield return new WaitForSeconds(.3f);
             active_Dialoguer.SetBool("NPc_Shake", false);
         }
-            
-        
+
+
     }
 
 
