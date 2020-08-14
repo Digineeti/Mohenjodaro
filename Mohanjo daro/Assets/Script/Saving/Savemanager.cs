@@ -139,7 +139,8 @@ public class Savemanager : MonoBehaviour
         public int level;
         public Vector2 playerPosition;
 
-        public string Date;}
+        public string Date;
+    }
 
     //string[] chest = { "box1", "box2", "box3", "box4", "box4" };
    

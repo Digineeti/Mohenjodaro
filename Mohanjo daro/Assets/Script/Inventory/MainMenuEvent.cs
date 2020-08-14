@@ -44,7 +44,12 @@ public class MainMenuEvent : MonoBehaviour
 
     public void Main_Menu_LoadGame_Panel_Back_Click()
     {
-       
+        GameObject[] List_destroyed = GameObject.FindGameObjectsWithTag("SaveListMenu");
+        foreach (GameObject files in List_destroyed)
+        {
+            Destroy(files);
+        }
+
         mainMenu.SetActive(true);
         LoadMenu.SetActive(false);
        
@@ -134,14 +139,15 @@ public class MainMenuEvent : MonoBehaviour
     {
 
         DirectoryInfo directoryInfo = new DirectoryInfo(Application.dataPath + "/save/");
-        FileInfo[] savefile = directoryInfo.GetFiles();
-        FileInfo mostrecentfile = null;
+        FileInfo[] savefile = directoryInfo.GetFiles("*.txt");
+        //FileInfo mostrecentfile = null;
         foreach (FileInfo files in savefile)
         {
             //spwan the prefab
             try
             {
-                string savestring = File.ReadAllText(files.FullName);
+
+                string savestring = File.ReadAllText(files.FullName);               
                 SaveObject saveobject = JsonUtility.FromJson<SaveObject>(savestring);
 
                 GameObject myBrick = Instantiate(load_game_prefab, parent.transform.position, Quaternion.identity) as GameObject;
@@ -156,24 +162,10 @@ public class MainMenuEvent : MonoBehaviour
                 myBrick.GetComponent<LoadsavePrefabvalue>().file_Name = files.FullName;
             }
             catch (System.Exception)
-            {
-
+            {   
                 
-            }
-           
-
-            //string savestring = File.ReadAllText(mostrecentfile.FullName);
-
+            }           
         }
-
-        //if (mostrecentfile != null)
-        //{
-        //    string savestring = File.ReadAllText(mostrecentfile.FullName);
-        //    return savestring;
-        //}
-        //else { return null; }
-
-      
     }
 
     private class SaveObject

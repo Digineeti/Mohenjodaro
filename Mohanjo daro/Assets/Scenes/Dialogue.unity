@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -134,7 +134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 68394451, guid: 3514bcdd3c0a48c40b7859d2a4df99ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -450.20688
+      value: -450.18268
       objectReference: {fileID: 0}
     - target: {fileID: 1539249603, guid: 3514bcdd3c0a48c40b7859d2a4df99ec, type: 3}
       propertyPath: m_IsActive
@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1539249607, guid: 3514bcdd3c0a48c40b7859d2a4df99ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -450.20688
+      value: -450.18268
       objectReference: {fileID: 0}
     - target: {fileID: 8205078307038689161, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
@@ -152,7 +152,12 @@ PrefabInstance:
     - target: {fileID: 8205078307038689164, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
       propertyPath: character.Array.size
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205078307038689164, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: enemy_character.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8205078307038689164, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}
@@ -177,6 +182,12 @@ PrefabInstance:
       propertyPath: character.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 3665cc41c878df84a988ee44c1e7f1d6,
+        type: 2}
+    - target: {fileID: 8205078307038689164, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
+        type: 3}
+      propertyPath: enemy_character.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: dc3babc1ee5928340be7dfa8ba68c062,
         type: 2}
     - target: {fileID: 8205078307038689165, guid: 3514bcdd3c0a48c40b7859d2a4df99ec,
         type: 3}

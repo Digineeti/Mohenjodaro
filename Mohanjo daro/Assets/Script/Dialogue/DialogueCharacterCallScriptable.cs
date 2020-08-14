@@ -26,7 +26,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     float time = 200;
     bool one_Shake;
 
-
+    string last_T_Name = "";
     private void Awake()
     {
 
@@ -39,6 +39,7 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         for (int i = 0; i < character.Length; i++)
         {
             int index = player_Name.text.IndexOf("[");
@@ -54,11 +55,8 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                 string t_Name = talker_Name.Substring(0, index2);
                 string t_expression = talker_Name.Substring(index2 + 1, 1);
 
-                //if(p_Name== character[i].expressions[int.Parse(expression)].Name)
-                //{ }
                 if (p_Name == character[i].dialoger)
                 {
-
                     active_Player = true;
                     player_Image.GetComponent<Image>().sprite = character[i].expressions[int.Parse(expression)].photo.GetComponent<SpriteRenderer>().sprite;
                     player_Image.GetComponent<Image>().material = character[i].expressions[int.Parse(expression)].material;
@@ -68,13 +66,12 @@ public class DialogueCharacterCallScriptable : MonoBehaviour
                     for (int j = 0; j < enemy_character.Length; j++)
                     {
                         if (t_Name == enemy_character[j].dialoger)
-                        {
-                            //Talk_check = 1;
+                        {      
+                            
                             enemy_Image.GetComponent<Image>().sprite = enemy_character[j].expressions[int.Parse(t_expression)].photo.GetComponent<SpriteRenderer>().sprite;
-                            enemy_Image.GetComponent<Image>().material = null;// enemy_character[j].expressions[int.Parse(expression)].material;
+                            enemy_Image.GetComponent<Image>().material = null;
                             enemy_Image.GetComponent<Image>().color = Color.gray;
-                            //enemy_Image = enemy_character[j].expressions[int.Parse(t_expression)].photo;
-                            //enemy_Image.GetComponent<Material>()                           
+                                                     
                         }
                     }
 

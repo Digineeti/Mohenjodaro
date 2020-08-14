@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogue.unity
     guid: 6ce8e81628faf47498d71530ccfe4bc4
   - enabled: 1
+    path: Assets/Scenes/DialogueNPC.unity
+    guid: d713e769c18b3794bb1332abbe605fc7
+  - enabled: 1
     path: Assets/Scenes/Inventory.unity
     guid: 9ff8d7d11bac2e74fbbec0c15081dacc
   m_configObjects: {}
