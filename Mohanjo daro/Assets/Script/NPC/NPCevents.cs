@@ -21,6 +21,7 @@ public class NPCevents : MonoBehaviour
     float end_Time = 0;
     public int dialogue_StartLine;
     public int dialogue_EndLine;
+    bool trigger_Active_Dialogue;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,45 +31,42 @@ public class NPCevents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //int val = Random.Range(0,4);
-        //if (val == 0)
-        //{
-        //    type = NPCType.horiontalRight;
-        //}
-        //else if(val==1)
-        //{
-        //    type = NPCType.verticalUp;
-        //}
-        //else if(val==3)
-        //{
-        //    type = NPCType.verticalDown;
-        //}
-        //else
-        //{
-        //    type = NPCType.horiontalLeft;
-        //}
-        //if (type.ToString() == "horiontalRight")
-        //{
-        //    RD.velocity = new Vector2(2f, 0f);          
-        //}     
-        //if (type.ToString() == "verticalUp")
-        //{
-        //    RD.velocity = new Vector2(0f, 2f);         
-        //}
-        //if (type.ToString() == "horiontalLeft")
-        //{
-        //    RD.velocity = new Vector2(-2f, 0f);
-        //}
-        //if (type.ToString() == "verticalDown")
-        //{
-        //    RD.velocity = new Vector2(0f, -2f);
-        //}
+        if (trigger_Active_Dialogue)
+        {
+
+            trigger_Active_Dialogue = false;
+            GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+            dialoguebar.transform.position = gameObject.transform.position;
+            if (PlayerPrefs.HasKey(SceneManager.GetActiveScene().name + gameObject.name))
+            {
+                int val = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + gameObject.name);
+                val += 1;
+                if (val > dialogue_EndLine)
+                    val = dialogue_EndLine;
+
+                dialoguebar.GetComponent<RPGTalk>().lineToStart = val.ToString();
+                dialoguebar.GetComponent<RPGTalk>().lineToBreak = val.ToString();
+                dialoguebar.GetComponent<RPGTalk>().NewTalk();
+                PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + gameObject.name, val);
+            }
+            else
+            {
+                dialoguebar.GetComponent<RPGTalk>().lineToStart = dialogue_StartLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().lineToBreak = dialogue_StartLine.ToString();
+                dialoguebar.GetComponent<RPGTalk>().NewTalk();
+                PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + gameObject.name, dialogue_StartLine);
+            }
+        }
+
+
+        
     }
 
     IEnumerator Trigger_Event()
     {
         SceneManager.LoadScene("DialogueNPC", LoadSceneMode.Additive);
-        yield return new WaitForEndOfFrame();      
+        yield return new WaitForEndOfFrame();
+        trigger_Active_Dialogue = true;
 
     }
 
@@ -91,6 +89,7 @@ public class NPCevents : MonoBehaviour
             //}
             Globalvariable.Dialogue_Open = true;           
             StartCoroutine(Trigger_Event());
+
         }
     }
 }

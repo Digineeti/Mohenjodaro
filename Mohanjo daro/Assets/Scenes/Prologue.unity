@@ -24091,7 +24091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 635302055, guid: deb8769508b8e0b45ab2521240dbda80, type: 3}
       propertyPath: m_StretchFill
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3822502958274829294, guid: deb8769508b8e0b45ab2521240dbda80,
         type: 3}

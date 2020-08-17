@@ -94,6 +94,7 @@ public class EnemyMovement : MonoBehaviour
             try
             {
                 GameObject dialoguebar = GameObject.Find("MainDialogueSystem");
+               
                 //GameObject cam = GameObject.Find();
                 //gameObject.GetComponent<RPGTalkArea>().rpgtalkTarget = dialoguebar.GetComponent<RPGTalk>();
                 //GameObject player_Position = GameObject.Find("Indra 1");
