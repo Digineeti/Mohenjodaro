@@ -61,12 +61,14 @@ public class Savemanager : MonoBehaviour
             //save
             Vector2 playerposition = unit.GetPosition();
             int level = unit.GetLevel();
+            int gold = unit.GetGold();
             string Date = unit.GetDate();
             SaveObject saveobject = new SaveObject()
             {
                 level = level,
                 playerPosition = playerposition,
-                Date=Date,
+                Date = Date,
+                gold = gold,
 
             };
             string json = JsonUtility.ToJson(saveobject);
@@ -138,7 +140,7 @@ public class Savemanager : MonoBehaviour
     {
         public int level;
         public Vector2 playerPosition;
-
+        public int gold;
         public string Date;
     }
 

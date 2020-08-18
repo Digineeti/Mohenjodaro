@@ -14,13 +14,13 @@ public class Chest : MonoBehaviour
 
     [HideInInspector] public bool enter;
 
-
+    GameObject player;
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ScenePlayer")
         {
             chest_activation_section = true;
-           
+            player = collision.gameObject;
         }
     }
     //private void OnCollisionExit2D(Collision2D collision)
@@ -36,11 +36,18 @@ public class Chest : MonoBehaviour
         /* if chest exists in the save list then set the animation to active mode else not*/
         if (chest_activation_section)
         {
+           
             enter = enter || Input.GetButtonDown("ActionEnter");
             if (enter)
-            {
-                
+            {                
                 gameObject.GetComponent<Animator>().SetBool("active", true);
+                    
+            }
+            if (gameObject.GetComponent<Animator>().GetBool("active") && Input.GetKeyDown(KeyCode.G))
+            {
+                gameObject.GetComponent<Animator>().SetBool("Grabgold", true);
+                Globalvariable.Gold = player.GetComponent<PlayerMovement>().GetGold() + receive_item_count;
+                player.GetComponent<PlayerMovement>().SetGold(Globalvariable.Gold);
             }
         }
 

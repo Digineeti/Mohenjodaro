@@ -257,6 +257,17 @@ public class PlayerMovement : MonoBehaviour,IUnit
         //nothing to set
         //set date in the ui  if required.
     }
+
+    public int GetGold()
+    {
+        return Globalvariable.Gold;
+        //throw new NotImplementedException();
+    }
+
+    public void SetGold(int gold)
+    {
+        //throw new NotImplementedException();
+    }
 }
 
 

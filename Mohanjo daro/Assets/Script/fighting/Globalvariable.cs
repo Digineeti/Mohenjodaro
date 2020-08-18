@@ -209,24 +209,11 @@ public class Globalvariable
         get { return walkable_Area; }
         set { walkable_Area = value; }
     }
-    //private static bool _Walkarea;
-    //public static bool Walkarea
-    //{
-    //    get { return _Walkarea; }
-    //    set { _Walkarea = value; }
-    //}
 
-    //private static bool _HouseEnterExit;
-    //public static bool HouseEnterExit
-    //{
-    //    get { return _HouseEnterExit; }
-    //    set { _HouseEnterExit = value; }
-    //}
-
-    //private static bool _FloorShifting;
-    //public static bool FloorShifting
-    //{
-    //    get { return _FloorShifting; }
-    //    set { _FloorShifting = value; }
-    //}
+    private static int gold;
+    public static int Gold
+    {
+        get { return gold; }
+        set { gold = value; }
+    }
 }

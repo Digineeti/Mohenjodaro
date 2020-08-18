@@ -6,6 +6,10 @@ public interface IUnit
     //current level of the player
     int GetLevel();
     void SetLevel(int level);
+
+    //current gold status
+    int GetGold();
+    void SetGold(int gold);
     //current position of the player
     Vector2 GetPosition();
     void SetPosition(Vector2 position);
